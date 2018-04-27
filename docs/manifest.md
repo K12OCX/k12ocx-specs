@@ -1,3 +1,4 @@
+# Manifest
 
 This proposal aims to provide a technical strategy for organizations to share and find OER content through the web.
 

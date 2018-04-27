@@ -22,9 +22,9 @@ For the properties tables we'll use the following vocabularies:
 
 | Prefix |  Vocabulary                    |
 |--------|--------------------------------|
-| oer    | http://oerschema.org/          |
-| schema | http://schema.org/             |
-| cc     | http://creativecommons.org/ns# |
+| oer    | [http://oerschema.org/](http://oerschema.org/) |
+| schema | [http://schema.org/](http://schema.org/) |
+| cc     | [http://creativecommons.org/ns#](http://creativecommons.org/ns#) |
 
 OERSchema types:
 
@@ -36,9 +36,5 @@ OERSchema types:
 - [Assessment](/metadata/assessment)
 - [SupportingMaterial](/metadata/supportingmaterial)
 - [Auxiliary Types](/metadata/auxiliary-types)
-
-______
-
-
 
 

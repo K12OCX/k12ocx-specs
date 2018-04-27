@@ -14,5 +14,6 @@ pages:
         - Auxiliary Types: metadata/auxiliary-types.md
     - Packaging: packaging.md
     - Styling: styling.md
-    - About: about.md
-theme: material
+theme: readthedocs
+extra_css:
+    - css/custom.css
