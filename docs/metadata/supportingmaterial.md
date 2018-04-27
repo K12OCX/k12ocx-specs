@@ -1,11 +1,12 @@
+# SupportingMaterial
 
 - type: http://oerschema.org/SupportingMaterial
 - extends:
-  - http://oerschema.org/InstructionalPattern > http://oerschema.org/LearningComponent
-  - http://oerschema.org/Resource
-  - http://oerschema.org/CreativeWork => http://schema.org/CreativeWork
-  - http://oerschema.org/Thing => http://schema.org/Thing
-  - https://creativecommons.org/ns#Work
+    - [http://oerschema.org/InstructionalPattern](http://oerschema.org/InstructionalPattern) => [http://oerschema.org/LearningComponent](http://oerschema.org/LearningComponent)
+    - [http://oerschema.org/Resource](http://oerschema.org/Resource)
+    - [http://oerschema.org/CreativeWork](http://oerschema.org/CreativeWork) => [http://schema.org/CreativeWork](http://schema.org/CreativeWork)
+    - [http://oerschema.org/Thing](http://oerschema.org/Thing) => [http://schema.org/Thing](http://schema.org/Thing)
+    - [https://creativecommons.org/ns#Work](https://creativecommons.org/ns#Work)
 - parentOf: None
 - childOf: `Course`, `Module`, `Unit`, `Lesson`
 
@@ -18,7 +19,7 @@ Examples:
 - [Teacher Course Guide](https://im.openupresources.org/6/teachers/teacher_course_guide.html) (IM)
 - [Family Materials](https://im.openupresources.org/6/families/index.html) (IM)
 
-##### Properties
+## Properties
 
 | Property     | Type     | Description                                         |
 | ------------ | -------- | --------------------------------------------------- |
@@ -49,7 +50,7 @@ Examples:
 | schema:url | URL | URL of the item. |
 | schema:alternateName | Text | An alias for the item. |
 | schema:potentialAction | schema:Acion | Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role. |
-| **schema:CreativeWork** | -------------------- | _(below we show a few relevant CreativeWork properties. For the full properties table see http://schema.org/CreativeWork)_ |
+| **schema:CreativeWork** | -------------------- | _(below we show a few relevant CreativeWork properties. For the full properties table see [http://schema.org/CreativeWork](http://schema.org/CreativeWork) )_ |
 | schema:about | schema:Thing | The subject matter of the content. |
 | schema:headline | Text | Headline of the article. |
 | schema:dateCreated | schema:Date | The date on which the resource was created. |
@@ -74,7 +75,7 @@ Examples:
 | cc:attributionURL | URL | The URL the creator of a Work would like used when attributing re-use. |
 | cc:useGuidelines | Text | A related resource which defines non-binding use guidelines for the work. |
 
-##### Samples
+## Samples
 
 - JSON-LD
 ```json

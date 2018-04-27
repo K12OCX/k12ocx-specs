@@ -1,11 +1,12 @@
+# Lesson
 
-- type: http://oerschema.org/Lesson/
+- type: [http://oerschema.org/Lesson/](http://oerschema.org/Lesson/)
 - extends:
-  - http://oerschema.org/InstructionalPattern => http://oerschema.org/LearningComponent
-  - http://oerschema.org/Resource/
-  - http://oerschema.org/CreativeWork => http://schema.org/CreativeWork
-  - http://oerschema.org/Thing => http://schema.org/Thing
-  - https://creativecommons.org/ns#Work
+    - [http://oerschema.org/InstructionalPattern](http://oerschema.org/InstructionalPattern) => [http://oerschema.org/LearningComponent](http://oerschema.org/LearningComponent)
+    - [http://oerschema.org/Resource/](http://oerschema.org/Resource/)
+    - [http://oerschema.org/CreativeWork](http://oerschema.org/CreativeWork) => [http://schema.org/CreativeWork](http://schema.org/CreativeWork)
+    - [http://oerschema.org/Thing](http://oerschema.org/Thing) => [http://schema.org/Thing](http://schema.org/Thing)
+    - [https://creativecommons.org/ns#Work](https://creativecommons.org/ns#Work)
 - childOf: `Module` or `Unit`
 - parentOf: `Activity`, `Assessment`, `SupportingMaterial`
 
@@ -20,7 +21,7 @@ Examples:
 - [From Parallelograms to Triangles](https://im.openupresources.org/6/teachers/1/7.html) (IM)
 - [Interpret A Multiplication Equation As A Comparison](https://www.unbounded.org/math/grade-4/module-1/topic-a/lesson-1) (UnboundEd)
 
-##### Properties
+## Properties
 
 | Property     | Type     | Description                                         |
 | ------------ | -------- | --------------------------------------------------- |
@@ -51,7 +52,7 @@ Examples:
 | schema:url | URL | URL of the item. |
 | schema:alternateName | Text | An alias for the item. |
 | schema:potentialAction | schema:Acion | Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role. |
-| **schema:CreativeWork** | -------------------- | _(below we show a few relevant CreativeWork properties. For the full properties table see http://schema.org/CreativeWork)_ |
+| **schema:CreativeWork** | -------------------- | _(below we show a few relevant CreativeWork properties. For the full properties table see [http://schema.org/CreativeWork](http://schema.org/CreativeWork) )_ |
 | schema:about | schema:Thing | The subject matter of the content. |
 | schema:headline | Text | Headline of the article. |
 | schema:dateCreated | schema:Date | The date on which the resource was created. |
@@ -77,9 +78,9 @@ Examples:
 | cc:useGuidelines | Text | A related resource which defines non-binding use guidelines for the work. |
 
 
-##### Samples
+## Samples
 
-Markup for https://www.unbounded.org/math/grade-4/module-1/topic-a/lesson-1
+Markup for [https://www.unbounded.org/math/grade-4/module-1/topic-a/lesson-1](https://www.unbounded.org/math/grade-4/module-1/topic-a/lesson-1)
 
 - JSON-LD
 

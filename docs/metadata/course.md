@@ -1,9 +1,10 @@
+# Course
 
-- type: http://oerschema.org/Course
+- type: [http://oerschema.org/Course](http://oerschema.org/Course)
 - extends:
-  - http://oerschema.org/Resource
-  - http://oerschema.org/Thing  =>  http://schema.org/Thing
-  - https://creativecommons.org/ns#Work
+    - [http://oerschema.org/Resource](http://oerschema.org/Resource)
+    - [http://oerschema.org/Thing](http://oerschema.org/Thing)  =>  [http://schema.org/Thing](http://schema.org/Thing)
+    - [https://creativecommons.org/ns#Work](https://creativecommons.org/ns#Work)
 - parentOf: `Module` and `SupportingMaterial`
 - childOf: none
 
@@ -22,7 +23,7 @@ Examples:
 - Kindergarten Skills Block (EL)
 
 
-##### Properties
+## Properties
 
 | Property     | Type     | Description                                         |
 | ------------ | -------- | --------------------------------------------------- |
@@ -68,9 +69,9 @@ Examples:
 | cc:useGuidelines | Text | A related resource which defines non-binding use guidelines for the work. |
 
 
-##### Samples
+## Samples
 
-Markup for https://www.unbounded.org/math/grade-4:
+Markup for [https://www.unbounded.org/math/grade-4](https://www.unbounded.org/math/grade-4):
 
 - JSON-LD. (`/html/head/script[@type="application/ld+json"]`)
 ```json
