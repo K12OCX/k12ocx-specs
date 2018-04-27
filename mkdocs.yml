@@ -3,15 +3,15 @@ pages:
     - Home: index.md
     - Manifest: manifest.md
     - Metadata:
-        - Semantic Markup: markup.md
-        - Course: course.md
-        - Module: module.md
-        - Unit: unit.md
-        - Lesson: lesson.md
-        - Activity: activity.md
-        - Assessment: assessment.md
-        - SupportingMaterial: supportingmaterial.md
-        - Auxiliary Types: auxiliary-types.md
+        - Semantic Markup: metadata/markup.md
+        - Course: metadata/course.md
+        - Module: metadata/module.md
+        - Unit: metadata/unit.md
+        - Lesson: metadata/lesson.md
+        - Activity: metadata/activity.md
+        - Assessment: metadata/assessment.md
+        - SupportingMaterial: metadata/supportingmaterial.md
+        - Auxiliary Types: metadata/auxiliary-types.md
     - Packaging: packaging.md
     - Styling: styling.md
     - About: about.md
