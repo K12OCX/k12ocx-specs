@@ -15,4 +15,4 @@ pages:
     - Packaging: packaging.md
     - Styling: styling.md
     - About: about.md
-theme: readthedocs
+theme: material
