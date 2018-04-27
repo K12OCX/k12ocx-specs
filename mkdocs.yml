@@ -1,0 +1,18 @@
+site_name: K12 OCX Specification
+pages:
+    - Home: index.md
+    - Manifest: manifest.md
+    - Metadata:
+        - Semantic Markup: markup.md
+        - Course: course.md
+        - Module: module.md
+        - Unit: unit.md
+        - Lesson: lesson.md
+        - Activity: activity.md
+        - Assessment: assessment.md
+        - SupportingMaterial: supportingmaterial.md
+        - Auxiliary Types: auxiliary-types.md
+    - Packaging: packaging.md
+    - Styling: styling.md
+    - About: about.md
+theme: readthedocs
