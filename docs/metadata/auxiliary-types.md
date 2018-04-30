@@ -134,7 +134,7 @@ Below we provide a quick reference, for some auxiliary type properties used on t
 | schema:address | schema:PostalAddress \| Text | Physical address of the item. |
 | schema:birthDate | schema:Date | Date of birth. |
 | email | Text | Email address |
-| gender | schema:GenderType \| Text | Gender of the person. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender.|
+| gender | schema:GenderType \| Text | Gender of the person. While [http://schema.org/Male](http://schema.org/Male) and [http://schema.org/Female](http://schema.org/Female) may be used, text strings are also acceptable for people who do not identify as a binary gender.|
 | schema:jobTitle | Text | The job title of the person (for example, Financial Manager). |
 | schema:memberOf | schema:Organization | An Organization to which this Person or Organization belongs. Inverse property: member. |
 | schema:telephone | Text | The telephone number. |
