@@ -19,7 +19,7 @@ Order (within a Lesson) is important, so the structure should maintain the inten
 Examples:
 
 - [A Tale of Two Triangles (Part 1)](https://im.openupresources.org/6/teachers/1/7.html#activity-2) (IM)
-- [Fluency Practice](https://www.unbounded.org/downloads/4502/preview?slug_id=37486) (UnboundEd)
+- [Fluency Practice](https://www.pilot.unbounded.org/downloads/4502/preview?slug_id=37486) (UnboundEd)
 
 ## Properties
 
@@ -90,7 +90,7 @@ Examples:
 
 ## Samples
 
-Markup for [https://www.unbounded.org/downloads/4502/preview?slug_id=37486](https://www.unbounded.org/downloads/4502/preview?slug_id=37486)
+Markup for [https://www.pilot.unbounded.org/downloads/4502/preview?slug_id=37486](https://www.pilot.unbounded.org/downloads/4502/preview?slug_id=37486)
 
 - JSON-LD
 

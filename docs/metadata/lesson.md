@@ -19,7 +19,7 @@ In many cases, the curriculum will describe a specific order that the Activities
 Examples:
 
 - [From Parallelograms to Triangles](https://im.openupresources.org/6/teachers/1/7.html) (IM)
-- [Interpret A Multiplication Equation As A Comparison](https://www.unbounded.org/math/grade-4/module-1/topic-a/lesson-1) (UnboundEd)
+- [Interpret A Multiplication Equation As A Comparison](https://www.pilot.unbounded.org/math/grade-4/module-1/topic-a/lesson-1) (UnboundEd)
 
 ## Properties
 
@@ -80,7 +80,7 @@ Examples:
 
 ## Samples
 
-Markup for [https://www.unbounded.org/math/grade-4/module-1/topic-a/lesson-1](https://www.unbounded.org/math/grade-4/module-1/topic-a/lesson-1)
+Markup for [https://pilot.unbounded.org/math/grade-4/module-1/topic-a/lesson-1](https://pilot.unbounded.org/math/grade-4/module-1/topic-a/lesson-1)
 
 - JSON-LD
 

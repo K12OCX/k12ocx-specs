@@ -73,7 +73,7 @@ This extended sitemap namespace might be included in a site's main `/sitemap.xml
 
 ```xml
   <url>
-    <loc>http://unbounded.org/ela</loc>
+    <loc>http://pilot.unbounded.org/ela</loc>
     <lastmod>2017-08-14T06:04:13.98+00:00</lastmod>
     <ocx:ocx>
         <ocx:type>http://oerschema.org/Topic</ocx:type>
@@ -83,7 +83,7 @@ This extended sitemap namespace might be included in a site's main `/sitemap.xml
     </ocx:ocx>
   </url>
   <url>
-    <loc>http://unbounded.org/ela/grade-2</loc>
+    <loc>http://pilot.unbounded.org/ela/grade-2</loc>
     <lastmod>2017-08-14T06:04:46.30+00:00</lastmod>
     <ocx:ocx>
         <ocx:type>http://oerschema.org/Course</ocx:type>
@@ -91,11 +91,11 @@ This extended sitemap namespace might be included in a site's main `/sitemap.xml
         <ocx:xpath>//script[@type="application/ld+json"]</ocx:xpath>
         <ocx:name>Grade 2 English Language Arts</ocx:name>
         <ocx:teaser></ocx:teaser>
-        <ocx:parent>http://unbounded.org/ela</ocx:parent>
+        <ocx:parent>http://pilot.unbounded.org/ela</ocx:parent>
     </ocx:ocx>
   </url>
   <url>
-    <loc>http://unbounded.org/ela/grade-2/module-1</loc>
+    <loc>http://pilot.unbounded.org/ela/grade-2/module-1</loc>
     <lastmod>2017-08-14T06:10:23.25+00:00</lastmod>
     <ocx:ocx>
         <ocx:type>http://oerschema.org/Module</ocx:type>
@@ -103,11 +103,11 @@ This extended sitemap namespace might be included in a site's main `/sitemap.xml
         <ocx:xpath>//script[@type="application/ld+json"]</ocx:xpath>
         <ocx:name>Listening and Learning</ocx:name>
         <ocx:teaser></ocx:teaser>
-        <ocx:parent>http://unbounded.org/ela/grade-2</ocx:parent>
+        <ocx:parent>http://pilot.unbounded.org/ela/grade-2</ocx:parent>
     </ocx:ocx>
   </url>
   <url>
-    <loc>http://unbounded.org/ela/grade-2/module-1/unit-1</loc>
+    <loc>http://pilot.unbounded.org/ela/grade-2/module-1/unit-1</loc>
     <lastmod>2017-08-15T19:27:17.97+00:00</lastmod>
     <ocx:ocx>
         <ocx:type>http://oerschema.org/Unit</ocx:type>
@@ -115,11 +115,11 @@ This extended sitemap namespace might be included in a site's main `/sitemap.xml
         <ocx:xpath>//script[@type="application/ld+json"]</ocx:xpath>
         <ocx:name>Fairy Tales and Tall Tales</ocx:name>
         <ocx:teaser>Students are introduced to classic fairy tales and tall tales, and the lessons they teach.</ocx:teaser>
-        <ocx:parent>http://unbounded.org/ela/grade-2/module-1</ocx:parent>
+        <ocx:parent>http://pilot.unbounded.org/ela/grade-2/module-1</ocx:parent>
     </ocx:ocx>
   </url>
   <url>
-    <loc>http://unbounded.org/documents/3</loc>
+    <loc>http://pilot.unbounded.org/documents/3</loc>
     <lastmod>2018-02-05T16:06:35.17+00:00</lastmod>
     <ocx:ocx>
         <ocx:type>http://oerschema.org/Lesson</ocx:type>
@@ -127,7 +127,7 @@ This extended sitemap namespace might be included in a site's main `/sitemap.xml
         <ocx:xpath>//script[@type="application/ld+json"]</ocx:xpath>
         <ocx:name>The Fisherman and His Wife</ocx:name>
         <ocx:teaser>Students will review characteristics of fairy tales.</ocx:teaser>
-        <ocx:parent>http://unbounded.org/ela/grade-2/module-1/unit-1</ocx:parent>
+        <ocx:parent>http://pilot.unbounded.org/ela/grade-2/module-1/unit-1</ocx:parent>
     </ocx:ocx>
   </url>
 ```

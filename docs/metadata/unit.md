@@ -15,7 +15,7 @@ A Unit is a sub-group of lessons. Units typically include a smaller collection o
 Examples:
 
 - [Triangles](https://im.openupresources.org/6/teachers/1.html) (IM)
-- [Place Value Of Multi-Digit Whole Numbers](https://www.unbounded.org/explore_curriculum?subjects=math&p=/math/grade-4/module-1/topic-a&e=1) (UnboundEd)
+- [Place Value Of Multi-Digit Whole Numbers](https://pilot.unbounded.org/explore_curriculum?subjects=math&p=/math/grade-4/module-1/topic-a&e=1) (UnboundEd)
 - Unit 1 (EL)
 
 ## Properties
@@ -76,7 +76,7 @@ Examples:
 
 ## Samples
 
-Markup for [https://www.unbounded.org/ela/grade-2/module-1/unit-6](https://www.unbounded.org/ela/grade-2/module-1/unit-6):
+Markup for [https://pilot.unbounded.org/ela/grade-2/module-1/unit-6](https://pilot.unbounded.org/ela/grade-2/module-1/unit-6):
 
 - JSON-LD
 
@@ -87,24 +87,24 @@ Markup for [https://www.unbounded.org/ela/grade-2/module-1/unit-6](https://www.u
     "schema": "http://schema.org/",
     "cc": "http://creativecommons.org/ns#"
   }],
-  "@id": "http://unbounded.org/ela/grade-2/module-1/unit-6",
+  "@id": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6",
   "@type": "http://oerschema.org/Unit",
   "name": "Cycles in Nature",
   "description": "This domain will introduce your students to the many natural cycles that make life on Earth possible. Your students will increase their knowledge of cycles in nature by learning more about seasonal cycles, and by beginning their study of flowering plants and trees, and animal life cycles. Students will also learn about the effect seasonal changes have on plants and animals. In addition, throughout this domain, students will gain exposure to poems by renowned authors Emily Dickinson and Robert Louis Stevenson. These informational text will serve as a model to support students’ writing of their own informational paragraph about the life cycle of either a frog or a butterfly.\r\n\r\nFlip Book Download Here you will find the Flip Book for the entire unit.\r\n\r\nImage Cards Download Here you will find the Image Cards for the entire unit.\r\n\r\nTens and Student Performance Tasks Download This document describes how to use the Tens system to capture student performance assessment data. It includes a Tens Conversion Chart to convert a raw score into a Tens score and rubric for recording observational Tens scores. Also included is a blank Tens Recording Chart.\r\n\r\nStudent Writing Portfolios Download. This document describes how to use activities marked with a writing portfolio icon to monitor and assess students’ writing during the unit.\r\n",
-  "sameAs": ["http://unbounded.org/resources/8991", "default"],
-  "uri": "http://unbounded.org/ela/grade-2/module-1/unit-6",
+  "sameAs": "http://pilot.unbounded.org/resources/8991",
+  "uri": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6",
   "schema:identifier": 8991,
-  "schema:url": "http://unbounded.org/ela/grade-2/module-1/unit-6",
+  "schema:url": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6",
   "schema:alternateName": "unit 6",
   "schema:headline": "Students will learn about many natural cycles that make life on Earth possible.  Through these lessons, students will continue to practice their use of transition words (first, then, next, finally) as they build skills necessary to write in informational paragraph about the life cycle of a frog or butterfly.\r\n",
   "schema:dateCreated": "2017-10-23T10:13:10.118Z",
   "schema:dateModified": "2017-10-23T12:45:12.017Z",
   "schema:publisher": {
     "@type": "http://schema.org/Organization",
-    "@id": "http://unbounded.org/about",
+    "@id": "http://pilot.unbounded.org/about",
     "schema:name": "UnboundEd",
     "schema:email": "supportdesk@unbounded.org",
-    "schema:url": "http://unbounded.org/about",
+    "schema:url": "http://pilot.unbounded.org/about",
     "schema:description": "We are a team of former classroom teachers, curriculum writers, school leaders and education experts who have worked in the public, private and nonprofit sectors. We are dedicated to empowering teachers by providing free, high-quality standards-aligned resources for the classroom, the opportunity for immersive training through our Institute, and the option of support through our website."
   },
   "schema:inLanguage": "en-US",
@@ -112,157 +112,212 @@ Markup for [https://www.unbounded.org/ela/grade-2/module-1/unit-6](https://www.u
   "schema:text": "<p>This domain will introduce your students to the many natural cycles that make life on Earth possible. Your students will increase their knowledge of cycles in nature by learning more about seasonal cycles, and by beginning their study of flowering plants and trees, and animal life cycles. Students will also learn about the effect seasonal changes have on plants and animals. In addition, throughout this domain, students will gain exposure to poems by renowned authors Emily Dickinson and Robert Louis Stevenson. These informational text will serve as a model to support students&rsquo; writing of their own informational paragraph about the life cycle of either a frog or a butterfly.</p>\r\n\r\n<p><strong>Flip Book Download</strong> Here you will find the Flip Book for the entire unit.</p>\r\n\r\n<p><strong>Image Cards Download</strong> Here you will find the Image Cards for the entire unit.</p>\r\n\r\n<p><strong>Tens and Student Performance Tasks Download</strong> This document describes how to use the Tens system to capture student performance assessment data. It includes a Tens Conversion Chart to convert a raw score into a Tens score and rubric for recording observational Tens scores. Also included is a blank Tens Recording Chart.</p>\r\n\r\n<p><meta charset=\"utf-8\"><strong>Student Writing Portfolios Download</strong>. This document describes how to use activities marked with a writing portfolio icon to monitor and assess students&rsquo; writing during the unit.</p>\r\n",
   "parentOf": [{
     "@type": "http://oerschema.org/Lesson",
-    "@id": "http://unbounded.org/documents/370",
+    "@id": "http://pilot.unbounded.org/documents/370",
     "name": "The Cycle of Daytime and Nighttime",
     "alternateName": "ela/grade-2/module-1/unit-6/lesson-1",
     "schema:identifier": 8992
   }, {
     "@type": "http://oerschema.org/Lesson",
-    "@id": "http://unbounded.org/documents/371",
+    "@id": "http://pilot.unbounded.org/documents/371",
     "name": "The Reasons for Seasons",
     "alternateName": "ela/grade-2/module-1/unit-6/lesson-2",
     "schema:identifier": 8993
   }, {
     "@type": "http://oerschema.org/Lesson",
-    "@id": "http://unbounded.org/documents/372",
+    "@id": "http://pilot.unbounded.org/documents/372",
     "name": "Four Seasons in One Year",
     "alternateName": "ela/grade-2/module-1/unit-6/lesson-3",
     "schema:identifier": 8994
   }, {
     "@type": "http://oerschema.org/Lesson",
-    "@id": "http://unbounded.org/documents/373",
+    "@id": "http://pilot.unbounded.org/documents/373",
     "name": "The Life Cycle of a Plant",
     "alternateName": "ela/grade-2/module-1/unit-6/lesson-4",
     "schema:identifier": 8995
   }, {
     "@type": "http://oerschema.org/Lesson",
-    "@id": "http://unbounded.org/documents/374",
+    "@id": "http://pilot.unbounded.org/documents/374",
     "name": "The Life Cycle of a Tree",
     "alternateName": "ela/grade-2/module-1/unit-6/lesson-5",
     "schema:identifier": 8996
   }, {
     "@type": "http://oerschema.org/Lesson",
-    "@id": "http://unbounded.org/documents/375",
+    "@id": "http://pilot.unbounded.org/documents/375",
     "name": "Pausing Point",
     "alternateName": "ela/grade-2/module-1/unit-6/lesson-6",
     "schema:identifier": 8997
   }, {
     "@type": "http://oerschema.org/Lesson",
-    "@id": "http://unbounded.org/documents/376",
+    "@id": "http://pilot.unbounded.org/documents/376",
     "name": "Which Came First, the Chicken or the Egg?",
     "alternateName": "ela/grade-2/module-1/unit-6/lesson-7",
     "schema:identifier": 8998
   }, {
     "@type": "http://oerschema.org/Lesson",
-    "@id": "http://unbounded.org/documents/377",
+    "@id": "http://pilot.unbounded.org/documents/377",
     "name": "The Life Cycle of a Frog",
     "alternateName": "ela/grade-2/module-1/unit-6/lesson-8",
     "schema:identifier": 8999
   }, {
     "@type": "http://oerschema.org/Lesson",
-    "@id": "http://unbounded.org/documents/378",
+    "@id": "http://pilot.unbounded.org/documents/378",
     "name": "The Life Cycle of a Butterfly",
     "alternateName": "ela/grade-2/module-1/unit-6/lesson-9",
     "schema:identifier": 9000
   }, {
     "@type": "http://oerschema.org/Lesson",
-    "@id": "http://unbounded.org/documents/379",
+    "@id": "http://pilot.unbounded.org/documents/379",
     "name": "Unfinished Learning: Writing an Introductory Sentence of a Paragraph",
     "alternateName": "ela/grade-2/module-1/unit-6/lesson-10",
     "schema:identifier": 9001
   }, {
     "@type": "http://oerschema.org/Lesson",
-    "@id": "http://unbounded.org/documents/380",
+    "@id": "http://pilot.unbounded.org/documents/380",
     "name": "Domain Review",
     "alternateName": "ela/grade-2/module-1/unit-6/lesson-11",
     "schema:identifier": 9002
   }, {
     "@type": "http://oerschema.org/Lesson",
-    "@id": "http://unbounded.org/documents/381",
+    "@id": "http://pilot.unbounded.org/documents/381",
     "name": "Domain Assessment",
     "alternateName": "ela/grade-2/module-1/unit-6/lesson-12",
     "schema:identifier": 9003
   }, {
     "@type": "http://oerschema.org/Lesson",
-    "@id": "http://unbounded.org/documents/382",
+    "@id": "http://pilot.unbounded.org/documents/382",
     "name": "Culminating Activities",
     "alternateName": "ela/grade-2/module-1/unit-6/lesson-13",
     "schema:identifier": 9004
   }],
   "childOf": {
     "@type": "http://oerschema.org/Module",
-    "@id": "http://unbounded.org/ela/grade-2/module-1",
+    "@id": "http://pilot.unbounded.org/ela/grade-2/module-1",
     "name": "Listening and Learning",
     "alternateName": "ela/grade-2/module-1",
     "schema:identifier": 640
   },
   "forCourse": {
     "@type": "http://oerschema.org/Course",
-    "@id": "http://unbounded.org/ela/grade-2",
+    "@id": "http://pilot.unbounded.org/ela/grade-2",
     "name": "Grade 2 English Language Arts",
     "alternateName": "ela/grade-2",
     "schema:identifier": 5389
   },
   "forTopic": {
     "@type": "http://oerschema.org/Topic",
-    "@id": "http://unbounded.org/ela",
+    "@id": "http://pilot.unbounded.org/ela",
     "name": "ELA"
   },
   "hasComponent": [{
     "@type": "http://oerschema.org/SupportingMaterial",
-    "@id": "https://apierre-ub-dev.s3.amazonaws.com/attachments/29808/G2_M1_U6_FB_COMPLETE.pdf",
+    "@id": "https://ubpilot-uploads.s3.amazonaws.com/attachments/29808/G2_M1_U6_FB_COMPLETE.pdf",
     "forComponent": {
-      "@id": "http://unbounded.org/ela/grade-2/module-1/unit-6"
+      "@id": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6"
     },
     "additionalType": "http://schema.org/DigitalDocument",
     "name": "Module 1, Unit 6, Flip Book",
+    "sameAs": "http://pilot.unbounded.org/downloads/29808?slug=ela%2Fgrade-2%2Fmodule-1%2Funit-6",
     "schema:identifier": 29808,
     "schema:dateCreated": "2017-10-23T12:45:12.020Z",
     "schema:dateModified": "2017-10-23T12:45:12.020Z",
-    "schema:url": "https://apierre-ub-dev.s3.amazonaws.com/attachments/29808/G2_M1_U6_FB_COMPLETE.pdf",
+    "schema:url": "https://ubpilot-uploads.s3.amazonaws.com/attachments/29808/G2_M1_U6_FB_COMPLETE.pdf",
     "schema:fileFormat": "application/pdf"
   }, {
     "@type": "http://oerschema.org/SupportingMaterial",
-    "@id": "https://apierre-ub-dev.s3.amazonaws.com/attachments/29809/Cycles_in_Nature_Image_Cards.pdf",
+    "@id": "https://ubpilot-uploads.s3.amazonaws.com/attachments/29809/Cycles_in_Nature_Image_Cards.pdf",
     "forComponent": {
-      "@id": "http://unbounded.org/ela/grade-2/module-1/unit-6"
+      "@id": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6"
     },
     "additionalType": "http://schema.org/DigitalDocument",
     "name": "Module 1, Unit 6, Image Cards",
+    "sameAs": "http://pilot.unbounded.org/downloads/29809?slug=ela%2Fgrade-2%2Fmodule-1%2Funit-6",
     "schema:identifier": 29809,
     "schema:dateCreated": "2017-10-23T12:45:12.459Z",
     "schema:dateModified": "2017-10-23T12:45:12.459Z",
-    "schema:url": "https://apierre-ub-dev.s3.amazonaws.com/attachments/29809/Cycles_in_Nature_Image_Cards.pdf",
+    "schema:url": "https://ubpilot-uploads.s3.amazonaws.com/attachments/29809/Cycles_in_Nature_Image_Cards.pdf",
     "schema:fileFormat": "application/pdf"
   }, {
     "@type": "http://oerschema.org/SupportingMaterial",
-    "@id": "https://apierre-ub-dev.s3.amazonaws.com/attachments/29810/Tens_and_Student_Performance_Tasks.pdf",
+    "@id": "https://ubpilot-uploads.s3.amazonaws.com/attachments/29810/Tens_and_Student_Performance_Tasks.pdf",
     "forComponent": {
-      "@id": "http://unbounded.org/ela/grade-2/module-1/unit-6"
+      "@id": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6"
     },
     "additionalType": "http://schema.org/DigitalDocument",
     "name": "Tens and Student Performance Tasks Download",
+    "sameAs": "http://pilot.unbounded.org/downloads/29810?slug=ela%2Fgrade-2%2Fmodule-1%2Funit-6",
     "schema:identifier": 29810,
     "schema:dateCreated": "2017-10-23T12:45:12.609Z",
     "schema:dateModified": "2017-10-23T12:45:12.609Z",
-    "schema:url": "https://apierre-ub-dev.s3.amazonaws.com/attachments/29810/Tens_and_Student_Performance_Tasks.pdf",
+    "schema:url": "https://ubpilot-uploads.s3.amazonaws.com/attachments/29810/Tens_and_Student_Performance_Tasks.pdf",
     "schema:fileFormat": "application/pdf"
   }, {
     "@type": "http://oerschema.org/SupportingMaterial",
-    "@id": "https://apierre-ub-dev.s3.amazonaws.com/attachments/29811/Student_Writing_Portfolios.pdf",
+    "@id": "https://ubpilot-uploads.s3.amazonaws.com/attachments/29811/Student_Writing_Portfolios.pdf",
     "forComponent": {
-      "@id": "http://unbounded.org/ela/grade-2/module-1/unit-6"
+      "@id": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6"
     },
     "additionalType": "http://schema.org/DigitalDocument",
     "name": "Student Writing Portfolios Download",
+    "sameAs": "http://pilot.unbounded.org/downloads/29811?slug=ela%2Fgrade-2%2Fmodule-1%2Funit-6",
     "schema:identifier": 29811,
     "schema:dateCreated": "2017-10-23T12:45:12.709Z",
     "schema:dateModified": "2017-10-23T12:45:12.709Z",
-    "schema:url": "https://apierre-ub-dev.s3.amazonaws.com/attachments/29811/Student_Writing_Portfolios.pdf",
+    "schema:url": "https://ubpilot-uploads.s3.amazonaws.com/attachments/29811/Student_Writing_Portfolios.pdf",
     "schema:fileFormat": "application/pdf"
+  }, {
+    "@type": "http://oerschema.org/SupportingMaterial",
+    "@id": "https://ubpilot-uploads.s3.amazonaws.com/bundles/8991/full/ela_g2_m1_unit-6_full.zip",
+    "forComponent": {
+      "@id": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6"
+    },
+    "additionalType": "http://schema.org/DigitalDocument",
+    "name": "All Lesson Materials",
+    "schema:identifier": 20,
+    "schema:dateCreated": "2017-10-23T13:58:09.941Z",
+    "schema:dateModified": "2017-10-23T13:58:09.949Z",
+    "schema:url": "https://ubpilot-uploads.s3.amazonaws.com/bundles/8991/full/ela_g2_m1_unit-6_full.zip",
+    "schema:fileFormat": "application/pdf"
+  }, {
+    "@type": "http://oerschema.org/SupportingMaterial",
+    "@id": "https://ubpilot-uploads.s3.amazonaws.com/bundles/8991/tm/ela_g2_m1_unit-6_tm.zip",
+    "forComponent": {
+      "@id": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6"
+    },
+    "additionalType": "http://schema.org/DigitalDocument",
+    "name": "Teacher Materials Only",
+    "schema:identifier": 21,
+    "schema:dateCreated": "2017-10-23T13:58:10.585Z",
+    "schema:dateModified": "2017-10-23T13:58:10.591Z",
+    "schema:url": "https://ubpilot-uploads.s3.amazonaws.com/bundles/8991/tm/ela_g2_m1_unit-6_tm.zip",
+    "schema:fileFormat": "application/pdf"
+  }, {
+    "@type": "http://oerschema.org/SupportingMaterial",
+    "@id": "https://ubpilot-uploads.s3.amazonaws.com/bundles/8991/sm/ela_g2_m1_unit-6_sm.zip",
+    "forComponent": {
+      "@id": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6"
+    },
+    "additionalType": "http://schema.org/DigitalDocument",
+    "name": "Student Materials Only",
+    "schema:identifier": 22,
+    "schema:dateCreated": "2017-10-23T13:58:10.866Z",
+    "schema:dateModified": "2017-10-23T13:58:10.872Z",
+    "schema:url": "https://ubpilot-uploads.s3.amazonaws.com/bundles/8991/sm/ela_g2_m1_unit-6_sm.zip",
+    "schema:fileFormat": "application/pdf"
+  }, {
+    "@type": "http://oerschema.org/SupportingMaterial",
+    "@id": "https://drive.google.com/open?id=0B2zfCya9OfhBQktxcF90MTdYdHc",
+    "forComponent": {
+      "@id": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6"
+    },
+    "additionalType": "http://schema.org/DigitalDocument",
+    "name": "All Lesson Materials",
+    "schema:identifier": 24,
+    "schema:dateCreated": "2017-10-23T14:01:55.387Z",
+    "schema:dateModified": "2017-10-23T14:01:55.391Z",
+    "schema:url": "https://drive.google.com/open?id=0B2zfCya9OfhBQktxcF90MTdYdHc",
+    "schema:fileFormat": "application/vnd.google-apps.document"
   }],
   "cc:license": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
   "cc:attributionName": "This work is based on an original work of the Core Knowledge® Foundation made available through licensing under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. This does not in any way imply that the Core Knowledge Foundation endorses this work."
 }
 ```
-
