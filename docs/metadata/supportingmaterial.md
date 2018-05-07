@@ -77,7 +77,139 @@ Examples:
 
 ## Samples
 
+
 - JSON-LD
 ```json
-{"todo": true}
+{
+  "@type": "http://oerschema.org/SupportingMaterial",
+  "@id": "http://pilot.unbounded.org/materials/2540",
+  "name": "TDQ’s Chapter 9 pages 189-206",
+  "alternateName": "ELA6_M3_U2_L03 TDQs Chapter 9 pages 189-206",
+  "sameAs": ["https://ubpilot-uploads.s3.amazonaws.com/documents/408/ELA6_M3_U2_L03%20TDQs%20Chapter%209%20pages%20189-206_v20.pdf", "https://drive.google.com/open?id=1Do8A9MOR2JCWAKpDfAM6DOUfNQeXAltOdi35WMM_0qQ"],
+  "image": ["https://ubpilot-uploads.s3.amazonaws.com/documents/408/ELA6_M3_U2_L03%20TDQs%20Chapter%209%20pages%20189-206_v20.jpg"],
+  "uri": "http://pilot.unbounded.org/materials/2540",
+  "forComponent": {
+    "@type": "http://oerschema.org/Lesson",
+    "@id": "http://pilot.unbounded.org/documents/408",
+    "name": "Chapter 9 of Dragonwings and Analyzing an Author’s Point of View",
+    "alternateName": "ela/grade-6/module-3/unit-2/lesson-3",
+    "schema:identifier": 9034
+  },
+  "hasComponent": [{
+    "@id": "https://ubpilot-uploads.s3.amazonaws.com/documents/408/ELA6_M3_U2_L03%20TDQs%20Chapter%209%20pages%20189-206_v20.pdf",
+    "additionalType": "http://schema.org/DigitalDocument",
+    "schema:fileFormat": "application/pdf",
+    "uri": "https://ubpilot-uploads.s3.amazonaws.com/documents/408/ELA6_M3_U2_L03%20TDQs%20Chapter%209%20pages%20189-206_v20.pdf"
+  }, {
+    "@id": "https://drive.google.com/open?id=1Do8A9MOR2JCWAKpDfAM6DOUfNQeXAltOdi35WMM_0qQ",
+    "additionalType": "http://schema.org/DigitalDocument",
+    "schema:fileFormat": "application/vnd.google-apps.document",
+    "uri": "https://drive.google.com/open?id=1Do8A9MOR2JCWAKpDfAM6DOUfNQeXAltOdi35WMM_0qQ"
+  }],
+  "forCourse": {
+    "@type": "http://oerschema.org/Course",
+    "@id": "http://pilot.unbounded.org/ela/grade-6",
+    "name": "Grade 6 English Language Arts",
+    "alternateName": "ela/grade-6",
+    "schema:identifier": 4875
+  },
+  "forTopic": {
+    "@type": "http://oerschema.org/Topic",
+    "@id": "http://pilot.unbounded.org/ela",
+    "name": "ELA"
+  },
+  "schema:identifier": 2540,
+  "schema:alternateName": "ela6_m3_u2_l03 tdqs chapter 9 pages 189-206",
+  "schema:dateCreated": "2017-10-23T11:10:48.457Z",
+  "schema:dateModified": "2017-10-23T11:10:48.457Z",
+  "schema:educationalUse": "Material",
+  "schema:learningResourceType": "Student Handout",
+  "schema:keywords": ["sw-template-p", "student"],
+  "schema:thumbnailUrl": "https://ubpilot-uploads.s3.amazonaws.com/documents/408/ELA6_M3_U2_L03%20TDQs%20Chapter%209%20pages%20189-206_v20.jpg"
+}
+```
+
+______
+
+
+```json
+{
+  "@type": "http://oerschema.org/SupportingMaterial",
+  "@id": "http://pilot.unbounded.org/materials/697",
+  "name": "Evidence-Based Claims Tool, Chapter 5",
+  "alternateName": "ELA6_M2_U1_L09 Evidence-Based Claims Ch 5",
+  "sameAs": ["https://ubpilot-uploads.s3.amazonaws.com/documents/141/ELA6_M2_U1_L09%20Evidence-Based%20Claims%20Ch%205_v881820.pdf", "https://drive.google.com/open?id=13v3S77kqfDafzdw9b7mx87Mp_6B6nZfEAEHcvwkPWWk", "https://ubpilot-uploads.s3.amazonaws.com/documents/142/ELA6_M2_U1_L09%20Evidence-Based%20Claims%20Ch%205_v881820.pdf", "https://drive.google.com/open?id=1962Y0XskjrEJcUeUMoZUk5zzeF_gadaZq4Z1xqQJ6rI", "https://ubpilot-uploads.s3.amazonaws.com/documents/140/ELA6_M2_U1_L09%20Evidence-Based%20Claims%20Ch%205_v881820.pdf", "https://drive.google.com/open?id=1P6ur-_omYo1zu9XS0ETRlNzIrkuadatttanQwXsn6uA"],
+  "image": ["https://ubpilot-uploads.s3.amazonaws.com/documents/141/ELA6_M2_U1_L09%20Evidence-Based%20Claims%20Ch%205_v881820.jpg", "https://ubpilot-uploads.s3.amazonaws.com/documents/142/ELA6_M2_U1_L09%20Evidence-Based%20Claims%20Ch%205_v881820.jpg", "https://ubpilot-uploads.s3.amazonaws.com/documents/140/ELA6_M2_U1_L09%20Evidence-Based%20Claims%20Ch%205_v881820.jpg"],
+  "uri": "http://pilot.unbounded.org/materials/697",
+  "forComponent": [{
+    "@type": "http://oerschema.org/Lesson",
+    "@id": "http://pilot.unbounded.org/documents/141",
+    "name": "Point of View Part 2 in Chapter 5 of World Without Fish",
+    "alternateName": "ela/grade-6/module-2/unit-1/lesson-10",
+    "schema:identifier": 8750
+  }, {
+    "@type": "http://oerschema.org/Lesson",
+    "@id": "http://pilot.unbounded.org/documents/142",
+    "name": "Assessing Point of View, End of Unit Assessment, World Without Fish",
+    "alternateName": "ela/grade-6/module-2/unit-1/lesson-11",
+    "schema:identifier": 8751
+  }, {
+    "@type": "http://oerschema.org/Lesson",
+    "@id": "http://pilot.unbounded.org/documents/140",
+    "name": "Point of View in Chapter 5 of World Without Fish",
+    "alternateName": "ela/grade-6/module-2/unit-1/lesson-9",
+    "schema:identifier": 8749
+  }],
+  "hasComponent": [{
+    "@id": "https://ubpilot-uploads.s3.amazonaws.com/documents/141/ELA6_M2_U1_L09%20Evidence-Based%20Claims%20Ch%205_v881820.pdf",
+    "additionalType": "http://schema.org/DigitalDocument",
+    "schema:fileFormat": "application/pdf",
+    "uri": "https://ubpilot-uploads.s3.amazonaws.com/documents/141/ELA6_M2_U1_L09%20Evidence-Based%20Claims%20Ch%205_v881820.pdf"
+  }, {
+    "@id": "https://drive.google.com/open?id=13v3S77kqfDafzdw9b7mx87Mp_6B6nZfEAEHcvwkPWWk",
+    "additionalType": "http://schema.org/DigitalDocument",
+    "schema:fileFormat": "application/vnd.google-apps.document",
+    "uri": "https://drive.google.com/open?id=13v3S77kqfDafzdw9b7mx87Mp_6B6nZfEAEHcvwkPWWk"
+  }, {
+    "@id": "https://ubpilot-uploads.s3.amazonaws.com/documents/142/ELA6_M2_U1_L09%20Evidence-Based%20Claims%20Ch%205_v881820.pdf",
+    "additionalType": "http://schema.org/DigitalDocument",
+    "schema:fileFormat": "application/pdf",
+    "uri": "https://ubpilot-uploads.s3.amazonaws.com/documents/142/ELA6_M2_U1_L09%20Evidence-Based%20Claims%20Ch%205_v881820.pdf"
+  }, {
+    "@id": "https://drive.google.com/open?id=1962Y0XskjrEJcUeUMoZUk5zzeF_gadaZq4Z1xqQJ6rI",
+    "additionalType": "http://schema.org/DigitalDocument",
+    "schema:fileFormat": "application/vnd.google-apps.document",
+    "uri": "https://drive.google.com/open?id=1962Y0XskjrEJcUeUMoZUk5zzeF_gadaZq4Z1xqQJ6rI"
+  }, {
+    "@id": "https://ubpilot-uploads.s3.amazonaws.com/documents/140/ELA6_M2_U1_L09%20Evidence-Based%20Claims%20Ch%205_v881820.pdf",
+    "additionalType": "http://schema.org/DigitalDocument",
+    "schema:fileFormat": "application/pdf",
+    "uri": "https://ubpilot-uploads.s3.amazonaws.com/documents/140/ELA6_M2_U1_L09%20Evidence-Based%20Claims%20Ch%205_v881820.pdf"
+  }, {
+    "@id": "https://drive.google.com/open?id=1P6ur-_omYo1zu9XS0ETRlNzIrkuadatttanQwXsn6uA",
+    "additionalType": "http://schema.org/DigitalDocument",
+    "schema:fileFormat": "application/vnd.google-apps.document",
+    "uri": "https://drive.google.com/open?id=1P6ur-_omYo1zu9XS0ETRlNzIrkuadatttanQwXsn6uA"
+  }],
+  "forCourse": {
+    "@type": "http://oerschema.org/Course",
+    "@id": "http://pilot.unbounded.org/ela/grade-6",
+    "name": "Grade 6 English Language Arts",
+    "alternateName": "ela/grade-6",
+    "schema:identifier": 4875
+  },
+  "forTopic": {
+    "@type": "http://oerschema.org/Topic",
+    "@id": "http://pilot.unbounded.org/ela",
+    "name": "ELA"
+  },
+  "schema:identifier": 697,
+  "schema:alternateName": "ela6_m2_u1_l09 evidence-based claims ch 5",
+  "schema:dateCreated": "2017-08-14T22:24:31.014Z",
+  "schema:dateModified": "2017-10-23T10:35:24.057Z",
+  "schema:educationalUse": "Material",
+  "schema:learningResourceType": "Student Handout",
+  "schema:keywords": ["sw-template-p", "student"],
+  "schema:thumbnailUrl": ["https://ubpilot-uploads.s3.amazonaws.com/documents/141/ELA6_M2_U1_L09%20Evidence-Based%20Claims%20Ch%205_v881820.jpg", "https://ubpilot-uploads.s3.amazonaws.com/documents/142/ELA6_M2_U1_L09%20Evidence-Based%20Claims%20Ch%205_v881820.jpg", "https://ubpilot-uploads.s3.amazonaws.com/documents/140/ELA6_M2_U1_L09%20Evidence-Based%20Claims%20Ch%205_v881820.jpg"]
+}
 ```
