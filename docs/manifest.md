@@ -35,6 +35,43 @@ This extended sitemap namespace might be included in a site's main `/sitemap.xml
 
 - Prefer using full URLs, i.e. locations for content or landing-pages that require 'hash marks' or fragment identifier are discouraged
 
+## Critical Elements in the Standard Sitemap Protocol
+The documentation at [Sitemap.org](https://www.sitemaps.org) is straightforard and worth reading for any web developer or publisher; here we will give a minimal definition of the protocol and highlight the elements most relevant for publishing curriculum.
+
+### Sitemap Basics
+A sitemap at its most simple is an XML file that is available at the root URL of a website (e.g. https://www.google.com/sitemap.xml), which tells automated web crawlers what web pages are accessible on the site. Like OCX, the sitemap format is a recommended convention rather than a global specification; however, it has become a _de facto_ standard thanks to adoption among the top search engine (e.g. Google, Microsoft, and Yahoo!). The bare minimum sitemap file would contain nothing more than a list of site URLs, marked up with the appropriate XML tags, e.g.:
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+      <loc>http://www.example.com/</loc>
+   </url>
+
+   <url>
+      <loc>http://www.example.org/about-example.html</loc>
+   </url>
+</urlset>
+</xml>
+```
+As you can see, each URL in the sitemap has a `<loc>` tag which describes its location on the web. There are three additional (optional) tags which can describe each URL in the sitemap, and those will be covered below.
+
+### Sitemap Conventions for Open Curriculum
+
+While web-crawling "robots" will crawl all public URLs on your site whether or not they are specified in the sitemap (indeed, whether or not the site _has_ a sitemap), you cannot assume the same from the robotic consumers of your curriculum via the OCX manifest. In most cases, those consumers are *only* interested in the curriculum content and will not attempt to crawl your site for any other reasons. Therefore, it's critical that the OCX manifest include *all of the URLs relevant to the curriculum*, whether those URLs are included in the main sitemap.xml file on your site or in a sitemap dedicated to the curriculum section of your site.
+ 
+In addition to the `<loc>` tag, the sitemap protocol supports three additional (optional) tags to describe a given URL: `<lastmod>`, `<changefreq>`, and `<priority>`. All of these elements are important for helping consumers stay up to date with changes to the curriculum.
+
+- `<lastmod>` - The [lastmod](https://www.sitemaps.org/protocol.html#lastmoddef) tag identifies when the content at the URL was last updated. The `<lastmod>` value for each URL should reflect changes to the curriculum's *content* at that URL, rather than the *HTML page* at that URL; this means it should only be included if you are able to reliably track those changes.
+- `<changefreq>` - The [changefreq](https://www.sitemaps.org/protocol.html#changefreqdef) tag identifies an _estimated_ frequency for changes to the content. In most cases, K-12 curriculum materials are only significantly changed once per year, aside from corrections and minor wording changes, and consumers of that curriculum will typically be familiar with that same cycle. In those case, the `<changefreq>` tag will be unnecessary and/or difficult to estimate for most _curriculum component_ URLS; however, any page which tracks the ongoing minor changes to that curriculum should be included in the OCX manifest and described with a sensible `<changefreq>` value which reflects a realistic frequency of those changes. For example:
+```
+   <url>
+      <loc>http://www.example.org/ela/grade-2/errata.html</loc>
+      <changefreq>weekly</changefreq>
+   </url>
+```
+- `<priority>` - The [priority](https://www.sitemaps.org/protocol.html#prioritydef) tag defines a URL's importance compared to the rest of the site. If you host multiple *versions* of a single curriculum, this tag may be used to de-emphasize the old version while still keeping it available for access.
+
 ## Examples
 
 - Minimal example:
@@ -50,6 +87,7 @@ This extended sitemap namespace might be included in a site's main `/sitemap.xml
 
   <url>
     <loc>http://example.com/articles/android-7-released</loc>
+    <lastmod>2017-02-18T01:16:08.00-05:00</lastmod>
     <ocx:ocx>
       <ocx:type>http://oerschema.org/Lesson/</ocx:type>
       <ocx:format>JSON-LD</ocx:format>
@@ -59,6 +97,7 @@ This extended sitemap namespace might be included in a site's main `/sitemap.xml
 
   <url>
     <loc>http://example.com/resources/class-activities/7</loc>
+    <lastmod>2017-05-15T03:30:08.00-05:00</lastmod>
     <ocx:ocx>
       <ocx:type>http://oerschema.org/Activity/</ocx:type>
       <ocx:format>RDFa</ocx:format>
@@ -131,4 +170,3 @@ This extended sitemap namespace might be included in a site's main `/sitemap.xml
     </ocx:ocx>
   </url>
 ```
-
