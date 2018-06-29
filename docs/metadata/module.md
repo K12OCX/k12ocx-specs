@@ -50,7 +50,7 @@ Examples:
 | schema:identifier | Text \|  URL \| schema:PropertyValue | Any kind of identifier (uuid, url, etc). |
 | schema:url | URL | URL of the item. |
 | schema:alternateName | Text | An alias for the item. |
-| schema:potentialAction | schema:Acion | Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role. |
+| schema:potentialAction | schema:Action | Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role. |
 | **schema:CreativeWork** | -------------------- | _(below we show a few relevant CreativeWork properties. For the full properties table see [http://schema.org/CreativeWork](http://schema.org/CreativeWork) )_ |
 | schema:about | schema:Thing | The subject matter of the content. |
 | schema:headline | Text | Headline of the article. |
