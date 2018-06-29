@@ -17,6 +17,7 @@ A Course is intended to provide complete curriculum for an academic term. In K-1
 Examples:
 
 - [Grade 6 Math](https://im.openupresources.org/6/teachers/index.html) (IM)
+- Algebra 1 (IM)
 - [Grade 4 Mathematics](https://www.pilot.unbounded.org/explore_curriculum?subjects=math&p=/math/grade-4&e=1) (UnboundEd)
 - Grade 3 ALL Block (EL)
 - Grade 1 Language Arts (EL)
