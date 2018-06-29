@@ -13,7 +13,8 @@ Below we make a quick alignment of different OER providers with this default OER
 |       | Course | Module | Unit | Lesson | Activity | Supporting Material | Assessment |
 |-------|--------|--------|------|--------|----------|---------------------|------------|
 |**UnboundEd**| Grade | Module | Unit / Topic | Lesson | Activity | Materials / Downloads | Assessment (it's a Unit) |
-|**IM / OpenUp**| Grade | Unit | ? (maybe Section?) | Lesson | Activity | Materials (teacher, family, course guide) | ? |
+|**IM**| Grade/Course | Unit | Section | Lesson | Activity | Materials (teacher, family, course guide) | Unit-level Assessments |
+|**Open Up**| Grade | Unit | ? (maybe Section?) | Lesson | Activity | Materials (teacher, family, course guide) | ? |
 |**EngageNy**| Curriculum | Module / Strand | Unit / Topic / Domain | Lesson / Document | ? | Material / Download | ? |
 
 ### OER Schema Properties
