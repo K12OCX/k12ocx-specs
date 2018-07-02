@@ -9,7 +9,7 @@ This specification is comprised of the following features:
 
 2. [Metadata semantic markup](/metadata/markup) for OER, using mostly OER schema whenever possible, but still allowing user specific definitions
 
-3. Base implementation (or tool) for [packaging and exporting](/packaging) OCX metadata with the OER resources, using CommonCartridge.
+3. Base implementation (or tool) for [packaging and exporting](/packaging) OCX metadata with the OER resources, using Common Cartridge.
 
 4. An additional set of [styling guides](/styling) for allowing resources to keep visual integrity, or to change themes accordingly to different consumers.
 
