@@ -3,7 +3,10 @@
 ### Table of Contents:
 
 1. [Getting Started](/docs/index.md)
-2. [Manifest](/docs/manifest.md)
+2. [Manifest]
+    - 2.1 [About the manifest](/docs/manifest/about.md)
+    - 2.2 [Locating content](/docs/manifest/locate.md)
+    - 2.3 [Structuring content](/docs/manifest/structure.md)
 3. Metadata:
     - 3.1. [Semantic Markup](/docs/metadata/markup.md)
     - 3.2. [Course](/docs/metadata/course.md)
@@ -27,4 +30,3 @@ pip install mkdocs-material
 
 mkdocs serve
 ```
-
