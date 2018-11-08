@@ -1,4 +1,4 @@
-# Structuring Content
+# Structuring Content in Aggregations
 We provide information about logical and pedagogically appropriate sequences for displaying or presenting  the components of complex curriculum materials using schema.org with some additional terms from OER Schema. The approach is founded on encodinging the structure using schema.org ItemLists, which can be interpreted as a table of contents.
 
 We recommend this information is provided as linked data encoded in JSON-LD (or potentially RDFa).
@@ -97,7 +97,7 @@ A module comprises two topics, one of the topics comprises three lessons
 ```
 __Editor's Note:__ hacking the context for sdo:hasPart to be stricter than schema.org's own and to generate links not values.
 
-__Editor's Note:__ do folk prefer their JSON-LD as separate linked objects, as above, or as nested objects?
+__Editor's Note:__ do folk prefer their JSON-LD examples as separate linked objects, as above, or as nested objects?
 
 __Notes:__
 
@@ -105,8 +105,84 @@ The identifiers should be different to the URLs of specific instances of these r
 
 Further information about the resources could be provided here, such as the URL to locate the content (`sdo:url`) and the name (`sdo:name`) of the resource, however this would duplicate information in the sitemap used to [locate](/manifest/locate) the resources, and embedded markup used to [describe](/metadata/markup) the resources.
 
-
 ## An Ordered Aggregation
+__Editor's Note OPEN ISSUE__: there are two options for ordering the component resources in an aggregation. Option 1 is a JSON array (i.e. an ordered list) of identifiers specifying a default order. This mirrors the approach taken for W3C Web Publications (ePub for the web). Option 2 is inspired by OAI-ORE and leverages schema.org ItemLists. Option 2 is conceptually and practically far more complex, however it may be more robust, and may more useful for providing information about next & previous components within the files for each component. It remains an open issue as to whether the extra complexity is manageable or necessary.
+
+## An Ordered Aggregation - Option 1
+We provide information about the default logical and pedagogically appropriate sequence for displaying or presenting the components of complex curriculum materials using a JSON array of URIs, each URI representing a component. This approach is based on the [default reading order](https://www.w3.org/TR/wpub/#default-reading-order) of the (draft) W3C [Web Publications](https://www.w3.org/TR/wpub/) spec.
+
+### Recommended Vocabulary Identifiers
+| Vocabulary | Namespace : Context URI |
+| ---------- | ----------------------- |
+| OCX extensions | `ocx` |
+
+__Editor's note:__ do we need to get context URI for OCX?
+
+### Recommended Properties
+| Property      | Expected Type  | Defintion |
+| ------------- | -------------- | --------- |
+| `ocx:defaultOrder` | an array of URIs | The default order in which to present the resources in the aggregation to the user.  |
+
+__Note:__ The ordering may be changed for many reasons, for example, remixing the content or adaptive delivery.
+
+__Note:__ JSON-LD arrays are unordered by default (in contrast with regular JSON). Ordering can be enforced using the `@list` JSON-LD keyword.
+
+__Note:__ In JSON-LD lists of lists are not allowed. Therefor the ordering for each level of a hierarchical aggregation must be specified separately.
+
+### Example
+A module comprising a sequence of two topics, the first of which is a sequence of three lessons.
+
+```
+{
+  "@context": {
+    "ex": "http://example.org/" ,
+    "sdo": "http://schema.org/" ,
+    "oer": "http://oerschema.org/",
+    "sdo:hasPart" : {
+      "@type" : "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "ex:Module1#A",
+      "@type": ["sdo:CreativeWork", "oer:Module"],
+      "sdo:hasPart": ["ex:TopicA#A", "ex:TopicB#A" ],
+      "ocx:defaultOrder": {"@list": ["ex:TopicA#A", "ex:TopicB#A"]}
+    },
+    {
+      "@id": "ex:TopicA#A",
+      "@type": ["sdo:CreativeWork", "oer:Unit"],
+      "sdo:hasPart": [
+        "ex:Lesson1#A",
+        "ex:Lesson2#A",
+        "ex:Lesson3#A",
+        "ex:Lesson4#A"
+      ],
+      "ocx:defaultOrder": {
+        "@list": ["ex:Lesson1#A", "ex:Lesson2#A", "ex:Lesson3#A","ex:Lesson4#A"]
+      }
+    },
+    {
+      "@id": "ex:TopicB#A",
+      "@type": ["sdo:CreativeWork", "oer:Unit"]
+    },
+    {
+      "@id": "ex:Lesson1#A",
+      "@type": ["sdo:CreativeWork", "oer:Lesson"]
+    },
+    {
+      "@id": "ex:Lesson2#A",
+      "@type": ["sdo:CreativeWork", "oer:Lesson"]
+    },
+    {
+      "@id": "ex:Lesson3#A",
+      "@type": ["sdo:CreativeWork", "oer:Lesson"]
+    }
+  ]
+}
+```
+
+## An Ordered Aggregation - Option 2
 We provide information about logical and pedagogically appropriate sequences for displaying or presenting  the components of complex curriculum materials using schema.org ItemLists.
 
 Ordering several levels of a hierarchy requires that we nest ItemLists, i.e. we have lists of lists.

@@ -4,7 +4,7 @@ This proposal aims to provide a technical strategy for organizations to share an
 
 For discovering and consuming content from others, we use a **manifest** specification to index these resources' metadata and relationships.
 
-Our approach is to use traditional well-adopted semantic HTML markup to share information about the location and sequencing of content. Primarily this involves using **schema.org** metadata markup with some added vocabulary from **OER Schema**  alongside a variant of another web standard called **sitemaps** to enable easy content discovery and hierarchy mapping.
+Our approach is to use JSON-LD to share information about the location and sequencing of content. Primarily this involves using **schema.org** metadata markup with some added vocabulary from **OER Schema**  alongside a variant of another web standard called **sitemaps** to enable easy content discovery and hierarchy mapping.
 
 * Information about the [location](../locate) of resources and their metadata is provided by an extended sitemap.
 
