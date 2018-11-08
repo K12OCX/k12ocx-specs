@@ -1,5 +1,7 @@
-# Structuring Content in Aggregations
-We provide information about logical and pedagogically appropriate sequences for displaying or presenting  the components of complex curriculum materials using schema.org with some additional terms from OER Schema. The approach is founded on encodinging the structure using schema.org ItemLists, which can be interpreted as a table of contents.
+# Structuring Aggregations
+We provide information about logical and pedagogically appropriate sequences for displaying or presenting  the components of complex curriculum materials using schema.org with some additional terms from OER Schema.
+
+There are currently two proposals for how to sequence the content. One approach is a simple JSON-LD ordered list. The other approach is founded on encoding the structure using schema.org ItemLists, which can be interpreted as a table of contents.
 
 We recommend this information is provided as linked data encoded in JSON-LD (or potentially RDFa).
 
@@ -72,8 +74,7 @@ A module comprises two topics, one of the topics comprises three lessons
       "sdo:hasPart": [
         "ex:Lesson1#A",
         "ex:Lesson2#A",
-        "ex:Lesson3#A",
-        "ex:Lesson4#A"
+        "ex:Lesson3#A"
       ]
     },
     {
@@ -121,7 +122,7 @@ __Editor's note:__ do we need to get context URI for OCX?
 ### Recommended Properties
 | Property      | Expected Type  | Defintion |
 | ------------- | -------------- | --------- |
-| `ocx:defaultOrder` | an array of URIs | The default order in which to present the resources in the aggregation to the user.  |
+| `ocx:defaultOrder` | a list of URIs | The default order in which to present the resources in the aggregation to the user.  |
 
 __Note:__ The ordering may be changed for many reasons, for example, remixing the content or adaptive delivery.
 
@@ -155,11 +156,10 @@ A module comprising a sequence of two topics, the first of which is a sequence o
       "sdo:hasPart": [
         "ex:Lesson1#A",
         "ex:Lesson2#A",
-        "ex:Lesson3#A",
-        "ex:Lesson4#A"
+        "ex:Lesson3#A"
       ],
       "ocx:defaultOrder": {
-        "@list": ["ex:Lesson1#A", "ex:Lesson2#A", "ex:Lesson3#A","ex:Lesson4#A"]
+        "@list": ["ex:Lesson1#A", "ex:Lesson2#A", "ex:Lesson3#A"]
       }
     },
     {

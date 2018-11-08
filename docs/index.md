@@ -3,7 +3,7 @@
 K-12 OCX is a specification for publishing OER (Open Educational Resources) on the web and packaging
 that OER for exchange with other parties. Typically the OER will be aggregated into collections of curriculum, content and material (compare with a book or collection of courseware).
 
-This specification is comprised of the following features:
+This specification comprises the following features:
 
 1. A [manifest](/manifest/about) with metadata that describe the *structure* of an aggregate resource, that is specify what are the components that are collected together and their logical and pedagogical ordering into hierachies and sequences. It is an important feature of OER reuse and repurposing that this structure is dynamic, i.e. it may be changed by the person using the aggregated resources.
 

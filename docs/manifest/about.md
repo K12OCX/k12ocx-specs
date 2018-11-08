@@ -1,10 +1,10 @@
-# About the Manifest
+# Aggregated Content
 
-This proposal aims to provide a technical strategy for organizations to share and find OER content through the web.
+This proposal aims to provide a technical strategy for organizations to share and find OER content through the web. Typically the OER will be aggregated into collections of curriculum content and material (compare with a book or collection of courseware).
 
-For discovering and consuming content from others, we use a **manifest** specification to index these resources' metadata and relationships.
+For discovering and consuming content from others, we use a **manifest** specification to index these resources' metadata and relationships. This manifest specifies the location of the content to be aggregated and the structure of the aggregation (i.e. a hierarchical and sequential ordering in which the content may be presented).
 
-Our approach is to use JSON-LD to share information about the location and sequencing of content. Primarily this involves using **schema.org** metadata markup with some added vocabulary from **OER Schema**  alongside a variant of another web standard called **sitemaps** to enable easy content discovery and hierarchy mapping.
+Our approach is to use well known and established formats to share information about the location and structuring of content. Primarily this involves using a variant of a web standard called **sitemaps** alongside **schema.org** metadata markup with some added vocabulary from **OER Schema** to enable easy content discovery and hierarchy mapping.
 
 * Information about the [location](../locate) of resources and their metadata is provided by an extended sitemap.
 
@@ -13,3 +13,5 @@ Our approach is to use JSON-LD to share information about the location and seque
 For clarity and ease of use, we propose Sitemap extended vocabulary that points to content and does not describe it. The descriptions are embeded as [metadata](/metadata/markup) in the resources.
 
 A similar approach has already been adopted by Google via Sitemap extensions for [Video](https://support.google.com/webmasters/answer/80471), [Images](https://support.google.com/webmasters/answer/178636?hl=en) and [News](https://www.google.co.uk/schemas/sitemap-news/0.9/). In addition, Google [recommends](https://developers.google.com/webmasters/videosearch/schema) using the schema.org compliant on-page markup, just as we do.
+
+__Editor's Note OPEN ISSUE:__ where does the manifest go? How can it be discovered. Is it one file or two?
