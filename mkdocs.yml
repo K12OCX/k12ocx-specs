@@ -5,16 +5,17 @@ pages:
         - Aggregated content: manifest/about.md
         - Locating content: manifest/locate.md
         - Structuring aggregations: manifest/structure.md
-    - Metadata:
-        - Semantic Markup: metadata/markup.md
-        - Course: metadata/course.md
-        - Module: metadata/module.md
-        - Unit: metadata/unit.md
-        - Lesson: metadata/lesson.md
-        - Activity: metadata/activity.md
-        - Assessment: metadata/assessment.md
-        - SupportingMaterial: metadata/supportingmaterial.md
-        - Auxiliary Types: metadata/auxiliary-types.md
+    - In-page Markup:
+        - In-page structuring: inpage/structure.md
+        - Semantic Markup: inpage/markup.md
+        - Course: inpage/course.md
+        - Module: inpage/module.md
+        - Unit: inpage/unit.md
+        - Lesson: inpage/lesson.md
+        - Activity: inpage/activity.md
+        - Assessment: inpage/assessment.md
+        - SupportingMaterial: inpage/supportingmaterial.md
+        - Auxiliary Types: inpage/auxiliary-types.md
     - Packaging: packaging.md
     - Styling: styling.md
 theme: readthedocs

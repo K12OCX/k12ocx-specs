@@ -29,13 +29,13 @@ For the properties tables we'll use the following vocabularies:
 
 OERSchema types:
 
-- [Course](/metadata/course)
-- [Module](/metadata/module)
-- [Unit](/metadata/unit)
-- [Lesson](/metadata/lesson)
-- [Activity](/metadata/activity)
-- [Assessment](/metadata/assessment)
-- [SupportingMaterial](/metadata/supportingmaterial)
-- [Auxiliary Types](/metadata/auxiliary-types)
+- [Course](/inpage/course)
+- [Module](/inpage/module)
+- [Unit](/inpage/unit)
+- [Lesson](/inpage/lesson)
+- [Activity](/inpage/activity)
+- [Assessment](/inpage/assessment)
+- [SupportingMaterial](/inpage/supportingmaterial)
+- [Auxiliary Types](/inpage/auxiliary-types)
 
 
