@@ -1,7 +1,10 @@
-site_name: K12 OCX Specification
+site_name: K12 OCX Specification (Working Draft)
 pages:
     - Home: index.md
-    - Manifest: manifest.md
+    - Manifest:
+        - Aggregated content: manifest/about.md
+        - Locating content: manifest/locate.md
+        - Structuring aggregations: manifest/structure.md
     - Metadata:
         - Semantic Markup: metadata/markup.md
         - Course: metadata/course.md
