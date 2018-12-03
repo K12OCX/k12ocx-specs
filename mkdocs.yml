@@ -1,6 +1,7 @@
 site_name: K12 OCX Specification (Working Draft)
 pages:
     - Home: index.md
+    - Content Model: contentmodel.md
     - Manifest:
         - Aggregated content: manifest/about.md
         - Locating content: manifest/locate.md
