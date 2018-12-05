@@ -3,12 +3,12 @@ pages:
     - Home: index.md
     - Content Model: contentmodel.md
     - Manifest:
-        - Aggregated content: manifest/about.md
+        - Aggregated content: manifest/index.md
         - Locating content: manifest/locate.md
         - Structuring aggregations: manifest/structure.md
     - In-page Markup:
+        - In-page Markup: inpage/index.md
         - In-page structuring: inpage/structure.md
-        - Semantic Markup: inpage/markup.md
         - Course: inpage/course.md
         - Module: inpage/module.md
         - Unit: inpage/unit.md

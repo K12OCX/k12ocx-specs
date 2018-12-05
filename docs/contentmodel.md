@@ -6,7 +6,7 @@ The curriculum, content and materials being exchanged are represented in the K12
 
 ![ocx - model schema](https://docs.google.com/drawings/d/e/2PACX-1vRFmqDy20wkWNhS4Iat6vRFLGfuhq9oTbayuG3_mJA9V46s6OT5oz8itEVyBYrO4YQCmcBH2qljgW6e/pub?w=960&h=720)
 
-__Note__: This model is based on [schema.org](https://schema.org), and hence on RDF and uses the [architecture of the World Wide Web](https://www.w3.org/TR/webarch/).
+__Note__: This model is based on [schema.org](https://schema.org), and hence on RDF and uses the W3C [architecture of the World Wide Web](https://www.w3.org/TR/webarch/).
 
 Below we make a quick alignment of different OER providers with this default OER Schema suggestion.
 
@@ -25,4 +25,4 @@ __Note__: A useful pattern adopted in this documentation is the use of fragment 
 ##Content Files and Formats
 The content being transferred may be contained in a single digital document or many. As this content will be presented through web pages or ebooks, the format of the digital document must be HTML5 or translatable to HTML5.
 
-If the content is contained in more than one digital document, then a [manifest](manifest/about.md) must be provided in order to provide information about the location of all the documents and the logical and pedagogic structure of the content. Individual documents contain [in-page](inpage/about.md) structural and descriptive metadata about the resources they represent.
+If the content is contained in more than one digital document, then a [manifest](manifest/index.md) must be provided in order to provide information about the location of all the documents and the logical and pedagogic structure of the content. Individual documents contain [in-page](inpage/index.md) structural and descriptive metadata about the resources they represent.
