@@ -1,111 +1,62 @@
-# Auxiliary Type
+# Auxiliary Types
 
-Below we provide a quick reference, for some auxiliary type properties used on the OER Classes above.
+Below we provide a quick reference, for some auxiliary type properties used on the OER Schema Classes above.
 
-## LearningComponent
+## oer:LearningComponent
 
   same as `Lesson` | `Topic/Module` | `Activity` | `Unit` | `SupportingMaterial`
 
-## ClassStanding
-
-  same as `Thing`, i.e.:
-
-| Property     | Type     | Description                                         |
-| ------------ | -------- | --------------------------------------------------- |
-| **oer:Thing** | -------------------- | -------------------- |
-| name | Text | The name of the item. |
-| additionalType | URL | An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. |
-| description | Text | A description of the item. |
-| image | URL \| CreativeWork | An image of the item |
-| mainEntityOfPage | URL \| CreativeWork | Indicates a page (or other CreativeWork) for which this thing is the main entity being described. |
-| sameAs | URL | URL of a reference Web page that unambiguously indicates the item's identity. |
-| uri | URL | URL of the item. |
-| **schema:Thing** | -------------------- | -------------------- |
-| schema:identifier | Text \|  URL \| schema:PropertyValue | Any kind of identifier (uuid, url, etc). |
-| schema:url | URL | URL of the item. |
-| schema:alternateName | Text | An alias for the item. |
-| schema:potentialAction | schema:Acion | Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role. |
-
-## Format
-
-  same as `Thing`
-
-## Enumeration
-
-  same as `Thing`
-
-## GradeFormat
-
-  same as `Thing`
-
-## CourseSection
-
-  see [http://oerschema.org/CourseSection](http://oerschema.org/CourseSection)
-
-## CourseSyllabus
+## oer:CourseSyllabus
 
   see [http://oerschema.org/CourseSyllabus](http://oerschema.org/CourseSyllabus)
 
-## Topic
+## oer:Topic
 
-  The context of a LearningComponent
+Defined as "the context of a LearningComponent". Treat as equivalent to a subclass of [schema.org/Intangible](https://schema.org/Intangible).
 
 | Property     | Type     | Description                                         |
 | ------------ | -------- | --------------------------------------------------- |
-| **oer:Topic**| -------------------- | -------------------- |
-| material | SupportingMaterial | The supporting material assiociated with a resource. |
+| **from oer:Topic**| -------------------- | -------------------- |
+| oer:material | SupportingMaterial | The supporting material assiociated with a resource. |
 | **oer:Resource** | -------------------- | -------------------- |
-| parentOf | Resource | A parent in relation to a child resource. |
-| childOf | Resource | A child in relation to a parent resource. |
-| forCourse | Course | The Course in which the resource is meant for. |
 | mainContent | Text | The main content relating to the item. |
-| forTopic| Topic | The Topic the resource is associated with. |
-| **oer:Thing** | -------------------- | -------------------- |
+| **From Thing** | -------------------- | -------------------- |
+| identifier | Text \|  URL \| schema:PropertyValue | Any kind of identifier (uuid, url, etc). |
 | name | Text | The name of the item. |
-| additionalType | URL | An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. |
 | description | Text | A description of the item. |
-| image | URL \| CreativeWork | An image of the item |
-| mainEntityOfPage | URL \| CreativeWork | Indicates a page (or other CreativeWork) for which this thing is the main entity being described. |
+| url | URL | URL of the item. |
 | sameAs | URL | URL of a reference Web page that unambiguously indicates the item's identity. |
-| uri | URL | URL of the item. |
-| **schema:Thing** | -------------------- | -------------------- |
-| schema:identifier | Text \|  URL \| schema:PropertyValue | Any kind of identifier (uuid, url, etc). |
-| schema:url | URL | URL of the item. |
-| schema:alternateName | Text | An alias for the item. |
-| schema:potentialAction | schema:Acion | Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role. |
-| **cc:Work** | -------------------- | -------------------- |
+| alternateName | Text | An alias for the item. |
+| **From cc:Work** | -------------------- | -------------------- |
 | cc:license | Text \| License | A Work has license a License (a subproperty of dc:license, the same as xhtml:license). |
 | cc:morePermissions | Text | A related resource which describes additional permissions or alternative licenses for a Work which may be available. |
 | cc:attributionName | Text | The name the creator of a Work would like used when attributing re-use. |
 | cc:attributionURL | URL | The URL the creator of a Work would like used when attributing re-use. |
 | cc:useGuidelines | Text | A related resource which defines non-binding use guidelines for the work. |
 
-## LearningObjective
+## oer:LearningObjective
+
+__Editor's Note:__ I am not sure if we use these, or whether we should use these. They are a little under-defined, but they do fill a hole currently in schema.org.
+
+Treat as equivalent to a subclass of  [schema.org/Intangible](https://schema.org/Intangible).
 
 | Property     | Type     | Description                                         |
 | ------------ | -------- | --------------------------------------------------- |
 | **oer:LearningObjective**| -------------------- | -------------------- |
 | prerequisite | Course \| LearningComponent \| LearningObjective | A requirement to be completed before this resource can be performed. |
-| forComponent | LearningComponent | Which LearningComponent the resource supports (inverse of hasComponent) |
 | **oer:Resource** | -------------------- | -------------------- |
 | parentOf | Resource | A parent in relation to a child resource. |
 | childOf | Resource | A child in relation to a parent resource. |
 | forCourse | Course | The Course in which the resource is meant for. |
 | mainContent | Text | The main content relating to the item. |
 | forTopic| Topic | The Topic the resource is associated with. |
-| **oer:Thing** | -------------------- | -------------------- |
+| **Thing** | -------------------- | -------------------- |
 | name | Text | The name of the item. |
-| additionalType | URL | An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. |
 | description | Text | A description of the item. |
-| image | URL \| CreativeWork | An image of the item |
-| mainEntityOfPage | URL \| CreativeWork | Indicates a page (or other CreativeWork) for which this thing is the main entity being described. |
 | sameAs | URL | URL of a reference Web page that unambiguously indicates the item's identity. |
-| uri | URL | URL of the item. |
-| **schema:Thing** | -------------------- | -------------------- |
-| schema:identifier | Text \|  URL \| schema:PropertyValue | Any kind of identifier (uuid, url, etc). |
-| schema:url | URL | URL of the item. |
-| schema:alternateName | Text | An alias for the item. |
-| schema:potentialAction | schema:Acion | Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role. |
+| identifier | Text \|  URL \| schema:PropertyValue | Any kind of identifier (uuid, url, etc). |
+| url | URL | URL of the item. |
+| alternateName | Text | An alias for the item. |
 | **cc:Work** | -------------------- | -------------------- |
 | cc:license | Text \| License | A Work has license a License (a subproperty of dc:license, the same as xhtml:license). |
 | cc:morePermissions | Text | A related resource which describes additional permissions or alternative licenses for a Work which may be available. |
@@ -117,54 +68,39 @@ Below we provide a quick reference, for some auxiliary type properties used on t
 
 | Property     | Type     | Description                                         |
 | ------------ | -------- | --------------------------------------------------- |
-| **oer:Thing** | -------------------- | -------------------- |
+| **From Thing** | -------------------- | -------------------- |
 | name | Text | The name of the item. |
-| additionalType | URL | An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. |
 | description | Text | A description of the item. |
-| image | URL \| CreativeWork | An image of the item |
-| mainEntityOfPage | URL \| CreativeWork | Indicates a page (or other CreativeWork) for which this thing is the main entity being described. |
 | sameAs | URL | URL of a reference Web page that unambiguously indicates the item's identity. |
-| uri | URL | URL of the item. |
-| **schema:Thing** | -------------------- | -------------------- |
-| schema:identifier | Text \|  URL \| schema:PropertyValue | Any kind of identifier (uuid, url, etc). |
-| schema:url | URL | URL of the item. |
-| schema:alternateName | Text | An alias for the item. |
-| schema:potentialAction | schema:Acion | Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role. |
-| **schema:Person** | -------------------- | _(below we show a few relevant Person properties. For the full properties table see [http://schema.org/Person](http://schema.org/Person) )_ |
-| schema:address | schema:PostalAddress \| Text | Physical address of the item. |
-| schema:birthDate | schema:Date | Date of birth. |
+| url | URL | URL of the item. |
+| identifier | Text \|  URL \| PropertyValue | Any kind of identifier (uuid, url, etc). |
+| alternateName | Text | An alias for the item. |
+| **From Person** | -------------------- | _(below we show a few relevant Person properties. For the full properties table see [http://schema.org/Person](http://schema.org/Person) )_ |
+| address | schema:PostalAddress \| Text | Physical address of the item. |
 | email | Text | Email address |
-| gender | schema:GenderType \| Text | Gender of the person. While [http://schema.org/Male](http://schema.org/Male) and [http://schema.org/Female](http://schema.org/Female) may be used, text strings are also acceptable for people who do not identify as a binary gender.|
-| schema:jobTitle | Text | The job title of the person (for example, Financial Manager). |
-| schema:memberOf | schema:Organization | An Organization to which this Person or Organization belongs. Inverse property: member. |
-| schema:telephone | Text | The telephone number. |
-| schema:worksFor | schema:Organization | Organizations that the person works for. |
+| jobTitle | Text | The job title of the person (for example, Financial Manager). |
+| memberOf | Organization | An Organization to which this Person or Organization belongs. Inverse property: member. |
+| telephone | Text | The telephone number. |
+| worksFor | Organization | Organizations that the person works for. |
 
 ## Organization
 
 | Property     | Type     | Description                                         |
 | ------------ | -------- | --------------------------------------------------- |
-| **oer:Thing** | -------------------- | -------------------- |
+| **From Thing** | -------------------- | -------------------- |
 | name | Text | The name of the item. |
-| additionalType | URL | An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. |
 | description | Text | A description of the item. |
-| image | URL \| CreativeWork | An image of the item |
-| mainEntityOfPage | URL \| CreativeWork | Indicates a page (or other CreativeWork) for which this thing is the main entity being described. |
 | sameAs | URL | URL of a reference Web page that unambiguously indicates the item's identity. |
-| uri | URL | URL of the item. |
-| **schema:Thing** | -------------------- | -------------------- |
-| schema:identifier | Text \|  URL \| schema:PropertyValue | Any kind of identifier (uuid, url, etc). |
-| schema:url | URL | URL of the item. |
-| schema:alternateName | Text | An alias for the item. |
-| schema:potentialAction | schema:Acion | Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role. |
-| **schema:Organization** | -------------------- | _(below we show a few relevant Organization properties. For the full properties table see [http://schema.org/Organization](http://schema.org/Organization) )_ |
-| schema:address | schema:PostalAddress \| Text | Physical address of the item. |
-| schema:contactPoint | schema:ContactPoint | A contact point for a person or organization. |
-| schema:department | schema:Organization | A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). |
-| schema:email | Text | Email address |
-| schema:location | schema:Location \| Text | The location of for example where the event is happening, an organization is located, or where an action takes place. |
-| schema:logo | schema:ImageObject \| URL | An associated logo. |
-| schema:member | schema:Organization \| schema:Person | sub-member Person or Organizations to this Organization. Inverse property: memberOf. |
-| schema:memberOf | schema:Organization | An Organization to which this  Organization belongs. Inverse property: member. |
-| schema:telephone | Text | The telephone number. |
-
+| url | URL | URL of the item. |
+| identifier | Text \|  URL \| PropertyValue | Any kind of identifier (uuid, url, etc). |
+| alternateName | Text | An alias for the item. |
+| **From Organization** | -------------------- | _(below we show a few relevant Organization properties. For the full properties table see [http://schema.org/Organization](http://schema.org/Organization) )_ |
+| address | PostalAddress \| Text | Physical address of the item. |
+| contactPoint | ContactPoint | A contact point for a person or organization. |
+| department | Organization | A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). |
+| email | Text | Email address |
+| location | Location \| Text | The location of for example where the event is happening, an organization is located, or where an action takes place. |
+| logo | ImageObject \| URL | An associated logo. |
+| member | Organization \| Person | sub-member Person or Organizations to this Organization. Inverse property: memberOf. |
+| memberOf | Organization | An Organization to which this  Organization belongs. Inverse property: member. |
+| telephone | Text | The telephone number. |

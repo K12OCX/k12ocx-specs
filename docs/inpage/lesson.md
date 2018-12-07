@@ -1,20 +1,22 @@
 # Lesson
 
-- type: [http://oerschema.org/Lesson/](http://oerschema.org/Lesson/)
+- type: [http://oerschema.org/Lesson/](http://oerschema.org/Lesson/)  & [http://schema.org/Course](http://schema.org/Course)
 - extends:
     - [http://oerschema.org/InstructionalPattern](http://oerschema.org/InstructionalPattern) => [http://oerschema.org/LearningComponent](http://oerschema.org/LearningComponent)
     - [http://oerschema.org/Resource/](http://oerschema.org/Resource/)
-    - [http://oerschema.org/CreativeWork](http://oerschema.org/CreativeWork) => [http://schema.org/CreativeWork](http://schema.org/CreativeWork)
-    - [http://oerschema.org/Thing](http://oerschema.org/Thing) => [http://schema.org/Thing](http://schema.org/Thing)
+    - [http://oerschema.org/CreativeWork](http://oerschema.org/CreativeWork) & [http://schema.org/CreativeWork](http://schema.org/CreativeWork)
+    - [http://oerschema.org/Thing](http://oerschema.org/Thing) & [http://schema.org/Thing](http://schema.org/Thing)
     - [https://creativecommons.org/ns#Work](https://creativecommons.org/ns#Work)
-- childOf: `Module` or `Unit`
-- parentOf: `Activity`, `Assessment`, `SupportingMaterial`
+- childOf: `oer:Module` or `oer:Unit`
+- parentOf: `oer:Activity`
 
 A Lesson contains instructional content intended to be completed in a single day and/or class period. A middle or high school lesson might be intended for a 50 minute period (unless it was a designed for a block schedule). An elementary school lesson might be design for however much time the teacher generally allots to the subject (e.g., reading/writing might have more time allotted than science or art).
 
 A lesson contains one or more Activities.
 
 In many cases, the curriculum will describe a specific order that the Activities in a Lesson should go.
+
+oer:Lesson meets the definition of schema.org/Course, i.e. it is "a sequence of one or more educational events and/or creative works which aims to build knowledge, competence or ability of learners". This means that resources that are units should be typed as oer:Unit and schema.org/Course. The schema.org learningResourceType property with a value of "Unit" should be used to indicate the type of course to systems that understand schema.org but not the OER Schema terms used by OCX.
 
 Examples:
 
@@ -25,51 +27,40 @@ Examples:
 
 | Property     | Type     | Description                                         |
 | ------------ | -------- | --------------------------------------------------- |
-| **oer:LearningComponent**| -------------------- | -------------------- |
-| forCourse | Course | The Course in which the resource is meant for. |
-| forComponent | LearningComponent | Which LearningComponent the resource supports (inverse of hasComponent) |
-| hasComponent | LearningComponent | Which LearningComponent the InstructionalPattern contains or is supported by (inverse of forComponent) |
-| duration | Enumeration \| Number \| Text | The duration of the resource. |
-| doTask | Task | Which tasks are to be completed for a LearningComponent |
-| hasLearningObjective | LearningObjective | A LearningObjective gained as a result of an InstructionalPattern . |
-| deliveryFormat | Format \| Text | The format used to deliver the resource. |
-| **oer:Resource** | -------------------- | -------------------- |
-| parentOf | Resource | A parent in relation to a child resource. |
-| childOf | Resource | A child in relation to a parent resource. |
-| forCourse | Course | The Course in which the resource is meant for. |
-| mainContent | Text | The main content relating to the item. |
+| **From schema.org:Course**| -------------------- | -------------------- |
+|courseCode|Text|The identifier for the lesson used by the course provider (e.g. CS101 or 6.001).|
+|coursePrerequisites|AlignmentObject  or Course  or Text |Requirements for taking the Lesson. May be completion of another course, module, unit or lesson, or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using AlignmentObject.|
+| **From schema.org:CreativeWork** | -------------------- | -------------------- |
+|about|Thing |The subject matter of the content.|
+|accessibilitySummary|Text|A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."|
+|audience|EducationalAudience |An intended audience, i.e. a group for whom the resource being described was created. Use the educationalRole property of the EducationalAudience object to state whether the intended audience is teacher, student, parent, etc. See the [LRMI Educational Audience Role concept scheme](http://lrmi.dublincore.org/specifications/concept_schemes/#educational-audience-role) for more values. |
+|author|Organization  or Person |The author of the lesson.|
+|citation|CreativeWork  or Text |A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.|
+|contributor|Organization  or Person |A secondary contributor to the lesson|
+| dateCreated | Date | The date on which the resource was created. |
+| dateModified | Date | The date on which the resource was updated. |
+|educationalAlignment|AlignmentObject|An alignment to an established educational framework. The alignment object can be used to provide information such as educational- (grade-) level of the lesson and competences being taught or assessed|
+|hasPart|CreativeWork|Indicates a CreativeWork that is part of this lesson (in some sense). Inverse property: isPartOf.|
+|inLanguage|Language or Text |The language of the content of the lesson. Please use one of the language codes from the IETF BCP 47 standard.|
+|isBasedOn|CreativeWork or URL|A resource from which this lesson is derived or of which it is a modification or adaption.|
+|isPartOf|CreativeWork |Indicates a CreativeWork that this lesson is (in some sense) part of. Inverse property: hasPart.|
+|keywords|Text|Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.|
+|learningResourceType|Text|The predominant type or kind characterizing the lesson. |
+|provider|Organization|The service provider, service operator, or service performer; the goods producer. Use to identify the Organization which is responsible for providing the educational input for the lesson, e.g. providing content, educational events, assessments, accreditation etc.|
+| publisher | Organization | The organization credited with publishing the lesson. |
+|timeRequired|Duration |Approximate or typical time it takes to work with or through this lesson for the typical intended target audience, e.g. 'P30M', 'P1H25M'.|
+|typicalAgeRange|	Text |The typical expected age in years of the learners on this lesson. For OCX the suggestion is to use a list to indicate a closed range of ages, e.g. ["9","10","11"], and values like "18-" for an open range.|
+| **From schema.org:Thing**| -------------------- | -------------------- |
+|alternateName|Text|An alias for the lesson.|
+|description|Text|A description of the lesson.|
+|identifier|PropertyValue  or Text  or URL |The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, DOIs, UUIDs etc. |
+|name|Text|The name [title] of the lesson.|
+|url|URL|URL of the lesson.|
+| **from oer:LearningComponent**| -------------------- | -------------------- |
+| oer:doTask | Task | Which tasks are to be completed for a LearningComponent |
+| oer:hasLearningObjective | LearningObjective | A LearningObjective gained as a result of an InstructionalPattern. |
+| **from oer:Resource** | -------------------- | -------------------- |
 | forTopic| Topic | The Topic the resource is associated with. |
-| **oer:Thing** | -------------------- | -------------------- |
-| name | Text | The name of the item. |
-| additionalType | URL | An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. |
-| description | Text | A description of the item. |
-| image | URL \| CreativeWork | An image of the item |
-| mainEntityOfPage | URL \| CreativeWork | Indicates a page (or other CreativeWork) for which this thing is the main entity being described. |
-| sameAs | URL | URL of a reference Web page that unambiguously indicates the item's identity. |
-| uri | URL | URL of the item. |
-| **schema:Thing** | -------------------- | -------------------- |
-| schema:identifier | Text \|  URL \| schema:PropertyValue | Any kind of identifier (uuid, url, etc). |
-| schema:url | URL | URL of the item. |
-| schema:alternateName | Text | An alias for the item. |
-| schema:potentialAction | schema:Acion | Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role. |
-| **schema:CreativeWork** | -------------------- | _(below we show a few relevant CreativeWork properties. For the full properties table see [http://schema.org/CreativeWork](http://schema.org/CreativeWork) )_ |
-| schema:about | schema:Thing | The subject matter of the content. |
-| schema:headline | Text | Headline of the article. |
-| schema:dateCreated | schema:Date | The date on which the resource was created. |
-| schema:dateModified | schema:Date | The date on which the resource was updated. |
-| schema:author | schema:Person | The individual credited with the creation of the resource. |
-| schema:publisher | schema:Organization | he organization credited with publishing the resource. |
-| schema:inLanguage | schema:Language | The primary language of the resource. |
-| schema:educationalAlignment | schema.org/AlignmentObject | An alignment to an established educational framework. |
-| schema:educationalUse | Text | The purpose of the work in the context of education. Ex: "assignment", "group work" |
-| schema:typicalAgeRange | Text | The typical range of ages the content’s intended end user. Ex: "7-9", "18-" |
-| schema:interactivityType | Text | The predominant mode of learning supported by the learning resource. Acceptable values are `active`, `expositive`, or `mixed`. |
-| schema:learningResourceType | Text | The predominant type or kind characterizing the learning resource. Ex: "presentation", "handout" |
-| schema:keywords | Text | Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas. |
-| schema:position | Number | The position of an item in a series or sequence of items. |
-| schema:text | Text | The textual content of this CreativeWork. |
-| schema:thumbnailUrl | URL | A thumbnail image relevant to the Thing. |
-| schema:video | schema:VideoObject | An embedded video object. |
 | **cc:Work** | -------------------- | -------------------- |
 | cc:license | Text \| License | A Work has license a License (a subproperty of dc:license, the same as xhtml:license). |
 | cc:morePermissions | Text | A related resource which describes additional permissions or alternative licenses for a Work which may be available. |
@@ -77,295 +68,125 @@ Examples:
 | cc:attributionURL | URL | The URL the creator of a Work would like used when attributing re-use. |
 | cc:useGuidelines | Text | A related resource which defines non-binding use guidelines for the work. |
 
+## Non-preferred properties
+The following OER Schema properties should not be used as there are similar properties in schema.org:
 
-## Samples
+| OER Schema Property     | preferred schema.org equivalent    |
+| ------------ | --------------------------- |
+| duration | learningTime (from CreativeWork) |
+| hasComponent | hasPart (from CreativWork) |
+| prerequisite | coursePrerequisites (from Course) |
+| parentOf | hasPart (from CreativeWork) |
+| childOf | isPartOf (from CreativeWork) |
+| all properties of oer:Thing | all have equivalents in schema.org Thing |
+
+## Example
 
 Markup for [https://pilot.unbounded.org/ela/grade-6/module-1/unit-2/lesson-8](https://pilot.unbounded.org/ela/grade-6/module-1/unit-2/lesson-8)
 
 - JSON-LD
 
+The following would be placed in a `<script  type="application/ld+json">` element in the HTML sectioning element that contained information about the lesson.
+
+__Note:__ The URIs used for the `@id`s are based on the URLs of the page that represent the module being described and its units with the addition of the #A fragment identifiers treating them as aggregate resources as described in the section on [manifest structuring](../manifest/structure.md). This conforms with the requirement that different identifiers are used for CCM entities and the web pages that represent them, as described in the [content model](../contentmodel.md).
+
+__Note:__ In the case where the content of a unit is split over many HTML files, there is no requirement for the `hasPart` array shown in this example as this information would be provided by the manifest.
+
+__Editor's Note:__ Several parts of the original are omitted in the example in order to avoid repetition.
+
+__Note:__ Some of the parts are documents in a choice of digital format (encoding). If the HTML page for the Lesson is the only HTML page containing information about these documents then it is necessary to provide a full description of those documents in this page and their encodings. An example of such as description is provided under [Properties of SupportingMaterial](supportingmaterial.md).
+
 ```json
-{{
-  "@context": ["http://oerschema.org/", {
-    "oer": "http://oerschema.org/",
-    "schema": "http://schema.org/",
-    "cc": "http://creativecommons.org/ns#"
-  }],
-  "@id": "http://pilot.unbounded.org/documents/227",
-  "@type": "http://oerschema.org/Lesson",
+{
+  "@context": [
+    "http://schema.org/",
+    {
+      "oer": "http://oerschema.org/",
+      "cc": "http://creativecommons.org/ns#"
+    }
+  ],
+  "@id": "http://pilot.unbounded.org/documents/227#A",
+  "@type": ["oer:Lesson","Course"],
+  "learningResourceType": "Lesson",
   "name": "Mid-Unit Assessment: Structure and Theme",
   "description": "This lesson asks students to review their understanding of structure, determining unfamiliar vocabulary and theme. The second part of the lesson asks students to complete the mid-unit assessment using the final stanza of the “If” poem. The purpose of the lesson is to assess students’ mastery of structure and theme. Students will be asked a series of short constructed-response questions about figurative language and word choice. ",
+  "keywords": "historical fiction,novel,poem",
+  "learningTime": "PT90M",
   "sameAs": "http://pilot.unbounded.org/resources/8666",
-  "uri": "http://pilot.unbounded.org/documents/227",
-  "schema:identifier": 8666,
-  "schema:url": "http://pilot.unbounded.org/documents/227",
-  "schema:alternateName": "lesson 8",
-  "schema:headline": "Students analyze the structure Stanza 4 of the “If” poem and determine themes. Students address the afterward of Bud, Not Buddy.",
-  "schema:dateCreated": "2017-06-14T17:26:37.919Z",
-  "schema:dateModified": "2017-08-14T22:44:01.334Z",
-  "schema:author": {
-    "@type": "http://schema.org/Person",
-    "schema:name": "Christopher Paul Curtis, Rudyard Kipling"
+  "url": "http://pilot.unbounded.org/documents/227",
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "UnboundEd resource identifier",
+    "value": "8666"
   },
-  "schema:publisher": {
-    "@type": "http://schema.org/Organization",
-    "@id": "http://pilot.unbounded.org/about",
-    "schema:name": "UnboundEd",
-    "schema:email": "supportdesk@unbounded.org",
-    "schema:url": "http://pilot.unbounded.org/about",
-    "schema:description": "We are a team of former classroom teachers, curriculum writers, school leaders and education experts who have worked in the public, private and nonprofit sectors. We are dedicated to empowering teachers by providing free, high-quality standards-aligned resources for the classroom, the opportunity for immersive training through our Institute, and the option of support through our website."
+  "dateCreated": "2017-06-14T17:26:37.919Z",
+  "dateModified": "2017-08-14T22:44:01.334Z",
+  "author": {
+    "@type": "Person",
+    "name": "Christopher Paul Curtis"
   },
-  "schema:inLanguage": "en-US",
-  "schema:educationalAlignment": [{
-    "@type": "http://schema.org/AlignmentObject",
-    "@id": "http://www.corestandards.org/ELA-Literacy/RL/6/5",
-    "name": "RL.6.5",
+  "publisher": {
+    "@type": "Organization",
+    "name": "UnboundEd",
+    "email": "supportdesk@unbounded.org",
+    "url": "http://pilot.unbounded.org/about"
+  },
+  "inLanguage": "en-US",
+  "educationalAlignment": [{
+    "@type": "AlignmentObject",
+    "alignmentType": "teaches",
+    "targetUrl": "http://www.corestandards.org/ELA-Literacy/RL/6/5",
     "targetName": "RL.6.5",
     "educationFramework": "CommonCoreStandard"
   }, {
-    "@type": "http://schema.org/AlignmentObject",
-    "@id": "http://www.corestandards.org/ELA-Literacy/RL/6/7",
-    "name": "RL.6.7",
+    "@type": "AlignmentObject",
+    "alignmentType": "teaches",
+    "targetUrl": "http://www.corestandards.org/ELA-Literacy/RL/6/7",
     "targetName": "RL.6.7",
     "educationFramework": "CommonCoreStandard"
   }, {
-    "@type": "http://schema.org/AlignmentObject",
-    "@id": "http://www.corestandards.org/ELA-Literacy/RL/6/9",
-    "name": "RL.6.9",
+    "@type": "AlignmentObject",
+    "alignmentType": "teaches",
+    "targetUrl": "http://www.corestandards.org/ELA-Literacy/RL/6/9",
     "targetName": "RL.6.9",
     "educationFramework": "CommonCoreStandard"
   }, {
-    "@type": "http://schema.org/AlignmentObject",
-    "@id": "http://www.corestandards.org/ELA-Literacy/L/6/5",
-    "name": "L.6.5",
+    "@type": "AlignmentObject",
+    "alignmentType": "teaches",
+    "targetUrl": "http://www.corestandards.org/ELA-Literacy/L/6/5",
     "targetName": "L.6.5",
     "educationFramework": "CommonCoreStandard"
   }],
-  "schema:keywords": "historical fiction,novel,poem",
-  "schema:position": 1000701020701,
-  "parentOf": [],
-  "childOf": {
-    "@type": "http://oerschema.org/Unit",
-    "@id": "http://pilot.unbounded.org/ela/grade-6/module-1/unit-2",
-    "name": "Analyzing Structure and Communicating Theme in Literature",
-    "alternateName": "ela/grade-6/module-1/unit-2",
-    "schema:identifier": 8658
+  "isPartOf": {
+    "@type": "oer:Unit",
+    "@id": "http://pilot.unbounded.org/ela/grade-6/module-1/unit-2#A",
+    "name": "Analyzing Structure and Communicating Theme in Literature"
   },
-  "forCourse": {
-    "@type": "http://oerschema.org/Course",
-    "@id": "http://pilot.unbounded.org/ela/grade-6",
-    "name": "Grade 6 English Language Arts",
-    "alternateName": "ela/grade-6",
-    "schema:identifier": 4875
-  },
-  "mainContent": "<div class=\"o-ld-teacher-guidance\">\n  <h2>Teacher Guidance</h2>\n  <h3>Pacing</h3>\n  <ul>\n    <li>Teacher can do a minimally scaffolded version of the lesson and then the students who need support get specific skill work using text from the lesson in a later class period (that teacher would pull out the activities for scaffolding that were not done from the ELA class)</li>\n    <li>The teacher can do the lesson over a period of two days (45 minute classes) using all of the embedded scaffolds</li>\n    <li>The teacher can do the lesson in one day (90 minute class)</li>\n  </ul>\n  <br>\n  <p>Pacing guidance is not applicable when lesson adaptations are made</p>\n  <h3>Materials</h3>\n  <div>\n    <ul> <li> <span style=\"font-style:italic;\">Bud, Not Buddy</span><span> (book; one per student) </span> </li> <li><span>Assessment Text: “If” by Rudyard Kipling (one per student)</span></li> <li> <span>Mid-Unit 2 Assessment: Analyzing Structure and Theme in Stanza 4 of “If”and </span><span style=\"font-style:italic;\">Bud, Not Buddy</span><span> (one per student)</span> </li> <li><span>“If ” audio recording (from Lesson 2)</span></li> <li><span>Technology to play audio recording </span></li> <li> <span>Word-catcher (from Unit 1, Le</span><span>sson 1)</span> </li> <li> <span>Conveying Theme in </span><span style=\"font-style:italic;\">Bud, Not Buddy</span><span> charts (from Lesson 1)</span> </li> <li><span>Analyzing “If” graphic organizer (from Lesson 2)</span></li> <li><span>Mid-Unit 2 Assessment: Analyzing Structure and Theme in Stanza 4 of “If” (Answers; for Teacher Reference)</span></li> <li><span>Qualities of a Strong Literary Essay anchor chart</span></li> <li><span>Model literary argument essay: “Steve Jobs’ Rules to Live By” </span></li> <li><span>Model literary argument essay: “Steve Jobs’ Rules to Live By” (for Teacher Reference)</span></li> <li><span>End of Unit 2 Assessment Prompt: How Does Bud Use His Rules—To Survive or To Thrive? Argument Essay</span></li> <li><span>document camera</span></li> </ul>\n  </div>\n  \n    <h3>Preparation</h3>\n    <div>\n      <ul> <li><span>Stanza 4 is challenging, and as this is an assessment, students are not able to work through the in-depth questioning they have completed with the other stanzas to better understand the meaning. As a result, before students answer questions about the meaning of the stanza of the poem in Part 2 of the assessment, there is a vocabulary discussion that is not part of the assessment. This ensures students are familiar with most of the vocabulary before they have to answer questions about the meaning of the stanza. </span></li> <li><span>Grading the Assessment: Because there are several kinds of questions, you will have to decide how many points to assign them. The multiple-choice questions are designed to scaffold understanding to help the students in their written responses. Assigning value to writing in complete sentences and avoiding fragments is appropriate as students have been working with sentence types and fragments. </span></li> <li><span>Post: Learning targets and the Conveying Theme in Bud, Not Buddy charts from Lesson 1.</span></li> </ul>\n    </div>\n  \n</div>\n\n\n\n\n<hr>\n<p></p>\n<a id=\"t.dc7b2f067025eaf8fa4be084ba516663239e4e40\"></a><a id=\"t.1\"></a><div class=\"o-ld-target-table\"> <h3>Targets Addressed</h3> <ul> <li><p><span><p><span><p><span><p><span><strong>Long-Term Targets Addressed (Based on ELA CCSS):</strong> I can analyze how a particular sentence, stanza, scene, or chapter fits in and contributes to the development of a literary text. <span></span><span class=\"c-ld-keyword\" data-toggle=\"cg-k_89784a5b\">(RL.6.5)</span><span class=\"dropdown-pane o-ld-dropdown\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"12\" id=\"cg-k_89784a5b\"><b>RL.6.5</b><br> Analyze how a particular sentence, chapter, scene, or stanza fits into the overall structure of a text and contributes to the development of the theme, setting, or plot.</span><span></span>; I can compare and contrast how reading a text is different from watching a movie or listening to a literary text. <span></span><span class=\"c-ld-keyword\" data-toggle=\"cg-k_add5c714\">(RL.6.7)</span><span class=\"dropdown-pane o-ld-dropdown\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"12\" id=\"cg-k_add5c714\"><b>RL.6.7</b><br> Compare and contrast the experience of reading a story, drama, or poem to listening to or viewing an audio, video, or live version of the text, including contrasting what they \"see\" and \"hear\" when reading the text to what they perceive when they listen or watch.</span><span></span>; I can compare and contrast how different genres communicate the same theme or idea. <span></span><span class=\"c-ld-keyword\" data-toggle=\"cg-k_abc0010e\">(RL.6.9)</span><span class=\"dropdown-pane o-ld-dropdown\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"12\" id=\"cg-k_abc0010e\"><b>RL.6.9</b><br> Compare and contrast texts in different forms or genres (e.g., stories and poems; historical novels and fantasy stories) in terms of their approaches to similar themes and topics.</span><span></span>; I can analyze figurative language, word relationships, and nuances in word meanings. <span></span><span class=\"c-ld-keyword\" data-toggle=\"cg-k_c3123c4c\">(L.6.5)</span><span class=\"dropdown-pane o-ld-dropdown\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"12\" id=\"cg-k_c3123c4c\"><b>L.6.5</b><br> Demonstrate understanding of figurative language, word relationships, and nuances in word meanings.</span><span></span></span></p></span></p></span></p></span></p></li> <li> <strong>Short Term Learning Targets: Objective:</strong> I can describe the literal meaning of figurative language in the poem “If.”; I can compare how similar themes are communicated in Bud, Not Buddy and “If.” ; I can compare the experience of listening to an audio version of the poem to reading the poem. </li> <li> <strong>Ongoing Assessment:</strong> Mid-Unit 3 Assessment: Analyzing Structure and Theme in Stanza 4 of “If”; Stanza 4 of “If” paraphrased on the Analyzing “If” graphic organizer </li> </ul> </div>\n<p></p>\n<p></p>\n<a id=\"t.80268067fd1b00c0339482571719ccb19f4c65be\"></a><a id=\"t.2\"></a>\n<p></p>\n<h3>Vocabulary</h3> <div class=\"o-ld-vocab\"> <p><span style=\"font-weight:700\">Task Centered</span></p> <div class=\"o-ld-inset\"> <p><span style=\"font-weight:700\" class=\" text-bold\">figurative language: </span><span>(noun) a meaning that is different from the basic meaning and that expresses an idea in an interesting way by using language that usually describes something else; not literal</span></p> <p><span style=\"font-weight:700\" class=\" text-bold\">paraphrase: </span><span>(verb) to say (something that someone else has said or written) using different words</span></p> </div> <p><span style=\"font-weight:700\">Text Centered</span></p> <div class=\"o-ld-inset\"> <p><span style=\"font-weight:700\" class=\" text-bold\">virtue: </span><span>(noun) goodness, honesty, integrity</span></p> <p><span style=\"font-weight:700\" class=\" text-bold\">foe: </span><span>(noun) enemy</span></p> </div> </div>\n<p></p>\n<div class=\"o-ld-group\" data-id=\"1-opening\" data-tag=\"group_tag_56ab66ed44785475d491\"> <hr class=\"o-ld-hr--l1\"> <h2 id=\"1-opening\" class=\"o-ld-title c-ld-toc\"> <div class=\"o-ld-title__title o-ld-title__title--h2\">Opening</div> <div class=\"o-ld-title__time o-ld-title__time--h2\"> 5 mins </div> </h2> <p></p> <div class=\"o-ld-section-wrapper\" data-id=\"2-unpacking-the-learning-targets\" data-deselectable data-tag=\"section_tag_923178f9f0ecd75217f5\"> <hr class=\"o-ld-hr--l2\"> <div id=\"2-unpacking-the-learning-targets\" class=\"o-ld-section c-ld-toc o-ld-section--bg-color\"> <h3 class=\"o-ld-title u-margin-top--large\"> <div class=\"o-ld-title__title o-ld-title__title--h3\"> Unpacking the Learning Targets </div> <div class=\"o-ld-title__time o-ld-title__time--h3\">5 mins</div> </h3> <div class=\"o-ld-activity__metacognition hide\"> (5 minutes) Unpacking learning targets provides the students and the teacher with the objectives for the class, and establishes a focus for learning. </div> <p><span>Invite students to read the learning targets with you:</span></p> <ul> <li><span>“I can describe the literal meaning of figurative language in the poem ‘If.’”</span></li> <li> <span>“I can compare how similar themes are communicated in </span><span style=\"font-style:italic;\">Bud, Not Buddy</span><span> and ‘If.’”</span> </li> <li><span>“I can compare the experience of listening to an audio version of the poem to reading the poem.”</span></li> </ul> <p></p> <p><span>Remind students of what </span><span style=\"font-style:italic;\">figurative language</span><span> is. Explain that in this lesson, they will read Stanza 4 of “If” and complete the mid-unit assessment.</span></p> <p><span>Address any clarifying questions.</span></p> <p></p> </div>  </div> </div><div class=\"o-ld-group\" data-id=\"3-work-time-a\" data-tag=\"group_tag_78ac9f4517d363643923\"> <hr class=\"o-ld-hr--l1\"> <h2 id=\"3-work-time-a\" class=\"o-ld-title c-ld-toc\"> <div class=\"o-ld-title__title o-ld-title__title--h2\">Work Time A</div> <div class=\"o-ld-title__time o-ld-title__time--h2\"> 40 mins </div> </h2> <p></p> <div class=\"o-ld-section-wrapper\" data-id=\"4-vocabulary-and-comprehension-for-stanza-4-of-if\" data-deselectable data-tag=\"section_tag_790248f37732d1758ad9\"> <hr class=\"o-ld-hr--l2\"> <div id=\"4-vocabulary-and-comprehension-for-stanza-4-of-if\" class=\"o-ld-section c-ld-toc o-ld-section--bg-color\"> <h3 class=\"o-ld-title u-margin-top--large\"> <div class=\"o-ld-title__title o-ld-title__title--h3\"> Vocabulary and Comprehension for Stanza 4 of “If” </div> <div class=\"o-ld-title__time o-ld-title__time--h3\">10 mins</div> </h3> <div class=\"o-ld-activity__metacognition hide\"> Asking students to identify challenging vocabulary helps them to monitor their understanding of a complex text. When students annotate the text by circling these words, it can also provide a formative assessment for the teacher. </div> <p><span>Explain to students that they are going to work on Stanza 4 independently for their mid-unit assessment rather than working in pairs or triads as in previous lessons, but we are going to tackle some of the vocabulary together.</span></p> <p><span>Distribute </span><span style=\"font-weight:700\">Assessment Text: “If” by Rudyard Kipling</span><span> and </span><span style=\"font-weight:700\">Mid-Unit 2 Assessment: Analyzing Structure and Theme in Stanza 4 of “If” and </span><span style=\"font-style:italic;font-weight:700\">Bud, Not Buddy</span><span>.</span></p> <p></p> <p><span>Tell students that now they are going to identify vocabulary that they are not familiar with, just as they did with the other stanzas. </span></p> <p><span>Give students 2 minutes to reread Stanza 4 and to circle the words they are not familiar with. Where possible, ask them to use context clues to try to determine the meaning, and jot their ideas for synonyms above the word in the stanza.</span></p> <p><span>Reconvene the students and select volunteers to share the words they have circled with the class. </span></p> <p><span>Words students may struggle with in Stanza 4 (and that they may not be understand through the context) include: </span><span style=\"font-style:italic;\">virtue</span><span>, </span><span style=\"font-style:italic;\">foes</span><span>, and </span><span style=\"font-style:italic;\">nor</span><span>.</span></p> <div class=\"o-ld-callout o-ld-callout--ela\"> <h4 class=\"o-ld-callout__header\">Scaffold for Support or Challenge</h4> <div class=\"o-ld-callout__content\"> <p><span>ELLs may be unfamiliar with more vocabulary words than are mentioned in this lesson. Check for comprehension of general words (e.g., </span><span style=\"font-style:italic;\">law</span><span>, </span><span style=\"font-style:italic;\">peace</span><span>, etc.) that most students would know.</span></p> </div> </div>\n<p><span>Define the words for students if there are no students who know these words specifically, as the context makes it difficult to accurately discern. Direct students to add words to their </span><span style=\"font-weight:700\">word catcher</span><span>.</span></p> <p></p> <a id=\"t.9a1c529bc0d3cb8010290414bdff74aa5d9da4aa\"></a><a id=\"t.10\"></a> <p></p> </div> <div data-react-class=\"MaterialsContainer\" data-react-props='{\"activity\":{\"activity_title\":\"Vocabulary and Comprehension for Stanza 4 of “If”\",\"activity_type\":null},\"color\":true,\"content_type\":\"none\",\"data\":[{\"anchors\":[],\"id\":653,\"identifier\":\"ela-g6-m1-u2-l8-sh-assessment text\",\"gdoc_url\":\"https://drive.google.com/open?id=1_jppHurkA7HJO2vIQVi1FyT8fCESTh5K7PWkLtZRsy8\",\"orientation\":\"portrait\",\"pdf_url\":\"https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-SH-Assessment%20Text_v791996.pdf\",\"source_type\":\"gdoc\",\"subtitle\":\"Student Handout\",\"title\":\"Assessment Text: “If” by Rudyard Kipling\",\"thumb_url\":\"https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-SH-Assessment%20Text_v791996.jpg\",\"pdf\":false},{\"anchors\":[],\"id\":652,\"identifier\":\"ela-g6-m1-u2-l8-assess-mid-unit 2 assessment\",\"gdoc_url\":\"https://drive.google.com/open?id=1VPFJFcgMMdMhc_hHmxRCVJN4BKZnWfEussOo9fFUl_4\",\"orientation\":\"portrait\",\"pdf_url\":\"https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-Assess-Mid-Unit%202%20Assessment_v791992.pdf\",\"source_type\":\"gdoc\",\"subtitle\":\"Student Handout\",\"title\":\"Mid-Unit 2 Assessment: Analyzing Structure and Theme in Stanza 4 of “If” and Bud, Not Buddy\",\"thumb_url\":\"https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-Assess-Mid-Unit%202%20Assessment_v791992.jpg\",\"pdf\":false},{\"anchors\":[],\"id\":649,\"identifier\":\"ela-g6-m1-u2-l8-th-mid-unit 2 assessment\",\"gdoc_url\":\"https://drive.google.com/open?id=1HxSJIDlvSTJBYcsKazlTfCcEYk8wyMIy43yAzVVq1mg\",\"orientation\":\"portrait\",\"pdf_url\":\"https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-TH-Mid-Unit%202%20Assessment_v791991.pdf\",\"source_type\":\"gdoc\",\"subtitle\":\"Answer Key\",\"title\":\"Mid-Unit 2 Assessment: Analyzing Structure and Theme in Stanza 4 of “If” and Bud, Not Buddy\",\"thumb_url\":\"https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-TH-Mid-Unit%202%20Assessment_v791991.jpg\",\"pdf\":false},{\"anchors\":[],\"id\":623,\"identifier\":\"ela-g6-m1-u1-l1-sh-word-catcher\",\"gdoc_url\":\"https://drive.google.com/open?id=1FNty5E-Rn6-Len3GKVnxAjN6crQ9ezIM1u0-HyGpB6Y\",\"orientation\":\"landscape\",\"pdf_url\":\"https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U1-L1-SH-Word-Catcher_v286368.pdf\",\"source_type\":\"gdoc\",\"subtitle\":\"Student Handout\",\"title\":\"Word-Catcher\",\"thumb_url\":\"https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U1-L1-SH-Word-Catcher_v286368.jpg\",\"pdf\":false}],\"for_group\":null,\"lesson\":{\"lesson_grade\":\"6\",\"lesson_ld_module\":\"1\",\"lesson_subject\":\"ela\",\"lesson_title\":\"Mid-Unit Assessment: Structure and Theme\",\"lesson_lesson\":\"8\",\"lesson_unit_topic\":\"2\"},\"subject\":\"ela\"}'></div> </div>\n<div class=\"o-ld-section-wrapper\" data-id=\"5-mid-unit-assessment-if-and-bud-not-buddy\" data-deselectable data-tag=\"section_tag_8b9b8942a2d42cd3707e\"> <hr class=\"o-ld-hr--l2\"> <div id=\"5-mid-unit-assessment-if-and-bud-not-buddy\" class=\"o-ld-section c-ld-toc o-ld-section--bg-color\"> <h3 class=\"o-ld-title u-margin-top--large\"> <div class=\"o-ld-title__title o-ld-title__title--h3\"> Mid-Unit Assessment,“If” and Bud, Not Buddy </div> <div class=\"o-ld-title__time o-ld-title__time--h3\">30 mins</div> </h3> <div class=\"o-ld-activity__metacognition hide\"> Assessing students on text they have already read and comprehend at a basic level ensures that this is not a reading test, and instead assesses the standards that have been driving instruction. </div> <p><span>Invite students to read the questions on the mid-unit assessment sheet with you.</span></p> <p></p> <p><span>Focus students’ attention on the </span><span style=\"font-weight:700\">Conveying Theme in Bud, Not Buddy charts</span><span> posted around the room and explain that students will need to refer to these for the last couple of questions. </span></p> <p><span>Direct students to answer the questions on the mid-unit assessment sheet. Remind them that as this is an assessment, they must work independently. Circulate to assist students in reading the poem where they need it. Because their written responses rely to some extent on the answers they select in their multiple-choice responses, consider supporting or redirecting students who have selected the wrong multiple-choice response.</span></p> <p><span>When you grade the assessment, consider making specific comments on the written student answers so they have specific directions to make corrections when they review the test.</span></p> </div> <div data-react-class=\"MaterialsContainer\" data-react-props='{\"activity\":{\"activity_title\":\"Mid-Unit Assessment,“If” and Bud, Not Buddy\",\"activity_type\":null},\"color\":true,\"content_type\":\"none\",\"data\":[{\"anchors\":[],\"id\":686,\"identifier\":\"ela-g6-m1-u2-l1-et-how does the author\",\"gdoc_url\":\"https://drive.google.com/open?id=1gMDkXrL6GM_cyh1p9K8uCt1IjVISHsKqZlcdfEtOLxg\",\"orientation\":\"portrait\",\"pdf_url\":\"https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L1-ET-How%20Does%20the%20Author_v856488.pdf\",\"source_type\":\"gdoc\",\"subtitle\":\"Student Handout\",\"title\":\"How Does the Author Convey Theme?\",\"thumb_url\":\"https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L1-ET-How%20Does%20the%20Author_v856488.jpg\",\"pdf\":false}],\"for_group\":null,\"lesson\":{\"lesson_grade\":\"6\",\"lesson_ld_module\":\"1\",\"lesson_subject\":\"ela\",\"lesson_title\":\"Mid-Unit Assessment: Structure and Theme\",\"lesson_lesson\":\"8\",\"lesson_unit_topic\":\"2\"},\"subject\":\"ela\"}'></div> </div>\n<div class=\"o-ld-optbreak-wrapper\"> <div class=\"o-ld-optbreak\"> <div class=\"o-ld-optbreak__delimeter\"></div> <div class=\"o-ld-optbreak__text\">45 MINUTE MARK</div> <div class=\"o-ld-optbreak__delimeter\"></div> </div> <h3>Optional Lesson Break</h3> <p></p> </div> </div><div class=\"o-ld-group\" data-id=\"6-work-time-b\" data-tag=\"group_tag_6c0862f5d2667b05c447\"> <hr class=\"o-ld-hr--l1\"> <h2 id=\"6-work-time-b\" class=\"o-ld-title c-ld-toc\"> <div class=\"o-ld-title__title o-ld-title__title--h2\">Work Time B</div> <div class=\"o-ld-title__time o-ld-title__time--h2\"> 25 mins </div> </h2> <p></p> <div class=\"o-ld-section-wrapper\" data-id=\"7-engaging-the-reader-afterword-of-bud-not-buddy\" data-deselectable data-tag=\"section_tag_6d72bbd0143dfb31410d\"> <hr class=\"o-ld-hr--l2\"> <div id=\"7-engaging-the-reader-afterword-of-bud-not-buddy\" class=\"o-ld-section c-ld-toc o-ld-section--bg-color\"> <h3 class=\"o-ld-title u-margin-top--large\"> <div class=\"o-ld-title__title o-ld-title__title--h3\"> Engaging the Reader: Afterword of Bud, Not Buddy </div> <div class=\"o-ld-title__time o-ld-title__time--h3\">10 mins</div> </h3> <div class=\"o-ld-activity__metacognition hide\"> Identifying reasons to read, or things to look for while reading, focuses student attention. Linking these reasons to specific standards (identifying central idea or paying attention to structure, for example) ensures standard alignment and clear purpose for reading </div> <p><span>Invite students to get out their copies of </span><span style=\"font-style:italic;\">Bud, Not Buddy</span><span> and get into triads. Remind them that for homework they were to read the afterword of </span><span style=\"font-style:italic;\">Bud, Not Buddy</span><span> and use evidence flags to identify three facts that they found particularly interesting.</span></p> <p><span>Invite students to share their three facts with their triad and to explain why those facts were interesting.</span></p> <p><span>Select volunteers to share their triad discussions with the whole group.</span></p> <p></p> </div>  </div>\n<div class=\"o-ld-section-wrapper\" data-id=\"8-unpacking-learning-targets\" data-deselectable data-tag=\"section_tag_7869c55fc300df3e212f\"> <hr class=\"o-ld-hr--l2\"> <div id=\"8-unpacking-learning-targets\" class=\"o-ld-section c-ld-toc o-ld-section--bg-color\"> <h3 class=\"o-ld-title u-margin-top--large\"> <div class=\"o-ld-title__title o-ld-title__title--h3\"> Unpacking Learning Targets </div> <div class=\"o-ld-title__time o-ld-title__time--h3\">5 mins</div> </h3> <div class=\"o-ld-activity__metacognition hide\"> Unpacking Learning Targets half-way through a lengthy lesson ensures that students and teachers are clear about the charges and tasks of the lesson </div> <p><span>Invite students to read along with you as you read the learning targets out loud: </span></p> <ul> <li><span>“I can describe the qualities of a literary argument essay about Bud’s Rules.”</span></li> <li><span>“I can analyze how evidence from the text supports a claim in the Steve Jobs model essay.”</span></li> </ul> <p></p> <p><span>Explain that understanding a</span><span style=\"font-style:italic;\"> literary argument </span><span>is key to their success in the next several lessons. Begin with having them think about what an argument is. </span></p> <p><span>Explain that in writing, there is a difference between argument and opinion. In speaking, we often say we had an argument because we had a difference of opinion; but when we refer to writing, the meaning of the two words is different. Writing an opinion piece means that it’s something a person believes, whether or not the person has evidence to prove it. However, in a written argument, the author will make a claim, support it with reasons, and prove those reasons with evidence. Ask: </span></p> <ul><li> <span>“If a written argument is where the author makes a claim, supports it with reasons, and proves those reasons with evidence, what can you infer is a </span><span style=\"font-style:italic;\">literary argument</span><span>?”</span> </li></ul> <p></p> <p><span>After giving students some think time, ask for a volunteer to share his answer. Listen for students to infer that a literary argument means the supporting reasons and evidence come from a text, including from a piece of literature. Ask students if they have written any literary arguments. (They actually have, in their discussion of how authors support their claim, through out Unit 1).</span></p> <p><span>Write the definition of a literary argument on the board: “A literary argument is a piece of writing that makes a claim about a literary text and uses details and evidence to support that claim.”</span></p> <p><span>Tell students that in order for them to get ready to write their own essays, the lesson today will be focused on looking at what makes a strong literary argument in a model essay.</span></p> <p></p> </div>  </div>\n<div class=\"o-ld-section-wrapper\" data-id=\"9-unpacking-the-end-of-unit-2-assessment-prompt\" data-deselectable data-tag=\"section_tag_377d64660ab372bb158a\"> <hr class=\"o-ld-hr--l2\"> <div id=\"9-unpacking-the-end-of-unit-2-assessment-prompt\" class=\"o-ld-section c-ld-toc o-ld-section--bg-color\"> <h3 class=\"o-ld-title u-margin-top--large\"> <div class=\"o-ld-title__title o-ld-title__title--h3\"> Unpacking the End of Unit 2 Assessment Prompt </div> <div class=\"o-ld-title__time o-ld-title__time--h3\">10 mins</div> </h3> <div class=\"o-ld-activity__metacognition hide\"> Prereading a passage that is going to be used in an assessment for the purpose of deeper analysis ensures that students with unfinished learning and who are working on fluency to achieve better comprehension have a better opportunity to be assessed on their ability understand the intent of the question and to apply the skill, as opposed to their ability to decode the text.. </div> <p><span>Distribute the </span><span style=\"font-weight:700\">End of Unit 2 Assessment Prompt: How Does Bud Use His Rules—To Survive or To Thrive? Argument Essay</span><span> and display it using a </span><span style=\"font-weight:700\">document camera</span><span>. Invite students to follow along as you read the prompt aloud. Ask students to circle any unfamiliar words. Clarify words as needed. </span></p> <p></p> <p><span>Invite students to underline words and phrases on the prompt that will help them make a strong literary argument. Look for students to underline words and phrases such as: </span></p> <ul> <li> <span>Establish a claim about whether Bud uses his rules to help him </span><span style=\"font-style:italic;\">survive</span><span> or </span><span style=\"font-style:italic;\">thrive</span><span>. </span> </li> <li><span>Write an introduction. </span></li> <li><span>To support your claim, use evidence about how Bud uses three of his rules.</span></li> <li><span>Provide closure to your essay with a conclusion.</span></li> <li><span>Use relevant and specific text evidence, including direct quotations, to support your claim.</span></li> <li><span>Explain how your evidence supports your claim.</span></li> <li><span>Use transitional words and phrases to make your writing cohesive and logical.</span></li> </ul> <p></p> <div class=\"o-ld-callout o-ld-callout--ela\"> <h4 class=\"o-ld-callout__header\">Understand the Rationale</h4> <div class=\"o-ld-callout__content\"> <p><span>Spending time unpacking writing prompts gives students a clear vision of what is expected of them in the assessment.</span></p> <p><span>Anchor charts provide a visual cue to students about what to do when you ask them to work independently. They also serve as note-catchers when the class is co-constructing ideas.</span></p> <p><span>Adding visuals or graphics to anchor charts can help students remember or understand key ideas or directions.</span></p> </div> </div>\n<p><span>Invite students to close their eyes for a moment and envision themselves writing their essay. Ask them to think about what the essay needs to include and what thinking they need to do in order to write. Now have students open their eyes, get with a partner, and discuss the three questions displayed on the board.</span></p> <a id=\"t.989590050ac6803d7a347b891ebb3be96c0d638a\"></a><a id=\"t.11\"></a> <p></p> <p><span>Display and ask: </span></p> <ul> <li><span>“What is this prompt asking you to do?”</span></li> <li><span>“What will your writing have to include to address the question?”</span></li> <li><span>“What thinking will you have to do to complete that writing?”</span></li> </ul> <p></p> </div> <div data-react-class=\"MaterialsContainer\" data-react-props='{\"activity\":{\"activity_title\":\"Unpacking the End of Unit 2 Assessment Prompt\",\"activity_type\":null},\"color\":true,\"content_type\":\"none\",\"data\":[{\"anchors\":[],\"id\":651,\"identifier\":\"ela-g6-m1-u2-l8-sh-end of unit 2\",\"gdoc_url\":\"https://drive.google.com/open?id=1eW0BX-mRcVESDT9iXVJHVLCG7yb6nDKTOVm-V9j5eyU\",\"orientation\":\"portrait\",\"pdf_url\":\"https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-SH-End%20of%20Unit%202_v286543.pdf\",\"source_type\":\"gdoc\",\"subtitle\":\"Student Handout\",\"title\":\"End of Unit 2 Assessment Prompt: How Does Bud Use His Rules—To Survive or To Thrive? Argument Essay\",\"thumb_url\":\"https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-SH-End%20of%20Unit%202_v286543.jpg\",\"pdf\":false}],\"for_group\":null,\"lesson\":{\"lesson_grade\":\"6\",\"lesson_ld_module\":\"1\",\"lesson_subject\":\"ela\",\"lesson_title\":\"Mid-Unit Assessment: Structure and Theme\",\"lesson_lesson\":\"8\",\"lesson_unit_topic\":\"2\"},\"subject\":\"ela\"}'></div> </div> </div><div class=\"o-ld-group\" data-id=\"10-closing-and-assessment\" data-tag=\"group_tag_3f9e017dc2c0b72dc22a\"> <hr class=\"o-ld-hr--l1\"> <h2 id=\"10-closing-and-assessment\" class=\"o-ld-title c-ld-toc\"> <div class=\"o-ld-title__title o-ld-title__title--h2\">Closing and Assessment</div> <div class=\"o-ld-title__time o-ld-title__time--h2\"> 20 mins </div> </h2> <p></p> <div class=\"o-ld-section-wrapper\" data-id=\"11-writing-instruction-a-strong-literary-essay\" data-deselectable data-tag=\"section_tag_5f2b580f888ae45bf537\"> <hr class=\"o-ld-hr--l2\"> <div id=\"11-writing-instruction-a-strong-literary-essay\" class=\"o-ld-section c-ld-toc o-ld-section--bg-color\"> <h3 class=\"o-ld-title u-margin-top--large\"> <div class=\"o-ld-title__title o-ld-title__title--h3\"> Writing Instruction-A Strong Literary Essay </div> <div class=\"o-ld-title__time o-ld-title__time--h3\">20 mins</div> </h3> <div class=\"o-ld-activity__metacognition hide\"> Ordering text before tackling its deconstruction provides you an informative assessment of how well students can process the order of an essay already. It ties directly into W.6.4 and L.6.4 and L.6.5 as students grapple with how authors structure texts to convey ideas. It is important for students to process and understand the “content” of the essay before they look more closely at the writer’s craft. </div> <p><span>Provide student groups with a copy of the </span><span style=\"font-weight:700\">Model literary argument essay: “Steve Jobs’ Rules to Live By” </span><span>cut up into paragraphs. Based on what they have been talking about, direct students to read the paragraphs and order them as a group, placing them in the order they think is correct. Direct student groups to justify their placement, then share the essay in its correct order.</span></p> <p><span>Refocus students as a whole group. Begin the </span><span style=\"font-weight:700\">Qualities of a Strong Literary Essay anchor chart</span><span>. Explain to students that they just discussed the </span><span style=\"font-style:italic;\">qualities</span><span> of a strong literary argument essay and then ordered a model essay according to those qualities. </span></p> <p><span>Cold call on pairs to share the qualities they discussed and used that will make this a strong literary argument essay. As students share their answers, put their answers into language from the rubric. For example, if a student says, “We have to choose a position,” you might write: “Make a claim = choosing a side.” Be sure the chart includes: </span></p> <div class=\"o-ld-callout o-ld-callout--ela\"> <h4 class=\"o-ld-callout__header\">Understand the Rationale</h4> <div class=\"o-ld-callout__content\"> <p><span>Ordering text before tackling its deconstruction provides you an informative assessment of how well students can process the order of an essay already. It ties directly into W.6.4 and L.6.4 and L.6.5 as students grapple with how authors structure texts to convey ideas.</span></p> <p><span>It is important for students to process and understand the “content” of the essay before they look more closely at the writer’s craft. </span></p> </div> </div>\n<ul> <li> <span>Make a </span><span style=\"text-decoration:underline\">claim</span><span>. (Students may say, “Choose a side.”) </span> </li> <li> <span>Choose </span><span style=\"text-decoration:underline\">text evidence</span><span> that supports the claim. (Students might say, “Pick rules to help back up your choice.”)</span> </li> <li> <span style=\"text-decoration:underline\">Explain</span><span> how each piece of evidence supports the claim. (Students might say, “Add my own thinking” or “Explain the evidence.”) </span> </li> <li><span>Introduce the claim. (Students might say, “Write my claim in the beginning.”)</span></li> <li><span>Make it coherent. (Students might say, “Make it stick together; have everything connect.”)</span></li> <li><span>Make it logical. (Students might say, “Have it make sense.”)</span></li> </ul> <a id=\"t.7920cd1eec9ee875b4e7427c5e222005fa91e9ef\"></a><a id=\"t.12\"></a> <p></p> <p><span>For anything students do not identify on their own, add it to the anchor chart and explain why you are adding it.</span></p> <p><span>Share that in the next lesson students will be taking a closer look at what makes this a strong essay. </span></p> <p></p> <p></p> <div><p></p></div> </div> <div data-react-class=\"MaterialsContainer\" data-react-props='{\"activity\":{\"activity_title\":\"Writing Instruction-A Strong Literary Essay\",\"activity_type\":null},\"color\":true,\"content_type\":\"none\",\"data\":[{\"anchors\":[],\"id\":648,\"identifier\":\"ela-g6-m1-u2-l8-sh-model literary argument\",\"gdoc_url\":\"https://drive.google.com/open?id=13tgpHXIgj4xi_Zxs8F6BCu3DNfcdFuN8p-LVeBXX0RA\",\"orientation\":\"portrait\",\"pdf_url\":\"https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-SH-Model%20literary%20argument_v791990.pdf\",\"source_type\":\"gdoc\",\"subtitle\":\"Student Handout\",\"title\":\"Model literary argument essay: “Steve Jobs’ Rules to Live By”\",\"thumb_url\":\"https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-SH-Model%20literary%20argument_v791990.jpg\",\"pdf\":false},{\"anchors\":[],\"id\":650,\"identifier\":\"ela-g6-m1-u2-l8-th-model literary argument\",\"gdoc_url\":\"https://drive.google.com/open?id=1rBSa4LRVTkezzAIoQ25JyXwjoDmb3Z1GVjDnZOIlH0E\",\"orientation\":\"portrait\",\"pdf_url\":\"https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-TH-Model%20literary%20argument_v791989.pdf\",\"source_type\":\"gdoc\",\"subtitle\":\"Answer Key\",\"title\":\"Model literary argument essay: “Steve Jobs’ Rules to Live By\",\"thumb_url\":\"https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-TH-Model%20literary%20argument_v791989.jpg\",\"pdf\":false}],\"for_group\":null,\"lesson\":{\"lesson_grade\":\"6\",\"lesson_ld_module\":\"1\",\"lesson_subject\":\"ela\",\"lesson_title\":\"Mid-Unit Assessment: Structure and Theme\",\"lesson_lesson\":\"8\",\"lesson_unit_topic\":\"2\"},\"subject\":\"ela\"}'></div> </div> </div>",
-  "forTopic": {
-    "@type": "http://oerschema.org/Topic",
+  "oer:forTopic": {
+    "@type": "oer:Topic",
     "@id": "http://pilot.unbounded.org/ela",
     "name": "ELA"
   },
-  "hasComponent": [{
-    "@type": "http://oerschema.org/SupportingMaterial",
+  "hasPart":[{
+    "@type": ["oer:SupportingMaterial","DigitalDocument"],
     "@id": "http://pilot.unbounded.org/materials/653",
-    "forComponent": {
-      "@id": "http://pilot.unbounded.org/documents/227"
-    },
-    "hasComponent": [{
-      "@id": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-SH-Assessment%20Text_v791996.pdf",
-      "additionalType": "http://schema.org/DigitalDocument",
-      "schema:fileFormat": "application/pdf",
-      "uri": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-SH-Assessment%20Text_v791996.pdf"
-    }, {
-      "@id": "https://drive.google.com/open?id=1_jppHurkA7HJO2vIQVi1FyT8fCESTh5K7PWkLtZRsy8",
-      "additionalType": "http://schema.org/DigitalDocument",
-      "schema:fileFormat": "application/vnd.google-apps.document",
-      "uri": "https://drive.google.com/open?id=1_jppHurkA7HJO2vIQVi1FyT8fCESTh5K7PWkLtZRsy8"
-    }],
     "name": "Assessment Text: “If” by Rudyard Kipling",
-    "alternateName": "ELA-G6-M1-U2-L8-SH-Assessment Text",
-    "sameAs": ["https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-SH-Assessment%20Text_v791996.pdf", "https://drive.google.com/open?id=1_jppHurkA7HJO2vIQVi1FyT8fCESTh5K7PWkLtZRsy8"],
-    "image": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-SH-Assessment%20Text_v791996.jpg",
-    "schema:identifier": 653,
-    "schema:educationalUse": "Material",
-    "schema:learningResourceType": "Student Handout",
-    "schema:thumbnailUrl": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-SH-Assessment%20Text_v791996.jpg"
+    "alternateName": "ELA-G6-M1-U2-L8-SH-Assessment Text"
   }, {
-    "@type": "http://oerschema.org/SupportingMaterial",
-    "@id": "http://pilot.unbounded.org/materials/652",
-    "forComponent": {
-      "@id": "http://pilot.unbounded.org/documents/227"
-    },
-    "hasComponent": [{
-      "@id": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-Assess-Mid-Unit%202%20Assessment_v791992.pdf",
-      "additionalType": "http://schema.org/DigitalDocument",
-      "schema:fileFormat": "application/pdf",
-      "uri": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-Assess-Mid-Unit%202%20Assessment_v791992.pdf"
-    }, {
-      "@id": "https://drive.google.com/open?id=1VPFJFcgMMdMhc_hHmxRCVJN4BKZnWfEussOo9fFUl_4",
-      "additionalType": "http://schema.org/DigitalDocument",
-      "schema:fileFormat": "application/vnd.google-apps.document",
-      "uri": "https://drive.google.com/open?id=1VPFJFcgMMdMhc_hHmxRCVJN4BKZnWfEussOo9fFUl_4"
-    }],
-    "name": "Mid-Unit 2 Assessment: Analyzing Structure and Theme in Stanza 4 of “If” and Bud, Not Buddy",
-    "alternateName": "ELA-G6-M1-U2-L8-Assess-Mid-Unit 2 Assessment",
-    "sameAs": ["https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-Assess-Mid-Unit%202%20Assessment_v791992.pdf", "https://drive.google.com/open?id=1VPFJFcgMMdMhc_hHmxRCVJN4BKZnWfEussOo9fFUl_4"],
-    "image": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-Assess-Mid-Unit%202%20Assessment_v791992.jpg",
-    "schema:identifier": 652,
-    "schema:educationalUse": "Material",
-    "schema:learningResourceType": "Student Handout",
-    "schema:thumbnailUrl": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-Assess-Mid-Unit%202%20Assessment_v791992.jpg"
-  }, {
-    "@type": "http://oerschema.org/SupportingMaterial",
-    "@id": "http://pilot.unbounded.org/materials/649",
-    "forComponent": {
-      "@id": "http://pilot.unbounded.org/documents/227"
-    },
-    "hasComponent": [{
-      "@id": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-TH-Mid-Unit%202%20Assessment_v791991.pdf",
-      "additionalType": "http://schema.org/DigitalDocument",
-      "schema:fileFormat": "application/pdf",
-      "uri": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-TH-Mid-Unit%202%20Assessment_v791991.pdf"
-    }, {
-      "@id": "https://drive.google.com/open?id=1HxSJIDlvSTJBYcsKazlTfCcEYk8wyMIy43yAzVVq1mg",
-      "additionalType": "http://schema.org/DigitalDocument",
-      "schema:fileFormat": "application/vnd.google-apps.document",
-      "uri": "https://drive.google.com/open?id=1HxSJIDlvSTJBYcsKazlTfCcEYk8wyMIy43yAzVVq1mg"
-    }],
-    "name": "Mid-Unit 2 Assessment: Analyzing Structure and Theme in Stanza 4 of “If” and Bud, Not Buddy",
-    "alternateName": "ELA-G6-M1-U2-L8-TH-Mid-Unit 2 Assessment",
-    "sameAs": ["https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-TH-Mid-Unit%202%20Assessment_v791991.pdf", "https://drive.google.com/open?id=1HxSJIDlvSTJBYcsKazlTfCcEYk8wyMIy43yAzVVq1mg"],
-    "image": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-TH-Mid-Unit%202%20Assessment_v791991.jpg",
-    "schema:identifier": 649,
-    "schema:educationalUse": "Material",
-    "schema:learningResourceType": "Answer Key",
-    "schema:thumbnailUrl": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-TH-Mid-Unit%202%20Assessment_v791991.jpg"
-  }, {
-    "@type": "http://oerschema.org/SupportingMaterial",
-    "@id": "http://pilot.unbounded.org/materials/651",
-    "forComponent": {
-      "@id": "http://pilot.unbounded.org/documents/227"
-    },
-    "hasComponent": [{
-      "@id": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-SH-End%20of%20Unit%202_v286543.pdf",
-      "additionalType": "http://schema.org/DigitalDocument",
-      "schema:fileFormat": "application/pdf",
-      "uri": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-SH-End%20of%20Unit%202_v286543.pdf"
-    }, {
-      "@id": "https://drive.google.com/open?id=1eW0BX-mRcVESDT9iXVJHVLCG7yb6nDKTOVm-V9j5eyU",
-      "additionalType": "http://schema.org/DigitalDocument",
-      "schema:fileFormat": "application/vnd.google-apps.document",
-      "uri": "https://drive.google.com/open?id=1eW0BX-mRcVESDT9iXVJHVLCG7yb6nDKTOVm-V9j5eyU"
-    }],
-    "name": "End of Unit 2 Assessment Prompt: How Does Bud Use His Rules—To Survive or To Thrive? Argument Essay",
-    "alternateName": "ELA-G6-M1-U2-L8-SH-End of Unit 2",
-    "sameAs": ["https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-SH-End%20of%20Unit%202_v286543.pdf", "https://drive.google.com/open?id=1eW0BX-mRcVESDT9iXVJHVLCG7yb6nDKTOVm-V9j5eyU"],
-    "image": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-SH-End%20of%20Unit%202_v286543.jpg",
-    "schema:identifier": 651,
-    "schema:educationalUse": "Material",
-    "schema:learningResourceType": "Student Handout",
-    "schema:thumbnailUrl": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-SH-End%20of%20Unit%202_v286543.jpg"
-  }, {
-    "@type": "http://oerschema.org/SupportingMaterial",
+    "@type": ["oer:SupportingMaterial","DigitalDocument"],
     "@id": "http://pilot.unbounded.org/materials/648",
-    "forComponent": {
-      "@id": "http://pilot.unbounded.org/documents/227"
-    },
-    "hasComponent": [{
-      "@id": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-SH-Model%20literary%20argument_v791990.pdf",
-      "additionalType": "http://schema.org/DigitalDocument",
-      "schema:fileFormat": "application/pdf",
-      "uri": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-SH-Model%20literary%20argument_v791990.pdf"
-    }, {
-      "@id": "https://drive.google.com/open?id=13tgpHXIgj4xi_Zxs8F6BCu3DNfcdFuN8p-LVeBXX0RA",
-      "additionalType": "http://schema.org/DigitalDocument",
-      "schema:fileFormat": "application/vnd.google-apps.document",
-      "uri": "https://drive.google.com/open?id=13tgpHXIgj4xi_Zxs8F6BCu3DNfcdFuN8p-LVeBXX0RA"
-    }],
     "name": "Model literary argument essay: “Steve Jobs’ Rules to Live By”",
-    "alternateName": "ELA-G6-M1-U2-L8-SH-Model literary argument",
-    "sameAs": ["https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-SH-Model%20literary%20argument_v791990.pdf", "https://drive.google.com/open?id=13tgpHXIgj4xi_Zxs8F6BCu3DNfcdFuN8p-LVeBXX0RA"],
-    "image": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-SH-Model%20literary%20argument_v791990.jpg",
-    "schema:identifier": 648,
-    "schema:educationalUse": "Material",
-    "schema:learningResourceType": "Student Handout",
-    "schema:thumbnailUrl": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-SH-Model%20literary%20argument_v791990.jpg"
+    "alternateName": "ELA-G6-M1-U2-L8-SH-Model literary argument"
+  },  {
+    "@type": ["oer:Assessment","DigitalDocument"],
+    "@id": "http://pilot.unbounded.org/materials/652",
+    "name": "Mid-Unit 2 Assessment: Analyzing Structure and Theme in Stanza 4 of “If” and Bud, Not Buddy",
+    "alternateName": "ELA-G6-M1-U2-L8-Assess-Mid-Unit 2 Assessment"
   }, {
-    "@type": "http://oerschema.org/SupportingMaterial",
-    "@id": "http://pilot.unbounded.org/materials/650",
-    "forComponent": {
-      "@id": "http://pilot.unbounded.org/documents/227"
-    },
-    "hasComponent": [{
-      "@id": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-TH-Model%20literary%20argument_v791989.pdf",
-      "additionalType": "http://schema.org/DigitalDocument",
-      "schema:fileFormat": "application/pdf",
-      "uri": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-TH-Model%20literary%20argument_v791989.pdf"
-    }, {
-      "@id": "https://drive.google.com/open?id=1rBSa4LRVTkezzAIoQ25JyXwjoDmb3Z1GVjDnZOIlH0E",
-      "additionalType": "http://schema.org/DigitalDocument",
-      "schema:fileFormat": "application/vnd.google-apps.document",
-      "uri": "https://drive.google.com/open?id=1rBSa4LRVTkezzAIoQ25JyXwjoDmb3Z1GVjDnZOIlH0E"
-    }],
-    "name": "Model literary argument essay: “Steve Jobs’ Rules to Live By",
-    "alternateName": "ELA-G6-M1-U2-L8-TH-Model literary argument",
-    "sameAs": ["https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-TH-Model%20literary%20argument_v791989.pdf", "https://drive.google.com/open?id=1rBSa4LRVTkezzAIoQ25JyXwjoDmb3Z1GVjDnZOIlH0E"],
-    "image": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-TH-Model%20literary%20argument_v791989.jpg",
-    "schema:identifier": 650,
-    "schema:educationalUse": "Material",
-    "schema:learningResourceType": "Answer Key",
-    "schema:thumbnailUrl": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-TH-Model%20literary%20argument_v791989.jpg"
-  }, {
-    "@type": "http://oerschema.org/SupportingMaterial",
-    "@id": "http://pilot.unbounded.org/materials/623",
-    "forComponent": {
-      "@id": "http://pilot.unbounded.org/documents/227"
-    },
-    "hasComponent": [{
-      "@id": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U1-L1-SH-Word-Catcher_v286368.pdf",
-      "additionalType": "http://schema.org/DigitalDocument",
-      "schema:fileFormat": "application/pdf",
-      "uri": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U1-L1-SH-Word-Catcher_v286368.pdf"
-    }, {
-      "@id": "https://drive.google.com/open?id=1FNty5E-Rn6-Len3GKVnxAjN6crQ9ezIM1u0-HyGpB6Y",
-      "additionalType": "http://schema.org/DigitalDocument",
-      "schema:fileFormat": "application/vnd.google-apps.document",
-      "uri": "https://drive.google.com/open?id=1FNty5E-Rn6-Len3GKVnxAjN6crQ9ezIM1u0-HyGpB6Y"
-    }],
-    "name": "Word-Catcher",
-    "alternateName": "ELA-G6-M1-U1-L1-SH-Word-Catcher",
-    "sameAs": ["https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U1-L1-SH-Word-Catcher_v286368.pdf", "https://drive.google.com/open?id=1FNty5E-Rn6-Len3GKVnxAjN6crQ9ezIM1u0-HyGpB6Y"],
-    "image": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U1-L1-SH-Word-Catcher_v286368.jpg",
-    "schema:identifier": 623,
-    "schema:educationalUse": "Material",
-    "schema:learningResourceType": "Student Handout",
-    "schema:thumbnailUrl": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U1-L1-SH-Word-Catcher_v286368.jpg"
-  }, {
-    "@type": "http://oerschema.org/SupportingMaterial",
-    "@id": "http://pilot.unbounded.org/materials/686",
-    "forComponent": {
-      "@id": "http://pilot.unbounded.org/documents/227"
-    },
-    "hasComponent": [{
-      "@id": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L1-ET-How%20Does%20the%20Author_v856488.pdf",
-      "additionalType": "http://schema.org/DigitalDocument",
-      "schema:fileFormat": "application/pdf",
-      "uri": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L1-ET-How%20Does%20the%20Author_v856488.pdf"
-    }, {
-      "@id": "https://drive.google.com/open?id=1gMDkXrL6GM_cyh1p9K8uCt1IjVISHsKqZlcdfEtOLxg",
-      "additionalType": "http://schema.org/DigitalDocument",
-      "schema:fileFormat": "application/vnd.google-apps.document",
-      "uri": "https://drive.google.com/open?id=1gMDkXrL6GM_cyh1p9K8uCt1IjVISHsKqZlcdfEtOLxg"
-    }],
-    "name": "How Does the Author Convey Theme?",
-    "alternateName": "ELA-G6-M1-U2-L1-ET-How Does the Author",
-    "sameAs": ["https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L1-ET-How%20Does%20the%20Author_v856488.pdf", "https://drive.google.com/open?id=1gMDkXrL6GM_cyh1p9K8uCt1IjVISHsKqZlcdfEtOLxg"],
-    "image": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L1-ET-How%20Does%20the%20Author_v856488.jpg",
-    "schema:identifier": 686,
-    "schema:educationalUse": "Material",
-    "schema:learningResourceType": "Student Handout",
-    "schema:thumbnailUrl": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L1-ET-How%20Does%20the%20Author_v856488.jpg"
+    "@type": ["oer:Assessment","DigitalDocument"],
+    "name": "End of Unit 2 Assessment Prompt: How Does Bud Use His Rules—To Survive or To Thrive? Argument Essay",
+    "alternateName": "ELA-G6-M1-U2-L8-SH-End of Unit 2"
   }],
-  "duration": 90,
   "cc:license": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
   "cc:attributionName": "This work is based on an original work of EL Education unless otherwise indicated, made available through licensing under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. This does not in any way imply that EL Education endorses this work."
 }
@@ -380,192 +201,80 @@ Markup for [https://pilot.unbounded.org/math/grade-4/module-1/topic-a/lesson-1](
 ```json
 {
   "@context": [
-    "http://oerschema.org/",
+    "http://schema.org/",
     {
       "oer": "http://oerschema.org/",
-      "schema": "http://schema.org/",
       "cc": "http://creativecommons.org/ns#"
     }
   ],
-  "@id": "http://pilot.unbounded.org/documents/25",
-  "@type": "http://oerschema.org/Lesson",
+  "@id": "http://pilot.unbounded.org/documents/25#A",
+  "@type": ["oer:Lesson","Course"],
+  "learningResourceType": "Lesson",
   "name": "Bundle ones, tens, and hundreds as well as model three-digit numbers using units of hundreds, tens, and/or ones.",
   "description": "SWBAT bundle ones, tens, and hundreds as well as model three-digit numbers using units of hundreds, tens, and/or ones.",
+  "learningTime": "PT60M",
   "sameAs": [
     "http://pilot.unbounded.org/resources/2116",
     "https://www.engageny.org/resource/grade-4-mathematics-module-1-topic-lesson-1"
   ],
-  "uri": "http://pilot.unbounded.org/documents/25",
-  "schema:identifier": 2116,
-  "schema:url": "http://pilot.unbounded.org/documents/25",
-  "schema:alternateName": "lesson 1",
-  "schema:dateCreated": "2015-10-23T02:05:49.483Z",
-  "schema:dateModified": "2017-08-15T19:25:19.867Z",
-  "schema:publisher": {
-    "@type": "http://schema.org/Organization",
-    "@id": "http://pilot.unbounded.org/about",
-    "schema:name": "UnboundEd",
-    "schema:email": "supportdesk@unbounded.org",
-    "schema:url": "http://pilot.unbounded.org/about",
-    "schema:description": "We are a team of former classroom teachers, curriculum writers, school leaders and education experts who have worked in the public, private and nonprofit sectors. We are dedicated to empowering teachers by providing free, high-quality standards-aligned resources for the classroom, the opportunity for immersive training through our Institute, and the option of support through our website."
+  "url": "http://pilot.unbounded.org/documents/25",
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "UnboundEd resource identifier",
+    "value": "2116"
   },
-  "schema:inLanguage": "en-US",
-  "schema:educationalAlignment": {
-    "@type": "http://schema.org/AlignmentObject",
-    "name": "ccss.math.content.4.oa.a.1",
-    "alternateName": [
-      "4.oa.1",
-      "4.oa.a.1",
-      "math.4.oa.a.1",
-      "4oa1",
-      "4oaa1",
-      "math4oaa1"
-    ],
+  "dateCreated": "2015-10-23T02:05:49.483Z",
+  "dateModified": "2017-08-15T19:25:19.867Z",
+  "publisher": {
+    "@type": "Organization",
+    "name": "UnboundEd",
+    "email": "supportdesk@unbounded.org",
+    "url": "http://pilot.unbounded.org/about",
+  },
+  "inLanguage": "en-US",
+  "educationalAlignment": {
+    "@type": "AlignmentObject",
     "targetName": "ccss.math.content.4.oa.a.1",
     "educationFramework": "CommonCoreStandard"
   },
-  "schema:keywords": "prereq",
-  "schema:position": 2000501010001,
-  "parentOf": [],
-  "childOf": {
-    "@type": "http://oerschema.org/Unit",
-    "@id": "http://pilot.unbounded.org/math/grade-4/module-1/topic-a",
+  "isPartOf": {
+    "@type": "oer:Unit",
+    "@id": "http://pilot.unbounded.org/math/grade-4/module-1/topic-a#A",
     "name": "Place Value of Multi-digit Whole Numbers",
-    "alternateName": "math/grade-4/module-1/topic-a",
-    "schema:identifier": 4527
   },
   "forCourse": {
     "@type": "http://oerschema.org/Course",
     "@id": "http://pilot.unbounded.org/math/grade-4",
     "name": "Grade 4 Mathematics",
     "alternateName": "math/grade-4",
-    "schema:identifier": 5150
+    "identifier": 5150
   },
-  "mainContent": "\n\n\n\n\n\n\n<div class=\"o-ld-group\" data-id=\"1-core-l1-opening\" data-tag=\"activity_metadata_section_tag_48f7a5106c9a71608ce5\"> <hr class=\"o-ld-hr--l1\"> <h2 id=\"1-core-l1-opening\" class=\"o-ld-title c-ld-toc \"> <div class=\"o-ld-title__title o-ld-title__title--h2\">Opening</div> <div class=\"o-ld-title__time o-ld-title__time--h2\"> 5 mins </div> </h2> <div class=\"o-ld-activity-wrapper \" data-id=\"1-core-l2-skip-count-by-tens-up-and-down-crossing-100\" data-tag=\"activity_metadata_type_tag_89f8c15b9baa0fdc0094\"> <hr class=\"o-ld-hr--l2\"> <div id=\"1-core-l2-skip-count-by-tens-up-and-down-crossing-100\" class=\"o-ld-activity c-ld-toc\"> <div> <div class=\"u-pdf-nobreak o-ld-activity__title u-text--uppercase cs-txt--math-base u-txt--ld-activity-kicker u-margin-bottom--xs\"> Fluency Practice </div> <h3 class=\"o-ld-title\"> <div class=\"o-ld-title__title o-ld-title__title--h3\"> Skip-Count by Tens: Up and Down Crossing 100 <div class=\"o-ld-icon__wrapper\" data-toggle=\"o-ld-p_70b4feaa\"> <span class=\"o-ld-icon o-ld-icon--base o-ld-icon--priority2\"></span> </div> <span class=\"dropdown-pane o-ld-dropdown bottom\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"8\" id=\"o-ld-p_70b4feaa\"> This is a Priority 2 activity that can be skipped if running short on time. It is less tightly connected to the lesson objective. It might be designed as an extension or to ensure maintenance of prior skills. </span> </div> <div class=\"o-ld-title__time o-ld-title__time--h3\">2 mins</div> </h3> <div class=\"o-ld-activity__metacognition u-txt--ld-activity-teaser u-margin-bottom--base\"> <p><span>In this Fluency Activity, students count by 10 to get them thinking about units of 10. The activity prepares students for the Concept Development on bundling units into 10 to compose new units.</span></p> </div> <div class=\"o-ld-activity__guidance\"> <strong class=\"o-ld-activity__guidance--title u-text--uppercase cs-txt--math-base u-txt--title-type\">Guidance</strong> <p><span>While this is a good activator for the Concept Development, if there is a time constraint, you should prioritize the second Fluency Activity over this one.</span></p> </div> <p> <strong>Standards: </strong> <span class=\"c-ld-keyword\" data-toggle=\"cg-k_a4138daf\">2.NBT.A.2</span> <span class=\"dropdown-pane o-ld-dropdown\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"12\" id=\"cg-k_a4138daf\"> <b>2.NBT.A.2</b><br> <span>Count within 1000; skip-count by 5s, 10s, and 100s.</span> </span> </p> </div> </div> <div class=\"o-ld-activity o-ld-activity__source\"> <h4> </h4> <div class=\"o-ld-dialogue\"> <p></p> <p><span><strong>Teacher:</strong> Let’s skip-count by tens starting at 60.</span></p> <p></p> <p><span><strong>T:</strong> Ready? (Rhythmically point up until a change is desired. Show a closed hand and then point down. Continue, mixing it up.) </span></p> <p></p> <p><span><strong>Student:</strong> 60, 70, 80, 90, 100, 110, 120, 130, 140. (Switch direction.) 130, 120, 110, 100, 90. (Switch direction.) 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220. (Switch direction.) 210, 200, 190, 180.</span></p> </div> <p></p> <p></p> <a id=\"t.5339b15459bdbaff42dc669cc4859856fb72f3bf\"></a><a id=\"t.3\"></a><div class=\"o-ld-expand o-ld-expand-math\"> <div class=\"o-ld-expand__content\"> <p><span style=\"font-weight:700;\">NOTES ON MULTIPLE MEANS OF ENGAGEMENT</span></p> <p><span>As often as possible, create opportunities for every student to respond every time. The vignettes throughout the entire module facilitate this by continuously demonstrating varied response patterns and materials including choral response, partner talk, personal white boards, and individual tools like meter strips. Response patterns built on 100% student participation have powerful effects on student engagement and lesson pacing. Choral response allows English language learners to listen to correct pronunciation and language structure while practicing with the support of peer voices. Choral response that incorporates chanting, like the counting activities </span><span>presented to the left</span><span>, allows struggling students and those with auditory processing difficulty to be supported by the group as they pick up on language and patterns. Wait time is an important component of choral response. It provides children with an opportunity to independently process the question and formulate an answer before speaking. This is a useful scaffold for English language learners and struggling students. Wait time is built into many vignettes where the dialogue says, “Pause,” or when the teacher asks students to wait for a signal to respond.</span></p> </div> </div> <p></p> <p></p> <p></p> <a id=\"t.95cc2408b2764245b25bc3f51fc5ee769988717b\"></a><a id=\"t.4\"></a> </div>  </div>\n<div class=\"o-ld-activity-wrapper \" data-id=\"2-core-l2-unit-form-counting-from-398-to-405\" data-tag=\"activity_metadata_type_tag_9c50a99f9db17c8560ba\"> <hr class=\"o-ld-hr--l2\"> <div id=\"2-core-l2-unit-form-counting-from-398-to-405\" class=\"o-ld-activity c-ld-toc\"> <div> <div class=\"u-pdf-nobreak o-ld-activity__title u-text--uppercase cs-txt--math-base u-txt--ld-activity-kicker u-margin-bottom--xs\"> Fluency Practice </div> <h3 class=\"o-ld-title\"> <div class=\"o-ld-title__title o-ld-title__title--h3\"> Unit Form Counting from 398 to 405 <div class=\"o-ld-icon__wrapper\" data-toggle=\"o-ld-p_06eaddce\"> <span class=\"o-ld-icon o-ld-icon--base o-ld-icon--priority1\"></span> </div> <span class=\"dropdown-pane o-ld-dropdown bottom\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"8\" id=\"o-ld-p_06eaddce\"> This is a Priority 1 activity that should not be skipped. It is tightly connected to the lesson objective. </span> </div> <div class=\"o-ld-title__time o-ld-title__time--h3\">3 mins</div> </h3> <div class=\"o-ld-activity__metacognition u-txt--ld-activity-teaser u-margin-bottom--base\"> <p><span>In this preparatory Fluency Activity, students practice unit form counting which gets them thinking about units of hundreds, tens, and ones.This activity prepares students for the Concept Development where they will bundle units into 10 to compose new units.</span></p> </div> <p> <strong>Standards: </strong> <span class=\"c-ld-keyword\" data-toggle=\"cg-k_13225db2\">2.NBT.A.3</span>, <span class=\"dropdown-pane o-ld-dropdown\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"12\" id=\"cg-k_13225db2\"> <b>2.NBT.A.3</b><br> <span>Read and write numbers to 1000 using base-ten numerals, number names, and expanded form.</span> </span> <span class=\"c-ld-keyword\" data-toggle=\"cg-k_903104c4\">MP.6</span> <span class=\"dropdown-pane o-ld-dropdown\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"12\" id=\"cg-k_903104c4\"> <b>MP.6</b><br> <span>Attend to precision.</span> </span> </p> </div> </div> <div class=\"o-ld-activity o-ld-activity__source\"> <h4> </h4> <p><span>Materials: (T) Hide Zero Cards </span><span>Template</span></p> <p></p> <div class=\"o-ld-smp\"> <div class=\"o-ld-smp__content\"> <div class=\"o-ld-dialogue\"> <p></p> <p><span><strong>Teacher:</strong> Today we’re going to practice unit form counting. This time we’ll include hundreds! The unit form way to say 324 is 3 hundreds 2 tens 4 ones. (Pull the cards apart to show the 300, 20, and 4.) </span></p> <p></p> <p></p> <p></p> <p><span><div class=\"o-ld-image-wrap--math u-text--centered\"><img alt=\"\" src=\"https://lh4.googleusercontent.com/Gp4Esmkoy-HCro70ukCpoSwxVi7A_WOkzB3MXRzfLPrg-mE9qkU1x3VJkQawApB9-C2BfAm8PUZYNrR_ijFhBhOcPVcqS2OhST27Tly5lLRsRbAfylEIGSI8TPlznH1v5uSUhm8v\" style=\"width: 190.85px; height: 127.00px; \"></div></span></p> <p></p> <p></p> <p></p> <p><span><strong>T:</strong> Try this number. (Show 398. Signal.) </span></p> <p></p> <p><span><strong>Student:</strong> 3 hundreds 9 tens 8 ones. </span></p> <p></p> <p><span><strong>T:</strong> (Pull cards apart.) That’s right! </span></p> <p></p> <p><span><strong>T:</strong> Let’s count on from 398 the unit form way. (Display 399–405 with Hide Zero cards as students count.) </span></p> <p></p> <p><span><strong>S:</strong> 3 hundreds 9 tens 9 ones, 4 hundreds, 4 hundreds 1 one, 4 hundreds 2 ones, 4 hundreds 3 ones, 4 hundreds 4 ones, 4 hundreds 5 ones.</span></p> </div> </div> <div class=\"o-ld-smp__lines\"> <div class=\"o-ld-smp-bracket\"></div> <div class=\"o-ld-smp-figure\"> <p class=\"o-ld-smp-figure__name\">MP.6</p> </div> </div> </div> <p></p> </div> <div data-react-class=\"MaterialsContainer\" data-react-props='{\"activity\":{\"activity_title\":\"Unit Form Counting from 398 to 405\",\"activity_type\":\"Fluency Practice\"},\"color\":null,\"content_type\":\"none\",\"data\":[{\"anchors\":[],\"id\":12,\"identifier\":\"math-hide-zero-cards-template-teacher\",\"gdoc_url\":\"\",\"orientation\":\"portrait\",\"pdf_url\":\"\",\"source_type\":\"gdoc\",\"subtitle\":\"Classroom Materials\",\"title\":\"(T) Hide Zero Cards Template\",\"thumb_url\":\"\",\"pdf\":false}],\"for_group\":null,\"lesson\":{\"lesson_grade\":\"4\",\"lesson_ld_module\":\"1\",\"lesson_subject\":\"math\",\"lesson_title\":\"Prerequisite -  Bundle ones, tens, and hundreds as well as model three-digit numbers using units of hundreds, tens, and/or ones.\",\"lesson_lesson\":\"1\",\"lesson_unit_topic\":\"A\"},\"subject\":\"math\"}'></div> </div> </div><div class=\"o-ld-group\" data-id=\"2-core-l1-new-instruction\" data-tag=\"activity_metadata_section_tag_fbd259d1caf8c3730172\"> <hr class=\"o-ld-hr--l1\"> <h2 id=\"2-core-l1-new-instruction\" class=\"o-ld-title c-ld-toc \"> <div class=\"o-ld-title__title o-ld-title__title--h2\">New Instruction</div> <div class=\"o-ld-title__time o-ld-title__time--h2\"> 42 mins </div> </h2> <div class=\"o-ld-activity-wrapper \" data-id=\"3-core-l2-concept-development\" data-tag=\"activity_metadata_type_tag_2f3188af38400dc1651f\"> <hr class=\"o-ld-hr--l2\"> <div id=\"3-core-l2-concept-development\" class=\"o-ld-activity c-ld-toc\"> <div> <div class=\"u-pdf-nobreak o-ld-activity__title u-text--uppercase cs-txt--math-base u-txt--ld-activity-kicker u-margin-bottom--xs\"> Concept Development </div> <h3 class=\"o-ld-title\"> <div class=\"o-ld-title__title o-ld-title__title--h3\"> Concept Development <div class=\"o-ld-icon__wrapper\" data-toggle=\"o-ld-p_34cca2a4\"> <span class=\"o-ld-icon o-ld-icon--base o-ld-icon--priority1\"></span> </div> <span class=\"dropdown-pane o-ld-dropdown bottom\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"8\" id=\"o-ld-p_34cca2a4\"> This is a Priority 1 activity that should not be skipped. It is tightly connected to the lesson objective. </span> </div> <div class=\"o-ld-title__time o-ld-title__time--h3\">30 mins</div> </h3> <div class=\"o-ld-activity__metacognition u-txt--ld-activity-teaser u-margin-bottom--base\"> <p><span>In this lesson, students count concrete objects (straws or sticks) by bundling them into groups of 10 (10 ones, 10 tens, and eventually 10 hundreds) to support more efficient counting. Students come to understand that each bundle is composed of 10 smaller units (e.g., 1 hundred is composed of 10 tens). This lesson reaches back to important Grade 2 understandings with the goal of preparing students for later grade-level lessons that develop the understanding that relationships between place value units are multiplicative (e.g., 1 hundred is 10 times as great as 1 ten). </span></p> </div> <p> <strong>Standards: </strong> <span class=\"c-ld-keyword\" data-toggle=\"cg-k_f2e08e6b\">2.NBT.A.1</span> <span class=\"dropdown-pane o-ld-dropdown\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"12\" id=\"cg-k_f2e08e6b\"> <b>2.NBT.A.1</b><br> <span>Understand that the three digits of a three-digit number represent amounts of hundreds, tens, and ones; e.g., 706 equals 7 hundreds, 0 tens, and 6 ones. Understand the following as special cases:</span> </span> </p> </div> </div> <div class=\"o-ld-activity o-ld-activity__source\"> <h3></h3> <p><span>Materials: (T) Box of 1,000 straws or sticks</span></p> <p></p> <p><span>Students are seated in a U shape or circle on the carpet. Quite dramatically empty the contents of the box onto the carpet.</span></p> <p></p> <div class=\"o-ld-dialogue\"> <p></p> <p><span><strong>Teacher:</strong> Let’s count these straws! About how many do you think there might be? Discuss your ideas with your partner.</span></p> <p></p> <p><span><strong>T:</strong> Let’s see how many there really are.</span></p> <p></p> <p><span><strong>T:</strong> How can we count them in a way that is fast and accurate, or efficient, so that we can get to recess on time?</span></p> <p></p> <p><span><strong>Student:</strong> We could split them up into piles and share the work. By twos! By fives! By tens. By ones.</span></p> <p></p> <p><span><strong>T:</strong> There are some very clear ideas. Discuss with your partner which method would be the most efficient, counting by ones, twos, fives, or tens.</span></p> <p></p> <p><span><strong>T:</strong> I hear most groups agreeing that counting by tens is the most efficient. Why is it more efficient to count by units of ten than units of two?</span></p> <p></p> <p><span><strong>S:</strong> Because there will be more units of two, it will take longer. The tens are the biggest so there are fewer of them to confuse us when we count.</span></p> <p></p> <p><span><strong>T:</strong> Are you ready to get going? Let’s count 10 straws and then wrap them in a rubber band to make a new unit of ten. I will put a pile of straws and rubber bands in front of each group of 3 students.</span></p> <p></p> <p><span><strong>S:</strong> (Work for about 8 minutes to finish bundling all the straws.)</span></p> <p></p> <p><span><strong>T:</strong> Let’s make even larger units: Hundreds. It takes 10 tens to make a hundred. Count with me.</span></p> <p></p> <p><span><strong>S:</strong> (Place a ten before each count.) 1 ten, 2 tens, 3 tens, 4 tens, 5 tens, 6 tens, 7 tens, 8 tens, 9 tens, 10 tens.</span></p> <p></p> <p><span><strong>T:</strong> What is the value of 10 tens?</span></p> <p></p> <p><span><strong>S:</strong> 1 hundred.</span></p> <p></p> <p><span><strong>T:</strong> How many straws equal 1 ten?</span></p> <p></p> <p><span><strong>S:</strong> 10 straws.</span></p> <p></p> <p><span><strong>T:</strong> Now, let’s count the number of straws in 10 tens or 1 hundred.</span></p> <p></p> <p><span><strong>S:</strong> (Repeat the process.) 10, 20, 30, 40, 50, 60, 70, 80, 90, 100.</span></p> <p></p> <p><span><strong>T:</strong> So, how many straws are in 10 tens?</span></p> <p></p> <p><span><strong>S:</strong> 100 straws.</span></p> <p></p> <p><span><strong>T:</strong> What is another way to say 10 tens?</span></p> <p></p> <p><span><strong>S:</strong> 1 hundred.</span></p> <p></p> <p><span><strong>T:</strong> As a group, bundle 10 tens to make 1 hundred. Put the tens and ones you have left over to one side.</span></p> <p></p> <p><span><strong>S:</strong> (Work.)</span></p> <p></p> <p><span><strong>T:</strong> Tell your neighboring group how many of each unit—ones, tens, and hundreds—you have. The single straws are units of one.</span></p> <p></p> <p><span><strong>S:</strong> We have 1 hundred, 6 tens, and 4 ones.</span></p> <p></p> <p><span><strong>T:</strong> Let’s make the single straws into as many tens as we can. How many extra ones does your group have?</span></p> <p></p> <p><span><strong>S:</strong> 3.</span></p> <p></p> <p><span><strong>T:</strong> Students, what do we need to add to 3 ones to make 10 ones? (Pause.)</span></p> <p></p> <p><span><strong>S:</strong> 7 ones.</span></p> <p></p> <p><span><strong>T:</strong> Which group has 7 ones? (Or, can we combine 2 groups’ straws to get 7 ones?)</span></p> <p></p> <p><span>Pass them to Group 1.</span></p> <p></p> <p><span>Repeat the </span><span style=\"font-style:italic\">make ten</span><span> process with all the extra ones.</span></p> <p></p> <p><span><strong>T:</strong> Now that we have made as many units of ten as possible, let’s make more units of one hundred.</span></p> <p></p> <p><span><strong>T:</strong> Group 2, how many tens do you have that are not bundled as 1 hundred?</span></p> <p></p>\n<div class=\"o-ld-callout o-ld-callout--math\"> <h4 class=\"o-ld-callout__header\">NOTES ON MULTIPLE MEANS OF ENGAGEMENT:</h4> <div class=\"o-ld-callout__content\"> <p><span>All through this module, students must pay attention to the units they are counting and use precise language to convey their knowledge. Hold them accountable: 6 tens + 4 tens is 10 tens</span><span style=\"font-weight:700\">.</span></p> </div> </div>\n<p><span><strong>S:</strong> 6 tens.</span></p> <p></p> <p></p> <p><a id=\"t.377565157b54d89ee7d54fc8cfa3ce53524f3566\"></a></p> <p><a id=\"t.7\"></a></p> <p></p> <p></p> <p></p> <p></p> <p><span><strong>T:</strong> Students, at the signal, what do we need to add to 6 tens to make 10 tens? (Signal.)</span></p> <p></p> <p><span><strong>S:</strong> 4 tens.</span></p> <p></p> <p><span><strong>T:</strong> 6 tens plus 4 tens is?</span></p> <p></p> <p><span><strong>S:</strong> 10 tens.</span></p> <p></p> <p><span><strong>T:</strong> What is another way to say 10 tens?</span></p> <p></p> <p><span><strong>S:</strong> 1 hundred.</span></p> <p></p> <p><span><strong>T:</strong> How can you prove that 10 tens is the same as 100?</span></p> <p></p> <p><span><strong>S:</strong> I could unbundle the hundred and count all the tens. I can skip-count by 10 and count how many times it takes to get to 100. When I skip-count on my fingers it takes all 10 to get to 100.</span></p> <p></p> <p></p> <p></p> <p><span>Repeat the </span><span style=\"font-style:italic\">make 1 hundred</span><span> process, bundling all the tens as hundreds.</span></p> <p></p> <p><span><strong>T:</strong> Now that we have made as many hundreds as possible, let’s make units of </span><span style=\"font-weight:700\">one thousand</span><span>.</span></p> <p></p> <p><span><strong>T:</strong> Think about the structure and pattern of numbers as we’ve moved from ones to tens to hundreds. Then talk with your partner: How many hundreds do you think make 1 thousand? Be ready to explain why.</span></p> <p></p> <p><span><strong>S:</strong> When we count, the numbers always go 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 and then we get a new unit. There are 10 hundreds in 1 thousand because we always make one bigger group out of 10 smaller groups.</span></p> <p></p> <p><span><strong>T:</strong> Yes, 10 of a smaller unit make 1 of the next largest unit. I like the way you used what you’ve learned about the structure of numbers to figure out something new.</span></p> <p></p> <p><span><strong>T:</strong> So, how many hundreds are in 1 thousand? Give me a complete sentence.</span></p> <p></p> <p><span><strong>S:</strong> 10 hundreds are in 1 thousand!</span></p> <p></p> <p><span><strong>T:</strong> Group 3, how many hundreds do you have?</span></p> <p></p> <p><span><strong>S:</strong> 2 hundreds.</span></p> <p></p> <p><span><strong>T:</strong> Students, complete the sentence: 2 hundreds plus how many hundreds equals 10 hundreds? (Pause.)</span></p> <p></p> <p><span><strong>S:</strong> 2 hundreds plus 8 hundreds equals 10 hundreds.</span></p> <p></p> <p><span><strong>T:</strong> Hand all your hundreds over! (Bundle them up to make one thousand.)</span></p> <p></p> <p><span><strong>T:</strong> Count the hundreds for me. I’ll listen.</span></p> <p></p> <p><span><strong>S:</strong> 1 hundred, 2 hundreds, …</span></p> <p></p> <p><span><strong>T:</strong> How many hundreds do we have here?</span></p> <p></p> <p><span><strong>S:</strong> 10 hundreds!</span></p> <p></p> <p><span><strong>T:</strong> Another name for 10 hundreds is 1 thousand, a new unit!</span></p> <p></p> <p><span><strong>T:</strong> At the signal, what is the largest unit we worked with today? (Signal.)</span></p> <p></p> <p><span><strong>S:</strong> 1 thousand!</span></p> <p></p> <p><span><strong>T:</strong> The next largest?</span></p> <p></p> <p><span><strong>S:</strong> 1 hundred!</span></p> <p></p> <p><span><strong>T:</strong> The next?</span></p> <p></p> <p><span><strong>S:</strong> 1 ten!</span></p> <p></p> <p><span><strong>T:</strong> The smallest?</span></p> <p></p> <p><span><strong>S:</strong> 1 one!</span></p> <p></p> <p><span><strong>T:</strong> (Give each pair 1 straw, a bundle of 1 ten, and a bundle of 1 hundred.) Show and tell your partner our units in order from smallest to largest and largest to smallest.</span></p> <p></p> <p><span><strong>T:</strong> How many different units did we work with today?</span></p> <p></p> <p><span><strong>S:</strong> 4 units!</span></p> <p></p> <p><span><strong>T:</strong> Tell me the unit names from smallest to largest.</span></p> <p></p> <p><span><strong>S:</strong> Ones, tens, hundreds, and thousands.</span></p> </div> <p></p> <a id=\"t.4da9a934b883ae00ebbdb72ea9fa415a20040df0\"></a><a id=\"t.8\"></a> </div>  </div>\n<div class=\"o-ld-activity-wrapper \" data-id=\"4-core-l2-problem-set\" data-tag=\"activity_metadata_type_tag_91017dfeadd1f58bd987\"> <hr class=\"o-ld-hr--l2\"> <div id=\"4-core-l2-problem-set\" class=\"o-ld-activity c-ld-toc\"> <div> <div class=\"u-pdf-nobreak o-ld-activity__title u-text--uppercase cs-txt--math-base u-txt--ld-activity-kicker u-margin-bottom--xs\"> Problem Set </div> <h3 class=\"o-ld-title\"> <div class=\"o-ld-title__title o-ld-title__title--h3\"> Problem Set <div class=\"o-ld-icon__wrapper\" data-toggle=\"o-ld-p_0ea46f4f\"> <span class=\"o-ld-icon o-ld-icon--base o-ld-icon--priority1\"></span> </div> <span class=\"dropdown-pane o-ld-dropdown bottom\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"8\" id=\"o-ld-p_0ea46f4f\"> This is a Priority 1 activity that should not be skipped. It is tightly connected to the lesson objective. </span> </div> <div class=\"o-ld-title__time o-ld-title__time--h3\">12 mins</div> </h3> <div class=\"o-ld-activity__metacognition u-txt--ld-activity-teaser u-margin-bottom--base\"> <p><span>In this Problem Set, students practice drawing models of numbers up to the hundreds place, naming each place value, and saying the numbers aloud.</span></p> </div> <div class=\"o-ld-activity__guidance\"> <strong class=\"o-ld-activity__guidance--title u-text--uppercase cs-txt--math-base u-txt--title-type\">Guidance</strong> <p><span>If your students struggle with the lesson, tell them to </span><span>draw a formal place value chart from ones to thousands for each of the problems. Although the Concept Development and the associated Problem Set only include numbers up to the hundreds place value, the thousands place value will be used during the Student Debrief</span><span> and during the following lessons, so it will be helpful for them to have the thousands place in mind right now. Additionally, if your students have difficulty drawing bundles of straws that differentiate hundreds, tens, and ones, tell them to </span><span>draw </span><span>place value disks</span><span>. Place value disks are also used in later lessons.</span></p> </div> </div> </div> <div class=\"o-ld-activity o-ld-activity__source\"> <h4> </h4> <p><span>Students should do their personal best to complete the Problem Set within the allotted 10 minutes. Some problems do not specify a method for solving. This is an intentional reduction of scaffolding that invokes MP.5, Use Appropriate Tools Strategically. Students should solve these problems using the RDW approach used for Application Problems.</span></p> <p><span>For some classes, it may be appropriate to modify the assignment by specifying which problems students should work on first. With this option, let the purposeful sequencing of the Problem Set guide your selections so that problems continue to be scaffolded. Balance word problems with other problem types to ensure a range of practice. Consider assigning incomplete problems for homework or at another time during the day.</span></p> <p></p> <p></p> <p><span><div class=\"o-ld-image-wrap--math u-text--centered\"><img alt=\"\" src=\"https://lh5.googleusercontent.com/3ostBSerJERxy5DLNVoX_vZnSGe7wN1Py8nfoyUKVbRqJPq1V0NvwPJctsU2fJvVCr8MJxcgkOWlHI_dsAm2rb5Ps0-uwckcqTlNWqumkSXPezLBWEsW6UDBRrgSnVx7SASQ5bYl\" style=\"width: 428.00px; height: 474.00px; \"></div></span></p> <p></p> <div class=\"o-ld-dialogue\"> <p></p> <p></p> <p></p> <p><span><strong>Teacher:</strong> We used straws to show units of hundreds, tens, and ones. Now, let’s draw models of these units.</span></p> <p></p> <p><span><strong>T:</strong> (Draw a sample of each unit, as shown in the picture.)</span></p> <p></p> <p><span><strong>T:</strong> Draw and label 4 hundreds. Whisper count as you draw.</span></p> <p></p> <p><span><strong>Student:</strong> (Whisper count and draw as you model.)</span></p> <p></p> <p><span><strong>T:</strong> Whisper count, draw, and label 3 tens.</span></p> <p></p> <p><span><strong>S:</strong> (Whisper count and draw.)</span></p> <p></p> <p><span><strong>T:</strong> Now, whisper count, draw, and label 5 ones. If you don’t have enough room in the box, use your eraser and try again.</span></p> <p></p> <p><span><strong>S:</strong> (Whisper count and draw.)</span></p> <p></p> <p><span><strong>T:</strong> Tell me the number of each unit in order from largest to smallest.</span></p> <p></p> <p><span><strong>S:</strong> 4 hundreds, 3 tens, 5 ones.</span></p> <p></p> <p><span><strong>T:</strong> The name of that number is?</span></p> <p></p> <p><span><strong>S:</strong> 435.</span></p> <p></p> <p><span><strong>T:</strong> Yes.</span></p> <p></p> <p><span><strong>T:</strong> In the next box down, draw and label 6 hundreds, 7 tens, 3 ones.</span></p> <p></p> <p><span><strong>S:</strong> (Work.)</span></p> <p></p> <p><span><strong>T:</strong> When I say, “Show me your work,” hold up your paper so I can see your independent effort.</span></p> </div> <p></p> <p><span>Repeat the process with the following: 297 and 308.</span></p> <p></p> <p></p> </div> <div data-react-class=\"MaterialsContainer\" data-react-props='{\"activity\":{\"activity_title\":\"Problem Set\",\"activity_type\":\"Problem Set\"},\"color\":null,\"content_type\":\"none\",\"data\":[{\"anchors\":[],\"id\":58,\"identifier\":\"math-g4-u1-ta-l1-student-ps\",\"gdoc_url\":\"\",\"orientation\":\"portrait\",\"pdf_url\":\"\",\"source_type\":\"gdoc\",\"subtitle\":\"Student Handout\",\"title\":\"Problem Set\",\"thumb_url\":\"\",\"pdf\":false}],\"for_group\":null,\"lesson\":{\"lesson_grade\":\"4\",\"lesson_ld_module\":\"1\",\"lesson_subject\":\"math\",\"lesson_title\":\"Prerequisite -  Bundle ones, tens, and hundreds as well as model three-digit numbers using units of hundreds, tens, and/or ones.\",\"lesson_lesson\":\"1\",\"lesson_unit_topic\":\"A\"},\"subject\":\"math\"}'></div> </div> </div><div class=\"o-ld-group\" data-id=\"3-core-l1-closing\" data-tag=\"activity_metadata_section_tag_7bb93320904423229bff\"> <hr class=\"o-ld-hr--l1\"> <h2 id=\"3-core-l1-closing\" class=\"o-ld-title c-ld-toc \"> <div class=\"o-ld-title__title o-ld-title__title--h2\">Closing</div> <div class=\"o-ld-title__time o-ld-title__time--h2\"> 13 mins </div> </h2> <div class=\"o-ld-activity-wrapper \" data-id=\"5-core-l2-student-debrief\" data-tag=\"activity_metadata_type_tag_b0ff04d8fe4e8c643b12\"> <hr class=\"o-ld-hr--l2\"> <div id=\"5-core-l2-student-debrief\" class=\"o-ld-activity c-ld-toc\"> <div> <div class=\"u-pdf-nobreak o-ld-activity__title u-text--uppercase cs-txt--math-base u-txt--ld-activity-kicker u-margin-bottom--xs\"> Student Debrief </div> <h3 class=\"o-ld-title\"> <div class=\"o-ld-title__title o-ld-title__title--h3\"> Student Debrief <div class=\"o-ld-icon__wrapper\" data-toggle=\"o-ld-p_5a7e1661\"> <span class=\"o-ld-icon o-ld-icon--base o-ld-icon--priority1\"></span> </div> <span class=\"dropdown-pane o-ld-dropdown bottom\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"8\" id=\"o-ld-p_5a7e1661\"> This is a Priority 1 activity that should not be skipped. It is tightly connected to the lesson objective. </span> </div> <div class=\"o-ld-title__time o-ld-title__time--h3\">10 mins</div> </h3> <div class=\"o-ld-activity__metacognition u-txt--ld-activity-teaser u-margin-bottom--base\"> <p><span>The Student Debrief emphasizes the key learning that each larger unit is composed of 10 smaller units. It is important that students walk away from this debrief understanding how to bundle smaller units into larger units.</span></p> </div> <div class=\"o-ld-activity__guidance\"> <strong class=\"o-ld-activity__guidance--title u-text--uppercase cs-txt--math-base u-txt--title-type\">Guidance</strong> <p><span>Prioritize the discussion questions that get at the core of this lesson and prepare students for subsequent lessons: </span></p> <ol start=\"1\" style=\"list-style-type: decimal\"> <li><span>How many units of 1 are in 1 ten?</span></li> <li><span>How many units of 10 are in 1 hundred?</span></li> <li> <span>How many units of 100 are in 1 </span><span style=\"font-weight:700\">thousand</span><span>?</span> </li> </ol> </div> </div> </div> <div class=\"o-ld-activity o-ld-activity__source\"> <h3> </h3> <p><span style=\"font-weight:700\">Lesson Objective:</span><span> SWBAT bundle ones, tens, and hundreds as well as model three-digit numbers using units of hundreds, tens, and/or ones.</span></p> <p></p> <p><span>The Student Debrief is intended to invite reflection and active processing of the total lesson experience.</span></p> <p></p> <p><span>Invite students to review their solutions for the Problem Set. They should check work by comparing answers with a partner before going over answers as a class. Look for misconceptions or misunderstandings that can be addressed in the Student Debrief. Guide students in a conversation to debrief the Problem Set and process the lesson.</span></p> <p></p> <div class=\"o-ld-dialogue\"> <p></p> <p><span><strong>Teacher:</strong> Bring your Problem Set to the carpet.</span></p> <p></p> <p><span><strong>T:</strong> Let’s read our first number by units.</span></p> <p></p> <p><span><strong>Student:</strong> 4 hundreds, 3 tens, 5 ones.</span></p> <p></p> <p><span><strong>T:</strong> How do we say 3 tens 5 ones?</span></p> <p></p> <p><span><strong>S:</strong> Thirty-five.</span></p> <p></p> <p><span><strong>T:</strong> We read this number as four hundred thirty-five. Say it for me.</span></p> <p></p> <p><span><strong>S:</strong> Four hundred thirty-five.</span></p> <p></p> <p><span><strong>T:</strong> What happens if I add 5 ones to this number? How many ones do I have now?</span></p> <p></p> <p><span><strong>S:</strong> 10 ones.</span></p> <p></p> <p><span><strong>T:</strong> So what can I do with these 10 ones?</span></p> <p></p> <p><span><strong>S:</strong> Bundle them into a ten and move them to </span><span>t</span><span>he tens place.</span></p> <p></p> <p><span><strong>T:</strong> Bundle your tens and move them over. How many tens do we have now?</span></p> <p></p> <p><span><strong>S:</strong> 4 tens.</span></p> <p></p> <p><span><strong>T:</strong> How many hundreds, tens, and ones do we have in the new number? And how do we say it? </span></p> <p></p> <p><span><strong>S:</strong> 4 hundreds, 4 tens, and 0 ones. The number is four hundred forty. </span></p> <p></p> <p><span><strong>T:</strong> How do we say the next number down?</span></p> <p></p> <p><span><strong>S:</strong> Six hundred seventy-three.</span></p> <p></p> <p><span><strong>T:</strong> How many tens do I need to add to six hundred seventy-three to make a bundle of tens that I can move over to the hundreds place? </span></p> <p></p> <p><span><strong>S:</strong> You need 3 more tens.</span></p> <p></p> <p><span><strong>T:</strong> How do you know? </span></p> <p></p> <p><span><strong>S:</strong> You have 7 tens, and I know that 7 and 3 make 10. So you need 3 more tens. </span></p> <p></p> <p><span><strong>T:</strong> Great job. How many hundreds, tens, and ones do I have now? And how do I say this new number?</span></p> <p></p> <p><span><strong>S:</strong> You have 7 hundreds, 0 tens, and 3 ones. The number is seven hundred three. </span></p> <p></p> <p><span><strong>T:</strong> Excellent. Read the next numbers on your paper to your partner. (Allow time to do so.)</span></p> <p></p> <p><span><strong>T:</strong> For the number 297, h</span><span>ow many more tens would be necessary to compose the next unit, and what would that new number be?</span></p> <p></p> <p><span><strong>S:</strong> You need 1 ten, and the new number would be 307.</span></p> <p></p> <p><span><strong>T:</strong> For the number 308, h</span><span>ow many more one would be necessary to compose the next unit, and what would that new number be?</span></p> <p></p> <p><span><strong>S:</strong> You need 2 ones, and the new number would be 310.</span></p> <p></p> <p><span><strong>T:</strong> Discuss with your partner three questions I will write on the board:</span></p> <p></p> <ol start=\"1\" style=\"list-style-type: decimal\"> <li><span>How many units of 1 are in 1 ten?</span></li> <li><span>How many units of 10 are in 1 hundred?</span></li> <li> <span>How many units of 100 are in </span><span style=\"font-weight:700\">1 thousand</span><span>?</span> </li> </ol> <p></p> <p><span><strong>T:</strong> I hear a lot of intelligent answers. Show me what you know by completing your Exit Ticket. Return to your seat as soon as you have it. If you finish early, count by 10 on the back of your paper as high as you can go!</span></p> </div> <p></p> <a id=\"t.112309c629b0cf0dccca7b9845070ec8360cfec0\"></a><a id=\"t.12\"></a> </div>  </div>\n<div class=\"o-ld-activity-wrapper \" data-id=\"6-core-l2-exit-ticket\" data-tag=\"activity_metadata_type_tag_cb54ca341e4299b2637c\"> <hr class=\"o-ld-hr--l2\"> <div id=\"6-core-l2-exit-ticket\" class=\"o-ld-activity c-ld-toc\"> <div> <div class=\"u-pdf-nobreak o-ld-activity__title u-text--uppercase cs-txt--math-base u-txt--ld-activity-kicker u-margin-bottom--xs\"> Exit Ticket </div> <h3 class=\"o-ld-title\"> <div class=\"o-ld-title__title o-ld-title__title--h3\"> Exit Ticket <div class=\"o-ld-icon__wrapper\" data-toggle=\"o-ld-p_f1a45d4c\"> <span class=\"o-ld-icon o-ld-icon--base o-ld-icon--priority1\"></span> </div> <span class=\"dropdown-pane o-ld-dropdown bottom\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"8\" id=\"o-ld-p_f1a45d4c\"> This is a Priority 1 activity that should not be skipped. It is tightly connected to the lesson objective. </span> </div> <div class=\"o-ld-title__time o-ld-title__time--h3\">3 mins</div> </h3> <div class=\"o-ld-activity__metacognition u-txt--ld-activity-teaser u-margin-bottom--base\"> <p><span>This Exit Ticket assesses students’ understanding of bundling 10 smaller units into a larger unit, understanding the size of the unit, and modeling a number in unit form with drawings and number name.</span></p> </div> </div> </div> <div class=\"o-ld-activity o-ld-activity__source\"> <h4></h4> <p><span>After the Student Debrief, instruct students to complete the Exit Ticket. A review of their work will help with assessing students’ understanding of the concepts that were presented in today’s lesson and planning more effectively for future lessons. </span><span>The questions may be read aloud to the students.</span></p> <p></p> </div> <div data-react-class=\"MaterialsContainer\" data-react-props='{\"activity\":{\"activity_title\":\"Exit Ticket\",\"activity_type\":\"Exit Ticket\"},\"color\":null,\"content_type\":\"none\",\"data\":[{\"anchors\":[],\"id\":57,\"identifier\":\"math-g4-u1-ta-l1-student-et\",\"gdoc_url\":\"\",\"orientation\":\"portrait\",\"pdf_url\":\"\",\"source_type\":\"gdoc\",\"subtitle\":\"Student Handout\",\"title\":\"Exit Ticket\",\"thumb_url\":\"\",\"pdf\":false}],\"for_group\":null,\"lesson\":{\"lesson_grade\":\"4\",\"lesson_ld_module\":\"1\",\"lesson_subject\":\"math\",\"lesson_title\":\"Prerequisite -  Bundle ones, tens, and hundreds as well as model three-digit numbers using units of hundreds, tens, and/or ones.\",\"lesson_lesson\":\"1\",\"lesson_unit_topic\":\"A\"},\"subject\":\"math\"}'></div> </div> </div><div class=\"o-ld-group\" data-id=\"4-core-l1-homework\" data-tag=\"activity_metadata_section_tag_fcd36129579d0dc5a669\"> <hr class=\"o-ld-hr--l1\"> <h2 id=\"4-core-l1-homework\" class=\"o-ld-title c-ld-toc \"> <div class=\"o-ld-title__title o-ld-title__title--h2\">Homework</div> <div class=\"o-ld-title__time o-ld-title__time--h2\"> — </div> </h2> <div class=\"o-ld-activity-wrapper \" data-id=\"7-core-l2-homework\" data-tag=\"activity_metadata_type_tag_ebc474920ef11659ba41\"> <hr class=\"o-ld-hr--l2\"> <div id=\"7-core-l2-homework\" class=\"o-ld-activity c-ld-toc\"> <div> <div class=\"u-pdf-nobreak o-ld-activity__title u-text--uppercase cs-txt--math-base u-txt--ld-activity-kicker u-margin-bottom--xs\"> Homework </div> <h3 class=\"o-ld-title\"> <div class=\"o-ld-title__title o-ld-title__title--h3\"> Homework </div> <div class=\"o-ld-title__time o-ld-title__time--h3\">—</div> </h3> <div class=\"o-ld-activity__metacognition u-txt--ld-activity-teaser u-margin-bottom--base\"> <p><span>This Homework set gives students the opportunity to bundle units into larger units and find the total number given a representation of groups of straws.</span></p> </div> </div> </div>  <div data-react-class=\"MaterialsContainer\" data-react-props='{\"activity\":{\"activity_title\":\"Homework\",\"activity_type\":\"Homework\"},\"color\":null,\"content_type\":\"none\",\"data\":[{\"anchors\":[],\"id\":56,\"identifier\":\"math-g4-u1-ta-l1-student-hw\",\"gdoc_url\":\"\",\"orientation\":\"portrait\",\"pdf_url\":\"\",\"source_type\":\"gdoc\",\"subtitle\":\"Student Handout\",\"title\":\"Homework\",\"thumb_url\":\"\",\"pdf\":false}],\"for_group\":null,\"lesson\":{\"lesson_grade\":\"4\",\"lesson_ld_module\":\"1\",\"lesson_subject\":\"math\",\"lesson_title\":\"Prerequisite -  Bundle ones, tens, and hundreds as well as model three-digit numbers using units of hundreds, tens, and/or ones.\",\"lesson_lesson\":\"1\",\"lesson_unit_topic\":\"A\"},\"subject\":\"math\"}'></div> </div> </div><div class=\"o-ld-group\" data-id=\"5-core-l1-foundational-skills\" data-tag=\"activity_metadata_section_tag_bff021ed3917661a0929\"> <div class=\"o-ld-foundational-divider\"> <div class=\"o-ld-foundational-divider__delimeter\"></div> <div class=\"o-ld-foundational-divider__block\">Foundational Skills Lesson</div> <div class=\"o-ld-foundational-divider__delimeter\"></div> </div> <h2 id=\"5-core-l1-foundational-skills\" class=\"o-ld-title c-ld-toc c-foundational-section\"> <div class=\"o-ld-title__title o-ld-title__title--h2\">Foundational Skills</div> <div class=\"o-ld-title__time o-ld-title__time--h2\"> 30 mins </div> </h2> <p></p> <p><span>SWBAT make a 10 and find the next 10: composition and decomposition of numbers and relating composition and decomposition to addition and subtraction.</span></p> <p> <strong>Standards: </strong> <span class=\"c-ld-keyword\" data-toggle=\"cg-k_a0382c61\">2.OA.B.2</span> <span class=\"dropdown-pane o-ld-dropdown\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"12\" id=\"cg-k_a0382c61\"> <b>2.OA.B.2</b><br> <span>Fluently add and subtract within 20 using mental strategies. By end of Grade 2, know from memory all sums of two one-digit numbers.</span> </span> </p> <div class=\"o-ld-activity-wrapper o-ld-activity-foundational-skills\" data-id=\"8-core-l2-happy-counting-the-say-ten-way\" data-tag=\"activity_metadata_type_tag_b67245201ec0cd6f55c4\"> <hr class=\"o-ld-hr--l2\"> <div id=\"8-core-l2-happy-counting-the-say-ten-way\" class=\"o-ld-activity c-ld-toc\"> <div> <div class=\"u-pdf-nobreak o-ld-activity__title u-text--uppercase cs-txt--math-base u-txt--ld-activity-kicker u-margin-bottom--xs\"> Fluency Practice </div> <h3 class=\"o-ld-title\"> <div class=\"o-ld-title__title o-ld-title__title--h3\"> Happy Counting the Say Ten Way <div class=\"o-ld-icon__wrapper\" data-toggle=\"o-ld-p_9bc6613b\"> <span class=\"o-ld-icon o-ld-icon--base o-ld-icon--priority1\"></span> </div> <span class=\"dropdown-pane o-ld-dropdown bottom\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"8\" id=\"o-ld-p_9bc6613b\"> This is a Priority 1 activity that should not be skipped. It is tightly connected to the lesson objective. </span> </div> <div class=\"o-ld-title__time o-ld-title__time--h3\">10 mins</div> </h3> <div class=\"o-ld-activity__metacognition u-txt--ld-activity-teaser u-margin-bottom--base\"> <p><span>This Fluency Activity focuses on decomposing numbers into tens and ones and relating the decomposition to addition. Together, these skills support addition and subtraction using place value strategies.</span></p> </div> <p> <strong>Standards: </strong> <span class=\"c-ld-keyword\" data-toggle=\"cg-k_012120ca\">2.OA.B.2</span> <span class=\"dropdown-pane o-ld-dropdown\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"12\" id=\"cg-k_012120ca\"> <b>2.OA.B.2</b><br> <span>Fluently add and subtract within 20 using mental strategies. By end of Grade 2, know from memory all sums of two one-digit numbers.</span> </span> </p> </div> </div> <div class=\"o-ld-activity o-ld-activity__source\"> <h4> </h4> <p><span>Materials: (T) Hide Zero Cards Template</span></p> <p></p> <p><span>Note: East Asian or Say Ten counting (e.g., 13 is said </span><span style=\"font-style:italic\">ten 3</span><span>) matches the base ten structure of numbers. In contrast, the English language says the ten </span><span style=\"font-style:italic\">after</span><span> the ones (e.g., </span><span style=\"font-style:italic\">four-teen</span><span>). This makes </span><span style=\"font-style:italic\">fourteen</span><span> easily confused with </span><span style=\"font-style:italic\">forty</span><span>. Since Kindergarten, in </span><span style=\"font-style:italic\">A Story of Units,</span><span> students have been counting the Say Ten way, a practice substantiated by research. (</span><span>Progressions for the Common Core Standards: “K-5, Numbers and Operations in Base Ten”; </span><span style=\"\"><a href=\"https://www.google.com/url?q=http://commoncoretools.me/wp-content/uploads/2015/03/ccss_progression_nbp_k5_2015_03_16.pdf&amp;sa=D&amp;ust=1517848859806000&amp;usg=AFQjCNE73Ru-F8hatr2G7hROFhUUEruKNQ\" target=\"_blank\">pp. 5</a></span><span>)</span></p> <p></p> <h5><span style=\"font-weight:700;\">Part 1: Say Ten Counting with the Hide Zero Cards</span></h5> <p></p> <p><span><div class=\"o-ld-image-wrap--math u-text--centered\"><img alt=\"\" src=\"https://lh5.googleusercontent.com/_IZVSflYjzqqSvFXK3xlJdRmILc3cm8pMIem0y6JTQTz8K5OKQVEfHflzD7523SlfTneGMpBalh-c2wytQIO_Ny9uFnITRK4qlDEnuW-LIYcg7ycDxGL7O6-CgBAtrcc1jmzVTW9\" style=\"width: 212.00px; height: 75.00px; \"></div></span></p> <div class=\"o-ld-dialogue\"> <p></p> <p></p> <p></p> <p><span><strong>Teacher:</strong> (Show 11 with the Hide Zero cards. Pull them apart to show the 10 and the 1. Repeat silently with 15 and 19.) </span></p> <p></p> <p><span><strong>T:</strong> (Show 12 with Hide Zero cards.) Say the number the regular way? </span></p> <p></p> <p><span><strong>Student:</strong> 12.</span></p> <p></p> <p><span><strong>T:</strong> (Pull cards apart.) The Say Ten way? </span></p> <p></p> <p><span><strong>S:</strong> Ten 2.</span></p> <p></p> <p><span><strong>T:</strong> (Show 13.) The Say Ten way? </span></p> <p></p> <p><span><strong>S:</strong> Ten 3.</span></p> <p></p> <p><span><strong>T:</strong> The regular way?</span></p> <p></p> <p><span><strong>S:</strong> 13.</span></p> <p></p> <p><span><strong>T:</strong> Let’s Say Ten count starting from 15 to 19.</span></p> <p></p> <p><span><strong>S:</strong> Ten 5, ten 6, ten 7, ten 8, ten 9.</span></p> <p></p> <p><span><strong>T:</strong> What comes after ten 9?</span></p> <p></p> <p><span><strong>S:</strong> 2 tens.</span></p> <p></p> <p><span><strong>T:</strong> That’s right. Continue counting to 25 using the Say Ten Way.</span></p> <p></p> <p><span><strong>S:</strong> 2 tens 1, 2 tens 2, 2 tens 3, 2 tens 4, 2 tens 5.</span></p> <p></p> <p><span><strong>T:</strong> Let’s start with a new number. (Use Hide Zero cards to show 47.)</span></p> <p></p> <p><span><strong>T:</strong> How much do I have?</span></p> <p></p> <p><span><strong>S:</strong> 47.</span></p> <p></p> <p><span><strong>T:</strong> What is 47 the Say Ten way? </span></p> <p></p> <p><span><strong>S:</strong> 4 </span><span>tens 7.</span></p> </div> <p></p> <p><span>For about 2 minutes, students count up and down within 100. Each 20 to 30 seconds, begin a new counting sequence starting from a larger decade. While moving up and down, cross over tens frequently (e.g., 38, 39, 40, 41, 40, 39 or 83, 82, 81, 80, 79, 78, 79, 80, 81) as this is more challenging, especially counting down.</span></p> <h5><span style=\"font-weight:700;\">Part 2: Happy Counting</span></h5> <p></p> <p><span><div class=\"o-ld-image-wrap--math u-text--centered\"><img alt=\"Screen Shot 2017-04-30 at 10.07.50 AM.png\" src=\"https://lh3.googleusercontent.com/5jYXf6aIj9DAjkQ-JJycaW7em6RJ6bMMHG-qwrlXyP2JJ_-JWKavskrtt5dvoamRW99RGoyw8IjTc9PPAgCINmcvgbmKw1rDNEy9NQm9O028lWaom5Sots8vZPhkPdvfNuw1pXgt\" style=\"width: 591.00px; height: 96.00px; \"></div></span></p> <p><span>Note: When Happy Counting, make the motions emphatic so counting is sharp and crisp. As students improve, up the challenge by increasing the speed and the number of direction changes or by using higher numbers. Be careful not to mouth the numbers!</span></p> <p></p> <div class=\"o-ld-dialogue\"> <p></p> <p><span><strong>Teacher:</strong> Now, let’s do some Happy Counting. Watch my thumb to know whether to count up or down. A thumb in the middle means pause. (Show signals as you explain.)</span></p> <p></p> <p><span><strong>T:</strong> Let’s count by ones starting at ten 3. Ready? (Rhythmically point up or down depending on if you want students to count up or count down.)</span></p> <p></p> <p><span><strong>Student:</strong> Ten 3, ten 4, ten 5, ten 6, (pause) ten 5, ten 4, (pause) ten 5, ten 6, ten 7, ten 8, (pause) ten 7, (pause) ten 8, ten 9, 2 tens.</span></p> <p></p> <p><span><strong>T:</strong> Follow my hand as we Happy Count. Watch my thumb.</span></p> <p></p> <p><span><strong>T:</strong> Let’s start at 2 tens 8. (Stop before students start to lose enthusiasm, after about 1 minute.)</span></p> <p></p> <p><span><strong>T:</strong> Excellent! Try it with your partner. Partner A, you are the teacher today. I’ll give you 30 seconds.</span></p> <p></p> <p></p> <p></p> <p><span>Ask students to share the number sentences for the following numbers.</span></p> <p></p> <p><span><strong>T:</strong> Let’s share number sentences that break apart two-digit numbers into tens and ones. (Show 28 on the Rekenrek and with Hide Zero cards.) I say 2 tens 8, and you say 20 + 8 = 28. (Break apart Hide Zero cards to show 20 and 8.)</span></p> <p></p> <p><span><strong>T:</strong> 2 tens 8.</span></p> <p></p> <p><span><strong>S:</strong> 20 + 8 = 28.</span></p> <p></p> <p><span><strong>T:</strong> (Write 20 + 8 = 28.)</span></p> <p></p> <p><span><strong>T:</strong> 5 tens 3.</span></p> <p></p> <p><span><strong>S:</strong> 50 + 3 = 53.</span></p> <p></p> <p><span><strong>T:</strong> (Write 50 + 3 = 53.)</span></p> </div> <p></p> <p><span>Use the following suggested sequence: 36, 19, 58, 77, 89, 90. </span></p> <p></p> </div> <div data-react-class=\"MaterialsContainer\" data-react-props='{\"activity\":{\"activity_title\":\"Happy Counting the Say Ten Way\",\"activity_type\":\"Fluency Practice\"},\"color\":null,\"content_type\":\"none\",\"data\":[{\"anchors\":[],\"id\":12,\"identifier\":\"math-hide-zero-cards-template-teacher\",\"gdoc_url\":\"\",\"orientation\":\"portrait\",\"pdf_url\":\"\",\"source_type\":\"gdoc\",\"subtitle\":\"Classroom Materials\",\"title\":\"(T) Hide Zero Cards Template\",\"thumb_url\":\"\",\"pdf\":false}],\"for_group\":null,\"lesson\":{\"lesson_grade\":\"4\",\"lesson_ld_module\":\"1\",\"lesson_subject\":\"math\",\"lesson_title\":\"Prerequisite -  Bundle ones, tens, and hundreds as well as model three-digit numbers using units of hundreds, tens, and/or ones.\",\"lesson_lesson\":\"1\",\"lesson_unit_topic\":\"A\"},\"subject\":\"math\"}'></div> </div>\n<div class=\"o-ld-activity-wrapper o-ld-activity-foundational-skills\" data-id=\"9-core-l2-ten-frame-flash\" data-tag=\"activity_metadata_type_tag_bd6b1af83e3578648e3c\"> <hr class=\"o-ld-hr--l2\"> <div id=\"9-core-l2-ten-frame-flash\" class=\"o-ld-activity c-ld-toc\"> <div> <div class=\"u-pdf-nobreak o-ld-activity__title u-text--uppercase cs-txt--math-base u-txt--ld-activity-kicker u-margin-bottom--xs\"> Fluency Practice </div> <h3 class=\"o-ld-title\"> <div class=\"o-ld-title__title o-ld-title__title--h3\"> Ten-Frame Flash <div class=\"o-ld-icon__wrapper\" data-toggle=\"o-ld-p_0de20eaa\"> <span class=\"o-ld-icon o-ld-icon--base o-ld-icon--priority2\"></span> </div> <span class=\"dropdown-pane o-ld-dropdown bottom\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"8\" id=\"o-ld-p_0de20eaa\"> This is a Priority 2 activity that can be skipped if running short on time. It is less tightly connected to the lesson objective. It might be designed as an extension or to ensure maintenance of prior skills. </span> </div> <div class=\"o-ld-title__time o-ld-title__time--h3\">5 mins</div> </h3> <div class=\"o-ld-activity__metacognition u-txt--ld-activity-teaser u-margin-bottom--base\"> <p><span>This Fluency </span><span>Activity prepares students to </span><span>identify partners of ten in the following activities. Students work to visually identify the combinations of ten using a ten-frame. </span></p> </div> <div class=\"o-ld-activity__guidance\"> <strong class=\"o-ld-activity__guidance--title u-text--uppercase cs-txt--math-base u-txt--title-type\">Guidance</strong> <p><span>This is a priority 2 activity. If you do not have time to complete this activity during the Foundational Skills block, incorporate this activity as practice when you have free time throughout the day (e.g., during transition, during morning meeting, etc.) to help students build fluency with partners of ten to be used throughout this unit.</span></p> </div> <p> <strong>Standards: </strong> <span class=\"c-ld-keyword\" data-toggle=\"cg-k_6eb6bb57\">2.OA.B.2</span>, <span class=\"dropdown-pane o-ld-dropdown\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"12\" id=\"cg-k_6eb6bb57\"> <b>2.OA.B.2</b><br> <span>Fluently add and subtract within 20 using mental strategies. By end of Grade 2, know from memory all sums of two one-digit numbers.</span> </span> <span class=\"c-ld-keyword\" data-toggle=\"cg-k_15eac157\">MP.8</span> <span class=\"dropdown-pane o-ld-dropdown\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"12\" id=\"cg-k_15eac157\"> <b>MP.8</b><br> <span>Look for and express regularity in repeated reasoning.</span> </span> </p> </div> </div> <div class=\"o-ld-activity o-ld-activity__source\"> <h4> </h4> <p><span>Materials: (T) Ten-frame Cards </span><span>Template</span><span>, (T) 5-group Column Cards Template</span></p> <p></p> <p><span>Note: By alternating between ten-frame and 5-groups column cards, students develop flexible perception of numbers 6–10 in two parts, with one part as 5.</span></p> <p></p> <div class=\"o-ld-smp\"> <div class=\"o-ld-smp__content\"> <p><span>The teacher flashes a ten-frame card for 2–3 seconds and guides students to respond on a signal. Students then generate a number sentence to get to 10.</span></p> <div class=\"o-ld-dialogue\"> <p></p> <p><span><strong>Teacher:</strong> (Flash the 9 ten-frame card. Give the</span><span> s</span><span>ignal.)</span></p> <p></p> <p><span><strong>Student:</strong> 9.</span></p> <p></p> <p><span><strong>T:</strong> How much does 9 need to make 10?</span></p> <p></p> <p><span><strong>S:</strong> 1.</span></p> <p></p> <p><span><strong>T:</strong> Say the addition number sentence to make 10, starting with 9.</span></p> <p></p> <p><span><strong>S:</strong> 9 + 1 = 10.</span></p> <p></p> <p><span><strong>T:</strong> (Continue to show the 9 card.) Tell me a related subtraction sentence starting with 10.</span></p> <p></p> <p><span><strong>S:</strong> 10 – 1 = 9. 10 – 9= 1.</span></p> </div> </div> <div class=\"o-ld-smp__lines\"> <div class=\"o-ld-smp-bracket\"></div> <div class=\"o-ld-smp-figure\"> <p class=\"o-ld-smp-figure__name\">MP.8</p> </div> </div> </div> <p></p> <p><span>Continue the process, using both ten-frame cards and 5-group column cards in the following suggested sequence: 8, 2, 5, 7, 3, 6, 4, 10, and 0.</span></p> <p></p> </div> <div data-react-class=\"MaterialsContainer\" data-react-props='{\"activity\":{\"activity_title\":\"Ten-Frame Flash\",\"activity_type\":\"Fluency Practice\"},\"color\":null,\"content_type\":\"none\",\"data\":[{\"anchors\":[],\"id\":8,\"identifier\":\"math-ten-frame-cards-template-teacher\",\"gdoc_url\":\"\",\"orientation\":\"portrait\",\"pdf_url\":\"\",\"source_type\":\"gdoc\",\"subtitle\":\"Classroom Materials\",\"title\":\"(T) Ten Frame Cards Template\",\"thumb_url\":\"\",\"pdf\":false},{\"anchors\":[],\"id\":11,\"identifier\":\"math-five-group-column-cards-template-teacher\",\"gdoc_url\":\"\",\"orientation\":\"portrait\",\"pdf_url\":\"\",\"source_type\":\"gdoc\",\"subtitle\":\"Classroom Materials\",\"title\":\"(T) Five-Group Column Cards Template\",\"thumb_url\":\"\",\"pdf\":false}],\"for_group\":null,\"lesson\":{\"lesson_grade\":\"4\",\"lesson_ld_module\":\"1\",\"lesson_subject\":\"math\",\"lesson_title\":\"Prerequisite -  Bundle ones, tens, and hundreds as well as model three-digit numbers using units of hundreds, tens, and/or ones.\",\"lesson_lesson\":\"1\",\"lesson_unit_topic\":\"A\"},\"subject\":\"math\"}'></div> </div>\n<div class=\"o-ld-activity-wrapper o-ld-activity-foundational-skills\" data-id=\"10-core-l2-target-practice-within-10\" data-tag=\"activity_metadata_type_tag_39d97f85aa443f624bc4\"> <hr class=\"o-ld-hr--l2\"> <div id=\"10-core-l2-target-practice-within-10\" class=\"o-ld-activity c-ld-toc\"> <div> <div class=\"u-pdf-nobreak o-ld-activity__title u-text--uppercase cs-txt--math-base u-txt--ld-activity-kicker u-margin-bottom--xs\"> Fluency Practice </div> <h3 class=\"o-ld-title\"> <div class=\"o-ld-title__title o-ld-title__title--h3\"> Target Practice: Within 10 <div class=\"o-ld-icon__wrapper\" data-toggle=\"o-ld-p_0118fb67\"> <span class=\"o-ld-icon o-ld-icon--base o-ld-icon--priority1\"></span> </div> <span class=\"dropdown-pane o-ld-dropdown bottom\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"8\" id=\"o-ld-p_0118fb67\"> This is a Priority 1 activity that should not be skipped. It is tightly connected to the lesson objective. </span> </div> <div class=\"o-ld-title__time o-ld-title__time--h3\">7 mins</div> </h3> <div class=\"o-ld-activity__metacognition u-txt--ld-activity-teaser u-margin-bottom--base\"> <p><span>In this Fluency Activity, students focus on finding pairs of ten. Finding pairs of ten (and other single-digit numbers) is important for building fact fluency and composition and decomposition strategies for addition and subtraction within 20 (2.OA.B.2). This skill supports students being able to efficiently apply the standard algorithm (4.NBT.B.4) toward the end of this unit. </span></p> </div> <p> <strong>Standards: </strong> <span class=\"c-ld-keyword\" data-toggle=\"cg-k_b050b7f0\">2.OA.B.2</span> <span class=\"dropdown-pane o-ld-dropdown\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"12\" id=\"cg-k_b050b7f0\"> <b>2.OA.B.2</b><br> <span>Fluently add and subtract within 20 using mental strategies. By end of Grade 2, know from memory all sums of two one-digit numbers.</span> </span> </p> </div> </div> <div class=\"o-ld-activity o-ld-activity__source\"> <h4> </h4> <p><span>Materials: (S) Per set of partners: personal white board, (T) Target Practice Template, 1 numeral die</span></p> <p></p> <p><span>Assign Partner A and Partner B. Students write the target number, 10, in the circle at the top right of the target practice template.</span></p> <p></p> <p><span>Directions:</span></p> <ul> <li><span>Partner A rolls the die.</span></li> <li><span>Partner A writes the number rolled in one part of the first number bond.</span></li> <li><span>Partner B makes a bull’s eye by writing the missing part that is needed to make ten.</span></li> </ul> <p></p> <div class=\"o-ld-callout o-ld-callout--math\"> <h4 class=\"o-ld-callout__header\">NOTES ON MULTIPLE MEANS OF ACTION AND REPRESENTATION</h4> <div class=\"o-ld-callout__content\"> <p><span>For students who have not yet mastered their pairs to ten, use fingers as models. Have students show the larger addend on their fingers and encourage them to look at their tucked fingers to determine the partner to make ten.</span></p> </div> </div>\n<p><span>Adjust the target number as appropriate for each pair of students, focusing on totals of 6, 7, 8, 9, and 10. </span></p> <a id=\"t.c35692d502931ae05e68a2e53b53ec4a81127fe7\"></a><a id=\"t.23\"></a> <p></p> </div> <div data-react-class=\"MaterialsContainer\" data-react-props='{\"activity\":{\"activity_title\":\"Target Practice: Within 10\",\"activity_type\":\"Fluency Practice\"},\"color\":null,\"content_type\":\"none\",\"data\":[{\"anchors\":[],\"id\":10,\"identifier\":\"math-target-practice-template-teacher\",\"gdoc_url\":\"\",\"orientation\":\"portrait\",\"pdf_url\":\"\",\"source_type\":\"gdoc\",\"subtitle\":\"Classroom Materials\",\"title\":\"(T) Target Practice Template\",\"thumb_url\":\"\",\"pdf\":false}],\"for_group\":null,\"lesson\":{\"lesson_grade\":\"4\",\"lesson_ld_module\":\"1\",\"lesson_subject\":\"math\",\"lesson_title\":\"Prerequisite -  Bundle ones, tens, and hundreds as well as model three-digit numbers using units of hundreds, tens, and/or ones.\",\"lesson_lesson\":\"1\",\"lesson_unit_topic\":\"A\"},\"subject\":\"math\"}'></div> </div>\n<div class=\"o-ld-activity-wrapper o-ld-activity-foundational-skills\" data-id=\"11-core-l2-make-the-next-ten\" data-tag=\"activity_metadata_type_tag_4e74fda8c6dadb8abd61\"> <hr class=\"o-ld-hr--l2\"> <div id=\"11-core-l2-make-the-next-ten\" class=\"o-ld-activity c-ld-toc\"> <div> <div class=\"u-pdf-nobreak o-ld-activity__title u-text--uppercase cs-txt--math-base u-txt--ld-activity-kicker u-margin-bottom--xs\"> Fluency Practice </div> <h3 class=\"o-ld-title\"> <div class=\"o-ld-title__title o-ld-title__title--h3\"> Make the Next Ten <div class=\"o-ld-icon__wrapper\" data-toggle=\"o-ld-p_f9bafca0\"> <span class=\"o-ld-icon o-ld-icon--base o-ld-icon--priority1\"></span> </div> <span class=\"dropdown-pane o-ld-dropdown bottom\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"8\" id=\"o-ld-p_f9bafca0\"> This is a Priority 1 activity that should not be skipped. It is tightly connected to the lesson objective. </span> </div> <div class=\"o-ld-title__time o-ld-title__time--h3\">8 mins</div> </h3> <div class=\"o-ld-activity__metacognition u-txt--ld-activity-teaser u-margin-bottom--base\"> <p><span>In this Fluency Activity, students focus on making the connection between pairs of 10 and finding the next 10,</span><span> which supports them with fluency with addition.</span></p> </div> <div class=\"o-ld-activity__guidance\"> <strong class=\"o-ld-activity__guidance--title u-text--uppercase cs-txt--math-base u-txt--title-type\">Guidance</strong> <p><span>Be sure to make the connection between pairs of 10 and finding the next 10 explicit (e.g., how does knowing that 8 needs 2 to make ten help us know how to get from 28 to the next ten?). Relate finding the next 10 to an addition sentence. For example, have your students say the addition sentence for finding the next 10 for each number: 28 → 28 + 2 = 30.</span></p> </div> <p> <strong>Standards: </strong> <span class=\"c-ld-keyword\" data-toggle=\"cg-k_fe5d1ac9\">2.OA.B.2</span> <span class=\"dropdown-pane o-ld-dropdown\" data-dropdown data-hover=\"true\" data-hover-delay=\"0\" data-hover-pane=\"true\" data-v-offset=\"12\" id=\"cg-k_fe5d1ac9\"> <b>2.OA.B.2</b><br> <span>Fluently add and subtract within 20 using mental strategies. By end of Grade 2, know from memory all sums of two one-digit numbers.</span> </span> </p> </div> </div> <div class=\"o-ld-activity o-ld-activity__source\"> <h4> </h4> <div class=\"o-ld-dialogue\"> <p></p> <p><span><strong>Teacher:</strong> I’ll say a number, and you tell me what it needs to make the next 10.</span></p> <p></p> <p><span><strong>T:</strong> 8. Get ready. </span></p> <p></p> <p><span><strong>Student:</strong> 2.</span></p> <p></p> <p><span><strong>T:</strong> 28. </span></p> <p></p> <p><span><strong>S:</strong> 2.</span></p> <p></p> <p><span><strong>T:</strong> 58.</span></p> <p></p> <p><span><strong>S:</strong> 2.</span></p> <p></p> <p><span>Continue the process using the following possible sequence: 7, 27, 67, 87.</span></p> <p></p> <p><span><strong>T:</strong> With your partner, take turns saying pairs to make 10, 20, 30, 40, 50, 60, 70, 80, 90, or 100. It’s your choice. Partner A, you will go first for now.</span></p> <p></p> <p><span>After about 30 seconds, have partners switch roles. Keep it fun and joyful!</span></p> <p></p> <p><span><strong>T:</strong> How does knowing that 8 needs 2 to make ten help us know how to get from 28 to the next ten?</span></p> </div> <div><p></p></div> </div>  </div> </div>",
   "forTopic": {
-    "@type": "http://oerschema.org/Topic",
+    "@type": "oer:Topic",
     "@id": "http://pilot.unbounded.org/math",
     "name": "Mathematics"
   },
-  "hasComponent": [
+  "hasPart": [
     {
-      "@type": "http://oerschema.org/SupportingMaterial",
-      "@id": "https://ubpilot-uploads.s3.amazonaws.com/attachments/4503/math-g4-m1-topic-a-lesson-1.pdf",
-      "forComponent": {
-        "@id": "http://pilot.unbounded.org/documents/25"
-      },
-      "additionalType": "http://schema.org/DigitalDocument",
+      "@type": ["oer:SupportingMaterial", "DigitalDocument"],
+      "@id": "#supportingmaterial4503",
       "name": "Grade 4 Mathematics Module 1, Topic A, Lesson 1",
-      "sameAs": "http://pilot.unbounded.org/downloads/4503?slug=math%2Fgrade-4%2Fmodule-1%2Ftopic-a%2Flesson-1",
-      "schema:identifier": 4503,
-      "schema:dateCreated": "2015-10-23T00:35:46.162Z",
-      "schema:dateModified": "2015-10-23T00:35:46.162Z",
-      "schema:url": "https://ubpilot-uploads.s3.amazonaws.com/attachments/4503/math-g4-m1-topic-a-lesson-1.pdf",
-      "schema:fileFormat": "application/pdf",
-      "schema:educationalUse": "Downloadable File"
+      "url": "https://ubpilot-uploads.s3.amazonaws.com/attachments/4503/math-g4-m1-topic-a-lesson-1.pdf",
+      "fileFormat": "application/pdf",
     },
     {
-      "@type": "http://oerschema.org/SupportingMaterial",
-      "@id": "https://ubpilot-uploads.s3.amazonaws.com/attachments/4502/math-g4-m1-topic-a-lesson-1.docx",
-      "forComponent": {
-        "@id": "http://pilot.unbounded.org/documents/25"
-      },
-      "additionalType": "http://schema.org/DigitalDocument",
+      "@type": ["oer:SupportingMaterial", "DigitalDocument"],
+      "@id": "#supportingmaterial4502",
       "name": "Grade 4 Mathematics Module 1, Topic A, Lesson 1",
-      "sameAs": "http://pilot.unbounded.org/downloads/4502?slug=math%2Fgrade-4%2Fmodule-1%2Ftopic-a%2Flesson-1",
-      "schema:identifier": 4502,
-      "schema:dateCreated": "2015-10-23T00:35:46.156Z",
-      "schema:dateModified": "2015-10-23T00:35:46.156Z",
-      "schema:url": "https://ubpilot-uploads.s3.amazonaws.com/attachments/4502/math-g4-m1-topic-a-lesson-1.docx",
-      "schema:fileFormat": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-      "schema:educationalUse": "Downloadable File"
+      "url": "https://ubpilot-uploads.s3.amazonaws.com/attachments/4502/math-g4-m1-topic-a-lesson-1.docx",
+      "fileFormat": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
     },
     {
-      "@type": "http://oerschema.org/SupportingMaterial",
-      "@id": "http://pilot.unbounded.org/materials/12",
-      "forComponent": {
-        "@id": "http://pilot.unbounded.org/documents/25"
-      },
-      "name": "(T) Hide Zero Cards Template",
-      "alternateName": "MATH-hide-zero-cards-template-teacher",
-      "schema:identifier": 12,
-      "schema:educationalUse": "Material",
-      "schema:learningResourceType": "Classroom Materials"
-    },
-    {
-      "@type": "http://oerschema.org/SupportingMaterial",
-      "@id": "http://pilot.unbounded.org/materials/58",
-      "forComponent": {
-        "@id": "http://pilot.unbounded.org/documents/25"
-      },
-      "name": "Problem Set",
-      "alternateName": "MATH-G4-U1-TA-L1-Student-PS",
-      "schema:identifier": 58,
-      "schema:educationalUse": "Material",
-      "schema:learningResourceType": "Student Handout"
-    },
-    {
-      "@type": "http://oerschema.org/SupportingMaterial",
-      "@id": "http://pilot.unbounded.org/materials/57",
-      "forComponent": {
-        "@id": "http://pilot.unbounded.org/documents/25"
-      },
-      "name": "Exit Ticket",
-      "alternateName": "MATH-G4-U1-TA-L1-Student-ET",
-      "schema:identifier": 57,
-      "schema:educationalUse": "Material",
-      "schema:learningResourceType": "Student Handout"
-    },
-    {
-      "@type": "http://oerschema.org/SupportingMaterial",
-      "@id": "http://pilot.unbounded.org/materials/56",
-      "forComponent": {
-        "@id": "http://pilot.unbounded.org/documents/25"
-      },
-      "name": "Homework",
-      "alternateName": "MATH-G4-U1-TA-L1-Student-HW",
-      "schema:identifier": 56,
-      "schema:educationalUse": "Material",
-      "schema:learningResourceType": "Student Handout"
-    },
-    {
-      "@type": "http://oerschema.org/SupportingMaterial",
-      "@id": "http://pilot.unbounded.org/materials/8",
-      "forComponent": {
-        "@id": "http://pilot.unbounded.org/documents/25"
-      },
-      "name": "(T) Ten Frame Cards Template",
-      "alternateName": "MATH-ten-frame-cards-template-teacher",
-      "schema:identifier": 8,
-      "schema:educationalUse": "Material",
-      "schema:learningResourceType": "Classroom Materials"
-    },
-    {
-      "@type": "http://oerschema.org/SupportingMaterial",
-      "@id": "http://pilot.unbounded.org/materials/11",
-      "forComponent": {
-        "@id": "http://pilot.unbounded.org/documents/25"
-      },
-      "name": "(T) Five-Group Column Cards Template",
-      "alternateName": "MATH-five-group-column-cards-template-teacher",
-      "schema:identifier": 11,
-      "schema:educationalUse": "Material",
-      "schema:learningResourceType": "Classroom Materials"
-    },
-    {
-      "@type": "http://oerschema.org/SupportingMaterial",
-      "@id": "http://pilot.unbounded.org/materials/10",
-      "forComponent": {
-        "@id": "http://pilot.unbounded.org/documents/25"
-      },
-      "name": "(T) Target Practice Template",
-      "alternateName": "MATH-target-practice-template-teacher",
-      "schema:identifier": 10,
-      "schema:educationalUse": "Material",
-      "schema:learningResourceType": "Classroom Materials"
+      "@type": ["oer:SupportingMaterial", "DigitalDocument"],
+      "@id": "#supportingmaterial12",
+      "url": "http://pilot.unbounded.org/materials/12",
     }
   ],
-  "duration": 60,
   "cc:license": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
   "cc:attributionName": "This work is based on an original work of Great Minds and licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. UnboundEd is not affiliated with the copyright holder of this work."
 }

@@ -1,16 +1,18 @@
 # Unit
 
-- type: [http://oerschema.org/Unit/](http://oerschema.org/Unit/)
+- type: [http://oerschema.org/Unit/](http://oerschema.org/Unit/) & [http://schema.org/Course](http://schema.org/Course)
 - extends:
     - [http://oerschema.org/InstructionalPattern](http://oerschema.org/InstructionalPattern) => [http://oerschema.org/LearningComponent](http://oerschema.org/LearningComponent)
     - [http://oerschema.org/Resource/](http://oerschema.org/Resource/)
-    - [http://oerschema.org/CreativeWork](http://oerschema.org/CreativeWork) => [http://schema.org/CreativeWork](http://schema.org/CreativeWork)
-    - [http://oerschema.org/Thing](http://oerschema.org/Thing) => [http://schema.org/Thing](http://schema.org/Thing)
+    - [http://oerschema.org/CreativeWork](http://oerschema.org/CreativeWork) & [http://schema.org/CreativeWork](http://schema.org/CreativeWork)
+    - [http://oerschema.org/Thing](http://oerschema.org/Thing) & [http://schema.org/Thing](http://schema.org/Thing)
     - [https://creativecommons.org/ns#Work](https://creativecommons.org/ns#Work)
-- parentOf: `Lesson`, `Assessment` and `SupportingMaterial`
-- childOf: `Course`
+- parentOf: `oer:Lesson`
+- childOf: `oer:Course`, `oer:Module`
 
-A Unit is a sub-group of lessons. Units typically include a smaller collection of Lessons than a Module would.
+A Unit is a grouping of lessons. Units typically include a smaller collection of Lessons than a Module would.
+
+oer:Unit meets the definition of schema.org/Course, i.e. it is "a sequence of one or more educational events and/or creative works which aims to build knowledge, competence or ability of learners". This means that resources that are units should be typed as oer:Unit and schema.org/Course. The schema.org learningResourceType property with a value of "Unit" should be used to indicate the type of course to systems that understand schema.org but not the OER Schema terms used by OCX.
 
 Examples:
 
@@ -22,51 +24,40 @@ Examples:
 
 | Property     | Type     | Description                                         |
 | ------------ | -------- | --------------------------------------------------- |
-| **oer:LearningComponent**| -------------------- | -------------------- |
-| forCourse | Course | The Course in which the resource is meant for. |
-| forComponent | LearningComponent | Which LearningComponent the resource supports (inverse of hasComponent) |
-| hasComponent | LearningComponent | Which LearningComponent the InstructionalPattern contains or is supported by (inverse of forComponent) |
-| duration | Enumeration \| Number \| Text | The duration of the resource. |
-| doTask | Task | Which tasks are to be completed for a LearningComponent |
-| hasLearningObjective | LearningObjective | A LearningObjective gained as a result of an InstructionalPattern . |
-| deliveryFormat | Format \| Text | The format used to deliver the resource. |
-| **oer:Resource** | -------------------- | -------------------- |
-| parentOf | Resource | A parent in relation to a child resource. |
-| childOf | Resource | A child in relation to a parent resource. |
-| forCourse | Course | The Course in which the resource is meant for. |
-| mainContent | Text | The main content relating to the item. |
+| **From schema.org:Course**| -------------------- | -------------------- |
+|courseCode|Text|The identifier for the Unit used by the course provider (e.g. CS101 or 6.001).|
+|coursePrerequisites|AlignmentObject  or Course  or Text |Requirements for taking the Unit. May be completion of another course, module or unit or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using AlignmentObject.|
+| **From schema.org:CreativeWork** | -------------------- | -------------------- |
+|about|Thing |The subject matter of the content.|
+|accessibilitySummary|Text|A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."|
+|audience|EducationalAudience |An intended audience, i.e. a group for whom the resource being described was created. Use the educationalRole property of the EducationalAudience object to state whether the intended audience is teacher, student, parent, etc. See the [LRMI Educational Audience Role concept scheme](http://lrmi.dublincore.org/specifications/concept_schemes/#educational-audience-role) for more values. |
+|author|Organization  or Person |The author of the unit.|
+|citation|CreativeWork  or Text |A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.|
+|contributor|Organization  or Person |A secondary contributor to the unit|
+| dateCreated | Date | The date on which the resource was created. |
+| dateModified | Date | The date on which the resource was updated. |
+|educationalAlignment|AlignmentObject|An alignment to an established educational framework. The alignment object can be used to provide information such as educational- (grade-) level of the unit and competences being taught or assessed|
+|hasPart|CreativeWork|Indicates a CreativeWork that is part of this unit (in some sense). Inverse property: isPartOf.|
+|inLanguage|Language or Text |The language of the content of the unit. Please use one of the language codes from the IETF BCP 47 standard.|
+|isBasedOn|CreativeWork or URL|A resource from which this unit is derived or of which it is a modification or adaption.|
+|isPartOf|CreativeWork |Indicates a CreativeWork that this unit is (in some sense) part of. Inverse property: hasPart.|
+|keywords|Text|Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.|
+|learningResourceType|Text|The predominant type or kind characterizing the unit. |
+|provider|Organization|The service provider, service operator, or service performer; the goods producer. Use to identify the Organization which is responsible for providing the educational input for the unit, e.g. providing content, educational events, assessments, accreditation etc.|
+| publisher | Organization | The organization credited with publishing the unit. |
+|timeRequired|Duration |Approximate or typical time it takes to work with or through this unit for the typical intended target audience, e.g. 'P30M', 'P1H25M'.|
+|typicalAgeRange|	Text |The typical expected age in years of the learners on this course. For OCX the suggestion is to use a list to indicate a closed range of ages, e.g. ["9","10","11"], and values like "18-" for an open range.|
+| **From schema.org:Thing**| -------------------- | -------------------- |
+|alternateName|Text|An alias for the unit.|
+|description|Text|A description of the unit.|
+|identifier|PropertyValue  or Text  or URL |The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, DOIs, UUIDs etc. |
+|name|Text|The name [title] of the unit.|
+|url|URL|URL of the unit.|
+| **from oer:LearningComponent**| -------------------- | -------------------- |
+| oer:doTask | Task | Which tasks are to be completed for a LearningComponent |
+| oer:hasLearningObjective | LearningObjective | A LearningObjective gained as a result of an InstructionalPattern. |
+| **from oer:Resource** | -------------------- | -------------------- |
 | forTopic| Topic | The Topic the resource is associated with. |
-| **oer:Thing** | -------------------- | -------------------- |
-| name | Text | The name of the item. |
-| additionalType | URL | An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. |
-| description | Text | A description of the item. |
-| image | URL \| CreativeWork | An image of the item |
-| mainEntityOfPage | URL \| CreativeWork | Indicates a page (or other CreativeWork) for which this thing is the main entity being described. |
-| sameAs | URL | URL of a reference Web page that unambiguously indicates the item's identity. |
-| uri | URL | URL of the item. |
-| **schema:Thing** | -------------------- | -------------------- |
-| schema:identifier | Text \|  URL \| schema:PropertyValue | Any kind of identifier (uuid, url, etc). |
-| schema:url | URL | URL of the item. |
-| schema:alternateName | Text | An alias for the item. |
-| schema:potentialAction | schema:Acion | Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role. |
-| **schema:CreativeWork** | -------------------- | _(below we show a few relevant CreativeWork properties. For the full properties table see [http://schema.org/CreativeWork](http://schema.org/CreativeWork) )_ |
-| schema:about | schema:Thing | The subject matter of the content. |
-| schema:headline | Text | Headline of the article. |
-| schema:dateCreated | schema:Date | The date on which the resource was created. |
-| schema:dateModified | schema:Date | The date on which the resource was updated. |
-| schema:author | schema:Person | The individual credited with the creation of the resource. |
-| schema:publisher | schema:Organization | he organization credited with publishing the resource. |
-| schema:inLanguage | schema:Language | The primary language of the resource. |
-| schema:educationalAlignment | schema.org/AlignmentObject | An alignment to an established educational framework. |
-| schema:educationalUse | Text | The purpose of the work in the context of education. Ex: "assignment", "group work" |
-| schema:typicalAgeRange | Text | The typical range of ages the content’s intended end user. Ex: "7-9", "18-" |
-| schema:interactivityType | Text | The predominant mode of learning supported by the learning resource. Acceptable values are `active`, `expositive`, or `mixed`. |
-| schema:learningResourceType | Text | The predominant type or kind characterizing the learning resource. Ex: "presentation", "handout" |
-| schema:keywords | Text | Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas. |
-| schema:position | Number | The position of an item in a series or sequence of items. |
-| schema:text | Text | The textual content of this CreativeWork. |
-| schema:thumbnailUrl | URL | A thumbnail image relevant to the Thing. |
-| schema:video | schema:VideoObject | An embedded video object. |
 | **cc:Work** | -------------------- | -------------------- |
 | cc:license | Text \| License | A Work has license a License (a subproperty of dc:license, the same as xhtml:license). |
 | cc:morePermissions | Text | A related resource which describes additional permissions or alternative licenses for a Work which may be available. |
@@ -74,249 +65,107 @@ Examples:
 | cc:attributionURL | URL | The URL the creator of a Work would like used when attributing re-use. |
 | cc:useGuidelines | Text | A related resource which defines non-binding use guidelines for the work. |
 
-## Samples
+## Non-preferred properties
+The following OER Schema properties should not be used as there are similar properties in schema.org:
+
+| OER Schema Property     | preferred schema.org equivalent    |
+| ------------ | --------------------------- |
+| duration | learningTime (from CreativeWork) |
+| hasComponent | hasPart (from CreativWork) |
+| prerequisite | coursePrerequisites (from Course) |
+| parentOf | hasPart (from CreativeWork) |
+| childOf | isPartOf (from CreativeWork) |
+| all properties of oer:Thing | all have equivalents in schema.org Thing |
+
+## Example
 
 Markup for [https://pilot.unbounded.org/ela/grade-2/module-1/unit-6](https://pilot.unbounded.org/ela/grade-2/module-1/unit-6):
 
 - JSON-LD
 
+The following would be placed in a `<script  type="application/ld+json">` element in the HTML sectioning element that contained information about the unit.
+
+__Note:__ The URIs used for the `@id`s are based on the URLs of the page that represent the module being described and its units with the addition of the #A fragment identifiers treating them as aggregate resources as described in the section on [manifest structuring](../manifest/structure.md). This conforms with the requirement that different identifiers are used for CCM entities and the web pages that represent them, as described in the [content model](../contentmodel.md).
+
+__Note:__ In the case where the content of a unit is split over many HTML files, there is no requirement for the `hasPart` array shown in this example as this information would be provided by the manifest.
+
+__Editor's Note:__ Several parts of the original are omitted in the example in order to avoid repetition.
+
+__Note:__ Some of the parts are pdf documents (one is included in the example). If the HTML page for the Unit is the only HTML page containing information about these documents then it is necessary to provide a full description of those documents in this page. An example of such as description is provided under [Properties of SupportingMaterial](supportingmaterial.md).
+
 ```json
 {
-  "@context": ["http://oerschema.org/", {
-    "oer": "http://oerschema.org/",
-    "schema": "http://schema.org/",
-    "cc": "http://creativecommons.org/ns#"
-  }],
-  "@id": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6",
-  "@type": "http://oerschema.org/Unit",
+  "@context": [
+    "http://schema.org/",
+    {
+      "oer": "http://oerschema.org/",
+      "cc": "http://creativecommons.org/ns#"
+    }
+  ],
+  "@id": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6#A",
+  "@type": ["oer:Unit", "Course"],
+  "learningResourceType": "Unit",
   "name": "Cycles in Nature",
   "description": "This domain will introduce your students to the many natural cycles that make life on Earth possible. Your students will increase their knowledge of cycles in nature by learning more about seasonal cycles, and by beginning their study of flowering plants and trees, and animal life cycles. Students will also learn about the effect seasonal changes have on plants and animals. In addition, throughout this domain, students will gain exposure to poems by renowned authors Emily Dickinson and Robert Louis Stevenson. These informational text will serve as a model to support students’ writing of their own informational paragraph about the life cycle of either a frog or a butterfly.\r\n\r\nFlip Book Download Here you will find the Flip Book for the entire unit.\r\n\r\nImage Cards Download Here you will find the Image Cards for the entire unit.\r\n\r\nTens and Student Performance Tasks Download This document describes how to use the Tens system to capture student performance assessment data. It includes a Tens Conversion Chart to convert a raw score into a Tens score and rubric for recording observational Tens scores. Also included is a blank Tens Recording Chart.\r\n\r\nStudent Writing Portfolios Download. This document describes how to use activities marked with a writing portfolio icon to monitor and assess students’ writing during the unit.\r\n",
+  "url": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6",
   "sameAs": "http://pilot.unbounded.org/resources/8991",
-  "uri": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6",
-  "schema:identifier": 8991,
-  "schema:url": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6",
-  "schema:alternateName": "unit 6",
-  "schema:headline": "Students will learn about many natural cycles that make life on Earth possible.  Through these lessons, students will continue to practice their use of transition words (first, then, next, finally) as they build skills necessary to write in informational paragraph about the life cycle of a frog or butterfly.\r\n",
-  "schema:dateCreated": "2017-10-23T10:13:10.118Z",
-  "schema:dateModified": "2017-10-23T12:45:12.017Z",
-  "schema:publisher": {
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "UnboundEd resource identifier",
+    "value": "8991"
+  },
+  "courseCode": "8991",
+  "dateCreated": "2017-10-23T10:13:10.118Z",
+  "dateModified": "2017-10-23T12:45:12.017Z",
+  "publisher": {
     "@type": "http://schema.org/Organization",
-    "@id": "http://pilot.unbounded.org/about",
-    "schema:name": "UnboundEd",
-    "schema:email": "supportdesk@unbounded.org",
-    "schema:url": "http://pilot.unbounded.org/about",
-    "schema:description": "We are a team of former classroom teachers, curriculum writers, school leaders and education experts who have worked in the public, private and nonprofit sectors. We are dedicated to empowering teachers by providing free, high-quality standards-aligned resources for the classroom, the opportunity for immersive training through our Institute, and the option of support through our website."
+    "name": "UnboundEd",
+    "email": "supportdesk@unbounded.org",
+    "url": "http://pilot.unbounded.org/about"
   },
-  "schema:inLanguage": "en-US",
-  "schema:position": 1000301060001,
-  "schema:text": "<p>This domain will introduce your students to the many natural cycles that make life on Earth possible. Your students will increase their knowledge of cycles in nature by learning more about seasonal cycles, and by beginning their study of flowering plants and trees, and animal life cycles. Students will also learn about the effect seasonal changes have on plants and animals. In addition, throughout this domain, students will gain exposure to poems by renowned authors Emily Dickinson and Robert Louis Stevenson. These informational text will serve as a model to support students&rsquo; writing of their own informational paragraph about the life cycle of either a frog or a butterfly.</p>\r\n\r\n<p><strong>Flip Book Download</strong> Here you will find the Flip Book for the entire unit.</p>\r\n\r\n<p><strong>Image Cards Download</strong> Here you will find the Image Cards for the entire unit.</p>\r\n\r\n<p><strong>Tens and Student Performance Tasks Download</strong> This document describes how to use the Tens system to capture student performance assessment data. It includes a Tens Conversion Chart to convert a raw score into a Tens score and rubric for recording observational Tens scores. Also included is a blank Tens Recording Chart.</p>\r\n\r\n<p><meta charset=\"utf-8\"><strong>Student Writing Portfolios Download</strong>. This document describes how to use activities marked with a writing portfolio icon to monitor and assess students&rsquo; writing during the unit.</p>\r\n",
-  "parentOf": [{
-    "@type": "http://oerschema.org/Lesson",
-    "@id": "http://pilot.unbounded.org/documents/370",
-    "name": "The Cycle of Daytime and Nighttime",
-    "alternateName": "ela/grade-2/module-1/unit-6/lesson-1",
-    "schema:identifier": 8992
+  "inLanguage": "en-US",
+  "hasPart": [{
+    "@type": "oer:Lesson",
+    "@id": "http://pilot.unbounded.org/documents/370#A",
+    "name": "The Cycle of Daytime and Nighttime"
   }, {
-    "@type": "http://oerschema.org/Lesson",
-    "@id": "http://pilot.unbounded.org/documents/371",
-    "name": "The Reasons for Seasons",
-    "alternateName": "ela/grade-2/module-1/unit-6/lesson-2",
-    "schema:identifier": 8993
+    "@type": "oer:Lesson",
+    "@id": "http://pilot.unbounded.org/documents/371#A",
+    "name": "The Reasons for Seasons"
   }, {
-    "@type": "http://oerschema.org/Lesson",
-    "@id": "http://pilot.unbounded.org/documents/372",
-    "name": "Four Seasons in One Year",
-    "alternateName": "ela/grade-2/module-1/unit-6/lesson-3",
-    "schema:identifier": 8994
+    "@type": "oer:Lesson",
+    "@id": "http://pilot.unbounded.org/documents/372#A",
+    "name": "Four Seasons in One Year"
   }, {
-    "@type": "http://oerschema.org/Lesson",
-    "@id": "http://pilot.unbounded.org/documents/373",
-    "name": "The Life Cycle of a Plant",
-    "alternateName": "ela/grade-2/module-1/unit-6/lesson-4",
-    "schema:identifier": 8995
+    "@type": "oer:Lesson",
+    "@id": "http://pilot.unbounded.org/documents/373#A",
+    "name": "The Life Cycle of a Plant"
   }, {
-    "@type": "http://oerschema.org/Lesson",
-    "@id": "http://pilot.unbounded.org/documents/374",
-    "name": "The Life Cycle of a Tree",
-    "alternateName": "ela/grade-2/module-1/unit-6/lesson-5",
-    "schema:identifier": 8996
+    "@type": "oer:Assessment",
+    "@id": "http://pilot.unbounded.org/documents/381#A",
+    "name": "Domain Assessment"
   }, {
-    "@type": "http://oerschema.org/Lesson",
-    "@id": "http://pilot.unbounded.org/documents/375",
-    "name": "Pausing Point",
-    "alternateName": "ela/grade-2/module-1/unit-6/lesson-6",
-    "schema:identifier": 8997
-  }, {
-    "@type": "http://oerschema.org/Lesson",
-    "@id": "http://pilot.unbounded.org/documents/376",
-    "name": "Which Came First, the Chicken or the Egg?",
-    "alternateName": "ela/grade-2/module-1/unit-6/lesson-7",
-    "schema:identifier": 8998
-  }, {
-    "@type": "http://oerschema.org/Lesson",
-    "@id": "http://pilot.unbounded.org/documents/377",
-    "name": "The Life Cycle of a Frog",
-    "alternateName": "ela/grade-2/module-1/unit-6/lesson-8",
-    "schema:identifier": 8999
-  }, {
-    "@type": "http://oerschema.org/Lesson",
-    "@id": "http://pilot.unbounded.org/documents/378",
-    "name": "The Life Cycle of a Butterfly",
-    "alternateName": "ela/grade-2/module-1/unit-6/lesson-9",
-    "schema:identifier": 9000
-  }, {
-    "@type": "http://oerschema.org/Lesson",
-    "@id": "http://pilot.unbounded.org/documents/379",
-    "name": "Unfinished Learning: Writing an Introductory Sentence of a Paragraph",
-    "alternateName": "ela/grade-2/module-1/unit-6/lesson-10",
-    "schema:identifier": 9001
-  }, {
-    "@type": "http://oerschema.org/Lesson",
-    "@id": "http://pilot.unbounded.org/documents/380",
-    "name": "Domain Review",
-    "alternateName": "ela/grade-2/module-1/unit-6/lesson-11",
-    "schema:identifier": 9002
-  }, {
-    "@type": "http://oerschema.org/Lesson",
-    "@id": "http://pilot.unbounded.org/documents/381",
-    "name": "Domain Assessment",
-    "alternateName": "ela/grade-2/module-1/unit-6/lesson-12",
-    "schema:identifier": 9003
-  }, {
-    "@type": "http://oerschema.org/Lesson",
-    "@id": "http://pilot.unbounded.org/documents/382",
-    "name": "Culminating Activities",
-    "alternateName": "ela/grade-2/module-1/unit-6/lesson-13",
-    "schema:identifier": 9004
+    "@type": "oer:Lesson",
+    "@id": "http://pilot.unbounded.org/documents/382#A",
+    "name": "Culminating Activities"
+  },
+  {
+    "@type":["oer:SupportingMaterial","DigitalDocument"],
+    "@id": "#SupportingMaterial29809",
+    "name": "Module 1, Unit 6, Image Cards",
+    "url": "https://ubpilot-uploads.s3.amazonaws.com/attachments/29809/Cycles_in_Nature_Image_Cards.pdf",
+    "fileFormat": "application/pdf"
   }],
-  "childOf": {
-    "@type": "http://oerschema.org/Module",
-    "@id": "http://pilot.unbounded.org/ela/grade-2/module-1",
-    "name": "Listening and Learning",
-    "alternateName": "ela/grade-2/module-1",
-    "schema:identifier": 640
-  },
-  "forCourse": {
-    "@type": "http://oerschema.org/Course",
-    "@id": "http://pilot.unbounded.org/ela/grade-2",
-    "name": "Grade 2 English Language Arts",
-    "alternateName": "ela/grade-2",
-    "schema:identifier": 5389
+  "isPartOf": {
+    "@type": "oer:Module",
+    "@id": "http://pilot.unbounded.org/ela/grade-2/module-1#A",
+    "name": "Listening and Learning"
   },
   "forTopic": {
     "@type": "http://oerschema.org/Topic",
     "@id": "http://pilot.unbounded.org/ela",
     "name": "ELA"
   },
-  "hasComponent": [{
-    "@type": "http://oerschema.org/SupportingMaterial",
-    "@id": "https://ubpilot-uploads.s3.amazonaws.com/attachments/29808/G2_M1_U6_FB_COMPLETE.pdf",
-    "forComponent": {
-      "@id": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6"
-    },
-    "additionalType": "http://schema.org/DigitalDocument",
-    "name": "Module 1, Unit 6, Flip Book",
-    "sameAs": "http://pilot.unbounded.org/downloads/29808?slug=ela%2Fgrade-2%2Fmodule-1%2Funit-6",
-    "schema:identifier": 29808,
-    "schema:dateCreated": "2017-10-23T12:45:12.020Z",
-    "schema:dateModified": "2017-10-23T12:45:12.020Z",
-    "schema:url": "https://ubpilot-uploads.s3.amazonaws.com/attachments/29808/G2_M1_U6_FB_COMPLETE.pdf",
-    "schema:fileFormat": "application/pdf"
-  }, {
-    "@type": "http://oerschema.org/SupportingMaterial",
-    "@id": "https://ubpilot-uploads.s3.amazonaws.com/attachments/29809/Cycles_in_Nature_Image_Cards.pdf",
-    "forComponent": {
-      "@id": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6"
-    },
-    "additionalType": "http://schema.org/DigitalDocument",
-    "name": "Module 1, Unit 6, Image Cards",
-    "sameAs": "http://pilot.unbounded.org/downloads/29809?slug=ela%2Fgrade-2%2Fmodule-1%2Funit-6",
-    "schema:identifier": 29809,
-    "schema:dateCreated": "2017-10-23T12:45:12.459Z",
-    "schema:dateModified": "2017-10-23T12:45:12.459Z",
-    "schema:url": "https://ubpilot-uploads.s3.amazonaws.com/attachments/29809/Cycles_in_Nature_Image_Cards.pdf",
-    "schema:fileFormat": "application/pdf"
-  }, {
-    "@type": "http://oerschema.org/SupportingMaterial",
-    "@id": "https://ubpilot-uploads.s3.amazonaws.com/attachments/29810/Tens_and_Student_Performance_Tasks.pdf",
-    "forComponent": {
-      "@id": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6"
-    },
-    "additionalType": "http://schema.org/DigitalDocument",
-    "name": "Tens and Student Performance Tasks Download",
-    "sameAs": "http://pilot.unbounded.org/downloads/29810?slug=ela%2Fgrade-2%2Fmodule-1%2Funit-6",
-    "schema:identifier": 29810,
-    "schema:dateCreated": "2017-10-23T12:45:12.609Z",
-    "schema:dateModified": "2017-10-23T12:45:12.609Z",
-    "schema:url": "https://ubpilot-uploads.s3.amazonaws.com/attachments/29810/Tens_and_Student_Performance_Tasks.pdf",
-    "schema:fileFormat": "application/pdf"
-  }, {
-    "@type": "http://oerschema.org/SupportingMaterial",
-    "@id": "https://ubpilot-uploads.s3.amazonaws.com/attachments/29811/Student_Writing_Portfolios.pdf",
-    "forComponent": {
-      "@id": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6"
-    },
-    "additionalType": "http://schema.org/DigitalDocument",
-    "name": "Student Writing Portfolios Download",
-    "sameAs": "http://pilot.unbounded.org/downloads/29811?slug=ela%2Fgrade-2%2Fmodule-1%2Funit-6",
-    "schema:identifier": 29811,
-    "schema:dateCreated": "2017-10-23T12:45:12.709Z",
-    "schema:dateModified": "2017-10-23T12:45:12.709Z",
-    "schema:url": "https://ubpilot-uploads.s3.amazonaws.com/attachments/29811/Student_Writing_Portfolios.pdf",
-    "schema:fileFormat": "application/pdf"
-  }, {
-    "@type": "http://oerschema.org/SupportingMaterial",
-    "@id": "https://ubpilot-uploads.s3.amazonaws.com/bundles/8991/full/ela_g2_m1_unit-6_full.zip",
-    "forComponent": {
-      "@id": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6"
-    },
-    "additionalType": "http://schema.org/DigitalDocument",
-    "name": "All Lesson Materials",
-    "schema:identifier": 20,
-    "schema:dateCreated": "2017-10-23T13:58:09.941Z",
-    "schema:dateModified": "2017-10-23T13:58:09.949Z",
-    "schema:url": "https://ubpilot-uploads.s3.amazonaws.com/bundles/8991/full/ela_g2_m1_unit-6_full.zip",
-    "schema:fileFormat": "application/pdf"
-  }, {
-    "@type": "http://oerschema.org/SupportingMaterial",
-    "@id": "https://ubpilot-uploads.s3.amazonaws.com/bundles/8991/tm/ela_g2_m1_unit-6_tm.zip",
-    "forComponent": {
-      "@id": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6"
-    },
-    "additionalType": "http://schema.org/DigitalDocument",
-    "name": "Teacher Materials Only",
-    "schema:identifier": 21,
-    "schema:dateCreated": "2017-10-23T13:58:10.585Z",
-    "schema:dateModified": "2017-10-23T13:58:10.591Z",
-    "schema:url": "https://ubpilot-uploads.s3.amazonaws.com/bundles/8991/tm/ela_g2_m1_unit-6_tm.zip",
-    "schema:fileFormat": "application/pdf"
-  }, {
-    "@type": "http://oerschema.org/SupportingMaterial",
-    "@id": "https://ubpilot-uploads.s3.amazonaws.com/bundles/8991/sm/ela_g2_m1_unit-6_sm.zip",
-    "forComponent": {
-      "@id": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6"
-    },
-    "additionalType": "http://schema.org/DigitalDocument",
-    "name": "Student Materials Only",
-    "schema:identifier": 22,
-    "schema:dateCreated": "2017-10-23T13:58:10.866Z",
-    "schema:dateModified": "2017-10-23T13:58:10.872Z",
-    "schema:url": "https://ubpilot-uploads.s3.amazonaws.com/bundles/8991/sm/ela_g2_m1_unit-6_sm.zip",
-    "schema:fileFormat": "application/pdf"
-  }, {
-    "@type": "http://oerschema.org/SupportingMaterial",
-    "@id": "https://drive.google.com/open?id=0B2zfCya9OfhBQktxcF90MTdYdHc",
-    "forComponent": {
-      "@id": "http://pilot.unbounded.org/ela/grade-2/module-1/unit-6"
-    },
-    "additionalType": "http://schema.org/DigitalDocument",
-    "name": "All Lesson Materials",
-    "schema:identifier": 24,
-    "schema:dateCreated": "2017-10-23T14:01:55.387Z",
-    "schema:dateModified": "2017-10-23T14:01:55.391Z",
-    "schema:url": "https://drive.google.com/open?id=0B2zfCya9OfhBQktxcF90MTdYdHc",
-    "schema:fileFormat": "application/vnd.google-apps.document"
-  }],
   "cc:license": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
   "cc:attributionName": "This work is based on an original work of the Core Knowledge® Foundation made available through licensing under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. This does not in any way imply that the Core Knowledge Foundation endorses this work."
 }
