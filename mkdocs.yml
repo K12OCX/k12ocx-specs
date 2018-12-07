@@ -9,14 +9,14 @@ pages:
     - In-page Markup:
         - In-page Markup: inpage/index.md
         - In-page structuring: inpage/structure.md
-        - Course: inpage/course.md
-        - Module: inpage/module.md
-        - Unit: inpage/unit.md
-        - Lesson: inpage/lesson.md
-        - Activity: inpage/activity.md
-        - Assessment: inpage/assessment.md
-        - SupportingMaterial: inpage/supportingmaterial.md
-        - Auxiliary Types: inpage/auxiliary-types.md
+        - Properties of Course: inpage/course.md
+        - Properties of Module: inpage/module.md
+        - Properties of Unit: inpage/unit.md
+        - Properties of Lesson: inpage/lesson.md
+        - Properties of Activity: inpage/activity.md
+        - Properties of Assessment: inpage/assessment.md
+        - Properties of SupportingMaterial: inpage/supportingmaterial.md
+        - Properties of Auxiliary Types: inpage/auxiliary-types.md
     - Packaging: packaging.md
     - Styling: styling.md
 theme: readthedocs
