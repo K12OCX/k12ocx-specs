@@ -37,7 +37,7 @@ Schema.org org allows us to say that a CreativeWork (such as a Book) has parts (
 | `oer:Assessment`  | An assessment of a student's activity. |
 | `oer:SupportingMaterial`| Material that teaches the learning objectives of the course. |
 
-Further information about mapping the OERSchema classes to the terms used by specific providers is given in the section on [semantic markup](../../inpage/)
+Further information about mapping the OERSchema classes to the terms used by specific providers is given in the section on [TO DO].
 
 ###  Recommended Properties
 
@@ -104,7 +104,7 @@ __Notes:__
 
 The identifiers should be different to the URLs of specific instances of these resources. They identify relationships that are true for any instance of these resources, and as such they identify an abstract resource of which specific instances are manifestations. Appending `#A` to the URL of the official or authoritative web page for the resource is a useful pattern for generating a different URI but still using a URI that will provide human users with a meaningful link.
 
-Further information about the resources could be provided here, such as the URL to locate the content (`sdo:url`) and the name (`sdo:name`) of the resource, however this would duplicate information in the sitemap used to [locate](../../manifest/locate) the resources, and embedded markup used to [describe](../../inpage) the resources.
+Further information about the resources could be provided here, such as the URL to locate the content (`sdo:url`) and the name (`sdo:name`) of the resource, however this would duplicate information in the sitemap used to [locate](../locate) the resources, and embedded markup used to [describe](../../inpage/) the resources.
 
 ## An Ordered Aggregation
 __Editor's Note OPEN ISSUE__: there are two options for ordering the component resources in an aggregation. Option 1 is a JSON array (i.e. an ordered list) of identifiers specifying a default order. This mirrors the approach taken for W3C Web Publications (ePub for the web). Option 2 is inspired by OAI-ORE and leverages schema.org ItemLists. Option 2 is conceptually and practically far more complex, however it may be more robust, and may more useful for providing information about next & previous components within the files for each component. It remains an open issue as to whether the extra complexity is manageable or necessary.
