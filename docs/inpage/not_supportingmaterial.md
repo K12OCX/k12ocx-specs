@@ -1,3 +1,6 @@
+
+NOTE: this is from the original version of the OCX spec.   The definition used and examples provided do not conform to the OERSchema defitinion for SupportingText. However we need something that will describe those materials that are used to support learning activities but do not directly "teaches the learning objectives of the course", e.g. parent guides, text excerpts.
+
 # SupportingMaterial
 
 - type: http://oerschema.org/SupportingMaterial & [http://schema.org/CreativeWork](http://schema.org/CreativeWork)
@@ -10,12 +13,14 @@
 - parentOf: None
 - childOf: None
 
-Material that teaches the learning objectives of the course.
+This represents a leaf node in the content tree -- that is, it isn’t designed to be the parent of other content. It could contain content that provides information about a course band, course, unit, or even lesson. This content often takes the form of a Teacher’s Guide or other support materials.
+
+This could also include materials aimed at other audiences, like family support materials.
 
 Examples:
 
-- blackline masters
-- Embedded apps / interactive elements such as in the Squares and Rectangles activity of the lesson [Using Diagrams to represent addition and subtraction](https://im.openupresources.org/6/students/5/2.html#activity-2) (IM / OUR)
+- [Teacher Course Guide](https://im.openupresources.org/6/teachers/teacher_course_guide.html) (IM)
+- [Family Materials](https://im.openupresources.org/6/families/index.html) (IM)
 
 ## Properties
 
@@ -50,7 +55,7 @@ Examples:
 |typicalAgeRange|	Text |The typical expected age in years of the learners on this supporting material. For OCX the suggestion is to use a list to indicate a closed range of ages, e.g. ["9","10","11"], and values like "18-" for an open range.|
 | **From oer:LearningComponent**| -------------------- | -------------------- |
 | oer:forCourse | oer:Course | The Course in which the resource is meant for. |
-| hasLearningObjective | LearningObjective | A LearningObjective gained as a result of an InstructionalPattern . |
+| oer:forComponent | LearningComponent | Which LearningComponent the resource supports. Note: do not use when a hasPart relationship is possible. |
 | **From oer:Resource** | -------------------- | -------------------- |
 | forTopic| Topic | The Topic the resource is associated with. |
 | From **cc:Work** | -------------------- | -------------------- |
@@ -87,24 +92,27 @@ The following OER Schema properties should not be used as there are similar prop
       "cc": "http://creativecommons.org/ns#"
     }
   ],
-  "@type": ["oer:SupportingMaterial","MediaObject"],
-  "name": "GeoGebra Applet FXEZD466",
-  "url": "https://im.openupresources.org/6/students/5/2.html#geogebra-wrapper-FXEZD466-1495720696216",  
-  "identifier": {
-    "@type": "PropertyValue",
-    "propertyID": "IM resource identifier",
-    "value": "FXEZD466"
-  },
-  "encodingFormat":  "text/javascript",
-  "learningResourceType": ["SupportingMaterial","Interactive applet"],
+  "@type": ["oer:SupportingMaterial", "CreativeWork"],
+  "@id": "http://pilot.unbounded.org/materials/653#A",
+  "name": "Assessment Text: “If” by Rudyard Kipling",
+  "learningResourceType": ["SupportingMaterial","Student Handout"],
   "audience": {
     "@type": "EducationalAudience",
     "educationalRole": "student"
   },
-  "isPartOf":  {
-    "@type": ["oer:Activity","CreativeWork"],
-    "@id": "https://im.openupresources.org/6/students/5/2.html#activity-2",
-    "name": "Squares and Rectangles"
+  "encoding": [{
+    "@type": "MediaObject",
+    "url": "https://ubpilot-uploads.s3.amazonaws.com/documents/227/ELA-G6-M1-U2-L8-SH-Assessment%20Text_v791996.pdf",
+    "encodingFormat":  "application/pdf"
+  }, {
+    "@type": "MediaObject",
+    "url": "https://drive.google.com/open?id=1_jppHurkA7HJO2vIQVi1FyT8fCESTh5K7PWkLtZRsy8",
+    "encodingFormat":  "application/vnd.google-apps.document"      
+  }],
+  "forComponent":  {
+    "@type": ["oer:Assessment","CreativeWork"],
+    "@id": "http://pilot.unbounded.org/materials/652#A",
+    "name": "Mid-Unit 2 Assessment: Analyzing Structure and Theme in Stanza 4 of “If” and Bud, Not Buddy"
   }
 }
 ```
