@@ -16,7 +16,9 @@ A lesson contains one or more Activities.
 
 In many cases, the curriculum will describe a specific order that the Activities in a Lesson should go.
 
-oer:Lesson meets the definition of schema.org/Course, i.e. it is "a sequence of one or more educational events and/or creative works which aims to build knowledge, competence or ability of learners". This means that resources that are units should be typed as oer:Unit and schema.org/Course. The schema.org learningResourceType property with a value of "Unit" should be used to indicate the type of course to systems that understand schema.org but not the OER Schema terms used by OCX.
+oer:Lesson meets the definition of schema.org/Course, i.e. it is "a sequence of one or more educational events and/or creative works which aims to build knowledge, competence or ability of learners". This means that resources that are lessons should be typed as oer:lesson and schema.org/Course. The schema.org learningResourceType property with a value of "lesson" should be used to indicate the type of course to systems that understand schema.org but not the OER Schema terms used by OCX.
+
+__Editor's Note:__ I know that lesson as a Course seems odd. If we find we don't need scheme.org's courseCode or coursePrerequisites properties we can just call a lesson a creative work.
 
 Examples:
 
