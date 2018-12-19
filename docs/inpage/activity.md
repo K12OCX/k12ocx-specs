@@ -57,8 +57,8 @@ Examples:
 | **From oer:Activity**| -------------------- | -------------------- |
 | oer:assessedBy | oer:Assessment | The assessment for this activity. |
 | gradingFormat | oer:GradeFormat \| Text | The grading format for this activity |
-| **From oer:Task** | -------------------- | -------------------- |
-| oer:material | oer:SupportingMaterial | The supporting material assiociated with a resource. |
+| **From ocx** | -------------------- | -------------------- |
+| ocx:material | ocx:AssociatedMaterial | Material assiociated with a resource which is SupplementalMaterial, ReferencedMaterial or SupportingMaterial |
 | **From oer:LearningComponent**| -------------------- | -------------------- |
 | oer:forCourse | oer:Course | The Course in which the resource is meant for. |
 | doTask | Task | Which tasks are to be completed for a LearningComponent |

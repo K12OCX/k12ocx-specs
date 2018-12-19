@@ -47,8 +47,9 @@ The closest schema.org type to oer:Assessment is CreativeWork, of which it is a 
 | publisher | Organization | The organization credited with publishing the assessment. |
 |timeRequired|Duration |Approximate or typical time it takes to work with or through this assessment for the typical intended target audience, e.g. 'P30M', 'PT1H25M'.|
 |typicalAgeRange|	Text |The typical expected age in years of the learners on this assessment. For OCX the suggestion is to use a list to indicate a closed range of ages, e.g. ["9","10","11"], and values like "18-" for an open range.|
+| **From ocx** | -------------------- | -------------------- |
+| ocx:material | ocx:AssociatedMaterial | Material assiociated with a resource which is SupplementalMaterial, ReferencedMaterial or SupportingMaterial |
 | **From oer:Assessment**| -------------------- | -------------------- |
-| material | SupportingMaterial | The supporting material assiociated with a resource. |
 | assessing | Activity | The activity the assessment is assessing. |
 | gradingFormat | GradeFormat \| Text | The grading format for this resource |
 | **From oer:LearningComponent**| -------------------- | -------------------- |

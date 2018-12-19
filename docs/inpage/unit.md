@@ -53,6 +53,8 @@ Examples:
 |identifier|PropertyValue  or Text  or URL |The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, DOIs, UUIDs etc. |
 |name|Text|The name [title] of the unit.|
 |url|URL|URL of the unit.|
+| **From ocx** | -------------------- | -------------------- |
+| ocx:material | ocx:AssociatedMaterial | Material assiociated with a resource which is SupplementalMaterial, ReferencedMaterial or SupportingMaterial |
 | **from oer:LearningComponent**| -------------------- | -------------------- |
 | oer:doTask | Task | Which tasks are to be completed for a LearningComponent |
 | oer:hasLearningObjective | LearningObjective | A LearningObjective gained as a result of an InstructionalPattern. |

@@ -4,7 +4,13 @@ This section presents the conceptual model used by K12 OCX to define what is bei
 ##The Entities represented
 The curriculum, content and materials being exchanged are represented in the K12 OCX Content Model using the using the **[OER Schema](http://oerschema.org/docs/schema.html)** model:
 
-![ocx - model schema](https://docs.google.com/drawings/d/e/2PACX-1vRFmqDy20wkWNhS4Iat6vRFLGfuhq9oTbayuG3_mJA9V46s6OT5oz8itEVyBYrO4YQCmcBH2qljgW6e/pub?w=960&h=720)
+![ocx - model schema](images/er-model.png)
+
+`Course`, `Module`, `Unit`, `Lesson`, `Activity`, `Assessment` and `SupportingMaterial` are all sub classes of [oer:LearningComponent](http://oerschema.org/LearningComponent/).
+
+`SupportingMaterial`, `SupplementalMaterial` and `ReferencedMaterial` are sub classes of  `ocx:AssociatedMaterial` (to do: define this formally)
+
+`LearningComponents` are related to other `LearningComponents` using the `hasPart` property (and the reverse `isPartOf`). `LearningComponents` are related to `AssociatedMaterial` using the `ocx:material` property (an extension of [oer:material](http://oerschema.org/material/))
 
 __Note__: This model is based on [schema.org](https://schema.org), and hence on RDF and uses the W3C [architecture of the World Wide Web](https://www.w3.org/TR/webarch/).
 

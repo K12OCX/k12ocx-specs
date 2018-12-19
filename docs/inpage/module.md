@@ -62,6 +62,8 @@ __Note:__ Descriptions of some properties have been tweaked to make them more ap
 |identifier|PropertyValue  or Text  or URL |The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, DOIs, UUIDs etc. |
 |name|Text|The name [title] of the course|
 |url|URL|URL of the course.|
+| **From ocx** | -------------------- | -------------------- |
+| ocx:material | ocx:AssociatedMaterial | Material assiociated with a resource which is SupplementalMaterial, ReferencedMaterial or SupportingMaterial |
 | **From oer:LearningComponent**| -------------------- | -------------------- |
 | oer:hasLearningObjective | oer:LearningObjective | A LearningObjective gained as a result of an InstructionalPattern . |
 | oer:doTask | oer:Task | Which tasks are to be completed for a LearningComponent. May be used to indicate required assessments |

@@ -58,6 +58,8 @@ Examples:
 |identifier|PropertyValue  or Text  or URL |The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, DOIs, UUIDs etc. |
 |name|Text|The name [title] of the lesson.|
 |url|URL|URL of the lesson.|
+| **From ocx** | -------------------- | -------------------- |
+| ocx:material | ocx:AssociatedMaterial | Material assiociated with a resource which is SupplementalMaterial, ReferencedMaterial or SupportingMaterial |
 | **from oer:LearningComponent**| -------------------- | -------------------- |
 | oer:doTask | Task | Which tasks are to be completed for a LearningComponent |
 | oer:hasLearningObjective | LearningObjective | A LearningObjective gained as a result of an InstructionalPattern. |
@@ -104,6 +106,7 @@ __Note:__ Some of the parts are documents in a choice of digital format (encodin
     "http://schema.org/",
     {
       "oer": "http://oerschema.org/",
+      "ocx": "https://github.com/K12OCX/k12ocx-specs/",
       "cc": "http://creativecommons.org/ns#"
     }
   ],
@@ -169,17 +172,18 @@ __Note:__ Some of the parts are documents in a choice of digital format (encodin
     "@id": "http://pilot.unbounded.org/ela",
     "name": "ELA"
   },
-  "hasPart":[{
-    "@type": ["oer:SupportingMaterial","DigitalDocument"],
+  "ocx:material":[{
+    "@type": ["ocx:ReferencedMaterial","DigitalDocument"],
     "@id": "http://pilot.unbounded.org/materials/653",
     "name": "Assessment Text: “If” by Rudyard Kipling",
     "alternateName": "ELA-G6-M1-U2-L8-SH-Assessment Text"
   }, {
-    "@type": ["oer:SupportingMaterial","DigitalDocument"],
+    "@type": ["ocx:ReferencedMaterial","DigitalDocument"],
     "@id": "http://pilot.unbounded.org/materials/648",
     "name": "Model literary argument essay: “Steve Jobs’ Rules to Live By”",
     "alternateName": "ELA-G6-M1-U2-L8-SH-Model literary argument"
-  },  {
+  }],
+  "hasPart": [{
     "@type": ["oer:Assessment","DigitalDocument"],
     "@id": "http://pilot.unbounded.org/materials/652",
     "name": "Mid-Unit 2 Assessment: Analyzing Structure and Theme in Stanza 4 of “If” and Bud, Not Buddy",
@@ -209,17 +213,13 @@ Markup for [https://pilot.unbounded.org/math/grade-4/module-1/topic-a/lesson-1](
       "cc": "http://creativecommons.org/ns#"
     }
   ],
-  "@id": "http://pilot.unbounded.org/documents/25#A",
+  "@id": "http://pilot.unbounded.org/resources/2116",
   "@type": ["oer:Lesson","Course"],
   "learningResourceType": "Lesson",
-  "name": "Bundle ones, tens, and hundreds as well as model three-digit numbers using units of hundreds, tens, and/or ones.",
-  "description": "SWBAT bundle ones, tens, and hundreds as well as model three-digit numbers using units of hundreds, tens, and/or ones.",
+  "name": "Grade 4 Mathematics Module 1, Topic A, Lesson 1",
+  "description": "Objective:  Interpret a multiplication equation as a comparison.",
   "learningTime": "PT60M",
-  "sameAs": [
-    "http://pilot.unbounded.org/resources/2116",
-    "https://www.engageny.org/resource/grade-4-mathematics-module-1-topic-lesson-1"
-  ],
-  "url": "http://pilot.unbounded.org/documents/25",
+  "url":     "https://www.engageny.org/resource/grade-4-mathematics-module-1-topic-lesson-1" ,
   "identifier": {
     "@type": "PropertyValue",
     "propertyID": "UnboundEd resource identifier",
@@ -256,25 +256,20 @@ Markup for [https://pilot.unbounded.org/math/grade-4/module-1/topic-a/lesson-1](
     "@id": "http://pilot.unbounded.org/math",
     "name": "Mathematics"
   },
-  "hasPart": [
+  "encoding": [
     {
-      "@type": ["oer:SupportingMaterial", "DigitalDocument"],
-      "@id": "#supportingmaterial4503",
-      "name": "Grade 4 Mathematics Module 1, Topic A, Lesson 1",
+      "@type": "DigitalDocument",
+      "@id": "#4503",
+      "name": "Grade 4 Mathematics Module 1, Topic A, Lesson 1 (pdf)",
       "url": "https://ubpilot-uploads.s3.amazonaws.com/attachments/4503/math-g4-m1-topic-a-lesson-1.pdf",
       "fileFormat": "application/pdf",
     },
     {
-      "@type": ["oer:SupportingMaterial", "DigitalDocument"],
-      "@id": "#supportingmaterial4502",
-      "name": "Grade 4 Mathematics Module 1, Topic A, Lesson 1",
+      "@type": ["DigitalDocument"],
+      "@id": "#4502",
+      "name": "Grade 4 Mathematics Module 1, Topic A, Lesson 1 (docx)",
       "url": "https://ubpilot-uploads.s3.amazonaws.com/attachments/4502/math-g4-m1-topic-a-lesson-1.docx",
       "fileFormat": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-    },
-    {
-      "@type": ["oer:SupportingMaterial", "DigitalDocument"],
-      "@id": "#supportingmaterial12",
-      "url": "http://pilot.unbounded.org/materials/12",
     }
   ],
   "cc:license": "https://creativecommons.org/licenses/by-nc-sa/3.0/",

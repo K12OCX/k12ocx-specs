@@ -16,6 +16,8 @@ pages:
         - Properties of Activity: inpage/activity.md
         - Properties of Assessment: inpage/assessment.md
         - Properties of SupportingMaterial: inpage/supportingmaterial.md
+        - Properties of SupplementalMaterial: inpage/supplementalmaterial.md
+        - Properties of ReferencedMaterial: inpage/referencedmaterial.md
         - Properties of Auxiliary Types: inpage/auxiliary-types.md
     - Packaging: packaging.md
     - Styling: styling.md
