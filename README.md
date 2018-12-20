@@ -3,11 +3,7 @@
 ### Table of Contents:
 
 1. [About K12OCX](/docs/index.md)
-<<<<<<< HEAD
 2. [Content Model](/docs/contentmodel.md)
-=======
-2. [Content Model](/docs/content.md)
->>>>>>> 35d22eb79bcd063688959c02cafd748a05fdb7d5
 2. [Manifest]
     - 2.1 [Aggregated Content](/docs/manifest/about.md)
     - 2.2 [Locating content](/docs/manifest/locate.md)
