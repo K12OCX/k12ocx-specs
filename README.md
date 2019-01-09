@@ -10,7 +10,7 @@ A [manifest](https://k12ocx.github.io/k12ocx-specs/manifest/) with metadata that
 
 [In-page markup](https://k12ocx.github.io/k12ocx-specs/inpage/) to provide descriptive metadata that aid the discovery and use of OER by providing information about their educationally-relevant charcteristics. Such metadata may be provided for any reasonable level of granularity, from the aggregate resource package as a whole down to individual assets.
 
-The following are also past of the project:
+The following are also part of the project:
 
 Base implementation (or tool) for packaging and exporting OCX metadata with the OER resources, using Common Cartridge.
 
