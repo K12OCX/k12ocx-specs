@@ -1,32 +1,25 @@
 # K12 Open Content Exchange - Specification
 
-### Table of Contents:
+[K-12 OCX is a specification](https://k12ocx.github.io/k12ocx-specs/) for publishing OER (Open Educational Resources) on the web and packaging that OER for exchange with other parties. Typically the OER will be aggregated into collections of curriculum, content and material (compare with a book or collection of courseware).
 
-1. [About K12OCX](/docs/index.md)
-2. [Content Model](/docs/contentmodel.md)
-2. [Manifest]
-    - 2.1 [Aggregated Content](/docs/manifest/about.md)
-    - 2.2 [Locating content](/docs/manifest/locate.md)
-    - 2.3 [Structuring Aggregations](/docs/manifest/structure.md)
-3. In-page Markup:
-    - 3.1. [About in page markup](/docs/inpage/index.md)
-    - 3.2. [In page structuring](/docs/inpage/strucutre.md)
-    - 3.3. [Course](/docs/inpage/course.md)
-    - 3.4. [Module](/docs/inpage/module.md)
-    - 3.5. [Unit](/docs/inpage/unit.md)
-    - 3.6. [Lesson](/docs/inpage/lesson.md)
-    - 3.7. [Activity](/docs/inpage/activity.md)
-    - 3.8. [Assessment](/docs/inpage/assessment.md)
-    - 3.9. [SupportingMaterial](/docs/inpage/supportingmaterial.md)
-    - 3.10. [SupplementalMaterial](/docs/inpage/supplementalmaterial.md)
-    - 3.11. [ReferencedMaterial](/docs/inpage/referencedmaterial.md)
-    - 3.12. [Auxiliary Types](/docs/inpage/auxiliary-types.md)
-4. [Packaging](/docs/packaging.md)
-5. [Styling](/docs/styling.md)
+This specification comprises the following features:
+
+A [content model](https://k12ocx.github.io/k12ocx-specs/contentmodel/) which is the conceptual model used by K12 OCX to define what is being transferred, and the realization of this model in one more file containing content and metadata.
+
+A [manifest](https://k12ocx.github.io/k12ocx-specs/manifest/) with metadata that describe the structure of an aggregate resource, that is specify what are the components that are collected together and their logical and pedagogical ordering into hierachies and sequences. It is an important feature of OER reuse and repurposing that this structure is dynamic, i.e. it may be changed by the person using the aggregated resources.
+
+[In-page markup](https://k12ocx.github.io/k12ocx-specs/inpage/) to provide descriptive metadata that aid the discovery and use of OER by providing information about their educationally-relevant charcteristics. Such metadata may be provided for any reasonable level of granularity, from the aggregate resource package as a whole down to individual assets.
+
+The following are also past of the project:
+
+Base implementation (or tool) for packaging and exporting OCX metadata with the OER resources, using Common Cartridge.
+
+An additional set of styling guides for allowing resources to keep visual integrity, or to change themes accordingly to different consumers.
 
 ### Contributing
+Please contribute ideas, suggestions, error reports etc. as [issues](https://github.com/K12OCX/k12ocx-specs/issues).
 
-This project uses [mkdocs](http://www.mkdocs.org/) to build the specs using markdown files.
+This project uses [mkdocs](http://www.mkdocs.org/) to build the specs using markdown files. If you clone this repository you can test any branch by running the following from the repository directory
 
 ```
 pip install mkdocs
