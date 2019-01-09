@@ -14,3 +14,6 @@ This specification comprises the following features:
 4. Base implementation (or tool) for [packaging and exporting](packaging) OCX metadata with the OER resources, using Common Cartridge.
 
 5. An additional set of [styling guides](styling) for allowing resources to keep visual integrity, or to change themes accordingly to different consumers.
+
+## License
+All materials are contributed under two licenses: [Apache 2](https://www.apache.org/licenses/LICENSE-2.0) and [CC:BY-4](https://creativecommons.org/licenses/by/4.0/). This means that any contribution can be used under either license.
