@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>In-page structuring - K12 OCX Specification (Working Draft)</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../../css/custom.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "In-page structuring";
+    var mkdocs_page_input_path = "inpage/structure.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> K12 OCX Specification (Working Draft)</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../contentmodel/">Content Model</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Manifest</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../manifest/">Aggregated content</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../manifest/locate/">Locating content</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../manifest/structure/">Structuring aggregations</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">In-page Markup</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../">In-page Markup</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">In-page structuring</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#html5-elements-for-the-divisions">HTML5 Elements for the divisions</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#example">Example</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#identifying-the-subdivisions-and-their-types">Identifying the subdivisions and their types</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#relevant-schemaorg-types">Relevant schema.org types</a></li>
+        
+            <li><a class="toctree-l4" href="#relevant-oer-schema-types">Relevant OER Schema types</a></li>
+        
+            <li><a class="toctree-l4" href="#custom-ocx-types">Custom OCX types</a></li>
+        
+            <li><a class="toctree-l4" href="#in-page-relationships-and-inheritance">In-page relationships and inheritance</a></li>
+        
+            <li><a class="toctree-l4" href="#example_1">Example</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../course/">Properties of Course</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../module/">Properties of Module</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../unit/">Properties of Unit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../lesson/">Properties of Lesson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../activity/">Properties of Activity</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../assessment/">Properties of Assessment</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../supportingmaterial/">Properties of SupportingMaterial</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../supplementalmaterial/">Properties of SupplementalMaterial</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../referencedmaterial/">Properties of ReferencedMaterial</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../auxiliary-types/">Properties of Auxiliary Types</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../packaging/">Packaging</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../styling/">Styling</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">K12 OCX Specification (Working Draft)</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>In-page Markup &raquo;</li>
+        
+      
+    
+    <li>In-page structuring</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="html5-elements-for-the-divisions">HTML5 Elements for the divisions</h1>
+<p>CCM documents should be in HTML5, or may be in an equivalent format that can be mapped to HTML5. A single file may contain pedagogically significant content that is subdivided into parts, such as a Lesson with associated Activities, Supporting Materials and Assessments. The file may also contain content that is not pedagogically significant, such as banner and navigation content that relates to the site hosting the content. HTML5 sectioning elements must be used with JSON-LD or RDFa metadata to define and identify with a URI the main pedagogical content and the significant subdivisions.</p>
+<p>For normative definitions of the HTML5 elements discussed here see <a href="https://www.w3.org/TR/html52/sections.html#sections">HTML5.2 Sections</a>.</p>
+<p><code>&lt;body&gt;</code> must be used at the top-level for the content of the HTML document. It may contain information that is not part of the CCM, for example it may contain navigation relating to the collection/website of which this resource is a part or information about the provider of the resource.</p>
+<p>One of <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;chapter&gt;</code> must be used to container the CCM resource. There are clear-cut cases where <code>&lt;article&gt;</code> and <code>&lt;chapter&gt;</code> are appropriate; <code>&lt;main&gt;</code> is general enough as a catch-all ensuring that there is an appropriate top-level element for any individual CCM resource.</p>
+<p>Multiple <code>&lt;section&gt;</code> may be used for subdivisions of the CCM resource. Sections may have sections. Subdivisions that might be considered a resource worth reusing or repurposing for use in their own right should be contained within a <code>&lt;section&gt;</code>. For example, where a document describes a lesson that comprises several activities that may be useful in other lessons, each activity should be separate <code>&lt;section&gt;</code>.</p>
+<p><code>&lt;aside&gt;</code> represents a section of a page that consists of content that is tangentially related to the content of the parenting sectioning content.</p>
+<p><code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> are useful within any of the above elements as containers for information that relates to all the parts of that container. They are not considered to be significant resources in their own right.</p>
+<p><code>&lt;nav&gt;</code> (typically in <code>&lt;header&gt;</code> or <code>&lt;footer&gt;</code> or acting as an implicit header or footer) contains navigation links at some level.</p>
+<p><code>&lt;div&gt;</code> may be used as a container of convenience for grouping together content within a <code>&lt;section&gt;</code> for the purpose of describing it with RDFa/microdata.</p>
+<h2 id="example">Example</h2>
+<p>Some OCX content is on a webpage, it comprises introductory material and a learning activity.</p>
+<pre><code>&lt;html&gt;
+  &lt;head&gt;&lt;title&gt;Example&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;
+      &lt;nav&gt;&lt;-- links to other pages --&gt;&lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;main&gt;&lt;-- container for the OCX content --&gt;
+      &lt;header&gt;&lt;-- note that any section may have a header --&gt;
+        &lt;h1&gt;OCX Example&lt;/h1&gt;
+        &lt;p&gt;Some general information about the resource&lt;/p&gt;
+      &lt;/header&gt;
+      &lt;section&gt;
+        &lt;h2&gt;Introduction to example subject&lt;/h2&gt;
+        &lt;div&gt;content for introduction&lt;/div&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;h2&gt;My example activity&lt;/h2&gt;
+        &lt;div&gt;content for the learning activity&lt;/div&gt;
+      &lt;/section&gt;
+    &lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h1 id="identifying-the-subdivisions-and-their-types">Identifying the subdivisions and their types</h1>
+<p>Each significant subdivision must be identifiable and describable as a resource separately from the whole document. A suitable HTTP URI identifier should be provided. Absent any web based service that will resolve a URI to deliver a representation of the resource, a reasonable default is to use a fragment identifier such as #section001. Such fragment identifiers should begin with a letter [a-z|A-Z]. OCX will thus conform to the W3C <a href="https://www.w3.org/TR/webarch/">Architecture of the World Wide Web</a> in its use of identifiers.</p>
+<p>In order to aid the extraction of significant subdivisions that are thus identified, the HTML5 <code>id</code> attribute of the sectioning element that contains that subdivision should be used with a value equal to the fragment identifier. Such <code>id</code> values must begin with a letter.</p>
+<p>The nature of the CCM or significant subdivision should be denoted with types drawn from, in order of preference, schema.org, OER Schema, and custom OCX types. Where OER Schema or OCX types are used, a broader matching schema.org type should also be used in order to provide information to systems and tools that understand schema.org but not OCX.</p>
+<p>Metadata about a subdivision should be placed within the HTML sectioning element that contains that subdivision. This ensures that if this section is extracted from the document the metadata travels with it.</p>
+<h2 id="relevant-schemaorg-types">Relevant schema.org types</h2>
+<p>Useful schema.org types can be found under <a href="http://schema.org/CreativeWork">schema.org/CreativeWork</a> which provides normative definitions, and include:</p>
+<ul>
+<li>Book, Course, AudioBook, WebSite</li>
+<li>DigitalDocument, Chapter, WebPage</li>
+<li>Article &amp; subtypes: NewsArticle Report ScholarlyArticle TechArticle</li>
+<li>Quotation</li>
+<li>HowTo, HowToStep, HowToSection, HowToDirection, HowToTip</li>
+<li>SoftwareApplication</li>
+<li>VisualArtwork, Painting, Photograph,</li>
+<li>Atlas, Map</li>
+<li>Movie</li>
+<li>Question, Answer (used for marking FAQs)</li>
+<li>MediaObject &amp; subtypes AudioObject, DataDownload, ImageObject, MusicVideoObject, VideoObject</li>
+</ul>
+<p>schema.org must be used as the main vocabulary for the document. schema.org types may be identified with cURIs with no namespace, e.g. <code>CreativeWork</code>.</p>
+<h2 id="relevant-oer-schema-types">Relevant OER Schema types</h2>
+<ul>
+<li>Course</li>
+<li>Module</li>
+<li>Unit</li>
+<li>Lesson</li>
+<li>Task<ul>
+<li>Activity<ul>
+<li>Project</li>
+</ul>
+</li>
+<li>Practice</li>
+</ul>
+</li>
+<li>Assessment<ul>
+<li>Quiz</li>
+<li>Submission</li>
+</ul>
+</li>
+<li>SupportingMaterial</li>
+<li>CourseSyllabus</li>
+</ul>
+<p>As defined by <a href="http://oerschema.org/docs/schema.html">OER Schema</a>.</p>
+<p>OER Schema types should be identified with cURIs using the RDF namespace prefix <code>oer:</code> for the <code>http://oerschema.org/</code> namespace URI, for example oer:Lesson.</p>
+<h2 id="custom-ocx-types">Custom OCX types</h2>
+<p>OCX types may be added as this specification matures.</p>
+<p>OCX types should be identified with cURIs using the RDF namespace prefix <code>ocx:</code> for the ocx namespace URI and , e.g. ocx:NewType.</p>
+<h2 id="in-page-relationships-and-inheritance">In-page relationships and inheritance</h2>
+<p>The <code>schema.org/hasPart</code> relationship may be used to indicate that a section is a part of the parent resource. For example that a Lesson has parts which are SupportingMaterial and an Activity.</p>
+<p>Where there are hasPart relationships, many descriptive properties of the parent resource may be assumed to be inherited by the child unless another value is provided for that property in the descriptive metadata of the child. These inheritable properties are identified in this specification under the  of the descriptive properties for each oerschema type.</p>
+<p>oerschema provides other types of relationship that are also described in this specification under the descriptive properties for each oerschema type.</p>
+<h2 id="example_1">Example</h2>
+<p>The example above is identified as a lesson plan, the introductory material and activity are identified as significant subdivisions.</p>
+<h3 id="1-with-rdfa-metadata">1. with RDFa metadata</h3>
+<pre><code>&lt;html&gt;
+  &lt;head&gt;&lt;title&gt;Example&lt;/title&gt;&lt;/head&gt;
+  &lt;body vocab=&quot;http://schema.org/&quot;
+        prefix=&quot;ocx: https://github.com/K12OCX/k12ocx-specs/terms/
+                oer: http://oerschema.org/&quot;&gt;
+    &lt;header&gt;
+      &lt;nav&gt;&lt;-- links to other pages --&gt;&lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;main id=&quot;LessonPlan&quot;
+          resource=&quot;#LessonPlan&quot;
+          typeof=&quot;CreativeWork oer:Lesson&quot;&gt;
+      &lt;header&gt;
+        &lt;h1&gt;OCX Example&lt;/h1&gt;
+        &lt;p&gt;Some general information about the resource&lt;/p&gt;
+      &lt;/header&gt;
+      &lt;section id=&quot;intro&quot;
+               property=&quot;haspart&quot;
+               resource=&quot;#intro&quot;
+               typeof=&quot;CreativeWork oer:SupportingMaterial&quot;&gt;
+        &lt;h2&gt;Introduction to example subject&lt;/h2&gt;
+        &lt;div&gt;content for introduction&lt;/div&gt;
+      &lt;/section&gt;
+      &lt;section id=&quot;activity&quot;
+               property=&quot;haspart&quot;
+               resource=&quot;#activity&quot;
+               typeof=&quot;CreativeWork oer:Activity&quot;&gt;
+        &lt;h2&gt;My example activity&lt;/h2&gt;
+        &lt;div&gt;content for the learning activity&lt;/div&gt;
+      &lt;/section&gt;
+    &lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3 id="2-with-json-ld-metadata">2. with JSON-LD metadata</h3>
+<pre><code> &lt;html&gt;
+  &lt;head&gt;&lt;title&gt;Example&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;
+      &lt;nav&gt;&lt;-- links to other pages --&gt;&lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;main id=&quot;LessonPlan&quot;&gt;
+      &lt;script type=&quot;application/ld+json&quot;&gt;
+        { &quot;@context&quot;: [
+            &quot;http://schema.org&quot;,
+            {&quot;oer&quot;: &quot;http://oerschema.org/&quot;}
+          ],
+          &quot;@id&quot;: &quot;#LessonPlan&quot;,
+          &quot;@type&quot;: [&quot;CreativeWork&quot;, &quot;oer:Lesson&quot;],
+          &quot;hasPart&quot;: [
+            {&quot;@id&quot;: &quot;#Activity&quot;},
+            {&quot;@id&quot;: &quot;#Intro&quot;}
+          ]
+        }
+      &lt;/script&gt;
+      &lt;header&gt;
+        &lt;h1&gt;OCX Example&lt;/h1&gt;
+        &lt;p&gt;Some general information about the resource&lt;/p&gt;
+      &lt;/header&gt;
+      &lt;section id=&quot;Intro&quot;&gt;
+        &lt;script type=&quot;application/ld+json&quot;&gt;
+            { &quot;@context&quot;: [
+              &quot;http://schema.org&quot;,
+              {&quot;oer&quot;: &quot;http://oerschema.org/&quot;}
+            ],
+            &quot;@id&quot;: &quot;#Intro&quot;,
+            &quot;@type&quot;: [&quot;CreativeWork&quot;,&quot;oer:SupportingMaterial&quot;]
+          }
+        &lt;/script&gt;
+        &lt;h2&gt;Introduction to example subject&lt;/h2&gt;
+        &lt;div&gt;content for introduction&lt;/div&gt;
+      &lt;/section&gt;
+      &lt;section id=&quot;Activity&quot;&gt;
+        &lt;script type=&quot;application/ld+json&quot;&gt;
+          { &quot;@context&quot;: [
+              &quot;http://schema.org&quot;,
+              {&quot;oer&quot;: &quot;http://oerschema.org/&quot;}
+            ],
+            &quot;@id&quot;: &quot;#Activity&quot;,
+            &quot;@type&quot;: [&quot;CreativeWork&quot;,&quot;oer:Activity&quot;]
+          }
+        &lt;/script&gt;
+        &lt;h2&gt;My example activity&lt;/h2&gt;
+        &lt;div&gt;content for the learning activity&lt;/div&gt;
+      &lt;/section&gt;
+    &lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../course/" class="btn btn-neutral float-right" title="Properties of Course">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../" class="btn btn-neutral" title="In-page Markup"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../course/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

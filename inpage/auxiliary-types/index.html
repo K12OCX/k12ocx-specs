@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Properties of Auxiliary Types - K12 OCX Specification (Working Draft)</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../../css/custom.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Properties of Auxiliary Types";
+    var mkdocs_page_input_path = "inpage/auxiliary-types.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> K12 OCX Specification (Working Draft)</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../contentmodel/">Content Model</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Manifest</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../manifest/">Aggregated content</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../manifest/locate/">Locating content</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../manifest/structure/">Structuring aggregations</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">In-page Markup</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../">In-page Markup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../structure/">In-page structuring</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../course/">Properties of Course</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../module/">Properties of Module</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../unit/">Properties of Unit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../lesson/">Properties of Lesson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../activity/">Properties of Activity</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../assessment/">Properties of Assessment</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../supportingmaterial/">Properties of SupportingMaterial</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../supplementalmaterial/">Properties of SupplementalMaterial</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../referencedmaterial/">Properties of ReferencedMaterial</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Properties of Auxiliary Types</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#auxiliary-types">Auxiliary Types</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#oerlearningcomponent">oer:LearningComponent</a></li>
+        
+            <li><a class="toctree-l4" href="#oercoursesyllabus">oer:CourseSyllabus</a></li>
+        
+            <li><a class="toctree-l4" href="#oertopic">oer:Topic</a></li>
+        
+            <li><a class="toctree-l4" href="#oerlearningobjective">oer:LearningObjective</a></li>
+        
+            <li><a class="toctree-l4" href="#person">Person</a></li>
+        
+            <li><a class="toctree-l4" href="#organization">Organization</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../packaging/">Packaging</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../styling/">Styling</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">K12 OCX Specification (Working Draft)</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>In-page Markup &raquo;</li>
+        
+      
+    
+    <li>Properties of Auxiliary Types</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="auxiliary-types">Auxiliary Types</h1>
+<p>Below we provide a quick reference, for some auxiliary type properties used on the OER Schema Classes above.</p>
+<h2 id="oerlearningcomponent">oer:LearningComponent</h2>
+<p>same as <code>Lesson</code> | <code>Topic/Module</code> | <code>Activity</code> | <code>Unit</code> | <code>SupportingMaterial</code></p>
+<h2 id="oercoursesyllabus">oer:CourseSyllabus</h2>
+<p>see <a href="http://oerschema.org/CourseSyllabus">http://oerschema.org/CourseSyllabus</a></p>
+<h2 id="oertopic">oer:Topic</h2>
+<p>Defined as "the context of a LearningComponent". Treat as equivalent to a subclass of <a href="https://schema.org/Intangible">schema.org/Intangible</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>from oer:Topic</strong></td>
+<td>--------------------</td>
+<td>--------------------</td>
+</tr>
+<tr>
+<td>oer:material</td>
+<td>SupportingMaterial</td>
+<td>The supporting material assiociated with a resource.</td>
+</tr>
+<tr>
+<td><strong>oer:Resource</strong></td>
+<td>--------------------</td>
+<td>--------------------</td>
+</tr>
+<tr>
+<td>mainContent</td>
+<td>Text</td>
+<td>The main content relating to the item.</td>
+</tr>
+<tr>
+<td><strong>From Thing</strong></td>
+<td>--------------------</td>
+<td>--------------------</td>
+</tr>
+<tr>
+<td>identifier</td>
+<td>Text |  URL | schema:PropertyValue</td>
+<td>Any kind of identifier (uuid, url, etc).</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Text</td>
+<td>The name of the item.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Text</td>
+<td>A description of the item.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>URL</td>
+<td>URL of the item.</td>
+</tr>
+<tr>
+<td>sameAs</td>
+<td>URL</td>
+<td>URL of a reference Web page that unambiguously indicates the item's identity.</td>
+</tr>
+<tr>
+<td>alternateName</td>
+<td>Text</td>
+<td>An alias for the item.</td>
+</tr>
+<tr>
+<td><strong>From cc:Work</strong></td>
+<td>--------------------</td>
+<td>--------------------</td>
+</tr>
+<tr>
+<td>cc:license</td>
+<td>Text | License</td>
+<td>A Work has license a License (a subproperty of dc:license, the same as xhtml:license).</td>
+</tr>
+<tr>
+<td>cc:morePermissions</td>
+<td>Text</td>
+<td>A related resource which describes additional permissions or alternative licenses for a Work which may be available.</td>
+</tr>
+<tr>
+<td>cc:attributionName</td>
+<td>Text</td>
+<td>The name the creator of a Work would like used when attributing re-use.</td>
+</tr>
+<tr>
+<td>cc:attributionURL</td>
+<td>URL</td>
+<td>The URL the creator of a Work would like used when attributing re-use.</td>
+</tr>
+<tr>
+<td>cc:useGuidelines</td>
+<td>Text</td>
+<td>A related resource which defines non-binding use guidelines for the work.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="oerlearningobjective">oer:LearningObjective</h2>
+<p><strong>Editor's Note:</strong> I am not sure if we use these, or whether we should use these. They are a little under-defined, but they do fill a hole currently in schema.org.</p>
+<p>Treat as equivalent to a subclass of  <a href="https://schema.org/Intangible">schema.org/Intangible</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>oer:LearningObjective</strong></td>
+<td>--------------------</td>
+<td>--------------------</td>
+</tr>
+<tr>
+<td>prerequisite</td>
+<td>Course | LearningComponent | LearningObjective</td>
+<td>A requirement to be completed before this resource can be performed.</td>
+</tr>
+<tr>
+<td><strong>oer:Resource</strong></td>
+<td>--------------------</td>
+<td>--------------------</td>
+</tr>
+<tr>
+<td>parentOf</td>
+<td>Resource</td>
+<td>A parent in relation to a child resource.</td>
+</tr>
+<tr>
+<td>childOf</td>
+<td>Resource</td>
+<td>A child in relation to a parent resource.</td>
+</tr>
+<tr>
+<td>forCourse</td>
+<td>Course</td>
+<td>The Course in which the resource is meant for.</td>
+</tr>
+<tr>
+<td>mainContent</td>
+<td>Text</td>
+<td>The main content relating to the item.</td>
+</tr>
+<tr>
+<td>forTopic</td>
+<td>Topic</td>
+<td>The Topic the resource is associated with.</td>
+</tr>
+<tr>
+<td><strong>Thing</strong></td>
+<td>--------------------</td>
+<td>--------------------</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Text</td>
+<td>The name of the item.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Text</td>
+<td>A description of the item.</td>
+</tr>
+<tr>
+<td>sameAs</td>
+<td>URL</td>
+<td>URL of a reference Web page that unambiguously indicates the item's identity.</td>
+</tr>
+<tr>
+<td>identifier</td>
+<td>Text |  URL | schema:PropertyValue</td>
+<td>Any kind of identifier (uuid, url, etc).</td>
+</tr>
+<tr>
+<td>url</td>
+<td>URL</td>
+<td>URL of the item.</td>
+</tr>
+<tr>
+<td>alternateName</td>
+<td>Text</td>
+<td>An alias for the item.</td>
+</tr>
+<tr>
+<td><strong>cc:Work</strong></td>
+<td>--------------------</td>
+<td>--------------------</td>
+</tr>
+<tr>
+<td>cc:license</td>
+<td>Text | License</td>
+<td>A Work has license a License (a subproperty of dc:license, the same as xhtml:license).</td>
+</tr>
+<tr>
+<td>cc:morePermissions</td>
+<td>Text</td>
+<td>A related resource which describes additional permissions or alternative licenses for a Work which may be available.</td>
+</tr>
+<tr>
+<td>cc:attributionName</td>
+<td>Text</td>
+<td>The name the creator of a Work would like used when attributing re-use.</td>
+</tr>
+<tr>
+<td>cc:attributionURL</td>
+<td>URL</td>
+<td>The URL the creator of a Work would like used when attributing re-use.</td>
+</tr>
+<tr>
+<td>cc:useGuidelines</td>
+<td>Text</td>
+<td>A related resource which defines non-binding use guidelines for the work.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="person">Person</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>From Thing</strong></td>
+<td>--------------------</td>
+<td>--------------------</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Text</td>
+<td>The name of the item.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Text</td>
+<td>A description of the item.</td>
+</tr>
+<tr>
+<td>sameAs</td>
+<td>URL</td>
+<td>URL of a reference Web page that unambiguously indicates the item's identity.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>URL</td>
+<td>URL of the item.</td>
+</tr>
+<tr>
+<td>identifier</td>
+<td>Text |  URL | PropertyValue</td>
+<td>Any kind of identifier (uuid, url, etc).</td>
+</tr>
+<tr>
+<td>alternateName</td>
+<td>Text</td>
+<td>An alias for the item.</td>
+</tr>
+<tr>
+<td><strong>From Person</strong></td>
+<td>--------------------</td>
+<td><em>(below we show a few relevant Person properties. For the full properties table see <a href="http://schema.org/Person">http://schema.org/Person</a> )</em></td>
+</tr>
+<tr>
+<td>address</td>
+<td>schema:PostalAddress | Text</td>
+<td>Physical address of the item.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>Text</td>
+<td>Email address</td>
+</tr>
+<tr>
+<td>jobTitle</td>
+<td>Text</td>
+<td>The job title of the person (for example, Financial Manager).</td>
+</tr>
+<tr>
+<td>memberOf</td>
+<td>Organization</td>
+<td>An Organization to which this Person or Organization belongs. Inverse property: member.</td>
+</tr>
+<tr>
+<td>telephone</td>
+<td>Text</td>
+<td>The telephone number.</td>
+</tr>
+<tr>
+<td>worksFor</td>
+<td>Organization</td>
+<td>Organizations that the person works for.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="organization">Organization</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>From Thing</strong></td>
+<td>--------------------</td>
+<td>--------------------</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Text</td>
+<td>The name of the item.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Text</td>
+<td>A description of the item.</td>
+</tr>
+<tr>
+<td>sameAs</td>
+<td>URL</td>
+<td>URL of a reference Web page that unambiguously indicates the item's identity.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>URL</td>
+<td>URL of the item.</td>
+</tr>
+<tr>
+<td>identifier</td>
+<td>Text |  URL | PropertyValue</td>
+<td>Any kind of identifier (uuid, url, etc).</td>
+</tr>
+<tr>
+<td>alternateName</td>
+<td>Text</td>
+<td>An alias for the item.</td>
+</tr>
+<tr>
+<td><strong>From Organization</strong></td>
+<td>--------------------</td>
+<td><em>(below we show a few relevant Organization properties. For the full properties table see <a href="http://schema.org/Organization">http://schema.org/Organization</a> )</em></td>
+</tr>
+<tr>
+<td>address</td>
+<td>PostalAddress | Text</td>
+<td>Physical address of the item.</td>
+</tr>
+<tr>
+<td>contactPoint</td>
+<td>ContactPoint</td>
+<td>A contact point for a person or organization.</td>
+</tr>
+<tr>
+<td>department</td>
+<td>Organization</td>
+<td>A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours).</td>
+</tr>
+<tr>
+<td>email</td>
+<td>Text</td>
+<td>Email address</td>
+</tr>
+<tr>
+<td>location</td>
+<td>Location | Text</td>
+<td>The location of for example where the event is happening, an organization is located, or where an action takes place.</td>
+</tr>
+<tr>
+<td>logo</td>
+<td>ImageObject | URL</td>
+<td>An associated logo.</td>
+</tr>
+<tr>
+<td>member</td>
+<td>Organization | Person</td>
+<td>sub-member Person or Organizations to this Organization. Inverse property: memberOf.</td>
+</tr>
+<tr>
+<td>memberOf</td>
+<td>Organization</td>
+<td>An Organization to which this  Organization belongs. Inverse property: member.</td>
+</tr>
+<tr>
+<td>telephone</td>
+<td>Text</td>
+<td>The telephone number.</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../packaging/" class="btn btn-neutral float-right" title="Packaging">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../referencedmaterial/" class="btn btn-neutral" title="Properties of ReferencedMaterial"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../referencedmaterial/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../packaging/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

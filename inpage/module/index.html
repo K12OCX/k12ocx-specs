@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Properties of Module - K12 OCX Specification (Working Draft)</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../../css/custom.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Properties of Module";
+    var mkdocs_page_input_path = "inpage/module.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> K12 OCX Specification (Working Draft)</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../contentmodel/">Content Model</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Manifest</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../manifest/">Aggregated content</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../manifest/locate/">Locating content</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../manifest/structure/">Structuring aggregations</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">In-page Markup</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../">In-page Markup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../structure/">In-page structuring</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../course/">Properties of Course</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Properties of Module</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#module">Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#properties">Properties</a></li>
+        
+            <li><a class="toctree-l4" href="#non-preferred-properties">Non-preferred properties</a></li>
+        
+            <li><a class="toctree-l4" href="#example">Example</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../unit/">Properties of Unit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../lesson/">Properties of Lesson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../activity/">Properties of Activity</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../assessment/">Properties of Assessment</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../supportingmaterial/">Properties of SupportingMaterial</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../supplementalmaterial/">Properties of SupplementalMaterial</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../referencedmaterial/">Properties of ReferencedMaterial</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../auxiliary-types/">Properties of Auxiliary Types</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../packaging/">Packaging</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../styling/">Styling</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">K12 OCX Specification (Working Draft)</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>In-page Markup &raquo;</li>
+        
+      
+    
+    <li>Properties of Module</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="module">Module</h1>
+<ul>
+<li>type: <a href="http://oerschema.org/Module/">http://oerschema.org/Module/</a> &amp; <a href="http://schema.org/Course">http://schema.org/Course</a></li>
+<li>extends:<ul>
+<li><a href="http://oerschema.org/InstructionalPattern">http://oerschema.org/InstructionalPattern</a> =&gt; <a href="http://oerschema.org/LearningComponent">http://oerschema.org/LearningComponent</a></li>
+<li><a href="http://oerschema.org/Resource/">http://oerschema.org/Resource/</a></li>
+<li><a href="http://oerschema.org/CreativeWork">http://oerschema.org/CreativeWork</a> &amp; <a href="http://schema.org/CreativeWork">http://schema.org/CreativeWork</a></li>
+<li><a href="http://oerschema.org/Thing">http://oerschema.org/Thing</a> &amp; <a href="http://schema.org/Thing">http://schema.org/Thing</a></li>
+<li><a href="https://creativecommons.org/ns#Work">https://creativecommons.org/ns#Work</a></li>
+</ul>
+</li>
+<li>parentOf: <code>oer:Unit</code>, <code>oer:Lesson</code></li>
+<li>childOf: <code>oer:Course</code></li>
+</ul>
+<p>An instructional Module is a grouping of units and/or lessons on a similar topic (e.g., “Area and Surface Area”).</p>
+<p>Typically, a Module represents two to six weeks of instructional content.</p>
+<p>oer:Module meets the definition of schema.org/Course, i.e. it is "a sequence of one or more educational events and/or creative works which aims to build knowledge, competence or ability of learners". This means that resources that are modules should be typed as oer:Module and schema.org/Course. The schema.org learningResourceType property with a value of "Module" should be used to indicate the type of course to systems that understand schema.org but not the OER Schema terms used by OCX.</p>
+<p>Examples:</p>
+<ul>
+<li><a href="https://im.openupresources.org/6/teachers/1.html">Area and Surface Area</a> (IM)</li>
+<li><a href="https://pilot.unbounded.org/explore_curriculum?subjects=math&amp;p=/math/grade-4/module-1&amp;e=1">Place Value, Rounding, And Algorithms For Addition And Subtraction</a> (UnboundEd)</li>
+<li>Module 1 (EL)</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<p>Any property from <a href="https://schema.org/Course">schema.org/Course</a> or <a href="http://oerschema.org/Module/">oerschema:Module</a> may be used, including those inherited from their parent types. The Creative Commons license vocabulary is used for IPR related information.</p>
+<p>If properties with similar meaning are available from both schema.org and OER schema, then the property from schema.org should be used in preference (see non-preferred properties, below).</p>
+<p>The table below selectively lists those properties that are most relevant to OCX.</p>
+<p><strong>Note:</strong> Descriptions of some properties have been tweaked to make them more appropriate for describing modules.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>From schema.org:Course</strong></td>
+<td>--------------------</td>
+<td>--------------------</td>
+</tr>
+<tr>
+<td>courseCode</td>
+<td>Text</td>
+<td>The identifier for the Module used by the provider (e.g. CS101 or 6.001).</td>
+</tr>
+<tr>
+<td>coursePrerequisites</td>
+<td>AlignmentObject  or Course  or Text</td>
+<td>Requirements for taking the Module. May be completion of another Course or module or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using AlignmentObject.</td>
+</tr>
+<tr>
+<td><strong>From schema.org:CreativeWork</strong></td>
+<td>--------------------</td>
+<td>--------------------</td>
+</tr>
+<tr>
+<td>about</td>
+<td>Thing</td>
+<td>The subject matter of the content.</td>
+</tr>
+<tr>
+<td>accessibilitySummary</td>
+<td>Text</td>
+<td>A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."</td>
+</tr>
+<tr>
+<td>audience</td>
+<td>EducationalAudience</td>
+<td>An intended audience, i.e. a group for whom the resource being described was created. Use the educationalRole property of the EducationalAudience object to state whether the intended audience is teacher, student, parent, etc. See the <a href="http://lrmi.dublincore.org/specifications/concept_schemes/#educational-audience-role">LRMI Educational Audience Role concept scheme</a> for more values.</td>
+</tr>
+<tr>
+<td>author</td>
+<td>Organization  or Person</td>
+<td>The author of the module.</td>
+</tr>
+<tr>
+<td>citation</td>
+<td>CreativeWork  or Text</td>
+<td>A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.</td>
+</tr>
+<tr>
+<td>contributor</td>
+<td>Organization  or Person</td>
+<td>A secondary contributor to the module</td>
+</tr>
+<tr>
+<td>dateCreated</td>
+<td>Date</td>
+<td>The date on which the resource was created.</td>
+</tr>
+<tr>
+<td>dateModified</td>
+<td>Date</td>
+<td>The date on which the resource was updated.</td>
+</tr>
+<tr>
+<td>educationalAlignment</td>
+<td>AlignmentObject</td>
+<td>An alignment to an established educational framework. The alignment object can be used to provide information such as educational- (grade-) level of the module and competences being taught or assessed</td>
+</tr>
+<tr>
+<td>hasPart</td>
+<td>CreativeWork</td>
+<td>Indicates a CreativeWork that is part of this  Module (in some sense). Inverse property: isPartOf.</td>
+</tr>
+<tr>
+<td>inLanguage</td>
+<td>Language or Text</td>
+<td>The language of the content of the module. Please use one of the language codes from the IETF BCP 47 standard.</td>
+</tr>
+<tr>
+<td>isBasedOn</td>
+<td>CreativeWork or URL</td>
+<td>A resource from which this module is derived or of which it is a modification or adaption.</td>
+</tr>
+<tr>
+<td>isPartOf</td>
+<td>CreativeWork</td>
+<td>Indicates a CreativeWork that this module is (in some sense) part of. Inverse property: hasPart.</td>
+</tr>
+<tr>
+<td>keywords</td>
+<td>Text</td>
+<td>Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.</td>
+</tr>
+<tr>
+<td>learningResourceType</td>
+<td>Text</td>
+<td>The predominant type or kind characterizing the module. A value of "Module" should be used to indicate the type of course to systems that understand schema.org but not the OER Schema terms used by OCX.</td>
+</tr>
+<tr>
+<td>provider</td>
+<td>Organization</td>
+<td>The service provider, service operator, or service performer; the goods producer. Use to identify the Organization which is responsible for providing the educational input for the module, e.g. providing content, assessments, accreditation etc.</td>
+</tr>
+<tr>
+<td>publisher</td>
+<td>Organization</td>
+<td>The organization credited with publishing the resource.</td>
+</tr>
+<tr>
+<td>timeRequired</td>
+<td>Duration</td>
+<td>Approximate or typical time it takes to work with or through this course for the typical intended target audience, e.g. 'P30M', 'P1H25M'.</td>
+</tr>
+<tr>
+<td>typicalAgeRange</td>
+<td>Text</td>
+<td>The typical expected age in years of the learners on this module. For OCX the suggestion is to use a list to indicate a closed range of ages, e.g. ["9","10","11"], and values like "18-" for an open range.</td>
+</tr>
+<tr>
+<td><strong>From schema.org:Thing</strong></td>
+<td>--------------------</td>
+<td>--------------------</td>
+</tr>
+<tr>
+<td>alternateName</td>
+<td>Text</td>
+<td>An alias for the course.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Text</td>
+<td>A description of the course</td>
+</tr>
+<tr>
+<td>identifier</td>
+<td>PropertyValue  or Text  or URL</td>
+<td>The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, DOIs, UUIDs etc.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Text</td>
+<td>The name [title] of the course</td>
+</tr>
+<tr>
+<td>url</td>
+<td>URL</td>
+<td>URL of the course.</td>
+</tr>
+<tr>
+<td><strong>From ocx</strong></td>
+<td>--------------------</td>
+<td>--------------------</td>
+</tr>
+<tr>
+<td>ocx:material</td>
+<td>ocx:AssociatedMaterial</td>
+<td>Material assiociated with a resource which is SupplementalMaterial, ReferencedMaterial or SupportingMaterial</td>
+</tr>
+<tr>
+<td><strong>From oer:LearningComponent</strong></td>
+<td>--------------------</td>
+<td>--------------------</td>
+</tr>
+<tr>
+<td>oer:hasLearningObjective</td>
+<td>oer:LearningObjective</td>
+<td>A LearningObjective gained as a result of an InstructionalPattern .</td>
+</tr>
+<tr>
+<td>oer:doTask</td>
+<td>oer:Task</td>
+<td>Which tasks are to be completed for a LearningComponent. May be used to indicate required assessments</td>
+</tr>
+<tr>
+<td>oer:forTopic</td>
+<td>oer:Topic</td>
+<td>The Topic the resource is associated with. An oer:Topic is defined as the context of a oer:LearningComponent</td>
+</tr>
+<tr>
+<td><strong>From cc:Work</strong></td>
+<td>--------------------</td>
+<td>--------------------</td>
+</tr>
+<tr>
+<td>cc:license</td>
+<td>Text | License</td>
+<td>A Work has license a License (a subproperty of dc:license, the same as xhtml:license).</td>
+</tr>
+<tr>
+<td>cc:morePermissions</td>
+<td>Text</td>
+<td>A related resource which describes additional permissions or alternative licenses for a Work which may be available.</td>
+</tr>
+<tr>
+<td>cc:attributionName</td>
+<td>Text</td>
+<td>The name the creator of a Work would like used when attributing re-use.</td>
+</tr>
+<tr>
+<td>cc:attributionURL</td>
+<td>URL</td>
+<td>The URL the creator of a Work would like used when attributing re-use.</td>
+</tr>
+<tr>
+<td>cc:useGuidelines</td>
+<td>Text</td>
+<td>A related resource which defines non-binding use guidelines for the work.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="non-preferred-properties">Non-preferred properties</h2>
+<p>The following OER Schema properties should not be used as there are similar properties in schema.org:</p>
+<table>
+<thead>
+<tr>
+<th>OER Schema Property</th>
+<th>preferred schema.org equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>duration</td>
+<td>learningTime (from CreativeWork)</td>
+</tr>
+<tr>
+<td>hasComponent</td>
+<td>hasPart (from CreativWork)</td>
+</tr>
+<tr>
+<td>prerequisite</td>
+<td>coursePrerequisites (from Course)</td>
+</tr>
+<tr>
+<td>parentOf</td>
+<td>hasPart (from CreativeWork)</td>
+</tr>
+<tr>
+<td>childOf</td>
+<td>isPartOf (from CreativeWork)</td>
+</tr>
+<tr>
+<td>all properties of oer:Thing</td>
+<td>all have equivalents in schema.org Thing</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example">Example</h2>
+<p>Markup for <a href="https://pilot.unbounded.org/math/grade-4/module-1">https://pilot.unbounded.org/math/grade-4/module-1</a>:</p>
+<ul>
+<li>JSON-LD</li>
+</ul>
+<p>The following would be placed in a <code>&lt;script  type="application/ld+json"&gt;</code> element in the HTML sectioning element that contained information about the module.</p>
+<p><strong>Note:</strong> The URIs used for the <code>@id</code>s are based on the URLs of the page that represent the module being described and its units with the addition of the #A fragment identifiers treating them as aggregate resources as described in the section on <a href="../../manifest/structure/">manifest structuring</a>. This conforms with the requirement that different identifiers are used for CCM entities and the web pages that represent them, as described in the <a href="../../contentmodel/">content model</a>.</p>
+<p><strong>Note:</strong> In the case where the content of a module is split over many HTML files, there is no requirement for the <code>hasPart</code> array shown in this example as this information would be provided by the manifest.</p>
+<pre><code class="json">{
+  &quot;@context&quot;: [
+    &quot;http://schema.org/&quot;,
+    {
+      &quot;oer&quot;: &quot;http://oerschema.org/&quot;,
+      &quot;cc&quot;: &quot;http://creativecommons.org/ns#&quot;
+    }
+  ],
+  &quot;@id&quot;: &quot;http://pilot.unbounded.org/math/grade-4/module-1#A&quot;,
+  &quot;@type&quot;: [&quot;oer:Module&quot;, &quot;Course&quot;],
+  &quot;learningResourceType&quot;: &quot;Module&quot;,
+  &quot;name&quot;: &quot;Place Value, Rounding, and Algorithms for Addition and Subtraction&quot;,
+  &quot;description&quot;: &quot;Students progress toward adding and subtracting multi-digit whole numbers using the standard algorithm.&quot;,
+  &quot;schema:keywords&quot;: &quot;number &amp; operations in base 10,operations &amp; algebraic thinking&quot;,
+  &quot;sameAs&quot;: [
+    &quot;http://pilot.unbounded.org/resources/934&quot;, &quot;https://www.engageny.org/resource/grade-4-mathematics-module-1&quot;
+  ],
+  &quot;url&quot;: &quot;http://pilot.unbounded.org/math/grade-4/module-1&quot;,
+  &quot;identifier&quot;: {
+    &quot;@type&quot;: &quot;PropertyValue&quot;,
+    &quot;propertyID&quot;: &quot;UnboundEd resource identifier&quot;,
+    &quot;value&quot;: &quot;934&quot;
+  },
+  &quot;dateCreated&quot;: &quot;2015-10-23T01:11:29.326Z&quot;,
+  &quot;dateModified&quot;: &quot;2017-08-25T11:29:22.859Z&quot;,
+  &quot;timeRequired&quot;: &quot;PT4H&quot;,
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;http://schema.org/Organization&quot;,
+    &quot;name&quot;: &quot;UnboundEd&quot;,
+    &quot;email&quot;: &quot;supportdesk@unbounded.org&quot;,
+    &quot;url&quot;: &quot;http://pilot.unbounded.org/about&quot;
+  },
+  &quot;schema:inLanguage&quot;: &quot;en-US&quot;,
+  &quot;schema:educationalAlignment&quot;: [{
+    &quot;@type&quot;: &quot;AlignmentObject&quot;,
+    &quot;alignmentType&quot;: &quot;teaches&quot;,
+    &quot;targetName&quot;: &quot;ccss.math.content.4.nbt.a.1&quot;,
+    &quot;educationFramework&quot;: &quot;CommonCoreStandard&quot;
+  }, {
+    &quot;@type&quot;: &quot;AlignmentObject&quot;,
+    &quot;alignmentType&quot;: &quot;teaches&quot;,
+    &quot;targetName&quot;: &quot;ccss.math.content.4.nbt.a.2&quot;,
+    &quot;educationFramework&quot;: &quot;CommonCoreStandard&quot;
+  }, {
+    &quot;@type&quot;: &quot;AlignmentObject&quot;,
+    &quot;alignmentType&quot;: &quot;teaches&quot;,
+    &quot;targetName&quot;: &quot;ccss.math.content.4.nbt.a.3&quot;,
+    &quot;educationFramework&quot;: &quot;CommonCoreStandard&quot;
+  }, {
+    &quot;@type&quot;: &quot;AlignmentObject&quot;,
+    &quot;alignmentType&quot;: &quot;teaches&quot;,
+    &quot;targetName&quot;: &quot;ccss.math.content.4.nbt.b.4&quot;,
+    &quot;educationFramework&quot;: &quot;CommonCoreStandard&quot;
+  }, {
+    &quot;@type&quot;: &quot;AlignmentObject&quot;,
+    &quot;alignmentType&quot;: &quot;teaches&quot;,
+    &quot;targetName&quot;: &quot;ccss.math.content.4.oa.a.3&quot;,
+    &quot;educationFramework&quot;: &quot;CommonCoreStandard&quot;
+  }, {
+    &quot;@type&quot;: &quot;AlignmentObject&quot;,
+    &quot;alignmentType&quot;: &quot;teaches&quot;,
+    &quot;targetName&quot;: &quot;math-4-cg&quot;,
+    &quot;educationFramework&quot;: &quot;UnboundedStandard&quot;
+  }],
+  &quot;hasPart&quot;: [{
+    &quot;@type&quot;: &quot;oer:Unit&quot;,
+    &quot;@id&quot;: &quot;http://pilot.unbounded.org/math/grade-4/module-1/topic-a#A&quot;,
+    &quot;name&quot;: &quot;Place Value of Multi-digit Whole Numbers&quot;
+  }, {
+    &quot;@type&quot;: &quot;oer:Unit&quot;,
+    &quot;@id&quot;: &quot;http://pilot.unbounded.org/math/grade-4/module-1/topic-b#A&quot;,
+    &quot;name&quot;: &quot;Comparing Multi-Digit Whole Numbers&quot;
+  }, {
+    &quot;@type&quot;: &quot;oer:Unit&quot;,
+    &quot;@id&quot;: &quot;http://pilot.unbounded.org/math/grade-4/module-1/topic-c#A&quot;,
+    &quot;name&quot;: &quot;Rounding Multi-Digit Whole Numbers&quot;
+  }, {
+    &quot;@type&quot;: &quot;oer:Unit&quot;,
+    &quot;@id&quot;: &quot;http://pilot.unbounded.org/documents/94&quot;,
+    &quot;name&quot;: &quot;Unit 1 Mid-Unit Assessment Task: Topics A-C&quot;
+  }, {
+    &quot;@type&quot;: &quot;oer:Unit&quot;,
+    &quot;@id&quot;: &quot;http://pilot.unbounded.org/math/grade-4/module-1/topic-d#A&quot;,
+    &quot;name&quot;: &quot;Multi-Digit Whole Number Addition&quot;
+  }, {
+    &quot;@type&quot;: &quot;oer:Unit&quot;,
+    &quot;@id&quot;: &quot;http://pilot.unbounded.org/math/grade-4/module-1/topic-e#A&quot;,
+    &quot;name&quot;: &quot;Multi-Digit Whole Number Subtraction&quot;
+  }, {
+    &quot;@type&quot;: &quot;oer:Unit&quot;,
+    &quot;@id&quot;: &quot;http://pilot.unbounded.org/math/grade-4/module-1/topic-f#A&quot;,
+    &quot;name&quot;: &quot;Addition and Subtraction Word Problems&quot;
+  }, {
+    &quot;@type&quot;: &quot;oer:Assessment&quot;,
+    &quot;@id&quot;: &quot;http://pilot.unbounded.org/documents/95#A&quot;,
+    &quot;name&quot;: &quot;Unit 1 End-of-Unit Assessment Task: Topics A-F&quot;
+  }],
+  &quot;isPartOf&quot;: {
+    &quot;@type&quot;: &quot;http://oerschema.org/Course&quot;,
+    &quot;@id&quot;: &quot;http://pilot.unbounded.org/math/grade-4#A&quot;,
+    &quot;name&quot;: &quot;Grade 4 Mathematics&quot;
+  },
+  &quot;oer:forTopic&quot;: {
+    &quot;@type&quot;: [&quot;oer:Topic&quot;,&quot;Intangible&quot;],
+    &quot;@id&quot;: &quot;http://pilot.unbounded.org/math&quot;,
+    &quot;name&quot;: &quot;Mathematics&quot;
+  }
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../unit/" class="btn btn-neutral float-right" title="Properties of Unit">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../course/" class="btn btn-neutral" title="Properties of Course"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../course/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../unit/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

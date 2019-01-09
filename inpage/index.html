@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>In-page Markup - K12 OCX Specification (Working Draft)</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../css/custom.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "In-page Markup";
+    var mkdocs_page_input_path = "inpage/index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> K12 OCX Specification (Working Draft)</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../contentmodel/">Content Model</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Manifest</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../manifest/">Aggregated content</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../manifest/locate/">Locating content</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../manifest/structure/">Structuring aggregations</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">In-page Markup</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">In-page Markup</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#in-page-markup">In page markup</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#information-to-be-provided">Information to be provided</a></li>
+        
+            <li><a class="toctree-l4" href="#outline-of-the-general-approach">Outline of the general approach</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="structure/">In-page structuring</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="course/">Properties of Course</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="module/">Properties of Module</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="unit/">Properties of Unit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="lesson/">Properties of Lesson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="activity/">Properties of Activity</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="assessment/">Properties of Assessment</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="supportingmaterial/">Properties of SupportingMaterial</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="supplementalmaterial/">Properties of SupplementalMaterial</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="referencedmaterial/">Properties of ReferencedMaterial</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="auxiliary-types/">Properties of Auxiliary Types</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../packaging/">Packaging</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../styling/">Styling</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">K12 OCX Specification (Working Draft)</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>In-page Markup &raquo;</li>
+        
+      
+    
+    <li>In-page Markup</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="in-page-markup">In page markup</h1>
+<p>CCM being transferred may be contained in a single digital document or many, the format of which must be HTML5 or translatable to HTML5. These digital documents may contain content from any level of the OER Schema model from Course down to Activity, and all smaller levels comprised by it.</p>
+<p><img alt="ocx - model schema" src="https://docs.google.com/drawings/d/e/2PACX-1vRFmqDy20wkWNhS4Iat6vRFLGfuhq9oTbayuG3_mJA9V46s6OT5oz8itEVyBYrO4YQCmcBH2qljgW6e/pub?w=960&amp;h=720" /></p>
+<p>For example a digital document might contain a Lesson with associated Activities, Supporting Materials and Assessments. Each of these may also be structured into parts. The <a href="http://research.cehd.umn.edu/otn/">Open Textbook Network</a> have published a <a href="https://canvas.umn.edu/courses/106630/pages/textbook-elements">useful vocabulary</a> for describing these parts that applies at any OER Schema level, which is divided into openers, closers and "integrated pedagogic devices," for each of which they provide several specific examples.</p>
+<h2 id="information-to-be-provided">Information to be provided</h2>
+<p>The in-page markup is required to:</p>
+<ul>
+<li>
+<p>define and identify with a URI the main pedagogical content, i.e. the CCM resources, from any other content that may be in the same document or web page (for example if the resource is in a repository or on a website there may be information and navigation elements relating to the service or site as a whole).</p>
+</li>
+<li>
+<p>define and identify with a URI the divisions of the document that are pedagogically significant in terms of their nature and their educational intent, for example distinguishing an introduction that provides context from the activities designed to foster understanding and from an end of lesson assessment. When a resource is being reused, repurposed or remixed these are the divisions that may be treated as somewhat independent resources.</p>
+</li>
+<li>
+<p>describe educationally significant properties and relationships of the resource as a whole and the significant divisions. These may include:</p>
+<ul>
+<li>what is being taught, with alignments to standards where appropriate and the educational level for which the content is suitable;</li>
+<li>the educational nature and intent of the resource;</li>
+<li>the educational level for which the resource is appropriate;</li>
+<li>specifying directly or indirectly who each part of the resource is intended for, e.g. distinguish teachers' notes from material that is presented to students.</li>
+<li>specifying relationships with other content, e.g. homework, classroom materials, teacher's guide etc. </li>
+</ul>
+</li>
+<li>
+<p>specify the ordering of the parts of the document. This is necessary because technology used to transmit, store and reuse the content may disaggregate the logical parts of the document in a way that does not preserve the implicit ordering in the document.</p>
+</li>
+</ul>
+<h2 id="outline-of-the-general-approach">Outline of the general approach</h2>
+<p>The digital document which contains the CCM is divided into parts using the HTML5 semantic sectioning elements <code>&lt;main&gt;</code> <code>&lt;chapter&gt;</code> <code>&lt;article&gt;</code> <code>&lt;section&gt;</code> <code>&lt;aside&gt;</code> <code>&lt;header&gt;</code> <code>&lt;footer&gt;</code> <code>&lt;nav&gt;</code>.  Descriptive information is provided using RDFa for the document as a whole and for each section individually.</p>
+<p>schema.org and oerschema object types, supplemented where necessary with custom ocx type are used to provide information about the nature of the document and its sections. Often the schema.org type will be vague or generic and so it can be supplemented with a more specific oerschema or ocx resource type. In such cases the schema.org/learningResourceType property should be used to provide similar information about the resource type in a form that is intelligible to systems that understand only schema.org.</p>
+<p>schema.org properties may be used to provide information about other aspects of the document and its sections. Where no suitable schema.org property exists, OER Schema properties will be used, and if no suitable OER Schema property exists either a custom OCX term will be used.</p>
+<p>Where appropriate, values for properties will come from (in order of preference): LRMI, OER Schema, or custom OCX vocabularies based on existing practice.</p>
+<p>Where the top level resource (e.g. a Lesson) comprises several parts (e.g. Activities) the schema.org/hasPart property will be used to provide the structural relationship between the top level resource and the parts. Where this is the case information about the top level resource will be held to relevant to all the parts unless more specific information is provided for the part. (For example if a Lesson is about subjectX, then all Activities that are part of it can be assumed to be about subjectX unless a different subject is specified for an Activity.)</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structure/" class="btn btn-neutral float-right" title="In-page structuring">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../manifest/structure/" class="btn btn-neutral" title="Structuring aggregations"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../manifest/structure/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="structure/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

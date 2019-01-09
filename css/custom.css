@@ -1,0 +1,18 @@
+.wy-nav-content {
+  max-width: 950px;
+}
+.wy-nav-content a:visited {
+  color: #2980B9;
+}
+.wy-nav-content-wrap {
+  margin-left: 250px;
+}
+.wy-nav-side {
+  width: 250px;
+}
+.rst-versions {
+  width: 250px;
+}
+.wy-body-for-nav {
+  background-size: 250px 1px;
+}

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Properties of SupportingMaterial - K12 OCX Specification (Working Draft)</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../../css/custom.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Properties of SupportingMaterial";
+    var mkdocs_page_input_path = "inpage/supportingmaterial.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> K12 OCX Specification (Working Draft)</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../contentmodel/">Content Model</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Manifest</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../manifest/">Aggregated content</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../manifest/locate/">Locating content</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../manifest/structure/">Structuring aggregations</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">In-page Markup</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../">In-page Markup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../structure/">In-page structuring</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../course/">Properties of Course</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../module/">Properties of Module</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../unit/">Properties of Unit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../lesson/">Properties of Lesson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../activity/">Properties of Activity</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../assessment/">Properties of Assessment</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Properties of SupportingMaterial</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#supportingmaterial">SupportingMaterial</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#properties">Properties</a></li>
+        
+            <li><a class="toctree-l4" href="#non-preferred-properties">Non-preferred properties</a></li>
+        
+            <li><a class="toctree-l4" href="#examples">Examples</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../supplementalmaterial/">Properties of SupplementalMaterial</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../referencedmaterial/">Properties of ReferencedMaterial</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../auxiliary-types/">Properties of Auxiliary Types</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../packaging/">Packaging</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../styling/">Styling</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">K12 OCX Specification (Working Draft)</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>In-page Markup &raquo;</li>
+        
+      
+    
+    <li>Properties of SupportingMaterial</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="supportingmaterial">SupportingMaterial</h1>
+<ul>
+<li>type: http://oerschema.org/SupportingMaterial &amp; <a href="http://schema.org/CreativeWork">http://schema.org/CreativeWork</a></li>
+<li>extends:<ul>
+<li><a href="http://oerschema.org/InstructionalPattern">http://oerschema.org/InstructionalPattern</a> =&gt; <a href="http://oerschema.org/LearningComponent">http://oerschema.org/LearningComponent</a></li>
+<li><a href="http://oerschema.org/Resource">http://oerschema.org/Resource</a></li>
+<li><a href="http://oerschema.org/CreativeWork">http://oerschema.org/CreativeWork</a> =&gt; <a href="http://schema.org/CreativeWork">http://schema.org/CreativeWork</a></li>
+<li><a href="http://oerschema.org/Thing">http://oerschema.org/Thing</a> =&gt; <a href="http://schema.org/Thing">http://schema.org/Thing</a></li>
+<li><a href="https://creativecommons.org/ns#Work">https://creativecommons.org/ns#Work</a></li>
+</ul>
+</li>
+<li>parentOf: None</li>
+<li>childOf: None</li>
+</ul>
+<p>Material that teaches the learning objectives of the course.</p>
+<p>Examples:</p>
+<ul>
+<li>blackline masters</li>
+<li>Embedded apps / interactive elements such as in the Squares and Rectangles activity of the lesson <a href="https://im.openupresources.org/6/students/5/2.html#activity-2">Using Diagrams to represent addition and subtraction</a> (IM / OUR)</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>From schema.org Thing</strong></td>
+<td>--------------------</td>
+<td>--------------------</td>
+</tr>
+<tr>
+<td>identifier</td>
+<td>Text |  URL | PropertyValue</td>
+<td>Any kind of identifier (uuid, url, etc).</td>
+</tr>
+<tr>
+<td>url</td>
+<td>URL</td>
+<td>URL of the item.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Text</td>
+<td>The name of the item.</td>
+</tr>
+<tr>
+<td>alternateName</td>
+<td>Text</td>
+<td>An alias for the item.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Text</td>
+<td>A description of the item.</td>
+</tr>
+<tr>
+<td><strong>From schema.org CreativeWork</strong></td>
+<td>--------------------</td>
+<td><em>(below we show a few relevant CreativeWork properties. For the full properties table see <a href="http://schema.org/CreativeWork">http://schema.org/CreativeWork</a> )</em></td>
+</tr>
+<tr>
+<td>about</td>
+<td>Thing</td>
+<td>The subject matter of the content.</td>
+</tr>
+<tr>
+<td>accessibilitySummary</td>
+<td>Text</td>
+<td>A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."</td>
+</tr>
+<tr>
+<td>audience</td>
+<td>EducationalAudience</td>
+<td>An intended audience, i.e. a group for whom the resource being described was created. Use the educationalRole property of the EducationalAudience object to state whether the intended audience is teacher, student, parent, etc. See the <a href="http://lrmi.dublincore.org/specifications/concept_schemes/#educational-audience-role">LRMI Educational Audience Role concept scheme</a> for more values.</td>
+</tr>
+<tr>
+<td>author</td>
+<td>Organization  or Person</td>
+<td>The author of the supporting material.</td>
+</tr>
+<tr>
+<td>citation</td>
+<td>CreativeWork  or Text</td>
+<td>A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.</td>
+</tr>
+<tr>
+<td>contributor</td>
+<td>Organization  or Person</td>
+<td>A secondary contributor to the supporting material</td>
+</tr>
+<tr>
+<td>dateCreated</td>
+<td>Date</td>
+<td>The date on which the resource was created.</td>
+</tr>
+<tr>
+<td>dateModified</td>
+<td>Date</td>
+<td>The date on which the resource was updated.</td>
+</tr>
+<tr>
+<td>educationalUse</td>
+<td>Text</td>
+<td>The purpose of the work in the context of education. Ex: "assignment", "group work"</td>
+</tr>
+<tr>
+<td>encoding</td>
+<td>MediaObject</td>
+<td>A media object that encodes this supporting material. Use when the same digital document is available in different formats.</td>
+</tr>
+<tr>
+<td>hasPart</td>
+<td>CreativeWork</td>
+<td>Indicates a CreativeWork that is part of this supporting material (in some sense). Inverse property: isPartOf.</td>
+</tr>
+<tr>
+<td>inLanguage</td>
+<td>Language or Text</td>
+<td>The language of the content of the supporting material. Please use one of the language codes from the IETF BCP 47 standard.</td>
+</tr>
+<tr>
+<td>isBasedOn</td>
+<td>CreativeWork or URL</td>
+<td>A resource from which this supporting material is derived or of which it is a modification or adaption.</td>
+</tr>
+<tr>
+<td>isPartOf</td>
+<td>CreativeWork</td>
+<td>Indicates a CreativeWork that this supporting material is (in some sense) part of. Inverse property: hasPart.</td>
+</tr>
+<tr>
+<td>keywords</td>
+<td>Text</td>
+<td>Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.</td>
+</tr>
+<tr>
+<td>learningResourceType</td>
+<td>Text</td>
+<td>The predominant type or kind characterizing the supporting material.</td>
+</tr>
+<tr>
+<td>provider</td>
+<td>Organization</td>
+<td>The service provider, service operator, or service performer; the goods producer. Use to identify the Organization which is responsible for providing the educational input for the supporting material, e.g. providing content, educational events, assessments, accreditation etc.</td>
+</tr>
+<tr>
+<td>publisher</td>
+<td>Organization</td>
+<td>The organization credited with publishing the supporting material.</td>
+</tr>
+<tr>
+<td>timeRequired</td>
+<td>Duration</td>
+<td>Approximate or typical time it takes to work with or through this supporting material for the typical intended target audience, e.g. 'P30M', 'PT1H25M'.</td>
+</tr>
+<tr>
+<td>typicalAgeRange</td>
+<td>Text</td>
+<td>The typical expected age in years of the learners on this supporting material. For OCX the suggestion is to use a list to indicate a closed range of ages, e.g. ["9","10","11"], and values like "18-" for an open range.</td>
+</tr>
+<tr>
+<td><strong>From oer:LearningComponent</strong></td>
+<td>--------------------</td>
+<td>--------------------</td>
+</tr>
+<tr>
+<td>oer:forCourse</td>
+<td>oer:Course</td>
+<td>The Course in which the resource is meant for.</td>
+</tr>
+<tr>
+<td>hasLearningObjective</td>
+<td>LearningObjective</td>
+<td>A LearningObjective gained as a result of an InstructionalPattern .</td>
+</tr>
+<tr>
+<td><strong>From oer:Resource</strong></td>
+<td>--------------------</td>
+<td>--------------------</td>
+</tr>
+<tr>
+<td>forTopic</td>
+<td>Topic</td>
+<td>The Topic the resource is associated with.</td>
+</tr>
+<tr>
+<td>From <strong>cc:Work</strong></td>
+<td>--------------------</td>
+<td>--------------------</td>
+</tr>
+<tr>
+<td>cc:license</td>
+<td>Text | License</td>
+<td>A Work has license a License (a subproperty of dc:license, the same as xhtml:license).</td>
+</tr>
+<tr>
+<td>cc:morePermissions</td>
+<td>Text</td>
+<td>A related resource which describes additional permissions or alternative licenses for a Work which may be available.</td>
+</tr>
+<tr>
+<td>cc:attributionName</td>
+<td>Text</td>
+<td>The name the creator of a Work would like used when attributing re-use.</td>
+</tr>
+<tr>
+<td>cc:attributionURL</td>
+<td>URL</td>
+<td>The URL the creator of a Work would like used when attributing re-use.</td>
+</tr>
+<tr>
+<td>cc:useGuidelines</td>
+<td>Text</td>
+<td>A related resource which defines non-binding use guidelines for the work.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="non-preferred-properties">Non-preferred properties</h2>
+<p>The following OER Schema properties should not be used as there are similar properties in schema.org:</p>
+<table>
+<thead>
+<tr>
+<th>OER Schema Property</th>
+<th>preferred schema.org equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>duration</td>
+<td>learningTime (from CreativeWork)</td>
+</tr>
+<tr>
+<td>hasComponent</td>
+<td>hasPart (from CreativWork)</td>
+</tr>
+<tr>
+<td>forComponent</td>
+<td>isPartOf (from CreativeWork)</td>
+</tr>
+<tr>
+<td>prerequisite</td>
+<td>coursePrerequisites (from Course)</td>
+</tr>
+<tr>
+<td>parentOf</td>
+<td>hasPart (from CreativeWork)</td>
+</tr>
+<tr>
+<td>childOf</td>
+<td>isPartOf (from CreativeWork)</td>
+</tr>
+<tr>
+<td>all properties of oer:Thing</td>
+<td>all have equivalents in schema.org Thing</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<ul>
+<li>JSON-LD</li>
+</ul>
+<pre><code class="json">{  
+  &quot;@context&quot;: [
+    &quot;http://schema.org/&quot;,
+    {
+      &quot;oer&quot;: &quot;http://oerschema.org/&quot;,
+      &quot;cc&quot;: &quot;http://creativecommons.org/ns#&quot;
+    }
+  ],
+  &quot;@type&quot;: [&quot;oer:SupportingMaterial&quot;,&quot;MediaObject&quot;],
+  &quot;name&quot;: &quot;GeoGebra Applet FXEZD466&quot;,
+  &quot;url&quot;: &quot;https://im.openupresources.org/6/students/5/2.html#geogebra-wrapper-FXEZD466-1495720696216&quot;,  
+  &quot;identifier&quot;: {
+    &quot;@type&quot;: &quot;PropertyValue&quot;,
+    &quot;propertyID&quot;: &quot;IM resource identifier&quot;,
+    &quot;value&quot;: &quot;FXEZD466&quot;
+  },
+  &quot;encodingFormat&quot;:  &quot;text/javascript&quot;,
+  &quot;learningResourceType&quot;: [&quot;SupportingMaterial&quot;,&quot;Interactive applet&quot;],
+  &quot;audience&quot;: {
+    &quot;@type&quot;: &quot;EducationalAudience&quot;,
+    &quot;educationalRole&quot;: &quot;student&quot;
+  },
+  &quot;isPartOf&quot;:  {
+    &quot;@type&quot;: [&quot;oer:Activity&quot;,&quot;CreativeWork&quot;],
+    &quot;@id&quot;: &quot;https://im.openupresources.org/6/students/5/2.html#activity-2&quot;,
+    &quot;name&quot;: &quot;Squares and Rectangles&quot;
+  }
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../supplementalmaterial/" class="btn btn-neutral float-right" title="Properties of SupplementalMaterial">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../assessment/" class="btn btn-neutral" title="Properties of Assessment"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../assessment/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../supplementalmaterial/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

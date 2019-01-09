@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Structuring aggregations - K12 OCX Specification (Working Draft)</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../../css/custom.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Structuring aggregations";
+    var mkdocs_page_input_path = "manifest/structure.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> K12 OCX Specification (Working Draft)</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../contentmodel/">Content Model</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Manifest</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../">Aggregated content</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../locate/">Locating content</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Structuring aggregations</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#structuring-aggregations">Structuring Aggregations</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#an-unordered-aggregation">An Unordered Aggregation</a></li>
+        
+            <li><a class="toctree-l4" href="#an-ordered-aggregation">An Ordered Aggregation</a></li>
+        
+            <li><a class="toctree-l4" href="#an-ordered-aggregation-option-1">An Ordered Aggregation - Option 1</a></li>
+        
+            <li><a class="toctree-l4" href="#an-ordered-aggregation-option-2">An Ordered Aggregation - Option 2</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">In-page Markup</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../inpage/">In-page Markup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../inpage/structure/">In-page structuring</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../inpage/course/">Properties of Course</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../inpage/module/">Properties of Module</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../inpage/unit/">Properties of Unit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../inpage/lesson/">Properties of Lesson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../inpage/activity/">Properties of Activity</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../inpage/assessment/">Properties of Assessment</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../inpage/supportingmaterial/">Properties of SupportingMaterial</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../inpage/supplementalmaterial/">Properties of SupplementalMaterial</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../inpage/referencedmaterial/">Properties of ReferencedMaterial</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../inpage/auxiliary-types/">Properties of Auxiliary Types</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../packaging/">Packaging</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../styling/">Styling</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">K12 OCX Specification (Working Draft)</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Manifest &raquo;</li>
+        
+      
+    
+    <li>Structuring aggregations</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="structuring-aggregations">Structuring Aggregations</h1>
+<p>We provide information about logical and pedagogically appropriate sequences for displaying or presenting  the components of complex curriculum materials using schema.org with some additional terms from OER Schema.</p>
+<p>There are currently two proposals for how to sequence the content. One approach is a simple JSON-LD ordered list. The other approach is founded on encoding the structure using schema.org ItemLists, which can be interpreted as a table of contents.</p>
+<p>We recommend this information is provided as linked data encoded in JSON-LD (or potentially RDFa).</p>
+<p><strong>Editor's note</strong> : for more information about the thinking behind this approach see <a href="https://docs.google.com/document/d/1CDIcyoYtg9WeWpno_wyuNRJmqyn80_hVKjpKBjIG7GE/edit#heading=h.e3fwche8pgr6">Structure and sequence of book- or course-like resources</a>.</p>
+<h2 id="an-unordered-aggregation">An Unordered Aggregation</h2>
+<p>We represent the whole-part relationships of complex curriculum materials using schema.org and OER Schema.</p>
+<p>Schema.org org allows us to say that a CreativeWork (such as a Book) has parts (Chapters). The terminology of Books and Chapters may be too restrictive for curriculum materials in general, and so we recommend the use of OER Schema's type vocabulary.</p>
+<h3 id="recommended-vocabulary-identifiers">Recommended Vocabulary Identifiers</h3>
+<table>
+<thead>
+<tr>
+<th>Vocabulary</th>
+<th>Namespace : Context URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>schema.org</td>
+<td><code>sdo : http://schema.org/</code></td>
+</tr>
+<tr>
+<td>OERSchema</td>
+<td><code>oer : http://oerschema.org/</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="recommended-classes-types">Recommended Classes / Types</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sdo:CreativeWork</code></td>
+<td>The most generic kind of creative work, including books, movies, photographs, software programs, etc.</td>
+</tr>
+<tr>
+<td><code>sdo:Book</code></td>
+<td>A book.</td>
+</tr>
+<tr>
+<td><code>sdo:Chapter</code></td>
+<td>One of the sections into which a book is divided. A chapter usually has a section number or a name.</td>
+</tr>
+<tr>
+<td><code>sdo:WebPage</code></td>
+<td>A web page.</td>
+</tr>
+<tr>
+<td><code>sdo:WebSite</code></td>
+<td>A website.</td>
+</tr>
+<tr>
+<td><code>sdo:Course</code></td>
+<td>A sequence of one or more educational events and/or creative works which aims to build knowledge, competence or ability of learners.</td>
+</tr>
+<tr>
+<td><code>oer:Module</code></td>
+<td>A module [the largest possible subpart]</td>
+</tr>
+<tr>
+<td><code>oer:Unit</code></td>
+<td>A unit [part of a module, comprising several lessons]</td>
+</tr>
+<tr>
+<td><code>oer:Lesson</code></td>
+<td>A lesson [a smaller component than a Unit]</td>
+</tr>
+<tr>
+<td><code>oer:Activity</code></td>
+<td>An activity performed by students which can be assessed and graded.</td>
+</tr>
+<tr>
+<td><code>oer:Assessment</code></td>
+<td>An assessment of a student's activity.</td>
+</tr>
+<tr>
+<td><code>oer:SupportingMaterial</code></td>
+<td>Material that teaches the learning objectives of the course.</td>
+</tr>
+</tbody>
+</table>
+<p>Further information about mapping the OERSchema classes to the terms used by specific providers is given in the section on [TO DO].</p>
+<h3 id="recommended-properties">Recommended Properties</h3>
+<p>Properties of sdo:CreativeWork</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Expected Type</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sdo:hasPart</code></td>
+<td>sdo:CreativeWork</td>
+<td>Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> All the schema.org types are subtypes of sdo:CreativeWork and so may be used wherever sdo:CreativeWork is the expected type. The leniency of domain and range specification in schema.org allows us to treat the OER Schema types as if they were CreativeWorks.</p>
+<h3 id="example">Example</h3>
+<p>A module comprises two topics, one of the topics comprises three lessons
+<img alt="entity-relationship graph of a module with two topics, one of the topic has three lessons; all the connecting edges are of type sdo:hasPart" src="../../images/hierarchy.png" /></p>
+<pre><code>{
+  &quot;@context&quot;: {
+    &quot;ex&quot;: &quot;http://example.org/&quot; ,
+    &quot;sdo&quot;: &quot;http://schema.org/&quot; ,
+    &quot;oer&quot;: &quot;http://oerschema.org/&quot;,
+    &quot;sdo:hasPart&quot; : {
+      &quot;@type&quot; : &quot;@id&quot;
+    }
+  },
+  &quot;@graph&quot;: [
+    {
+      &quot;@id&quot;: &quot;ex:Module1#A&quot;,
+      &quot;@type&quot;: [&quot;sdo:CreativeWork&quot;, &quot;oer:Module&quot;],
+      &quot;sdo:hasPart&quot;: [&quot;ex:TopicA#A&quot;, &quot;ex:TopicB#A&quot; ]
+    },
+    {
+      &quot;@id&quot;: &quot;ex:TopicA#A&quot;,
+      &quot;@type&quot;: [&quot;sdo:CreativeWork&quot;, &quot;oer:Unit&quot;],
+      &quot;sdo:hasPart&quot;: [
+        &quot;ex:Lesson1#A&quot;,
+        &quot;ex:Lesson2#A&quot;,
+        &quot;ex:Lesson3#A&quot;
+      ]
+    },
+    {
+      &quot;@id&quot;: &quot;ex:TopicB#A&quot;,
+      &quot;@type&quot;: [&quot;sdo:CreativeWork&quot;, &quot;oer:Unit&quot;]
+    },
+    {
+      &quot;@id&quot;: &quot;ex:Lesson1#A&quot;,
+      &quot;@type&quot;: [&quot;sdo:CreativeWork&quot;, &quot;oer:Lesson&quot;]
+    },
+    {
+      &quot;@id&quot;: &quot;ex:Lesson2#A&quot;,
+      &quot;@type&quot;: [&quot;sdo:CreativeWork&quot;, &quot;oer:Lesson&quot;]
+    },
+    {
+      &quot;@id&quot;: &quot;ex:Lesson3#A&quot;,
+      &quot;@type&quot;: [&quot;sdo:CreativeWork&quot;, &quot;oer:Lesson&quot;]
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Editor's Note:</strong> hacking the context for sdo:hasPart to be stricter than schema.org's own and to generate links not values.</p>
+<p><strong>Editor's Note:</strong> do folk prefer their JSON-LD examples as separate linked objects, as above, or as nested objects?</p>
+<p><strong>Notes:</strong></p>
+<p>The identifiers should be different to the URLs of specific instances of these resources. They identify relationships that are true for any instance of these resources, and as such they identify an abstract resource of which specific instances are manifestations. Appending <code>#A</code> to the URL of the official or authoritative web page for the resource is a useful pattern for generating a different URI but still using a URI that will provide human users with a meaningful link.</p>
+<p>Further information about the resources could be provided here, such as the URL to locate the content (<code>sdo:url</code>) and the name (<code>sdo:name</code>) of the resource, however this would duplicate information in the sitemap used to <a href="../locate">locate</a> the resources, and embedded markup used to <a href="../../inpage/">describe</a> the resources.</p>
+<h2 id="an-ordered-aggregation">An Ordered Aggregation</h2>
+<p><strong>Editor's Note OPEN ISSUE</strong>: there are two options for ordering the component resources in an aggregation. Option 1 is a JSON array (i.e. an ordered list) of identifiers specifying a default order. This mirrors the approach taken for W3C Web Publications (ePub for the web). Option 2 is inspired by OAI-ORE and leverages schema.org ItemLists. Option 2 is conceptually and practically far more complex, however it may be more robust, and may more useful for providing information about next &amp; previous components within the files for each component. It remains an open issue as to whether the extra complexity is manageable or necessary.</p>
+<h2 id="an-ordered-aggregation-option-1">An Ordered Aggregation - Option 1</h2>
+<p>We provide information about the default logical and pedagogically appropriate sequence for displaying or presenting the components of complex curriculum materials using a JSON array of URIs, each URI representing a component. This approach is based on the <a href="https://www.w3.org/TR/wpub/#default-reading-order">default reading order</a> of the (draft) W3C <a href="https://www.w3.org/TR/wpub/">Web Publications</a> spec.</p>
+<h3 id="recommended-vocabulary-identifiers_1">Recommended Vocabulary Identifiers</h3>
+<table>
+<thead>
+<tr>
+<th>Vocabulary</th>
+<th>Namespace : Context URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OCX extensions</td>
+<td><code>ocx</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Editor's note:</strong> do we need to get context URI for OCX?</p>
+<h3 id="recommended-properties_1">Recommended Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Expected Type</th>
+<th>Defintion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ocx:defaultOrder</code></td>
+<td>a list of URIs</td>
+<td>The default order in which to present the resources in the aggregation to the user.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> The ordering may be changed for many reasons, for example, remixing the content or adaptive delivery.</p>
+<p><strong>Note:</strong> JSON-LD arrays are unordered by default (in contrast with regular JSON). Ordering can be enforced using the <code>@list</code> JSON-LD keyword.</p>
+<p><strong>Note:</strong> In JSON-LD lists of lists are not allowed. Therefor the ordering for each level of a hierarchical aggregation must be specified separately.</p>
+<h3 id="example_1">Example</h3>
+<p>A module comprising a sequence of two topics, the first of which is a sequence of three lessons.</p>
+<pre><code>{
+  &quot;@context&quot;: {
+    &quot;ex&quot;: &quot;http://example.org/&quot; ,
+    &quot;sdo&quot;: &quot;http://schema.org/&quot; ,
+    &quot;oer&quot;: &quot;http://oerschema.org/&quot;,
+    &quot;sdo:hasPart&quot; : {
+      &quot;@type&quot; : &quot;@id&quot;
+    }
+  },
+  &quot;@graph&quot;: [
+    {
+      &quot;@id&quot;: &quot;ex:Module1#A&quot;,
+      &quot;@type&quot;: [&quot;sdo:CreativeWork&quot;, &quot;oer:Module&quot;],
+      &quot;sdo:hasPart&quot;: [&quot;ex:TopicA#A&quot;, &quot;ex:TopicB#A&quot; ],
+      &quot;ocx:defaultOrder&quot;: {&quot;@list&quot;: [&quot;ex:TopicA#A&quot;, &quot;ex:TopicB#A&quot;]}
+    },
+    {
+      &quot;@id&quot;: &quot;ex:TopicA#A&quot;,
+      &quot;@type&quot;: [&quot;sdo:CreativeWork&quot;, &quot;oer:Unit&quot;],
+      &quot;sdo:hasPart&quot;: [
+        &quot;ex:Lesson1#A&quot;,
+        &quot;ex:Lesson2#A&quot;,
+        &quot;ex:Lesson3#A&quot;
+      ],
+      &quot;ocx:defaultOrder&quot;: {
+        &quot;@list&quot;: [&quot;ex:Lesson1#A&quot;, &quot;ex:Lesson2#A&quot;, &quot;ex:Lesson3#A&quot;]
+      }
+    },
+    {
+      &quot;@id&quot;: &quot;ex:TopicB#A&quot;,
+      &quot;@type&quot;: [&quot;sdo:CreativeWork&quot;, &quot;oer:Unit&quot;]
+    },
+    {
+      &quot;@id&quot;: &quot;ex:Lesson1#A&quot;,
+      &quot;@type&quot;: [&quot;sdo:CreativeWork&quot;, &quot;oer:Lesson&quot;]
+    },
+    {
+      &quot;@id&quot;: &quot;ex:Lesson2#A&quot;,
+      &quot;@type&quot;: [&quot;sdo:CreativeWork&quot;, &quot;oer:Lesson&quot;]
+    },
+    {
+      &quot;@id&quot;: &quot;ex:Lesson3#A&quot;,
+      &quot;@type&quot;: [&quot;sdo:CreativeWork&quot;, &quot;oer:Lesson&quot;]
+    }
+  ]
+}
+</code></pre>
+
+<h2 id="an-ordered-aggregation-option-2">An Ordered Aggregation - Option 2</h2>
+<p>We provide information about logical and pedagogically appropriate sequences for displaying or presenting  the components of complex curriculum materials using schema.org ItemLists.</p>
+<p>Ordering several levels of a hierarchy requires that we nest ItemLists, i.e. we have lists of lists.</p>
+<p>We have to be careful because reuse and repurposing of resources means that the same resources may appear in different orders when used by different people, however previous work [<a href="https://www.openarchives.org/ore/">OAI-ORE</a>] shows a solution to this. In order avoid this issue we create resources that are "proxies" for the components and sequence these. These proxies can be thought of as entries in a table of contents structure and are the ListItems in the schema.org ItemList.</p>
+<h3 id="recommended-vocabulary-identifiers_2">Recommended Vocabulary Identifiers</h3>
+<p>In addition to the vocabularies used for an unordered aggregation we need</p>
+<table>
+<thead>
+<tr>
+<th>Vocabulary</th>
+<th>Namespace : Context URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OCX extensions</td>
+<td><code>ocx</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Editor's note:</strong> do we need to get context URI for OCX?</p>
+<h3 id="recommended-classes-types_1">Recommended Classes / Types</h3>
+<p>In addition to the types used for an unordered aggregation we need</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sdo:ItemList</code></td>
+<td>A list of items of any sort</td>
+</tr>
+<tr>
+<td><code>sdo:ListItem</code></td>
+<td>An item in a list</td>
+</tr>
+</tbody>
+</table>
+<h3 id="recommended-properties_2">Recommended Properties</h3>
+<p>Properties of a sdo:CreativeWork.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Expected Type</th>
+<th>Defintion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ocx:hasToC</code></td>
+<td><code>sdo:ItemList</code></td>
+<td>The aggregate resource has a table of contents that specifies a possible logical or pedagogically appropriate ordering of its parts.</td>
+</tr>
+</tbody>
+</table>
+<p>Properties of a sdo:ItemList.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Expected Type</th>
+<th>Defintion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sdo:itemListElement</code></td>
+<td><code>sdo:ListItem</code> or <code>sdo:ItemList</code></td>
+<td>A resource in this list [i.e., an entry in the table of contents].</td>
+</tr>
+<tr>
+<td><code>sdo:itemListOrder</code></td>
+<td>Text</td>
+<td>The type of ordering. Permitted values are Ascending, Descending, Unordered.</td>
+</tr>
+<tr>
+<td><code>sdo:numberOfItems</code></td>
+<td>Integer</td>
+<td>The number of items in the ItemList</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> the order of elements in the mark-up is not sufficient for indicating the order of items in the list.  Use ListItem with a 'position' property in such cases.</p>
+<p>Properties of a sdo:ListItem</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Expected Type</th>
+<th>Defintion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sdo:item</code></td>
+<td><code>sdo:CreativeWork</code></td>
+<td>The component being represented by this entry in the list</td>
+</tr>
+<tr>
+<td><code>sdo:nextItem</code></td>
+<td><code>sdo:ListItem</code></td>
+<td>A link to the ListItem that follows the current one</td>
+</tr>
+<tr>
+<td><code>sdo:position</code></td>
+<td>Integer</td>
+<td>The position of an item in a series or sequence of items</td>
+</tr>
+<tr>
+<td><code>sdo:perviousItem</code></td>
+<td><code>sdo:ListItem</code></td>
+<td>A link to the ListItem that preceeds the current one</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Editor's Note:</strong> The terminology of ListItem and ItemList; nextItem (which is a ListItem), item (which is not a ListItem) and itemListElement (which is a ListItem, and sometimes also an ItemList) is confusing, but it's what schema.org has given us <code>¯\_(ツ)_/¯</code>.</p>
+<h3 id="example_2">Example</h3>
+<p>A module comprising a sequence of two topics, the first of which is a sequence of three lessons.</p>
+<p><img alt="entity-relationship graph of the resources represented in the JSON-LD text below" src="../../images/nestedOrderedList.png" /></p>
+<pre><code>{
+  &quot;@context&quot;: {
+    &quot;ex&quot;: &quot;http://example.org/&quot; ,
+    &quot;sdo&quot;: &quot;http://schema.org/&quot; ,
+    &quot;oer&quot;: &quot;http://oerschema.org/&quot; ,
+    &quot;ocx:hasToC&quot;: {
+      &quot;@type&quot; : &quot;@id&quot;
+    },
+    &quot;sdo:item&quot;: {
+      &quot;@type&quot; : &quot;@id&quot;
+    },
+    &quot;sdo:nextItem&quot;: {
+      &quot;@type&quot; : &quot;@id&quot;
+    },
+    &quot;sdo:previousItem&quot;: {
+      &quot;@type&quot; : &quot;@id&quot;
+    },
+    &quot;sdo:hasPart&quot;: {
+      &quot;@type&quot; : &quot;@id&quot;
+    }
+  },
+  &quot;@graph&quot;: [
+    {
+      &quot;@id&quot;: &quot;ex:Module1#A&quot;,
+      &quot;@type&quot;: [&quot;sdo:CreativeWork&quot;, &quot;oer:Module&quot;],
+      &quot;sdo:hasPart&quot;: [&quot;ex:TopicA#A&quot;, &quot;ex:TopicB#A&quot; ],
+      &quot;ocx:hasToC&quot;: &quot;ex:Module#ToC&quot;
+    },
+    {
+      &quot;@id&quot;: &quot;ex:TopicA#A&quot;,
+      &quot;@type&quot;: [&quot;sdo:CreativeWork&quot;, &quot;oer:Unit&quot;],
+      &quot;sdo:hasPart&quot;: [
+        &quot;ex:Lesson1#A&quot;,
+        &quot;ex:Lesson2#A&quot;,
+        &quot;ex:Lesson3#A&quot;
+      ],
+      &quot;ocx:hasToC&quot;: &quot;ex:TopicA#ToC&quot;
+    },
+    {
+      &quot;@id&quot;: &quot;ex:TopicB#A&quot;,
+      &quot;@type&quot;: [&quot;sdo:CreativeWork&quot;, &quot;oer:Unit&quot;]
+    },
+    {
+      &quot;@id&quot;: &quot;ex:Lesson1#A&quot;,
+      &quot;@type&quot;: [&quot;sdo:CreativeWork&quot;, &quot;oer:Lesson&quot;],
+      &quot;ocx:hasToC&quot;: &quot;ex:Lesson1#ToC&quot;
+    },
+    {
+      &quot;@id&quot;: &quot;ex:Lesson2#A&quot;,
+      &quot;@type&quot;: [&quot;sdo:CreativeWork&quot;, &quot;oer:Lesson&quot;],
+      &quot;ocx:hasToC&quot;: &quot;ex:Lesson2#ToC&quot;
+    },
+    {
+      &quot;@id&quot;: &quot;ex:Lesson3#A&quot;,
+      &quot;@type&quot;: [&quot;sdo:CreativeWork&quot;, &quot;oer:Lesson&quot;],
+      &quot;ocx:hasToC&quot;: &quot;ex:Lesson3#ToC&quot;
+    },
+    {
+      &quot;@id&quot;: &quot;ex:Module1#Toc&quot;,
+      &quot;@type&quot;: &quot;sdo:ItemList&quot;,
+      &quot;sdo:itemListOrder&quot;: &quot;Ascending&quot;,
+      &quot;sdo:numberOfItems&quot;: 2,
+      &quot;sdo:itemListElement&quot;: [
+        {
+          &quot;@id&quot;: &quot;ex:TopicA#ToC&quot;,
+          &quot;@type&quot;: [&quot;sdo:ListItem&quot;, &quot;sdo:ItemList&quot;],
+          &quot;sdo:item&quot;: &quot;ex:TopicA#A&quot;,
+          &quot;sdo:position&quot;: 1,
+          &quot;sdo:nextItem&quot;: &quot;ex:TopicB#ToC&quot;,
+          &quot;sdo:numberOfItems&quot;: 3,
+          &quot;sdo:itemListElement&quot; : [
+            {
+              &quot;@id&quot;: &quot;ex:Lesson1#ToC&quot;,
+              &quot;@type&quot;: &quot;sdo:ListItem&quot;,
+              &quot;sdo:position&quot;: 1,
+              &quot;sdo:item&quot;: &quot;ex:Lesson1#A&quot;,
+              &quot;sdo:nextItem&quot;: &quot;ex:Lesson2#ToC&quot;
+            },
+            {
+              &quot;@id&quot;: &quot;ex:Lesson2#ToC&quot;,
+              &quot;@type&quot;: &quot;sdo:ListItem&quot;,
+              &quot;sdo:position&quot;: 2,
+              &quot;sdo:previousItem&quot;: &quot;ex:Lesson1#ToC&quot;,
+              &quot;sdo:item&quot;: &quot;ex:Lesson2#A&quot;,
+              &quot;sdo:nextItem&quot;: &quot;ex:Lesson3#ToC&quot;
+            },
+            {
+              &quot;@id&quot;: &quot;ex:Lesson3#ToC&quot;,
+              &quot;@type&quot;: &quot;sdo:ListItem&quot;,
+              &quot;sdo:position&quot;: 3,
+              &quot;sdo:previousItem&quot;: &quot;ex:Lesson2#ToC&quot;,
+              &quot;sdo:item&quot;: &quot;ex:Lesson3#A&quot;
+            }
+          ]
+        },
+        {
+          &quot;@id&quot;: &quot;ex:TopicB#ToC&quot;,
+          &quot;@type&quot;: &quot;sdo:ListItem&quot;,
+          &quot;sdo:item&quot;: &quot;ex:TopicB#A&quot;,
+          &quot;sdo:previousItem&quot;: &quot;ex:TopicA#ToC&quot;,
+          &quot;sdo:position&quot;: 2
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Editor's Note:</strong> Experimenting with ToC as nested objects.</p>
+<p><strong>Editor's Note:</strong> Hacking the context for sdo: properties to be stricter than schema.org's own and to generate links not values.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../inpage/" class="btn btn-neutral float-right" title="In-page Markup">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../locate/" class="btn btn-neutral" title="Locating content"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../locate/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../inpage/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

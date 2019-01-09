@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Locating content - K12 OCX Specification (Working Draft)</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../../css/custom.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Locating content";
+    var mkdocs_page_input_path = "manifest/locate.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> K12 OCX Specification (Working Draft)</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../contentmodel/">Content Model</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Manifest</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../">Aggregated content</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Locating content</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#locating-content">Locating Content</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#sitemap-basics">Sitemap Basics</a></li>
+        
+            <li><a class="toctree-l4" href="#sitemap-conventions-for-open-curriculum">Sitemap Conventions for Open Curriculum</a></li>
+        
+            <li><a class="toctree-l4" href="#examples">Examples</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../structure/">Structuring aggregations</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">In-page Markup</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../inpage/">In-page Markup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../inpage/structure/">In-page structuring</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../inpage/course/">Properties of Course</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../inpage/module/">Properties of Module</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../inpage/unit/">Properties of Unit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../inpage/lesson/">Properties of Lesson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../inpage/activity/">Properties of Activity</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../inpage/assessment/">Properties of Assessment</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../inpage/supportingmaterial/">Properties of SupportingMaterial</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../inpage/supplementalmaterial/">Properties of SupplementalMaterial</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../inpage/referencedmaterial/">Properties of ReferencedMaterial</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../inpage/auxiliary-types/">Properties of Auxiliary Types</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../packaging/">Packaging</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../styling/">Styling</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">K12 OCX Specification (Working Draft)</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Manifest &raquo;</li>
+        
+      
+    
+    <li>Locating content</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="locating-content">Locating Content</h1>
+<p>In order to facilitate the automatic location of content we extend <a href="https://www.sitemaps.org/protocol.html">Sitemap</a> protocol with a new namespace <code>xmlns:ocx</code> that introduces following tags:</p>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ocx:type</code></td>
+<td>Text | URL</td>
+<td>required</td>
+<td>Indicates that the URL has OCX compatible content and giving information on specific OER type used to describe the content. Accepted values are existing <em>OER schema</em> or <em>schema.org</em> types or well-defined, publicly available, not-yet-accepted sub-types of <em>schema.org</em> types.</td>
+</tr>
+<tr>
+<td><code>ocx:format</code></td>
+<td>Text</td>
+<td>optional</td>
+<td>The expected format of content metadata. Purpose of this tag is to allow [crawlers] to further filter sitemap URLs and crawl only pages that have relevant metadata and have it in a format [crawler] is capable of processing. Accepted values: <code>JSON-LD</code>, <code>Microdata</code> and <code>RDFa</code></td>
+</tr>
+<tr>
+<td><code>ocx:loc</code></td>
+<td>URL</td>
+<td>optional</td>
+<td>Provide the URL where metadata is located. Unless metadata is placed on a web page different from content page, this tag can be skipped.</td>
+</tr>
+<tr>
+<td><code>ocx:xpath</code></td>
+<td>Text</td>
+<td>optional</td>
+<td>Provide where exactly the metadata is located inside document. The value should be a <code>HTML XPath</code></td>
+</tr>
+<tr>
+<td><code>ocx:name</code></td>
+<td>Text</td>
+<td>optional</td>
+<td>Resource name or title</td>
+</tr>
+<tr>
+<td><code>ocx:teaser</code></td>
+<td>Text</td>
+<td>optional</td>
+<td>Small text describing the resource content or objective</td>
+</tr>
+<tr>
+<td><code>ocx:parent</code></td>
+<td>Text | URL</td>
+<td>optional</td>
+<td>identifier or URL (<code>loc</code>) for the parent resource.</td>
+</tr>
+<tr>
+<td><code>ocx:image</code></td>
+<td>URL</td>
+<td>optional</td>
+<td>An image or thumbnail for the resource.</td>
+</tr>
+</tbody>
+</table>
+<p>This extended sitemap namespace might be included in a site's main <code>/sitemap.xml</code> file or it might be included in a dedicated sitemap-structured file (index) with a different name such as <code>/ocx.xml</code>.</p>
+<ul>
+<li>
+<p>Each sitemap file that you provide must have no more than 50,000 URL elements. Keep in mind that if you are adding optional tags, you may hit the 50MB uncompressed limit before you hit the 50,000 entries limit.</p>
+</li>
+<li>
+<p>If you want to list more than 50,000 URLs, you must create multiple Sitemap files then list each of them in a Sitemap index file (sitemaps does not support nesting of index files).</p>
+</li>
+<li>
+<p>Make sure that your robots.txt file isn't blocking any of the items included in each sitemap entry</p>
+</li>
+<li>
+<p>Prefer using full URLs, i.e. locations for content or landing-pages that require 'hash marks' or fragment identifier are discouraged</p>
+</li>
+</ul>
+<h2 id="sitemap-basics">Sitemap Basics</h2>
+<p>The documentation at <a href="https://www.sitemaps.org">Sitemap.org</a> is straightforard and worth reading for any web developer or publisher; here we will give a minimal definition of the protocol and highlight the elements most relevant for publishing curriculum.</p>
+<p>A sitemap at its most simple is an XML file that is available at the root URL of a website (e.g. https://www.google.com/sitemap.xml), which tells automated web crawlers what web pages are accessible on the site. Like OCX, the sitemap format is a recommended convention rather than a global specification; however, it has become a <em>de facto</em> standard thanks to adoption among the top search engine (e.g. Google, Microsoft, and Yahoo!). The bare minimum sitemap file would contain nothing more than a list of site URLs, marked up with the appropriate XML tags, e.g.:</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;urlset xmlns=&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;&gt;
+   &lt;url&gt;
+      &lt;loc&gt;http://www.example.com/&lt;/loc&gt;
+   &lt;/url&gt;
+
+   &lt;url&gt;
+      &lt;loc&gt;http://www.example.org/about-example.html&lt;/loc&gt;
+   &lt;/url&gt;
+&lt;/urlset&gt;
+&lt;/xml&gt;
+</code></pre>
+
+<p>As you can see, each URL in the sitemap has a <code>&lt;loc&gt;</code> tag which describes its location on the web. There are three additional (optional) tags which can describe each URL in the sitemap, and those will be covered below.</p>
+<h2 id="sitemap-conventions-for-open-curriculum">Sitemap Conventions for Open Curriculum</h2>
+<p>While web-crawling "robots" will crawl all public URLs on your site whether or not they are specified in the sitemap (indeed, whether or not the site <em>has</em> a sitemap), you cannot assume the same from the robotic consumers of your curriculum via the OCX manifest. In most cases, those consumers are <em>only</em> interested in the curriculum content and will not attempt to crawl your site for any other reasons. Therefore, it's critical that the OCX manifest include <em>all of the URLs relevant to the curriculum</em>, whether those URLs are included in the main sitemap.xml file on your site or in a sitemap dedicated to the curriculum section of your site.</p>
+<p>In addition to the <code>&lt;loc&gt;</code> tag, the sitemap protocol supports three additional (optional) tags to describe a given URL: <code>&lt;lastmod&gt;</code>, <code>&lt;changefreq&gt;</code>, and <code>&lt;priority&gt;</code>. All of these elements are important for helping consumers stay up to date with changes to the curriculum.</p>
+<ul>
+<li><code>&lt;lastmod&gt;</code> - The <a href="https://www.sitemaps.org/protocol.html#lastmoddef">lastmod</a> tag identifies when the content at the URL was last updated. The <code>&lt;lastmod&gt;</code> value for each URL should reflect changes to the curriculum's <em>content</em> at that URL, rather than the <em>HTML page</em> at that URL; this means it should only be included if you are able to reliably track those changes.</li>
+<li><code>&lt;changefreq&gt;</code> - The <a href="https://www.sitemaps.org/protocol.html#changefreqdef">changefreq</a> tag identifies an <em>estimated</em> frequency for changes to the content. In most cases, K-12 curriculum materials are only significantly changed once per year, aside from corrections and minor wording changes, and consumers of that curriculum will typically be familiar with that same cycle. In those case, the <code>&lt;changefreq&gt;</code> tag will be unnecessary and/or difficult to estimate for most <em>curriculum component</em> URLS; however, any page which tracks the ongoing minor changes to that curriculum should be included in the OCX manifest and described with a sensible <code>&lt;changefreq&gt;</code> value which reflects a realistic frequency of those changes. For example:</li>
+</ul>
+<pre><code>   &lt;url&gt;
+      &lt;loc&gt;http://www.example.org/ela/grade-2/errata.html&lt;/loc&gt;
+      &lt;changefreq&gt;weekly&lt;/changefreq&gt;
+   &lt;/url&gt;
+</code></pre>
+
+<ul>
+<li><code>&lt;priority&gt;</code> - The <a href="https://www.sitemaps.org/protocol.html#prioritydef">priority</a> tag defines a URL's importance compared to the rest of the site. If you host multiple <em>versions</em> of a single curriculum, this tag may be used to de-emphasize the old version while still keeping it available for access.</li>
+</ul>
+<h2 id="examples">Examples</h2>
+<ul>
+<li>Minimal example:</li>
+</ul>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;urlset xmlns=&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;
+        xmlns:ocx=&quot;http://sitemap.ocx.org/v/1.0&quot;&gt;
+
+  &lt;url&gt;
+    &lt;loc&gt;http://example.com/&lt;/loc&gt;
+  &lt;/url&gt;
+
+  &lt;url&gt;
+    &lt;loc&gt;http://example.com/articles/android-7-released&lt;/loc&gt;
+    &lt;lastmod&gt;2017-02-18T01:16:08.00-05:00&lt;/lastmod&gt;
+    &lt;ocx:ocx&gt;
+      &lt;ocx:type&gt;http://oerschema.org/Lesson/&lt;/ocx:type&gt;
+      &lt;ocx:format&gt;JSON-LD&lt;/ocx:format&gt;
+      &lt;ocx:xpath&gt;/html/head/script[@type=&quot;application/ld+json&quot;]&lt;/ocx:xpath&gt;
+    &lt;/ocx:ocx&gt;
+  &lt;/url&gt;
+
+  &lt;url&gt;
+    &lt;loc&gt;http://example.com/resources/class-activities/7&lt;/loc&gt;
+    &lt;lastmod&gt;2017-05-15T03:30:08.00-05:00&lt;/lastmod&gt;
+    &lt;ocx:ocx&gt;
+      &lt;ocx:type&gt;http://oerschema.org/Activity/&lt;/ocx:type&gt;
+      &lt;ocx:format&gt;RDFa&lt;/ocx:format&gt;
+      &lt;ocx:loc&gt;http://example.com/resources/class-activities/7&lt;/ocx:loc&gt;
+      &lt;ocx:xpath&gt;/html/body/main/section[@class=&quot;activity&quot;]&lt;/ocx:xpath&gt;
+    &lt;/ocx:ocx&gt;
+  &lt;/url&gt;
+&lt;/urlset&gt;
+</code></pre>
+
+<ul>
+<li>The manifest below uses sample data from <strong>UnboundEd</strong>:</li>
+</ul>
+<pre><code class="xml">  &lt;url&gt;
+    &lt;loc&gt;http://pilot.unbounded.org/ela&lt;/loc&gt;
+    &lt;lastmod&gt;2017-08-14T06:04:13.98+00:00&lt;/lastmod&gt;
+    &lt;ocx:ocx&gt;
+        &lt;ocx:type&gt;http://oerschema.org/Topic&lt;/ocx:type&gt;
+        &lt;ocx:format&gt;JSON-LD&lt;/ocx:format&gt;
+        &lt;ocx:xpath&gt;//script[@type=&quot;application/ld+json&quot;]&lt;/ocx:xpath&gt;
+        &lt;ocx:name&gt;ELA Curriculum Map&lt;/ocx:name&gt;
+    &lt;/ocx:ocx&gt;
+  &lt;/url&gt;
+  &lt;url&gt;
+    &lt;loc&gt;http://pilot.unbounded.org/ela/grade-2&lt;/loc&gt;
+    &lt;lastmod&gt;2017-08-14T06:04:46.30+00:00&lt;/lastmod&gt;
+    &lt;ocx:ocx&gt;
+        &lt;ocx:type&gt;http://oerschema.org/Course&lt;/ocx:type&gt;
+        &lt;ocx:format&gt;JSON-LD&lt;/ocx:format&gt;
+        &lt;ocx:xpath&gt;//script[@type=&quot;application/ld+json&quot;]&lt;/ocx:xpath&gt;
+        &lt;ocx:name&gt;Grade 2 English Language Arts&lt;/ocx:name&gt;
+        &lt;ocx:teaser&gt;&lt;/ocx:teaser&gt;
+        &lt;ocx:parent&gt;http://pilot.unbounded.org/ela&lt;/ocx:parent&gt;
+    &lt;/ocx:ocx&gt;
+  &lt;/url&gt;
+  &lt;url&gt;
+    &lt;loc&gt;http://pilot.unbounded.org/ela/grade-2/module-1&lt;/loc&gt;
+    &lt;lastmod&gt;2017-08-14T06:10:23.25+00:00&lt;/lastmod&gt;
+    &lt;ocx:ocx&gt;
+        &lt;ocx:type&gt;http://oerschema.org/Module&lt;/ocx:type&gt;
+        &lt;ocx:format&gt;JSON-LD&lt;/ocx:format&gt;
+        &lt;ocx:xpath&gt;//script[@type=&quot;application/ld+json&quot;]&lt;/ocx:xpath&gt;
+        &lt;ocx:name&gt;Listening and Learning&lt;/ocx:name&gt;
+        &lt;ocx:teaser&gt;&lt;/ocx:teaser&gt;
+        &lt;ocx:parent&gt;http://pilot.unbounded.org/ela/grade-2&lt;/ocx:parent&gt;
+    &lt;/ocx:ocx&gt;
+  &lt;/url&gt;
+  &lt;url&gt;
+    &lt;loc&gt;http://pilot.unbounded.org/ela/grade-2/module-1/unit-1&lt;/loc&gt;
+    &lt;lastmod&gt;2017-08-15T19:27:17.97+00:00&lt;/lastmod&gt;
+    &lt;ocx:ocx&gt;
+        &lt;ocx:type&gt;http://oerschema.org/Unit&lt;/ocx:type&gt;
+        &lt;ocx:format&gt;JSON-LD&lt;/ocx:format&gt;
+        &lt;ocx:xpath&gt;//script[@type=&quot;application/ld+json&quot;]&lt;/ocx:xpath&gt;
+        &lt;ocx:name&gt;Fairy Tales and Tall Tales&lt;/ocx:name&gt;
+        &lt;ocx:teaser&gt;Students are introduced to classic fairy tales and tall tales, and the lessons they teach.&lt;/ocx:teaser&gt;
+        &lt;ocx:parent&gt;http://pilot.unbounded.org/ela/grade-2/module-1&lt;/ocx:parent&gt;
+    &lt;/ocx:ocx&gt;
+  &lt;/url&gt;
+  &lt;url&gt;
+    &lt;loc&gt;http://pilot.unbounded.org/documents/3&lt;/loc&gt;
+    &lt;lastmod&gt;2018-02-05T16:06:35.17+00:00&lt;/lastmod&gt;
+    &lt;ocx:ocx&gt;
+        &lt;ocx:type&gt;http://oerschema.org/Lesson&lt;/ocx:type&gt;
+        &lt;ocx:format&gt;JSON-LD&lt;/ocx:format&gt;
+        &lt;ocx:xpath&gt;//script[@type=&quot;application/ld+json&quot;]&lt;/ocx:xpath&gt;
+        &lt;ocx:name&gt;The Fisherman and His Wife&lt;/ocx:name&gt;
+        &lt;ocx:teaser&gt;Students will review characteristics of fairy tales.&lt;/ocx:teaser&gt;
+        &lt;ocx:parent&gt;http://pilot.unbounded.org/ela/grade-2/module-1/unit-1&lt;/ocx:parent&gt;
+    &lt;/ocx:ocx&gt;
+  &lt;/url&gt;
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../structure/" class="btn btn-neutral float-right" title="Structuring aggregations">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../" class="btn btn-neutral" title="Aggregated content"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../structure/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
