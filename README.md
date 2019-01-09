@@ -24,6 +24,9 @@
 4. [Packaging](/docs/packaging.md)
 5. [Styling](/docs/styling.md)
 
+### License
+All materials are contributed under two licenses: [Apache 2](https://www.apache.org/licenses/LICENSE-2.0) and [CC:BY-4](https://creativecommons.org/licenses/by/4.0/). This means that any contribution can be used under either license.
+
 ### Contributing
 
 This project uses [mkdocs](http://www.mkdocs.org/) to build the specs using markdown files.
