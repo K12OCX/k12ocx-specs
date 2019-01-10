@@ -1,4 +1,4 @@
-# K12 Open Content Exchange - Specification
+mk# K12 Open Content Exchange - Specification
 
 ### Table of Contents:
 
@@ -25,7 +25,7 @@
 5. [Styling](/docs/styling.md)
 
 ### Licenses and IPR
-All materials are contributed under two licenses: [Apache 2](https://www.apache.org/licenses/LICENSE-2.0) and [CC:BY-4](https://creativecommons.org/licenses/by/4.0/). This means that any contribution can be used under either license. Materials will be contributed per copyright title to The Bill and Melinda Gates Foundation, and all such contributions will be licensed openly per previous sentence.
+All materials are contributed under the [Apache 2](https://www.apache.org/licenses/LICENSE-2.0) license. This means that any contribution can be used under either license. Materials will be contributed per copyright title to The Bill and Melinda Gates Foundation, and all such contributions will be licensed openly per previous sentence.
 
 Any licensing obligations inherited from dependencies (e.g. licenses of OS code libraries used) should be clearly indicated by the partner contributing the software that brings those obligations.
 
