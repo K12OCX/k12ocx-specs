@@ -32,3 +32,7 @@ pip install mkdocs-material
 
 mkdocs serve
 ```
+
+The current version of the spec main branch is available at [https://k12ocx.github.io/k12ocx-specs/](https://k12ocx.github.io/k12ocx-specs/). If you have write permission to the github repo you can regenerate these using: `mkdocs gh-deploy` [see mkdocs documentation](https://www.mkdocs.org/user-guide/deploying-your-docs/)
+
+The HTML for these pages is in the `gh-pages` branch on github, which *should not be edited directly* and *must not be merged* into any other branch!
