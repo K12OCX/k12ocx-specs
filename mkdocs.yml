@@ -1,5 +1,5 @@
 site_name: K12 OCX Specification (Working Draft)
-pages:
+nav:
     - Home: index.md
     - Content Model: contentmodel.md
     - Manifest:
