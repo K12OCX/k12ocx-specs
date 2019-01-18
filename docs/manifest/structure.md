@@ -5,7 +5,8 @@ There are currently two proposals for how to sequence the content. One approach 
 
 We recommend this information is provided as linked data encoded in JSON-LD (or potentially RDFa).
 
-__Editor's note__ : for more information about the thinking behind this approach see [Structure and sequence of book- or course-like resources](https://docs.google.com/document/d/1CDIcyoYtg9WeWpno_wyuNRJmqyn80_hVKjpKBjIG7GE/edit#heading=h.e3fwche8pgr6).
+!!! note "Editor's note"
+    for more information about the thinking behind this approach see [Structure and sequence of book- or course-like resources](https://docs.google.com/document/d/1CDIcyoYtg9WeWpno_wyuNRJmqyn80_hVKjpKBjIG7GE/edit#heading=h.e3fwche8pgr6).
 
 
 ## An Unordered Aggregation
@@ -47,7 +48,8 @@ Properties of sdo:CreativeWork
 | ------------- | ------------- | ------------------------------------------ |
 | `sdo:hasPart` | sdo:CreativeWork | Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense) |
 
-__Note:__ All the schema.org types are subtypes of sdo:CreativeWork and so may be used wherever sdo:CreativeWork is the expected type. The leniency of domain and range specification in schema.org allows us to treat the OER Schema types as if they were CreativeWorks.
+!!! note
+    All the schema.org types are subtypes of sdo:CreativeWork and so may be used wherever sdo:CreativeWork is the expected type. The leniency of domain and range specification in schema.org allows us to treat the OER Schema types as if they were CreativeWorks.
 
 ### Example
 A module comprises two topics, one of the topics comprises three lessons
@@ -96,18 +98,22 @@ A module comprises two topics, one of the topics comprises three lessons
   ]
 }
 ```
-__Editor's Note:__ hacking the context for sdo:hasPart to be stricter than schema.org's own and to generate links not values.
+!!! note "Editor's Note"
+    hacking the context for sdo:hasPart to be stricter than schema.org's own and to generate links not values.
 
-__Editor's Note:__ do folk prefer their JSON-LD examples as separate linked objects, as above, or as nested objects?
+!!! note "Editor's Note"
+    do folk prefer their JSON-LD examples as separate linked objects, as above, or as nested objects?
 
-__Notes:__
+!!! note
+    The identifiers should be different to the URLs of specific instances of these resources. They identify relationships that are true for any instance of these resources, and as such they identify an abstract resource of which specific instances are manifestations. Appending `#A` to the URL of the official or authoritative web page for the resource is a useful pattern for generating a different URI but still using a URI that will provide human users with a meaningful link.
 
-The identifiers should be different to the URLs of specific instances of these resources. They identify relationships that are true for any instance of these resources, and as such they identify an abstract resource of which specific instances are manifestations. Appending `#A` to the URL of the official or authoritative web page for the resource is a useful pattern for generating a different URI but still using a URI that will provide human users with a meaningful link.
-
-Further information about the resources could be provided here, such as the URL to locate the content (`sdo:url`) and the name (`sdo:name`) of the resource, however this would duplicate information in the sitemap used to [locate](../locate) the resources, and embedded markup used to [describe](../../inpage/) the resources.
+!!! note
+    Further information about the resources could be provided here, such as the URL to locate the content (`sdo:url`) and the name (`sdo:name`) of the resource, however this would duplicate information in the sitemap used to [locate](../locate) the resources, and embedded markup used to [describe](../../inpage/) the resources.
 
 ## An Ordered Aggregation
-__Editor's Note OPEN ISSUE__: there are two options for ordering the component resources in an aggregation. Option 1 is a JSON array (i.e. an ordered list) of identifiers specifying a default order. This mirrors the approach taken for W3C Web Publications (ePub for the web). Option 2 is inspired by OAI-ORE and leverages schema.org ItemLists. Option 2 is conceptually and practically far more complex, however it may be more robust, and may more useful for providing information about next & previous components within the files for each component. It remains an open issue as to whether the extra complexity is manageable or necessary.
+
+!!! note "open issue"
+    there are two options for ordering the component resources in an aggregation. Option 1 is a JSON array (i.e. an ordered list) of identifiers specifying a default order. This mirrors the approach taken for W3C Web Publications (ePub for the web). Option 2 is inspired by OAI-ORE and leverages schema.org ItemLists. Option 2 is conceptually and practically far more complex, however it may be more robust, and may more useful for providing information about next & previous components within the files for each component. It remains an open issue as to whether the extra complexity is manageable or necessary. [See issue on github](https://github.com/K12OCX/k12ocx-specs/issues/34)
 
 ## An Ordered Aggregation - Option 1
 We provide information about the default logical and pedagogically appropriate sequence for displaying or presenting the components of complex curriculum materials using a JSON array of URIs, each URI representing a component. This approach is based on the [default reading order](https://www.w3.org/TR/wpub/#default-reading-order) of the (draft) W3C [Web Publications](https://www.w3.org/TR/wpub/) spec.
@@ -117,18 +123,20 @@ We provide information about the default logical and pedagogically appropriate s
 | ---------- | ----------------------- |
 | OCX extensions | `ocx` |
 
-__Editor's note:__ do we need to get context URI for OCX?
+!!! note "Open issue"
+    We should declare ocx properties properly and provide info at context URI [see github issue](https://github.com/K12OCX/k12ocx-specs/issues/35)
 
 ### Recommended Properties
 | Property      | Expected Type  | Defintion |
 | ------------- | -------------- | --------- |
 | `ocx:defaultOrder` | a list of URIs | The default order in which to present the resources in the aggregation to the user.  |
 
-__Note:__ The ordering may be changed for many reasons, for example, remixing the content or adaptive delivery.
+The default order is only one permitted ordering. The ordering presented to the student or other user may be changed for many reasons, for example, remixing the content or adaptive delivery.
 
-__Note:__ JSON-LD arrays are unordered by default (in contrast with regular JSON). Ordering can be enforced using the `@list` JSON-LD keyword.
+!!! note
+    JSON-LD arrays are unordered by default (in contrast with regular JSON). Ordering can be enforced using the `@list` JSON-LD keyword.
 
-__Note:__ In JSON-LD lists of lists are not allowed. Therefor the ordering for each level of a hierarchical aggregation must be specified separately.
+    In JSON-LD lists of lists are not allowed. Therefor the ordering for each level of a hierarchical aggregation must be specified separately.
 
 ### Example
 A module comprising a sequence of two topics, the first of which is a sequence of three lessons.
@@ -196,8 +204,6 @@ In addition to the vocabularies used for an unordered aggregation we need
 | ---------- | ----------------------- |
 | OCX extensions | `ocx` |
 
-__Editor's note:__ do we need to get context URI for OCX?
-
 ### Recommended Classes / Types
 In addition to the types used for an unordered aggregation we need
 
@@ -221,7 +227,8 @@ Properties of a sdo:ItemList.
 | `sdo:itemListOrder`   | Text          | The type of ordering. Permitted values are Ascending, Descending, Unordered. |
 | `sdo:numberOfItems`   | Integer       | The number of items in the ItemList |
 
-__Note:__ the order of elements in the mark-up is not sufficient for indicating the order of items in the list.  Use ListItem with a 'position' property in such cases.
+!!! note
+    the order of elements in the mark-up is not sufficient for indicating the order of items in the list.  Use ListItem with a 'position' property in such cases.
 
 Properties of a sdo:ListItem
 
@@ -232,7 +239,8 @@ Properties of a sdo:ListItem
 | `sdo:position`     | Integer            | The position of an item in a series or sequence of items |
 | `sdo:perviousItem` | `sdo:ListItem`     | A link to the ListItem that preceeds the current one  |
 
-__Editor's Note:__ The terminology of ListItem and ItemList; nextItem (which is a ListItem), item (which is not a ListItem) and itemListElement (which is a ListItem, and sometimes also an ItemList) is confusing, but it's what schema.org has given us `¯\_(ツ)_/¯`.
+!!! note "Editor's Note"
+    The terminology of ListItem and ItemList; nextItem (which is a ListItem), item (which is not a ListItem) and itemListElement (which is a ListItem, and sometimes also an ItemList) is confusing, but it's what schema.org has given us `¯\_(ツ)_/¯`.
 
 ### Example
 
@@ -348,6 +356,8 @@ A module comprising a sequence of two topics, the first of which is a sequence o
   ]
 }
 ```
-__Editor's Note:__ Experimenting with ToC as nested objects.
+!!! note "Editor's Note"
+    Experimenting with ToC as nested objects.
 
-__Editor's Note:__ Hacking the context for sdo: properties to be stricter than schema.org's own and to generate links not values.
+!!! note "Editor's Note"
+    Hacking the context for sdo: properties to be stricter than schema.org's own and to generate links not values.

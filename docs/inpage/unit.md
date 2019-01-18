@@ -87,13 +87,17 @@ Markup for [https://pilot.unbounded.org/ela/grade-2/module-1/unit-6](https://pil
 
 The following would be placed in a `<script  type="application/ld+json">` element in the HTML sectioning element that contained information about the unit.
 
-__Note:__ The URIs used for the `@id`s are based on the URLs of the page that represent the module being described and its units with the addition of the #A fragment identifiers treating them as aggregate resources as described in the section on [manifest structuring](../manifest/structure.md). This conforms with the requirement that different identifiers are used for CCM entities and the web pages that represent them, as described in the [content model](../contentmodel.md).
+!!! note
+     The URIs used for the `@id`s are based on the URLs of the page that represent the module being described and its units with the addition of the #A fragment identifiers treating them as aggregate resources as described in the section on [manifest structuring](../manifest/structure.md). This conforms with the requirement that different identifiers are used for CCM entities and the web pages that represent them, as described in the [content model](../contentmodel.md).
 
-__Note:__ In the case where the content of a unit is split over many HTML files, there is no requirement for the `hasPart` array shown in this example as this information would be provided by the manifest.
+!!! note
+    In the case where the content of a unit is split over many HTML files, there is no requirement for the `hasPart` array shown in this example as this information would be provided by the manifest.
 
-__Editor's Note:__ Several parts of the original are omitted in the example in order to avoid repetition.
+!!! note "Editor's Note"
+    Several parts of the original are omitted in the example in order to avoid repetition.
 
-__Note:__ Some of the parts are pdf documents (one is included in the example). If the HTML page for the Unit is the only HTML page containing information about these documents then it is necessary to provide a full description of those documents in this page. An example of such as description is provided under [Properties of SupportingMaterial](supportingmaterial.md).
+!!! note
+    Some of the parts are pdf documents (one is included in the example). If the HTML page for the Unit is the only HTML page containing information about these documents then it is necessary to provide a full description of those documents in this page. An example of such as description is provided under [Properties of SupportingMaterial](supportingmaterial.md).
 
 ```json
 {

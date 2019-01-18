@@ -24,3 +24,6 @@ nav:
 theme: readthedocs
 extra_css:
     - css/custom.css
+
+markdown_extensions:
+    - admonition

@@ -90,7 +90,8 @@ See also examples for Assessment.
 
 From https://pilot.unbounded.org/math/grade-4/module-1/topic-a/lesson-1
 
-__Editor's note:__ DRAFT EXAMPLE, needs checking & validating.
+!!! note "Editor's note:"
+    DRAFT EXAMPLE, needs checking & validating.
 
 ``` json
 {  

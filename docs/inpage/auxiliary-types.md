@@ -36,7 +36,8 @@ Defined as "the context of a LearningComponent". Treat as equivalent to a subcla
 
 ## oer:LearningObjective
 
-__Editor's Note:__ I am not sure if we use these, or whether we should use these. They are a little under-defined, but they do fill a hole currently in schema.org.
+!!! note "Editor's Note"
+    I am not sure if we use these, or whether we should use these. They are a little under-defined, but they do fill a hole currently in schema.org.
 
 Treat as equivalent to a subclass of  [schema.org/Intangible](https://schema.org/Intangible).
 
