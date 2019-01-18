@@ -201,7 +201,10 @@
 <p>We provide information about logical and pedagogically appropriate sequences for displaying or presenting  the components of complex curriculum materials using schema.org with some additional terms from OER Schema.</p>
 <p>There are currently two proposals for how to sequence the content. One approach is a simple JSON-LD ordered list. The other approach is founded on encoding the structure using schema.org ItemLists, which can be interpreted as a table of contents.</p>
 <p>We recommend this information is provided as linked data encoded in JSON-LD (or potentially RDFa).</p>
-<p><strong>Editor's note</strong> : for more information about the thinking behind this approach see <a href="https://docs.google.com/document/d/1CDIcyoYtg9WeWpno_wyuNRJmqyn80_hVKjpKBjIG7GE/edit#heading=h.e3fwche8pgr6">Structure and sequence of book- or course-like resources</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Editor's note</p>
+<p>for more information about the thinking behind this approach see <a href="https://docs.google.com/document/d/1CDIcyoYtg9WeWpno_wyuNRJmqyn80_hVKjpKBjIG7GE/edit#heading=h.e3fwche8pgr6">Structure and sequence of book- or course-like resources</a>.</p>
+</div>
 <h2 id="an-unordered-aggregation">An Unordered Aggregation</h2>
 <p>We represent the whole-part relationships of complex curriculum materials using schema.org and OER Schema.</p>
 <p>Schema.org org allows us to say that a CreativeWork (such as a Book) has parts (Chapters). The terminology of Books and Chapters may be too restrictive for curriculum materials in general, and so we recommend the use of OER Schema's type vocabulary.</p>
@@ -302,7 +305,10 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Note:</strong> All the schema.org types are subtypes of sdo:CreativeWork and so may be used wherever sdo:CreativeWork is the expected type. The leniency of domain and range specification in schema.org allows us to treat the OER Schema types as if they were CreativeWorks.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All the schema.org types are subtypes of sdo:CreativeWork and so may be used wherever sdo:CreativeWork is the expected type. The leniency of domain and range specification in schema.org allows us to treat the OER Schema types as if they were CreativeWorks.</p>
+</div>
 <h3 id="example">Example</h3>
 <p>A module comprises two topics, one of the topics comprises three lessons
 <img alt="entity-relationship graph of a module with two topics, one of the topic has three lessons; all the connecting edges are of type sdo:hasPart" src="../../images/hierarchy.png" /></p>
@@ -350,13 +356,27 @@
 }
 </code></pre>
 
-<p><strong>Editor's Note:</strong> hacking the context for sdo:hasPart to be stricter than schema.org's own and to generate links not values.</p>
-<p><strong>Editor's Note:</strong> do folk prefer their JSON-LD examples as separate linked objects, as above, or as nested objects?</p>
-<p><strong>Notes:</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Editor's Note</p>
+<p>hacking the context for sdo:hasPart to be stricter than schema.org's own and to generate links not values.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Editor's Note</p>
+<p>do folk prefer their JSON-LD examples as separate linked objects, as above, or as nested objects?</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>The identifiers should be different to the URLs of specific instances of these resources. They identify relationships that are true for any instance of these resources, and as such they identify an abstract resource of which specific instances are manifestations. Appending <code>#A</code> to the URL of the official or authoritative web page for the resource is a useful pattern for generating a different URI but still using a URI that will provide human users with a meaningful link.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Further information about the resources could be provided here, such as the URL to locate the content (<code>sdo:url</code>) and the name (<code>sdo:name</code>) of the resource, however this would duplicate information in the sitemap used to <a href="../locate">locate</a> the resources, and embedded markup used to <a href="../../inpage/">describe</a> the resources.</p>
+</div>
 <h2 id="an-ordered-aggregation">An Ordered Aggregation</h2>
-<p><strong>Editor's Note OPEN ISSUE</strong>: there are two options for ordering the component resources in an aggregation. Option 1 is a JSON array (i.e. an ordered list) of identifiers specifying a default order. This mirrors the approach taken for W3C Web Publications (ePub for the web). Option 2 is inspired by OAI-ORE and leverages schema.org ItemLists. Option 2 is conceptually and practically far more complex, however it may be more robust, and may more useful for providing information about next &amp; previous components within the files for each component. It remains an open issue as to whether the extra complexity is manageable or necessary.</p>
+<div class="admonition note">
+<p class="admonition-title">open issue</p>
+<p>there are two options for ordering the component resources in an aggregation. Option 1 is a JSON array (i.e. an ordered list) of identifiers specifying a default order. This mirrors the approach taken for W3C Web Publications (ePub for the web). Option 2 is inspired by OAI-ORE and leverages schema.org ItemLists. Option 2 is conceptually and practically far more complex, however it may be more robust, and may more useful for providing information about next &amp; previous components within the files for each component. It remains an open issue as to whether the extra complexity is manageable or necessary. <a href="https://github.com/K12OCX/k12ocx-specs/issues/34">See issue on github</a></p>
+</div>
 <h2 id="an-ordered-aggregation-option-1">An Ordered Aggregation - Option 1</h2>
 <p>We provide information about the default logical and pedagogically appropriate sequence for displaying or presenting the components of complex curriculum materials using a JSON array of URIs, each URI representing a component. This approach is based on the <a href="https://www.w3.org/TR/wpub/#default-reading-order">default reading order</a> of the (draft) W3C <a href="https://www.w3.org/TR/wpub/">Web Publications</a> spec.</p>
 <h3 id="recommended-vocabulary-identifiers_1">Recommended Vocabulary Identifiers</h3>
@@ -374,7 +394,10 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Editor's note:</strong> do we need to get context URI for OCX?</p>
+<div class="admonition note">
+<p class="admonition-title">Open issue</p>
+<p>We should declare ocx properties properly and provide info at context URI <a href="https://github.com/K12OCX/k12ocx-specs/issues/35">see github issue</a></p>
+</div>
 <h3 id="recommended-properties_1">Recommended Properties</h3>
 <table>
 <thead>
@@ -392,9 +415,12 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Note:</strong> The ordering may be changed for many reasons, for example, remixing the content or adaptive delivery.</p>
-<p><strong>Note:</strong> JSON-LD arrays are unordered by default (in contrast with regular JSON). Ordering can be enforced using the <code>@list</code> JSON-LD keyword.</p>
-<p><strong>Note:</strong> In JSON-LD lists of lists are not allowed. Therefor the ordering for each level of a hierarchical aggregation must be specified separately.</p>
+<p>The default order is only one permitted ordering. The ordering presented to the student or other user may be changed for many reasons, for example, remixing the content or adaptive delivery.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>JSON-LD arrays are unordered by default (in contrast with regular JSON). Ordering can be enforced using the <code>@list</code> JSON-LD keyword.</p>
+<p>In JSON-LD lists of lists are not allowed. Therefor the ordering for each level of a hierarchical aggregation must be specified separately.</p>
+</div>
 <h3 id="example_1">Example</h3>
 <p>A module comprising a sequence of two topics, the first of which is a sequence of three lessons.</p>
 <pre><code>{
@@ -465,7 +491,6 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Editor's note:</strong> do we need to get context URI for OCX?</p>
 <h3 id="recommended-classes-types_1">Recommended Classes / Types</h3>
 <p>In addition to the types used for an unordered aggregation we need</p>
 <table>
@@ -531,7 +556,10 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Note:</strong> the order of elements in the mark-up is not sufficient for indicating the order of items in the list.  Use ListItem with a 'position' property in such cases.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>the order of elements in the mark-up is not sufficient for indicating the order of items in the list.  Use ListItem with a 'position' property in such cases.</p>
+</div>
 <p>Properties of a sdo:ListItem</p>
 <table>
 <thead>
@@ -564,7 +592,10 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Editor's Note:</strong> The terminology of ListItem and ItemList; nextItem (which is a ListItem), item (which is not a ListItem) and itemListElement (which is a ListItem, and sometimes also an ItemList) is confusing, but it's what schema.org has given us <code>¯\_(ツ)_/¯</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Editor's Note</p>
+<p>The terminology of ListItem and ItemList; nextItem (which is a ListItem), item (which is not a ListItem) and itemListElement (which is a ListItem, and sometimes also an ItemList) is confusing, but it's what schema.org has given us <code>¯\_(ツ)_/¯</code>.</p>
+</div>
 <h3 id="example_2">Example</h3>
 <p>A module comprising a sequence of two topics, the first of which is a sequence of three lessons.</p>
 <p><img alt="entity-relationship graph of the resources represented in the JSON-LD text below" src="../../images/nestedOrderedList.png" /></p>
@@ -676,8 +707,14 @@
 }
 </code></pre>
 
-<p><strong>Editor's Note:</strong> Experimenting with ToC as nested objects.</p>
-<p><strong>Editor's Note:</strong> Hacking the context for sdo: properties to be stricter than schema.org's own and to generate links not values.</p>
+<div class="admonition note">
+<p class="admonition-title">Editor's Note</p>
+<p>Experimenting with ToC as nested objects.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Editor's Note</p>
+<p>Hacking the context for sdo: properties to be stricter than schema.org's own and to generate links not values.</p>
+</div>
               
             </div>
           </div>

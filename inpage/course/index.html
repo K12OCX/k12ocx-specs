@@ -208,7 +208,10 @@
 <li>parentOf: <code>oer:Module</code></li>
 <li>childOf: <code>oer:Resource</code></li>
 </ul>
-<p><strong>Note:</strong> We treat the OER Schema course to be equivalent to <a href="https://schema.org/Course">schema.org/Course</a> so that properties for scheme.org/Course may be used with it. (This exploits the flexibility of schema.org/domainIncludes used in defining schema.org properties.)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We treat the OER Schema course to be equivalent to <a href="https://schema.org/Course">schema.org/Course</a> so that properties for scheme.org/Course may be used with it. (This exploits the flexibility of schema.org/domainIncludes used in defining schema.org properties.)</p>
+</div>
 <p>This represents the entire course. A Course includes one or more modules.</p>
 <p>The entire course could contain materials for multiple audiences (students, teachers, families).</p>
 <p>A Course is intended to provide complete curriculum for an academic term. In K-12, the most common term is the full school year. But, this wouldn’t preclude a semester (half year) long course or trimester (⅓ of a year) long course, or courses that span several grade levels either. It does imply, however, that the course includes multiple instructional units. The schema.org definition of a course is "a sequence of one or more educational events and/or creative works which aims to build knowledge, competence or ability of learners".</p>
@@ -225,7 +228,10 @@
 <p>Any property from <a href="https://schema.org/Course">schema.org:Course</a> or <a href="http://oerschema.org/Course/">oerschema:Course</a> may be used, including those inherited from their parent types. The Creative Commons license vocabulary is used for IPR related information.</p>
 <p>If properties with similar meaning are available from both schema.org and OER schema, then the property from schema.org should be used in preference (see non-preferred properties, below).</p>
 <p>The table below selectively lists those properties that are most relevant to OCX.</p>
-<p><strong>Note:</strong> Descriptions of some properties have been tweaked to make them more appropriate for describing courses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Descriptions of some properties have been tweaked to make them more appropriate for describing courses.</p>
+</div>
 <table>
 <thead>
 <tr>
@@ -489,8 +495,14 @@
 <li>JSON-LD.</li>
 </ul>
 <p>The following would be placed in a <code>&lt;script  type="application/ld+json"&gt;</code> element in the HTML sectioning element that contained information about the course.</p>
-<p><strong>Note:</strong> The URIs used for the <code>@id</code>s are based on the URLs of the page that represent the course being described and its modules with the addition of the #A fragment identifiers treating them as aggregate resources as described in the section on <a href="../../manifest/structure/">manifest structuring</a>. This conforms with the requirement that different identifiers are used for CCM entities and the web pages that represent them, as described in the <a href="../../contentmodel/">content model</a>.</p>
-<p><strong>Note:</strong> In the case where the content of a course is split over many HTML files, there is no requirement for the <code>hasPart</code> array shown in this example as this information would be provided by the manifest.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The URIs used for the <code>@id</code>s are based on the URLs of the page that represent the course being described and its modules with the addition of the #A fragment identifiers treating them as aggregate resources as described in the section on <a href="../../manifest/structure/">manifest structuring</a>. This conforms with the requirement that different identifiers are used for CCM entities and the web pages that represent them, as described in the <a href="../../contentmodel/">content model</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the case where the content of a course is split over many HTML files, there is no requirement for the <code>hasPart</code> array shown in this example as this information would be provided by the manifest.</p>
+</div>
 <pre><code class="json">{
   &quot;@context&quot;: [
     &quot;http://schema.org/&quot;,

@@ -222,7 +222,10 @@
 <p>Any property from <a href="https://schema.org/Course">schema.org/Course</a> or <a href="http://oerschema.org/Module/">oerschema:Module</a> may be used, including those inherited from their parent types. The Creative Commons license vocabulary is used for IPR related information.</p>
 <p>If properties with similar meaning are available from both schema.org and OER schema, then the property from schema.org should be used in preference (see non-preferred properties, below).</p>
 <p>The table below selectively lists those properties that are most relevant to OCX.</p>
-<p><strong>Note:</strong> Descriptions of some properties have been tweaked to make them more appropriate for describing modules.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Descriptions of some properties have been tweaked to make them more appropriate for describing modules.</p>
+</div>
 <table>
 <thead>
 <tr>
@@ -481,8 +484,14 @@
 <li>JSON-LD</li>
 </ul>
 <p>The following would be placed in a <code>&lt;script  type="application/ld+json"&gt;</code> element in the HTML sectioning element that contained information about the module.</p>
-<p><strong>Note:</strong> The URIs used for the <code>@id</code>s are based on the URLs of the page that represent the module being described and its units with the addition of the #A fragment identifiers treating them as aggregate resources as described in the section on <a href="../../manifest/structure/">manifest structuring</a>. This conforms with the requirement that different identifiers are used for CCM entities and the web pages that represent them, as described in the <a href="../../contentmodel/">content model</a>.</p>
-<p><strong>Note:</strong> In the case where the content of a module is split over many HTML files, there is no requirement for the <code>hasPart</code> array shown in this example as this information would be provided by the manifest.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The URIs used for the <code>@id</code>s are based on the URLs of the page that represent the module being described and its units with the addition of the #A fragment identifiers treating them as aggregate resources as described in the section on <a href="../../manifest/structure/">manifest structuring</a>. This conforms with the requirement that different identifiers are used for CCM entities and the web pages that represent them, as described in the <a href="../../contentmodel/">content model</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the case where the content of a module is split over many HTML files, there is no requirement for the <code>hasPart</code> array shown in this example as this information would be provided by the manifest.</p>
+</div>
 <pre><code class="json">{
   &quot;@context&quot;: [
     &quot;http://schema.org/&quot;,

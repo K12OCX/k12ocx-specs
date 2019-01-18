@@ -199,7 +199,10 @@
 <p><code>Course</code>, <code>Module</code>, <code>Unit</code>, <code>Lesson</code>, <code>Activity</code>, <code>Assessment</code> and <code>SupportingMaterial</code> are all sub classes of <a href="http://oerschema.org/LearningComponent/">oer:LearningComponent</a>.</p>
 <p><code>SupportingMaterial</code>, <code>SupplementalMaterial</code> and <code>ReferencedMaterial</code> are sub classes of  <code>ocx:AssociatedMaterial</code> (to do: define this formally)</p>
 <p><code>LearningComponents</code> are related to other <code>LearningComponents</code> using the <code>hasPart</code> property (and the reverse <code>isPartOf</code>). <code>LearningComponents</code> are related to <code>AssociatedMaterial</code> using the <code>ocx:material</code> property (an extension of <a href="http://oerschema.org/material/">oer:material</a>)</p>
-<p><strong>Note</strong>: This model is based on <a href="https://schema.org">schema.org</a>, and hence on RDF and uses the W3C <a href="https://www.w3.org/TR/webarch/">architecture of the World Wide Web</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This model is based on <a href="https://schema.org">schema.org</a>, and hence on RDF and uses the W3C <a href="https://www.w3.org/TR/webarch/">architecture of the World Wide Web</a>.</p>
+</div>
 <p>Below we make a quick alignment of different OER providers with this default OER Schema suggestion.</p>
 <table>
 <thead>
@@ -259,7 +262,10 @@
 </table>
 <h2 id="identifiers">Identifiers</h2>
 <p>As we use an RDF-based model to describe the CCM being exchanged, any content that is to be described must be identifiable with a URI, preferably a resolvable http:// URI. Since a Course/Module/Unit/etc is not a web page, the URI that is used to identify such content must be distinct from that used for the web page through which it is represented.</p>
-<p><strong>Note</strong>: A useful pattern adopted in this documentation is the use of fragment identifiers based on the web page URL to identify entities represented on that page. So, if the web page <code>http://example.org/MyLesson</code> represents an OER Schema Lesson, the URI used to identify that lesson might be of the form <code>http://example.org/MyLesson#lesson</code> or similar.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A useful pattern adopted in this documentation is the use of fragment identifiers based on the web page URL to identify entities represented on that page. So, if the web page <code>http://example.org/MyLesson</code> represents an OER Schema Lesson, the URI used to identify that lesson might be of the form <code>http://example.org/MyLesson#lesson</code> or similar.</p>
+</div>
 <h2 id="content-files-and-formats">Content Files and Formats</h2>
 <p>The content being transferred may be contained in a single digital document or many. As this content will be presented through web pages or ebooks, the format of the digital document must be HTML5 or translatable to HTML5.</p>
 <p>If the content is contained in more than one digital document, then a <a href="../manifest/">manifest</a> must be provided in order to provide information about the location of all the documents and the logical and pedagogic structure of the content. Individual documents contain <a href="../inpage/">in-page</a> structural and descriptive metadata about the resources they represent.</p>

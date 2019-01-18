@@ -481,10 +481,22 @@
 <li>JSON-LD</li>
 </ul>
 <p>The following would be placed in a <code>&lt;script  type="application/ld+json"&gt;</code> element in the HTML sectioning element that contained information about the unit.</p>
-<p><strong>Note:</strong> The URIs used for the <code>@id</code>s are based on the URLs of the page that represent the module being described and its units with the addition of the #A fragment identifiers treating them as aggregate resources as described in the section on <a href="../../manifest/structure/">manifest structuring</a>. This conforms with the requirement that different identifiers are used for CCM entities and the web pages that represent them, as described in the <a href="../../contentmodel/">content model</a>.</p>
-<p><strong>Note:</strong> In the case where the content of a unit is split over many HTML files, there is no requirement for the <code>hasPart</code> array shown in this example as this information would be provided by the manifest.</p>
-<p><strong>Editor's Note:</strong> Several parts of the original are omitted in the example in order to avoid repetition.</p>
-<p><strong>Note:</strong> Some of the parts are pdf documents (one is included in the example). If the HTML page for the Unit is the only HTML page containing information about these documents then it is necessary to provide a full description of those documents in this page. An example of such as description is provided under <a href="../supportingmaterial/">Properties of SupportingMaterial</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The URIs used for the <code>@id</code>s are based on the URLs of the page that represent the module being described and its units with the addition of the #A fragment identifiers treating them as aggregate resources as described in the section on <a href="../../manifest/structure/">manifest structuring</a>. This conforms with the requirement that different identifiers are used for CCM entities and the web pages that represent them, as described in the <a href="../../contentmodel/">content model</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the case where the content of a unit is split over many HTML files, there is no requirement for the <code>hasPart</code> array shown in this example as this information would be provided by the manifest.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Editor's Note</p>
+<p>Several parts of the original are omitted in the example in order to avoid repetition.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some of the parts are pdf documents (one is included in the example). If the HTML page for the Unit is the only HTML page containing information about these documents then it is necessary to provide a full description of those documents in this page. An example of such as description is provided under <a href="../supportingmaterial/">Properties of SupportingMaterial</a>.</p>
+</div>
 <pre><code class="json">{
   &quot;@context&quot;: [
     &quot;http://schema.org/&quot;,
