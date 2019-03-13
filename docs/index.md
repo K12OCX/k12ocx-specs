@@ -15,6 +15,10 @@ This specification comprises the following features:
 
 5. An additional set of [styling guides](styling) for allowing resources to keep visual integrity, or to change themes accordingly to different consumers.
 
+## Examples
+
+Examples for emitting or consuming the data using different programming languages can be found [here](emit-consume-example.md)
+
 ## IPR & License
 All materials are contributed under the [Apache 2](https://www.apache.org/licenses/LICENSE-2.0) license. Materials will be contributed per copyright title to The Bill and Melinda Gates Foundation, and all such contributions will be licensed openly per previous sentence.
 
