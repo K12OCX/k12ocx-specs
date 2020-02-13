@@ -1,0 +1,53 @@
+name: Person
+properties:
+- name: name
+  type: Text
+  description: The name of the item.
+  from: Thing
+- name: description
+  type: Text
+  description: A description of the item.
+  from: Thing
+- name: sameAs
+  type: URL
+  description: URL of a reference Web page that unambiguously indicates the item's
+    identity.
+  from: Thing
+- name: url
+  type: URL
+  description: URL of the item.
+  from: Thing
+- name: identifier
+  type: Text \|  URL \| PropertyValue
+  description: Any kind of identifier (uuid, url, etc).
+  from: Thing
+- name: alternateName
+  type: Text
+  description: An alias for the item.
+  from: Thing
+- name: address
+  type: schema:PostalAddress \| Text
+  description: Physical address of the item.
+  from: Person
+- name: email
+  type: Text
+  description: Email address
+  from: Person
+- name: jobTitle
+  type: Text
+  description: The job title of the person (for example, Financial Manager).
+  from: Person
+- name: memberOf
+  type: Organization
+  description: 'An Organization to which this Person or Organization belongs. Inverse
+    property: member.'
+  from: Person
+- name: telephone
+  type: Text
+  description: The telephone number.
+  from: Person
+- name: worksFor
+  type: Organization
+  description: Organizations that the person works for.
+  from: Person
+non_preferred_properties: []

@@ -1,0 +1,185 @@
+name: Course
+properties:
+- name: courseCode
+  type: Text
+  description: The identifier for the Course used by the course provider (e.g. CS101
+    or 6.001).
+  from: schema.org:Course
+- name: coursePrerequisites
+  type: AlignmentObject  or Course  or Text
+  description: Requirements for taking the Course. May be completion of another Course
+    or a textual description like "permission of instructor". Requirements may be
+    a pre-requisite competency, referenced using AlignmentObject.
+  from: schema.org:Course
+- name: about
+  type: Thing
+  description: The subject matter of the content.
+  from: schema.org:CreativeWork
+- name: accessibilitySummary
+  type: Text
+  description: A human-readable summary of specific accessibility features or deficiencies,
+    consistent with the other accessibility metadata but expressing subtleties such
+    as "short descriptions are present but long descriptions will be needed for non-visual
+    users" or "short descriptions are present and no long descriptions are needed."
+  from: schema.org:CreativeWork
+- name: audience
+  type: EducationalAudience
+  description: An intended audience, i.e. a group for whom the resource being described
+    was created. Use the educationalRole property of the EducationalAudience object
+    to state whether the intended audience is teacher, student, parent, etc. See the
+    [LRMI Educational Audience Role concept scheme](http://lrmi.dublincore.org/specifications/concept_schemes/#educational-audience-role)
+    for more values.
+  from: schema.org:CreativeWork
+- name: author
+  type: Organization  or Person
+  description: The author of the course.
+  from: schema.org:CreativeWork
+- name: citation
+  type: CreativeWork  or Text
+  description: A citation or reference to another creative work, such as another publication,
+    web page, scholarly article, etc.
+  from: schema.org:CreativeWork
+- name: contributor
+  type: Organization  or Person
+  description: A secondary contributor to the course
+  from: schema.org:CreativeWork
+- name: dateCreated
+  type: Date
+  description: The date on which the resource was created.
+  from: schema.org:CreativeWork
+- name: dateModified
+  type: Date
+  description: The date on which the resource was updated.
+  from: schema.org:CreativeWork
+- name: educationalAlignment
+  type: AlignmentObject
+  description: An alignment to an established educational framework. The alignment
+    object can be used to provide information such as educational- (grade-) level
+    of the course and competences being taught or assessed
+  from: schema.org:CreativeWork
+- name: hasPart
+  type: CreativeWork
+  description: 'Indicates a CreativeWork that is part of this  Course (in some sense).
+    Inverse property: isPartOf.'
+  from: schema.org:CreativeWork
+- name: inLanguage
+  type: Language or Text
+  description: The language of the content of the course. Please use one of the language
+    codes from the IETF BCP 47 standard.
+  from: schema.org:CreativeWork
+- name: isBasedOn
+  type: CreativeWork or URL
+  description: A resource from which this course is derived or of which it is a modification
+    or adaption.
+  from: schema.org:CreativeWork
+- name: isPartOf
+  type: CreativeWork
+  description: 'Indicates a CreativeWork that this course is (in some sense) part
+    of. Inverse property: hasPart.'
+  from: schema.org:CreativeWork
+- name: keywords
+  type: Text
+  description: Keywords or tags used to describe this content. Multiple entries in
+    a keywords list are typically delimited by commas.
+  from: schema.org:CreativeWork
+- name: learningResourceType
+  type: Text
+  description: The predominant type or kind characterizing the course.
+  from: schema.org:CreativeWork
+- name: provider
+  type: Organization
+  description: The service provider, service operator, or service performer; the goods
+    producer. Use to identify the Organization which is responsible for providing
+    the educational input for the course, e.g. providing content, educational events,
+    assessments, accreditation etc.
+  from: schema.org:CreativeWork
+- name: publisher
+  type: schema:Organization
+  description: The organization credited with publishing the resource.
+  from: schema.org:CreativeWork
+- name: timeRequired
+  type: Duration
+  description: Approximate or typical time it takes to work with or through this course
+    for the typical intended target audience, e.g. 'P30M', 'P1H25M'.
+  from: schema.org:CreativeWork
+- name: typicalAgeRange
+  type: Text
+  description: The typical expected age in years of the learners on this course. For
+    OCX the suggestion is to use a list to indicate a closed range of ages, e.g. ["9","10","11"],
+    and values like "18-" for an open range.
+  from: schema.org:CreativeWork
+- name: alternateName
+  type: Text
+  description: An alias for the course.
+  from: schema.org:Thing
+- name: description
+  type: Text
+  description: A description of the course
+  from: schema.org:Thing
+- name: identifier
+  type: PropertyValue  or Text  or URL
+  description: The identifier property represents any kind of identifier for any kind
+    of Thing, such as ISBNs, DOIs, UUIDs etc.
+  from: schema.org:Thing
+- name: name
+  type: Text
+  description: The name [title] of the course
+  from: schema.org:Thing
+- name: url
+  type: URL
+  description: URL of the course.
+  from: schema.org:Thing
+- name: ocx:material
+  type: ocx:AssociatedMaterial
+  description: Material assiociated with a resource which is SupplementalMaterial,
+    ReferencedMaterial or SupportingMaterial
+  from: ocx
+- name: oer:syllabus
+  type: oer:CourseSyllabus
+  description: The syllabus for this course
+  from: oer:Course
+- name: oer:mainContent
+  type: Text
+  description: The main content relating to the item.
+  from: oer:Course
+- name: oer:forTopic
+  type: oer:Topic
+  description: The Topic the resource is associated with. An oer:Topic is defined
+    as the context of a oer:LearningComponent
+  from: oer:Resource
+- name: cc:license
+  type: Text \| License
+  description: A Work has license a License (a subproperty of dc:license, the same
+    as xhtml:license).
+  from: cc:Work
+- name: cc:morePermissions
+  type: Text
+  description: A related resource which describes additional permissions or alternative
+    licenses for a Work which may be available.
+  from: cc:Work
+- name: cc:attributionName
+  type: Text
+  description: The name the creator of a Work would like used when attributing re-use.
+  from: cc:Work
+- name: cc:attributionURL
+  type: URL
+  description: The URL the creator of a Work would like used when attributing re-use.
+  from: cc:Work
+- name: cc:useGuidelines
+  type: Text
+  description: A related resource which defines non-binding use guidelines for the
+    work.
+  from: cc:Work
+non_preferred_properties:
+- name: courseIdentifier
+  preferred: courseCode (from Course)
+- name: duration
+  preferred: learningTime (from CreativeWork)
+- name: prerequisite
+  preferred: coursePrerequisites (from Course)
+- name: parentOf
+  preferred: hasPart (from CreativeWork)
+- name: childOf
+  preferred: isPartOf (from CreativeWork)
+- name: all properties of oer:Thing
+  preferred: all have equivalents in schema.org Thing

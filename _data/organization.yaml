@@ -1,0 +1,68 @@
+name: Organization
+properties:
+- name: name
+  type: Text
+  description: The name of the item.
+  from: Thing
+- name: description
+  type: Text
+  description: A description of the item.
+  from: Thing
+- name: sameAs
+  type: URL
+  description: URL of a reference Web page that unambiguously indicates the item's
+    identity.
+  from: Thing
+- name: url
+  type: URL
+  description: URL of the item.
+  from: Thing
+- name: identifier
+  type: Text \|  URL \| PropertyValue
+  description: Any kind of identifier (uuid, url, etc).
+  from: Thing
+- name: alternateName
+  type: Text
+  description: An alias for the item.
+  from: Thing
+- name: address
+  type: PostalAddress \| Text
+  description: Physical address of the item.
+  from: Organization
+- name: contactPoint
+  type: ContactPoint
+  description: A contact point for a person or organization.
+  from: Organization
+- name: department
+  type: Organization
+  description: A relationship between an organization and a department of that organization,
+    also described as an organization (allowing different urls, logos, opening hours).
+  from: Organization
+- name: email
+  type: Text
+  description: Email address
+  from: Organization
+- name: location
+  type: Location \| Text
+  description: The location of for example where the event is happening, an organization
+    is located, or where an action takes place.
+  from: Organization
+- name: logo
+  type: ImageObject \| URL
+  description: An associated logo.
+  from: Organization
+- name: member
+  type: Organization \| Person
+  description: 'sub-member Person or Organizations to this Organization. Inverse property:
+    memberOf.'
+  from: Organization
+- name: memberOf
+  type: Organization
+  description: 'An Organization to which this  Organization belongs. Inverse property:
+    member.'
+  from: Organization
+- name: telephone
+  type: Text
+  description: The telephone number.
+  from: Organization
+non_preferred_properties: []
