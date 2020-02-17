@@ -1,0 +1,173 @@
+name: SupportingMaterial
+properties:
+- name: identifier
+  type: Text \|  URL \| PropertyValue
+  description: Any kind of identifier (uuid, url, etc).
+  from: schema.org Thing
+- name: url
+  type: URL
+  description: URL of the item.
+  from: schema.org Thing
+- name: name
+  type: Text
+  description: The name of the item.
+  from: schema.org Thing
+- name: alternateName
+  type: Text
+  description: An alias for the item.
+  from: schema.org Thing
+- name: description
+  type: Text
+  description: A description of the item.
+  from: schema.org Thing
+- name: about
+  type: Thing
+  description: The subject matter of the content.
+  from: schema.org CreativeWork
+- name: accessibilitySummary
+  type: Text
+  description: A human-readable summary of specific accessibility features or deficiencies,
+    consistent with the other accessibility metadata but expressing subtleties such
+    as "short descriptions are present but long descriptions will be needed for non-visual
+    users" or "short descriptions are present and no long descriptions are needed."
+  from: schema.org CreativeWork
+- name: audience
+  type: EducationalAudience
+  description: An intended audience, i.e. a group for whom the resource being described
+    was created. Use the educationalRole property of the EducationalAudience object
+    to state whether the intended audience is teacher, student, parent, etc. See the
+    [LRMI Educational Audience Role concept scheme](http://lrmi.dublincore.org/specifications/concept_schemes/#educational-audience-role)
+    for more values.
+  from: schema.org CreativeWork
+- name: author
+  type: Organization  or Person
+  description: The author of the supporting material.
+  from: schema.org CreativeWork
+- name: citation
+  type: CreativeWork  or Text
+  description: A citation or reference to another creative work, such as another publication,
+    web page, scholarly article, etc.
+  from: schema.org CreativeWork
+- name: contributor
+  type: Organization  or Person
+  description: A secondary contributor to the supporting material
+  from: schema.org CreativeWork
+- name: dateCreated
+  type: Date
+  description: The date on which the resource was created.
+  from: schema.org CreativeWork
+- name: dateModified
+  type: Date
+  description: The date on which the resource was updated.
+  from: schema.org CreativeWork
+- name: educationalUse
+  type: Text
+  description: 'The purpose of the work in the context of education. Ex: "assignment",
+    "group work"'
+  from: schema.org CreativeWork
+- name: encoding
+  type: MediaObject
+  description: A media object that encodes this supporting material. Use when the
+    same digital document is available in different formats.
+  from: schema.org CreativeWork
+- name: hasPart
+  type: CreativeWork
+  description: 'Indicates a CreativeWork that is part of this supporting material
+    (in some sense). Inverse property: isPartOf.'
+  from: schema.org CreativeWork
+- name: inLanguage
+  type: Language or Text
+  description: The language of the content of the supporting material. Please use
+    one of the language codes from the IETF BCP 47 standard.
+  from: schema.org CreativeWork
+- name: isBasedOn
+  type: CreativeWork or URL
+  description: A resource from which this supporting material is derived or of which
+    it is a modification or adaption.
+  from: schema.org CreativeWork
+- name: isPartOf
+  type: CreativeWork
+  description: 'Indicates a CreativeWork that this supporting material is (in some
+    sense) part of. Inverse property: hasPart.'
+  from: schema.org CreativeWork
+- name: keywords
+  type: Text
+  description: Keywords or tags used to describe this content. Multiple entries in
+    a keywords list are typically delimited by commas.
+  from: schema.org CreativeWork
+- name: learningResourceType
+  type: Text
+  description: The predominant type or kind characterizing the supporting material.
+  from: schema.org CreativeWork
+- name: provider
+  type: Organization
+  description: The service provider, service operator, or service performer; the goods
+    producer. Use to identify the Organization which is responsible for providing
+    the educational input for the supporting material, e.g. providing content, educational
+    events, assessments, accreditation etc.
+  from: schema.org CreativeWork
+- name: publisher
+  type: Organization
+  description: The organization credited with publishing the supporting material.
+  from: schema.org CreativeWork
+- name: timeRequired
+  type: Duration
+  description: Approximate or typical time it takes to work with or through this supporting
+    material for the typical intended target audience, e.g. 'P30M', 'PT1H25M'.
+  from: schema.org CreativeWork
+- name: typicalAgeRange
+  type: Text
+  description: The typical expected age in years of the learners on this supporting
+    material. For OCX the suggestion is to use a list to indicate a closed range of
+    ages, e.g. ["9","10","11"], and values like "18-" for an open range.
+  from: schema.org CreativeWork
+- name: oer:forCourse
+  type: oer:Course
+  description: The Course in which the resource is meant for.
+  from: oer:LearningComponent
+- name: hasLearningObjective
+  type: LearningObjective
+  description: A LearningObjective gained as a result of an InstructionalPattern .
+  from: oer:LearningComponent
+- name: forTopic
+  type: Topic
+  description: The Topic the resource is associated with.
+  from: oer:Resource
+- name: cc:license
+  type: Text \| License
+  description: A Work has license a License (a subproperty of dc:license, the same
+    as xhtml:license).
+  from: cc:Work
+- name: cc:morePermissions
+  type: Text
+  description: A related resource which describes additional permissions or alternative
+    licenses for a Work which may be available.
+  from: cc:Work
+- name: cc:attributionName
+  type: Text
+  description: The name the creator of a Work would like used when attributing re-use.
+  from: cc:Work
+- name: cc:attributionURL
+  type: URL
+  description: The URL the creator of a Work would like used when attributing re-use.
+  from: cc:Work
+- name: cc:useGuidelines
+  type: Text
+  description: A related resource which defines non-binding use guidelines for the
+    work.
+  from: cc:Work
+non_preferred_properties:
+- name: duration
+  preferred: learningTime (from CreativeWork)
+- name: hasComponent
+  preferred: hasPart (from CreativWork)
+- name: forComponent
+  preferred: isPartOf (from CreativeWork)
+- name: prerequisite
+  preferred: coursePrerequisites (from Course)
+- name: parentOf
+  preferred: hasPart (from CreativeWork)
+- name: childOf
+  preferred: isPartOf (from CreativeWork)
+- name: all properties of oer:Thing
+  preferred: all have equivalents in schema.org Thing

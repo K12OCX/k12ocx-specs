@@ -1,0 +1,67 @@
+name: oer:Topic
+properties:
+- name: "**from oer:Topic**"
+  type: "--------------------"
+  description: "--------------------"
+  from: 
+- name: oer:material
+  type: SupportingMaterial
+  description: The supporting material assiociated with a resource.
+  from: 
+- name: "**oer:Resource**"
+  type: "--------------------"
+  description: "--------------------"
+  from: 
+- name: mainContent
+  type: Text
+  description: The main content relating to the item.
+  from: 
+- name: identifier
+  type: Text \|  URL \| schema:PropertyValue
+  description: Any kind of identifier (uuid, url, etc).
+  from: Thing
+- name: name
+  type: Text
+  description: The name of the item.
+  from: Thing
+- name: description
+  type: Text
+  description: A description of the item.
+  from: Thing
+- name: url
+  type: URL
+  description: URL of the item.
+  from: Thing
+- name: sameAs
+  type: URL
+  description: URL of a reference Web page that unambiguously indicates the item's
+    identity.
+  from: Thing
+- name: alternateName
+  type: Text
+  description: An alias for the item.
+  from: Thing
+- name: cc:license
+  type: Text \| License
+  description: A Work has license a License (a subproperty of dc:license, the same
+    as xhtml:license).
+  from: cc:Work
+- name: cc:morePermissions
+  type: Text
+  description: A related resource which describes additional permissions or alternative
+    licenses for a Work which may be available.
+  from: cc:Work
+- name: cc:attributionName
+  type: Text
+  description: The name the creator of a Work would like used when attributing re-use.
+  from: cc:Work
+- name: cc:attributionURL
+  type: URL
+  description: The URL the creator of a Work would like used when attributing re-use.
+  from: cc:Work
+- name: cc:useGuidelines
+  type: Text
+  description: A related resource which defines non-binding use guidelines for the
+    work.
+  from: cc:Work
+non_preferred_properties: []

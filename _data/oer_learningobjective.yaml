@@ -1,0 +1,91 @@
+name: oer:LearningObjective
+properties:
+- name: "**oer:LearningObjective**"
+  type: "--------------------"
+  description: "--------------------"
+  from: 
+- name: prerequisite
+  type: Course \| LearningComponent \| LearningObjective
+  description: A requirement to be completed before this resource can be performed.
+  from: 
+- name: "**oer:Resource**"
+  type: "--------------------"
+  description: "--------------------"
+  from: 
+- name: parentOf
+  type: Resource
+  description: A parent in relation to a child resource.
+  from: 
+- name: childOf
+  type: Resource
+  description: A child in relation to a parent resource.
+  from: 
+- name: forCourse
+  type: Course
+  description: The Course in which the resource is meant for.
+  from: 
+- name: mainContent
+  type: Text
+  description: The main content relating to the item.
+  from: 
+- name: forTopic
+  type: Topic
+  description: The Topic the resource is associated with.
+  from: 
+- name: "**Thing**"
+  type: "--------------------"
+  description: "--------------------"
+  from: 
+- name: name
+  type: Text
+  description: The name of the item.
+  from: 
+- name: description
+  type: Text
+  description: A description of the item.
+  from: 
+- name: sameAs
+  type: URL
+  description: URL of a reference Web page that unambiguously indicates the item's
+    identity.
+  from: 
+- name: identifier
+  type: Text \|  URL \| schema:PropertyValue
+  description: Any kind of identifier (uuid, url, etc).
+  from: 
+- name: url
+  type: URL
+  description: URL of the item.
+  from: 
+- name: alternateName
+  type: Text
+  description: An alias for the item.
+  from: 
+- name: "**cc:Work**"
+  type: "--------------------"
+  description: "--------------------"
+  from: 
+- name: cc:license
+  type: Text \| License
+  description: A Work has license a License (a subproperty of dc:license, the same
+    as xhtml:license).
+  from: 
+- name: cc:morePermissions
+  type: Text
+  description: A related resource which describes additional permissions or alternative
+    licenses for a Work which may be available.
+  from: 
+- name: cc:attributionName
+  type: Text
+  description: The name the creator of a Work would like used when attributing re-use.
+  from: 
+- name: cc:attributionURL
+  type: URL
+  description: The URL the creator of a Work would like used when attributing re-use.
+  from: 
+- name: cc:useGuidelines
+  type: Text
+  description: A related resource which defines non-binding use guidelines for the
+    work.
+  from: 
+non_preferred_properties: []
