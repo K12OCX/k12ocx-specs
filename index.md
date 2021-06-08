@@ -7,7 +7,7 @@ nav_order: 1
 # K-12 Open Content Exchange
 
 K-12 OCX is a specification for publishing OER (Open Educational Resources) on the web and packaging
-that OER for exchange with other parties. Typically the OER will be aggregated into collections of curriculum, content and material (compare with a book or collection of courseware).
+that OER for exchange with other parties. Typically the OER will be aggregated into collections of curriculum, content and material (compare with a book or collection of courseware). The specification is maintained on [Github in Markdown](https://github.com/K12OCX/k12ocx-specs), and issues and pull-requests for new metadata welcome.
 
 This specification comprises the following features:
 
