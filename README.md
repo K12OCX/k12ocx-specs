@@ -34,3 +34,5 @@ bundle exec jekyll serve
 ```
 
 The current version of the spec master branch is available at [https://k12ocx.github.io/k12ocx-specs/](https://k12ocx.github.io/k12ocx-specs/).
+
+![Powered by LRMI + DCMI](/images/LRMI-DCMI.png)
