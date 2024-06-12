@@ -24,8 +24,8 @@ In many cases, the curriculum will describe a specific order that the Activities
 
 oer:Lesson meets the definition of schema.org/Course, i.e. it is "a sequence of one or more educational events and/or creative works which aims to build knowledge, competence or ability of learners". This means that resources that are lessons should be typed as oer:lesson and schema.org/Course. The schema.org learningResourceType property with a value of "lesson" should be used to indicate the type of course to systems that understand schema.org but not the OER Schema terms used by OCX.
 
-!!! Note "Editor's Note"
-    I know that lesson as a Course seems odd. If we find we don't need scheme.org's courseCode or coursePrerequisites properties we can just call a lesson a creative work.
+**Note**
+    Lesson as a Course seems odd. If we find we don't need scheme.org's courseCode or coursePrerequisites properties we can just call a lesson a creative work.
 
 Examples:
 
@@ -49,16 +49,16 @@ Markup for [https://pilot.unbounded.org/ela/grade-6/module-1/unit-2/lesson-8](ht
 
 The following would be placed in a `<script  type="application/ld+json">` element in the HTML sectioning element that contained information about the lesson.
 
-!!! note
+**Note**
     The URIs used for the `@id`s are based on the URLs of the page that represent the module being described and its units with the addition of the #A fragment identifiers treating them as aggregate resources as described in the section on [manifest structuring]({{ site.baseurl }}{% link manifest/structure.md %}). This conforms with the requirement that different identifiers are used for CCM entities and the web pages that represent them, as described in the [content model]({{ site.baseurl }}{% link contentmodel.md %}).
 
-!!!note
+**Note**
     In the case where the content of a unit is split over many HTML files, there is no requirement for the `hasPart` array shown in this example as this information would be provided by the manifest.
 
-!!! note "Editor's Note"
+**Note**
     Several parts of the original are omitted in the example in order to avoid repetition.
 
-!!! note
+**Note**
     Some of the parts are documents in a choice of digital format (encoding). If the HTML page for the Lesson is the only HTML page containing information about these documents then it is necessary to provide a full description of those documents in this page and their encodings. An example of such as description is provided under [Properties of SupportingMaterial]({{ site.baseurl }}{% link inpage/supportingmaterial.md %}).
 
 ```json

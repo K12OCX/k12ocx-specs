@@ -60,7 +60,8 @@ The nature of the CCM or significant subdivision should be denoted with types dr
 
 Metadata about a subdivision should be placed within the HTML sectioning element that contains that subdivision. This ensures that if this section is extracted from the document the metadata travels with it.
 
-##Relevant schema.org types
+## Relevant schema.org types
+
 Useful schema.org types can be found under [schema.org/CreativeWork](http://schema.org/CreativeWork) which provides normative definitions, and include:
 
 * Book, Course, AudioBook, WebSite
@@ -78,6 +79,7 @@ Useful schema.org types can be found under [schema.org/CreativeWork](http://sche
 schema.org must be used as the main vocabulary for the document. schema.org types may be identified with cURIs with no namespace, e.g. `CreativeWork`.
 
 ## Relevant OER Schema types
+
 * Course
 * Module
 * Unit
@@ -96,7 +98,8 @@ As defined by [OER Schema](http://oerschema.org/docs/schema.html).
 
 OER Schema types should be identified with cURIs using the RDF namespace prefix `oer:` for the `http://oerschema.org/` namespace URI, for example oer:Lesson.
 
-##Custom OCX types
+## Custom OCX types
+
 OCX types may be added as this specification matures.
 
 OCX types should be identified with cURIs using the RDF namespace prefix `ocx:` for the ocx namespace URI and , e.g. ocx:NewType.

@@ -21,5 +21,5 @@ For clarity and ease of use, we propose Sitemap extended vocabulary that points 
 
 A similar approach has already been adopted by Google via Sitemap extensions for [Video](https://support.google.com/webmasters/answer/80471), [Images](https://support.google.com/webmasters/answer/178636?hl=en) and [News](https://www.google.co.uk/schemas/sitemap-news/0.9/). In addition, Google [recommends](https://developers.google.com/webmasters/videosearch/schema) using the schema.org compliant on-page markup, just as we do.
 
-!!! Note "open issue"
+**Open issue:**
     Where does the manifest go? How can it be discovered. Is it one file or two? [See github issue](https://github.com/K12OCX/k12ocx-specs/issues/33)

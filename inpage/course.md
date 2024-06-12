@@ -15,7 +15,7 @@ parent: In page markup
 - parentOf: `oer:Module`
 - childOf: `oer:Resource`
 
-!!! Note
+**Note:**
     We treat the OER Schema course to be equivalent to [schema.org/Course](https://schema.org/Course) so that properties for scheme.org/Course may be used with it. (This exploits the flexibility of schema.org/domainIncludes used in defining schema.org properties.)
 
 This represents the entire course. A Course includes one or more modules.
@@ -41,7 +41,7 @@ If properties with similar meaning are available from both schema.org and OER sc
 
 The table below selectively lists those properties that are most relevant to OCX.
 
-!!! Note
+**Note**
     Descriptions of some properties have been tweaked to make them more appropriate for describing courses.
 
 {% include props.md schematype="course" %}
@@ -59,10 +59,10 @@ Markup for [https://pilot.unbounded.org/math/grade-4](https://pilot.unbounded.or
 
 The following would be placed in a `<script  type="application/ld+json">` element in the HTML sectioning element that contained information about the course.
 
-!!! Note
+**Note**
     The URIs used for the `@id`s are based on the URLs of the page that represent the course being described and its modules with the addition of the #A fragment identifiers treating them as aggregate resources as described in the section on [manifest structuring]({{ site.baseurl }}{% link manifest/structure.md %}). This conforms with the requirement that different identifiers are used for CCM entities and the web pages that represent them, as described in the [content model]({{ site.baseurl }}{% link contentmodel.md %}).
 
-!!! Note
+**Note**
     In the case where the content of a course is split over many HTML files, there is no requirement for the `hasPart` array shown in this example as this information would be provided by the manifest.
 
 ```json
