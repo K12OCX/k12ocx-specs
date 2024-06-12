@@ -35,7 +35,7 @@ If properties with similar meaning are available from both schema.org and OER sc
 
 The table below selectively lists those properties that are most relevant to OCX.
 
-!!! note
+**Note**
      Descriptions of some properties have been tweaked to make them more appropriate for describing modules.
 
 {% include props.md schematype="module" %}
@@ -53,10 +53,10 @@ Markup for [https://pilot.unbounded.org/math/grade-4/module-1](https://pilot.unb
 
 The following would be placed in a `<script  type="application/ld+json">` element in the HTML sectioning element that contained information about the module.
 
-!!! note
+**Note**
      The URIs used for the `@id`s are based on the URLs of the page that represent the module being described and its units with the addition of the #A fragment identifiers treating them as aggregate resources as described in the section on [manifest structuring]({{ site.baseurl }}{% link manifest/structure.md %}). This conforms with the requirement that different identifiers are used for CCM entities and the web pages that represent them, as described in the [content model]({{ site.baseurl }}{% link contentmodel.md %}).
 
-!!! note
+**Note**
     In the case where the content of a module is split over many HTML files, there is no requirement for the `hasPart` array shown in this example as this information would be provided by the manifest.
 
 

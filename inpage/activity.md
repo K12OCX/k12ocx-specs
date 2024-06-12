@@ -42,7 +42,7 @@ See also examples for Assessment.
 
 From https://pilot.unbounded.org/math/grade-4/module-1/topic-a/lesson-1
 
-!!! note "Editor's note:"
+**Note:**
     DRAFT EXAMPLE, needs checking & validating.
 
 ``` json

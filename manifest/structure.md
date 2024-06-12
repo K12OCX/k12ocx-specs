@@ -123,6 +123,7 @@ A module comprises two topics, one of the topics comprises three lessons
 We provide information about the default logical and pedagogically appropriate sequence for displaying or presenting the components of complex curriculum materials using a JSON array of URIs, each URI representing a component. This approach is based on the [default reading order](https://www.w3.org/TR/wpub/#default-reading-order) of the (draft) W3C [Web Publications](https://www.w3.org/TR/wpub/) spec.
 
 ### Recommended Vocabulary Identifiers
+
 | Vocabulary | Namespace : Context URI |
 | ---------- | ----------------------- |
 | OCX extensions | `ocx` |
@@ -131,6 +132,7 @@ We provide information about the default logical and pedagogically appropriate s
     We should declare ocx properties properly and provide info at context URI [see github issue](https://github.com/K12OCX/k12ocx-specs/issues/35)
 
 ### Recommended Properties
+
 | Property      | Expected Type  | Defintion |
 | ------------- | -------------- | --------- |
 | `ocx:defaultOrder` | a list of URIs | The default order in which to present the resources in the aggregation to the user.  |

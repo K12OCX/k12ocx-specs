@@ -44,16 +44,16 @@ Markup for [https://pilot.unbounded.org/ela/grade-2/module-1/unit-6](https://pil
 
 The following would be placed in a `<script type="application/ld+json">` element in the HTML sectioning element that contained information about the unit.
 
-!!! note
+**Note**
 The URIs used for the `@id`s are based on the URLs of the page that represent the module being described and its units with the addition of the #A fragment identifiers treating them as aggregate resources as described in the section on [manifest structuring]({{ site.baseurl }}{% link manifest/structure.md %}). This conforms with the requirement that different identifiers are used for CCM entities and the web pages that represent them, as described in the [content model]({{ site.baseurl }}{% link contentmodel.md %}).
 
-!!! note
+**Note**
 In the case where the content of a unit is split over many HTML files, there is no requirement for the `hasPart` array shown in this example as this information would be provided by the manifest.
 
-!!! note "Editor's Note"
+**Note**
 Several parts of the original are omitted in the example in order to avoid repetition.
 
-!!! note
+**Note**
 Some of the parts are pdf documents (one is included in the example). If the HTML page for the Unit is the only HTML page containing information about these documents then it is necessary to provide a full description of those documents in this page. An example of such as description is provided under [Properties of SupportingMaterial]({{ site.baseurl }}{% link inpage/supportingmaterial.md %}).
 
 ```json
